@@ -1,0 +1,102 @@
+
+<mat-toolbar >
+    <div class="spacer"></div>
+    <div style="margin-left: 3%;">
+        <span >
+            مرحبا
+        </span>
+    </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened class="mat-elevation-z6">
+        <div class="profil">
+            <img src="./assets/images/man.png"  width="50%" max-width= "250px">
+            <h1></h1>
+
+        </div>
+        
+        <h4 class="name">دكتور أحمد</h4>
+        <p class="designation">طبيب</p>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="contents">
+            <button class="btn btn-primary" (click)="ajouterMedecin()">
+                إضافة طبيب
+            </button>
+        </div>
+        <div class="contents">
+            القائمة
+        </div>
+        
+        <div class="content">
+                
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+              
+                <!-- Position Column -->
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef> id </th>
+                  <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                </ng-container>
+              
+                <!-- Name Column -->
+                <ng-container matColumnDef="nom">
+                  <th mat-header-cell *matHeaderCellDef> nom </th>
+                  <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+                </ng-container>
+                
+                <!-- Name Column -->
+                <ng-container matColumnDef="etat ">
+                    <th mat-header-cell *matHeaderCellDef> etat  </th>
+                    <td mat-cell *matCellDef="let element"> {{element.etat}} </td>
+                  </ng-container>
+                  
+                <!-- Name Column -->
+                <ng-container matColumnDef="email">
+                    <th mat-header-cell *matHeaderCellDef> email </th>
+                    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                  </ng-container>
+
+
+                  <!-- Name Column -->
+                <ng-container matColumnDef="telephone">
+                    <th mat-header-cell *matHeaderCellDef>telephone</th>
+                    <td mat-cell *matCellDef="let element"> {{element.telephone}} </td>
+                  </ng-container>
+                  
+                <!-- Name Column -->
+                <ng-container matColumnDef="number">
+                    <th mat-header-cell *matHeaderCellDef>number</th>
+                    <td mat-cell *matCellDef="let element"> {{element.number}} </td>
+                  </ng-container>
+                    
+                
+                    
+                <!-- Name Column -->
+                <ng-container matColumnDef="modifier">
+                    <th mat-header-cell *matHeaderCellDef>modifier</th>
+                    <td mat-cell *matCellDef="let element; let i of index"> 
+                        <a  class="pointer" (click)="editUsers(i)" style="color:rgb(0, 255, 128)" matTooltip="تحرير هذا المستخدم">
+                            <mat-icon>edit</mat-icon>
+                        </a>
+                        <a class="pointer" (click)="deleteUsers(i)" style="color:rgb(255, 0, 0)" matTooltip="حذف هذا المستخدم">
+                            <mat-icon>delete</mat-icon>
+                        </a>
+                    </td>
+                  </ng-container>                
+
+              
+                
+              
+                  
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+              <h2 *ngIf="listUsers.length ==0">لا يوجد مستخدمون لعرضهم </h2>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

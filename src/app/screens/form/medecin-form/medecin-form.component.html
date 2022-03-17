@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2" >
+        <mat-toolbar >
+            <h2 style="margin-right:50%">إضافة طبيب</h2>
+        </mat-toolbar>
+        <form [formGroup]="medecinForm" (ngSubmit)="onSaveMedecin()" >
+            <div class="form-group">
+                <label for="telephone">
+                            هاتف
+                </label>        
+                <input type="text" class="form-control" id="telephone"  formControlName="telephone" ngModel required> 
+                
+            </div>
+            <div class="form-group">
+                <label for="email">
+                    البريد الإلكتروني
+                </label>
+                <input type="text" class="form-control" id="email" formControlName="email" ngModel required>
+            </div>
+            <div class="form-group">
+                <label for="number">
+                    ب.ت.و
+                </label>
+                <input type="text" class="form-control" id="number" formControlName="number" ngModel required>
+            </div>
+            <div class="form-group">
+                <label for="etat">
+                    الولاية 
+                </label>
+                <input type="text" class="form-control" id="etat"  formControlName="etat" ngModel required>
+            </div>
+            <div class="form-group">
+                <label for="nom">
+                    اسم
+                </label>
+                <input type="text" class="form-control" id="nom"  formControlName="nom" ngModel required>
+            </div>
+            <div class="form-group">
+                <label for="id">
+                    رقم
+                </label>
+                <input type="text" class="form-control" id="id" formControlName="id" ngModel required>
+            </div>
+            <button class="btn btn-success" [disabled]="medecinForm.invalid" type="submit">يضيف</button>
+            <button class="btn btn-danger" (click)="annuler()" >يلغي</button>
+        </form>
+    </div>
+</div>

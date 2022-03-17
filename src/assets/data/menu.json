@@ -1,0 +1,24 @@
+[
+    {
+        "nombre":"الرسائل",
+        "redirect":""
+
+    },
+    {
+        "nombre":"جدول المواعيد",
+        "redirect":""
+
+    },
+    {
+        "nombre":"الرسائل",
+        "redirect":""
+    },
+    {
+        "nombre":"لوحة متابعة",
+        "redirect":"/superdocwelcpage"
+    },
+    {
+        "nombre":"افهمني",
+        "redirect":""
+    }
+]
