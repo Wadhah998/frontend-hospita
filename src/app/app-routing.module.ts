@@ -1,3 +1,4 @@
+import { LandingComponent } from './components/landing/landing.component';
 import { MedecinFormComponent } from './screens/form/medecin-form/medecin-form.component';
 import { AjouterMedecinComponent } from './components/ajouter-medecin/ajouter-medecin.component';
 import { SuperDoctorComponent } from './components/super-doctor/super-doctor.component';
@@ -37,6 +38,7 @@ const MaterialComponents = [
   MatSnackBarModule
 ]
 const routes: Routes = [
+  {path: '',component:LandingComponent},
   {path: 'superdocwelcpage', component : SuperDoctorComponent},
   {path: 'ajouterMedecin', component : MedecinFormComponent}
 ];
