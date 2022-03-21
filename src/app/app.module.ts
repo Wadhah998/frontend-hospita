@@ -11,6 +11,7 @@ import { SuperDoctorComponent } from './components/super-doctor/super-doctor.com
 import { MedecinFormComponent } from './screens/form/medecin-form/medecin-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LandingComponent } from './components/landing/landing.component';
+import { NavBar1Component } from './components/nav-bar1/nav-bar1.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LandingComponent } from './components/landing/landing.component';
     AjouterMedecinComponent,
     SuperDoctorComponent,
     MedecinFormComponent,
-    LandingComponent
+    LandingComponent,
+    NavBar1Component
   ],
   imports: [
     BrowserModule,

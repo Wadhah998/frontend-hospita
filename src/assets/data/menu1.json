@@ -1,0 +1,20 @@
+[
+   
+    {
+        "nombre":"وجهني",
+        "redirect":""
+
+    },
+    {
+        "nombre":"تسجيل الدخول ",
+        "redirect":""
+    },
+    {
+        "nombre":"التسجيل",
+        "redirect":"/superdocwelcpage"
+    },
+    {
+        "nombre":"افهمني",
+        "redirect":""
+    }
+]

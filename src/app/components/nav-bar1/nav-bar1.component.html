@@ -1,0 +1,38 @@
+<mat-toolbar dir="rtl" backgroundcolor="white">
+    <div style="margin-left: 3%;">
+        <span class="material-icons">
+            <a routerLink="">
+                perm_identity
+            </a>
+        </span>
+        <span>
+            <mat-icon matBadge="" matBadgePosition="above after" matBadgeColor="warn" >
+               
+               <a routerLink="">
+                notifications
+               </a>
+            </mat-icon>
+        </span>
+            
+        <span class="material-icons">
+            <a routerLink="">
+                search
+            </a>
+        </span>
+            
+        <span></span>
+        <span>
+            <a routerLink="">
+                بحث
+            </a>
+        </span>
+    </div>
+    <div class="spacer"></div>
+    <div style="margin-left: 3%;">
+        <span *ngFor="let item of menu">
+            <a  [routerLink]="item.redirect">
+                {{item.nombre}}
+            </a>
+        </span>
+    </div>
+</mat-toolbar>
