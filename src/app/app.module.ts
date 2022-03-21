@@ -11,6 +11,9 @@ import { SuperDoctorComponent } from './components/super-doctor/super-doctor.com
 import { MedecinFormComponent } from './screens/form/medecin-form/medecin-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LandingComponent } from './components/landing/landing.component';
+import { SignInComponent } from './screens/sign-in/sign-in.component';
+import { SignUpComponent } from './screens/sign-up/sign-up.component';
+import { ForgetPasswordComponent } from './screens/forget-password/forget-password.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { LandingComponent } from './components/landing/landing.component';
     AjouterMedecinComponent,
     SuperDoctorComponent,
     MedecinFormComponent,
-    LandingComponent
+    LandingComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgetPasswordComponent
   ],
   imports: [
     BrowserModule,
