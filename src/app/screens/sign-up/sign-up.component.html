@@ -1,3 +1,4 @@
+<app-nav-bar></app-nav-bar>
 <div  style="margin-top: 5%; margin-left: 2%; margin-right: 2%;">
    <div style=" margin-right:15%; color: rgba(26,125,183,1); ">
     <span>إفهمني</span>
@@ -6,45 +7,64 @@
     <span>الرجاء إكمال إنشاء حسابك</span>
   </div>
   
-  
-  <div style="width: 180px; margin-top: 5%; margin-right:5%;" class="m-3 p-3 shadow">
-    <input type="text"  class="form-control" placeholder="اللقب"> 
-    <br>
-    <input type="text"  class="form-control" placeholder="رقم بطاقة الهوية الوطنية"> 
+
+
+  <form class="form-inline" style="margin-top: 2%; margin-right: 5%;">
+    <div class="form-group">
+      
+      <input type="text" id="prenom" name="prenom" placeholder="اللقب">
+    </div>
+    <div class="form-group ml-3" style="margin-right:3%;">
+      
+      <input type="email" id="mail" name="mail" placeholder="الاسم">
+    </div>
+  </form>
+  <form class="form-inline" style="margin-top: 1%; margin-right: 5%;">
+    <div class="form-group">
+      
+      <input type="text" id="prenom" name="prenom" placeholder="رقم بطاقة الهوية الوطنية">
+    </div>
+    <div class="form-group ml-3" style="margin-right:3%;">
+      
+      <input type="email" id="mail" name="mail" placeholder="رقم الهاتف">
+    </div>
+  </form>
+
+  <form class="form-inline" style="margin-top: 1%; margin-right: 5%; ">
+    <div class="form-group">
+      
+      <input type="text" id="prenom" name="prenom" style="width: 383px;" placeholder="البريد الإلكتروني">
+    </div>
     
+  </form>
+
+  <form class="form-inline" style="margin-top: 1%; margin-right: 5%; ">
+    <div class="form-group">
+      
+      <input type="text" id="prenom" name="prenom" style="width: 383px;" placeholder="كلمة السر">
+    </div>
     
-  </div>
-<br>
-  <div style="width: 410px;  margin-right: 5%; " class="m-3 p-3 shadow">
-    <input type="text"  class="form-control" placeholder="البريد الإلكتروني"> 
-    <br>
-    <input type="text"  class="form-control" placeholder="كلمة السر"> 
-    <br>
-    <input type="text"  class="form-control" placeholder="تأكيد كلمة السر"> 
-<br>
-  </div>
- 
-  <div style="width: 180px; margin-right: 5%; " class="m-3 p-3 shadow">
-    <input type="text"  class="form-control" placeholder="الرمز البريدي"> 
+  </form>
 
+  <form class="form-inline" style="margin-top: 1%; margin-right: 5%; ">
+    <div class="form-group">
+      
+      <input type="text" id="prenom" name="prenom" style="width: 383px;" placeholder="تأكيد كلمة السر">
+    </div>
+    
+  </form>
 
-  </div>
+  <form class="form-inline" style="margin-top: 1%; margin-right: 5%;">
+    <div class="form-group">
+      
+      <input type="text" id="prenom" name="prenom" placeholder="الرمز البريدي">
+    </div>
+    <div class="form-group ml-3" style="margin-right:3%;">
+      
+      <input type="email" id="mail" name="mail" placeholder="الولاية">
+    </div>
+  </form>
 
-  <div style="width: 180px; margin-top:-21%; margin-right: 22.9%; " class="m-3 p-3 shadow">
-    <input type="text"  class="form-control" placeholder="الاسم"> 
-    <br>
-    <input type="text"  class="form-control" placeholder="رقم الهاتف"> 
-
-  </div>
-  
-
-
-  <div style="width: 180px; margin-top: 11.5%; margin-right: 22.9%; " class="m-3 p-3 shadow">
-    <input type="text"  class="form-control" placeholder="الولاية"> 
-   
-
-  </div>
-  
   <div style="margin-right: 10%; margin-top: 3%;" class="form-check">
     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
     <label class="form-check-label" for="flexCheckChecked">
@@ -59,7 +79,7 @@
     <a routerLink="/signin" routerLinkActive="active">بالفعل عضو ؟ تسجيل الدخول
   </a>
   </div>
-  <div style="margin-top: -50%; margin-right: 50%;">
+  <div style="margin-top: -45.5%; margin-right: 50%;">
   <img  src="assets/img1.png" id="img1" >
   </div>
 
@@ -70,6 +90,6 @@
     
 
    
-</div>
+
 
 
