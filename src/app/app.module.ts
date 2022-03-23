@@ -12,6 +12,10 @@ import { MedecinFormComponent } from './screens/form/medecin-form/medecin-form.c
 import { ReactiveFormsModule } from '@angular/forms';
 import { LandingComponent } from './components/landing/landing.component';
 import { NavBar1Component } from './components/nav-bar1/nav-bar1.component';
+import { SignInComponent } from './screens/sign-in/sign-in.component';
+import { SignUpComponent } from './screens/sign-up/sign-up.component';
+import { ForgetPasswordComponent } from './screens/forget-password/forget-password.component';
+import { AdminComponent } from './screens/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { NavBar1Component } from './components/nav-bar1/nav-bar1.component';
     SuperDoctorComponent,
     MedecinFormComponent,
     LandingComponent,
-    NavBar1Component
+    NavBar1Component,
+    SignInComponent,
+    SignUpComponent,
+    ForgetPasswordComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

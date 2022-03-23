@@ -1,3 +1,4 @@
+import { AdminComponent } from './screens/admin/admin.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { MedecinFormComponent } from './screens/form/medecin-form/medecin-form.component';
 import { AjouterMedecinComponent } from './components/ajouter-medecin/ajouter-medecin.component';
@@ -18,6 +19,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { SignInComponent } from './screens/sign-in/sign-in.component';
+import { SignUpComponent } from './screens/sign-up/sign-up.component';
+import { ForgetPasswordComponent } from './screens/forget-password/forget-password.component';
 
 
 
@@ -40,7 +44,12 @@ const MaterialComponents = [
 const routes: Routes = [
   {path: '',component:LandingComponent},
   {path: 'superdocwelcpage', component : SuperDoctorComponent},
-  {path: 'ajouterMedecin', component : MedecinFormComponent}
+  {path: 'ajouterMedecin', component : MedecinFormComponent},
+  { path: 'signin', component: SignInComponent },
+  { path: 'signup', component: SignUpComponent },
+  { path: 'forgetpassword' , component: ForgetPasswordComponent },
+  { path:'admin', component:AdminComponent}
+
 ];
 
 @NgModule({
