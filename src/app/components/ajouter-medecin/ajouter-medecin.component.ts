@@ -17,16 +17,6 @@ export class AjouterMedecinComponent implements OnInit {
      private router : Router) { }
 
   ngOnInit(): void {
-
-    this.medecin = new Medecin ( 0,0,'','','',0);
-    const id = this.route.snapshot.params['id'];
-
-    this.userService.getSingleMedecin(+id)?.telephone;
-    this.userService.getSingleMedecin(+id)?.email;
-    this.userService.getSingleMedecin(+id)?.number;
-    this.userService.getSingleMedecin(+id)?.etat;
-    this.userService.getSingleMedecin(+id)?.nom;
-    this.userService.getSingleMedecin(+id)?.id;
   }
 
 }

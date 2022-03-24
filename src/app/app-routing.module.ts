@@ -1,3 +1,5 @@
+import { ProfileComponent } from './components/profile/profile.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MedecinFormComponent } from './screens/form/medecin-form/medecin-form.component';
 import { AjouterMedecinComponent } from './components/ajouter-medecin/ajouter-medecin.component';
 import { SuperDoctorComponent } from './components/super-doctor/super-doctor.component';
@@ -17,6 +19,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatInputModule} from '@angular/material/input';
+import {MatSortModule} from '@angular/material/sort';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -34,11 +39,16 @@ const MaterialComponents = [
   MatPaginatorModule,
   MatDialogModule,
   MatSelectModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatInputModule,
+  MatSortModule,
+  MatCardModule
 ]
 const routes: Routes = [
-  {path: 'superdocwelcpage', component : SuperDoctorComponent},
-  {path: 'ajouterMedecin', component : MedecinFormComponent}
+  {path: 'medecins', component : SuperDoctorComponent},
+  {path: 'ajouterMedecin', component : MedecinFormComponent},
+  {path : 'dashboard' , component:DashboardComponent},
+  {path : 'profile', component : ProfileComponent}
 ];
 
 @NgModule({

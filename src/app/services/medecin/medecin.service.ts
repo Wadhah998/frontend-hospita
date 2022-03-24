@@ -1,40 +1,58 @@
+import { Medecins } from './../../Profiles';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { ApiService } from './../api.service';
 import { Medecin } from './../../models/medecin/medecin';
-import { Injectable } from '@angular/core';
+import { Injectable, ViewChild } from '@angular/core';
+import {MatPaginator} from '@angular/material/paginator';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MedecinService {
 
-  listmedecins: Medecin[] = [
-    {id: 1, nom: 'Dr.Indigo Violet', etat: 'Sfax', email: 'test@gmail.com', number: 12345678, telephone: 12345677},
-    {id: 2, nom: 'Dr.Justin Case', etat: 'Sfax', email: 'test@gmail.com', number: 12345678, telephone: 12345677},
-    {id: 3, nom: 'Dr.Hilary Ouse', etat: 'Sfax', email: 'test@gmail.com', number: 12345678, telephone: 12345677},
-    {id: 4, nom: 'Dr.Archibald', etat: 'Sfax', email: 'test@gmail.com', number: 12345678, telephone: 12345677}
-  ];
+  medecins : Medecins []= [];
 
-  constructor() { }
+  dataSource!: MatTableDataSource<any>;
 
-  getUser(){
-    return this.listmedecins.slice();
-  }
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
-  getSingleMedecin(id: number){
-    const medecin = this.listmedecins.find(
-      (medecinObject) => {
-          return medecinObject.id===id;
+
+  constructor(private api : ApiService) { }
+
+
+  getOneMedecin (nom : string){
+    this.api.getSingleMedecin(nom)
+    .subscribe({
+      next:(res)=>{
+        console.log(res)
+      },
+      error:()=>{
+        alert("!!")
       }
-  );
+    })
+  }
+  
 
-   return medecin ;
+  getAllMedecins () {
+    this.api.getMedecin()
+      .subscribe({
+        next:(res)=>{
+          console.log(res);
+          this.medecins = res
+          this.dataSource = new MatTableDataSource(res);
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+        },
+        error:(error)=>{
+          alert("خطأ أثناء جلب السجلات")
+        }
+      })
   }
 
-  removeUsers(index:number){
-    this.listmedecins.splice(index, 1);
+ 
 
-  }
+ 
 
-  addMedecin(nouveauMedecin : Medecin){
-    this.listmedecins.push(nouveauMedecin);
-  }
 }

@@ -40,7 +40,7 @@ export class MedecinFormComponent implements OnInit {
 
       const newMedecin = new Medecin(telephone,email,number,etat,nom,id);
 
-      this.userService.addMedecin(newMedecin)
+     // this.userService.addMedecin(newMedecin)
     this.router.navigate(['/superdocwelcpage']);
   }
 

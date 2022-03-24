@@ -1,4 +1,6 @@
-import { NgModule } from '@angular/core';
+import { ApiService } from './services/api.service';
+import { MedecinService } from './services/medecin/medecin.service';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -9,7 +11,10 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { AjouterMedecinComponent } from './components/ajouter-medecin/ajouter-medecin.component';
 import { SuperDoctorComponent } from './components/super-doctor/super-doctor.component';
 import { MedecinFormComponent } from './screens/form/medecin-form/medecin-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Dialog1Component } from './dialog1/dialog1.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -17,16 +22,26 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavBarComponent,
     AjouterMedecinComponent,
     SuperDoctorComponent,
-    MedecinFormComponent
+    MedecinFormComponent,
+    Dialog1Component,
+    DashboardComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    MedecinService,
+    ApiService
+  ],
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class AppModule { }
