@@ -4,6 +4,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { UserFormComponent } from '../form/user-form/user-form.component';
 
 @Component({
   selector: 'app-admin',
@@ -11,10 +14,15 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+  typeUser: any;
+  isSuperDoctor !: boolean;
+  formGroup !: FormGroup;
+  displayPerson = false;
+  typeDisplayedPerson !: string;
   listUsers: User[]= [];
-  displayedColumns: string[] = ['modifier','password','loginNumber','email','telephone','prenom',' nom',' TypeUser',' id'];
+  displayedColumns: string[] = ['modifier','password','loginNumber','email','telephone','prenom','nom','TypeUser','id'];
   dataSource! : MatTableDataSource<any>;
-  constructor(private userService:UserService, private _snackBar: MatSnackBar, private router : Router) {}
+  constructor(private userService:UserService,public dialog:MatDialog, private _snackBar: MatSnackBar, private router : Router) {}
 
 
   ngOnInit(): void {
@@ -51,6 +59,9 @@ export class AdminComponent implements OnInit {
   editUsers(index:number){
 
   }
+  openUserDialog(): void {
+    this.dialog.open(UserFormComponent)
+}
 
 
 }

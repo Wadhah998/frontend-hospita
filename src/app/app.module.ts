@@ -16,6 +16,7 @@ import { SignInComponent } from './screens/sign-in/sign-in.component';
 import { SignUpComponent } from './screens/sign-up/sign-up.component';
 import { ForgetPasswordComponent } from './screens/forget-password/forget-password.component';
 import { AdminComponent } from './screens/admin/admin.component';
+import { UserFormComponent } from './screens/form/user-form/user-form.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AdminComponent } from './screens/admin/admin.component';
     SignInComponent,
     SignUpComponent,
     ForgetPasswordComponent,
-    AdminComponent
+    AdminComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,
