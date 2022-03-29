@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend-hospital';
+
+  bgImage:string = "assets/images/image4.jpg";
 }

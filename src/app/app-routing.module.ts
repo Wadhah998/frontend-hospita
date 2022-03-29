@@ -1,7 +1,8 @@
 import { AdminComponent } from './screens/admin/admin.component';
 import { LandingComponent } from './components/landing/landing.component';
+import { ProfileComponent } from './screens/form/profile/profile.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MedecinFormComponent } from './screens/form/medecin-form/medecin-form.component';
-import { AjouterMedecinComponent } from './components/ajouter-medecin/ajouter-medecin.component';
 import { SuperDoctorComponent } from './components/super-doctor/super-doctor.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -22,6 +23,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { SignInComponent } from './screens/sign-in/sign-in.component';
 import { SignUpComponent } from './screens/sign-up/sign-up.component';
 import { ForgetPasswordComponent } from './screens/forget-password/forget-password.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatSortModule} from '@angular/material/sort';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
@@ -39,7 +44,11 @@ const MaterialComponents = [
   MatPaginatorModule,
   MatDialogModule,
   MatSelectModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatInputModule,
+  MatSortModule,
+  MatCardModule,
+  MatGridListModule
 ]
 const routes: Routes = [
   {path: '',component:LandingComponent},
@@ -48,8 +57,12 @@ const routes: Routes = [
   { path: 'signin', component: SignInComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'forgetpassword' , component: ForgetPasswordComponent },
-  { path:'admin', component:AdminComponent}
+  { path:'admin', component:AdminComponent},
 
+  {path: 'medecins', component : SuperDoctorComponent},
+  {path: 'ajouterMedecin', component : MedecinFormComponent},
+  {path : 'dashboard' , component:DashboardComponent},
+  {path : 'profile', component : ProfileComponent}
 ];
 
 @NgModule({

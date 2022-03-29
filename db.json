@@ -1,0 +1,31 @@
+{
+  "listMedecins": [
+    {
+      "telephone": "52358423",
+      "email": "orl.ndonse@gmail.com",
+      "cin": "5888877",
+      "speciality": "specilaté1",
+      "nom": "Orly",
+      "password": "46666",
+      "id": "1"
+    },
+    {
+      "telephone": "5665134",
+      "email": "daoidwadhah@gmail.com",
+      "cin": "77444",
+      "speciality": "spécialité2",
+      "nom": "Wadhah",
+      "id": "2"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

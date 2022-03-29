@@ -4,18 +4,14 @@
         "redirect":""
 
     },
+   
     {
-        "nombre":"جدول المواعيد",
-        "redirect":""
-
-    },
-    {
-        "nombre":"الرسائل",
+        "nombre":"الأطباء",
         "redirect":""
     },
     {
         "nombre":"لوحة متابعة",
-        "redirect":"/superdocwelcpage"
+        "redirect":"/medecins"
     },
     {
         "nombre":"افهمني",

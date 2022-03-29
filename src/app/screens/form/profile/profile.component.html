@@ -1,0 +1,23 @@
+<div class="main-div" dir="rtl">
+    <mat-card class="card">
+        <mat-card-header>
+            <div mat-card-avatar>
+                <img src="./assets/images/man.png"  width="50%" max-width= "250px" class="header-image">
+            </div>
+            <mat-card-title style="margin-left: -20px;  color: rgb(23, 112, 228); ">
+                {{nom}}
+            </mat-card-title>
+            <mat-card-subtitle style="margin-left: -10px;">
+                {{speciality}}
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p style="text-align:left; margin-top:10%; text-align:right ;">{{cin}}</p>
+            <p style="text-align:left;text-align:right ;"> {{email}}</p>
+        </mat-card-content>
+
+    </mat-card>
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="primary" mat-dialog-close>إلغاء</button> 
+</div>
