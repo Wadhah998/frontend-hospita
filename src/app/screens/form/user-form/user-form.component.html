@@ -1,0 +1,40 @@
+<h1 mat-dialog-title style="margin-left:40%;  color:rgb(7, 107, 221)">إضافة طبيب</h1>
+<div mat-dialog-content dir="rtl">
+    <form [formGroup]="userForm">
+        <mat-form-field class="class1" appearance="outline">
+            <mat-label>الاسم واللقب</mat-label>
+            <input formControlName="nom" matInput placeholder="الاسم واللقب">
+        </mat-form-field>
+        <mat-form-field class="class1" appearance="outline">
+            <mat-label>رقم التسجيل</mat-label>
+            <input formControlName="cin" matInput placeholder="رقم التسجيل">
+        </mat-form-field>
+        <mat-form-field class="class1" appearance="outline">
+            <mat-label>الهاتف</mat-label>
+            <input formControlName="telephone" matInput placeholder="الهاتف">
+        </mat-form-field>
+        <mat-form-field class="class1" appearance="outline">
+            <mat-label>البريد الاكتروني</mat-label>
+            <input formControlName="email" matInput placeholder="البريد الاكتروني">
+        </mat-form-field >
+        <mat-form-field class="class1" appearance="outline">
+            <mat-label>الولاية</mat-label>
+            <input formControlName="password" matInput placeholder="كلمة السر">
+        </mat-form-field>
+        
+        <mat-form-field class="class2" appearance="outline">
+            <mat-label>الولاية</mat-label>
+            <input formControlName="speciality" matInput placeholder="الولاية">
+        </mat-form-field>
+    
+        <mat-form-field class="class2" appearance="outline" style="margin-left: 20%;">
+            <mat-label>الترقيم البريدي</mat-label>
+            <input formControlName="id" matInput placeholder="الترقيم البريدي">
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="primary">{{actionBtn}}</button>
+    <button mat-raised-button color="warn" mat-dialog-close>إلغاء</button> 
+</div>

@@ -60,7 +60,10 @@ export class AdminComponent implements OnInit {
 
   }
   openUserDialog(): void {
-    this.dialog.open(UserFormComponent)
+    this.dialog.open(UserFormComponent,{
+    width:'60%',
+    disableClose:true,
+    autoFocus :true})
 }
 
 

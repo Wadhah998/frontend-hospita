@@ -1,51 +1,40 @@
 <app-nav-bar></app-nav-bar>
 <mat-toolbar >
-    <div class="spacer"></div>
+    <div  class="spacer"></div>
     <div style="margin-left: 3%;">
-        <span >
+        <span class="text-center" >
             مرحبا
         </span>
     </div>
 </mat-toolbar>
 
-<mat-sidenav-container>
-    <mat-sidenav mode="side" opened class="mat-elevation-z6">
-        <div class="profil">
-            <img src="./assets/images/man.png"  width="50%" max-width= "250px">
-            <h1></h1>
 
-        </div>
-        
-        <h4 class="name">دكتور أحمد</h4>
-        <p class="designation">طبيب</p>
-
-
-     
-      </mat-sidenav>
-       
-    <mat-sidenav-content>
    
       
         <div class="contents">
-          <div class="form-floating w-25" style="margin-left:50% ; " >
-            <mat-label >بحث بإستعمال نوع المستعمل</mat-label>
-            <mat-select aria-label="Floating label select example"
-                    class="form-select"
-                    id="floatingSelect" name="typeUser">
+          
+ 
+
+          
+          <div class="form-floating w-25" style="margin-left:50% ; margin-top: -125px; " class="bg-primary" ><small>
+            <mat-label class="btn-lg"> نوع المستخدم</mat-label>
+            <mat-select aria-label="Floating label select example" id="floatingSelect" name="typeUser" style=" text-align: center;">          
                 <mat-option selected value=""></mat-option>
-                <mat-option value="parent">ولي</mat-option>
-                <mat-option value="doctor">طبيب</mat-option>
-                <mat-option value="teacher">مربي</mat-option>
-                <mat-option value="school">مدرسة</mat-option>
-            </mat-select>
-            
+                <mat-option value="parent" class="text-primary">ولي</mat-option>
+                <mat-option value="doctor" class="text-primary">طبيب</mat-option>
+                <mat-option value="teacher" class="text-primary">مربي</mat-option>
+                <mat-option value="school" class="text-primary">مدرسة</mat-option>
+           </mat-select> 
+          
+            </small>
         </div>
           
         
-            <button  class="btn btn-success" (click)="openUserDialog()">
+            <button  class="btn btn-lg btn-primary" (click)="openUserDialog()">
                 إضافة طبيب أول أو مدرسة
             </button>
-        </div>
+          
+          </div>
         <div class="contents">
             القائمة
         </div>
@@ -126,7 +115,6 @@
 
               <h2 *ngIf="listUsers.length ==0">لا يوجد مستخدمون لعرضهم </h2>
         </div>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+  
 
 
