@@ -1,4 +1,13 @@
-mat-toolbar{
-    background: #c4dffd;
-    color: rgb(0, 18, 119);
+mat-form-field.class1{
+    width: 80%;
 }
+
+
+mat-form-field.class2{
+    width: 30%;
+    
+}
+
+.mat-dialog-actions{
+    justify-content: flex-end;
+    }

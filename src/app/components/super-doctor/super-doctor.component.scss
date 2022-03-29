@@ -1,14 +1,13 @@
-.spacer{
-    flex: 1 1 auto;
-}
-span{
-    padding-right: 1rem;
-    margin-left: 1%;
-}
 mat-toolbar{
     background: #d5e9fd;
     color: rgb(23, 112, 228);
 }
+
+
+.mat-sidenav-container{
+    height: calc(100vh - 65px);
+}
+
 
 mat-sidenav {
     margin: 26px;
@@ -16,65 +15,9 @@ mat-sidenav {
     border-right: none;
     background: #ffffff;
     color: rgb(0, 0, 0);
-    border-radius: 10px;
+    border-radius: 0px;
     padding: 16px;
     text-align: center;
 }
 
 
-
-
-
-mat-sidenav-container{
-    height: calc(100vh - 65px);
-}
-  table {
-    width: 100%;
-  }
-  
-  .mat-form-field.class1 {
-    font-size: 14px;
-    width: 100%;
-  }
-  th  {
-    width: 18%;
-    padding-left: 6rem;
-  }
-  .pointer {
-    cursor: pointer;
-  }
-
-
-  .sidenav{
-    background: #dee9f8;
-    background: linear-gradient(0deg, #dee9f8 0, #dee9f8);
-    height: 100%;
-    width: 230px;
-    display: block;
-    box-shadow: 0 045px 0 rgba(0, 0, 0 , 6);
-    margin-right: 15px;
-    border-radius: 5px;
-    transition: .5s cubic-bezier(.685,.0473,.346,1);;
-}
-
-.header-image {
-    background-size: cover;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    object-fit: cover;
-}
-
-.card {
-    width: 80%;
-    max-width:  80%;
-    height:  300px;
-    margin-top: 2%;
-}
-
-.main-div {
-    display:  flex;
-    width: 100%;
-    justify-content: center;
-}

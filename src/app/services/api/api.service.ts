@@ -1,6 +1,8 @@
-import { Medecins } from './../Profiles';
+import { Medecins } from './../../models/medecin/Profiles';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +27,8 @@ export class ApiService {
   deleteMedecin(id:number){
     return this.http.delete<Medecins[]>("http://localhost:3000/listMedecins/"+id);
   }
-  getSingleMedecin(nom:string){
-    return this.http.get<Medecins[]>("http://localhost:3000/listMedecins/"+nom);
+  getSingleMedecin(id:number){
+    return this.http.get<Medecins[]>("http://localhost:3000/listMedecins/"+id);
   }
 
 }

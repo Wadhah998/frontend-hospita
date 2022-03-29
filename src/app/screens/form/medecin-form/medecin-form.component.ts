@@ -1,8 +1,7 @@
-import { MedecinService } from './../../../services/medecin/medecin.service';
-import { Medecin } from './../../../models/medecin/medecin';
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ApiService } from './../../../services/api/api.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-medecin-form',
@@ -11,42 +10,75 @@ import { Router } from '@angular/router';
 })
 export class MedecinFormComponent implements OnInit {
 
-  medecinForm!: FormGroup;
+  medecinForm! : FormGroup;
+  actionBtn : string = "تأكيد";
 
-  constructor(private formBuilder: FormBuilder,private userService : MedecinService, private router : Router) { }
+  constructor(
+    
+    private formBuilder : FormBuilder, private api : ApiService, private dialogRef : MatDialogRef<MedecinFormComponent>, 
+    @Inject(MAT_DIALOG_DATA) public editData :any) { }
 
   ngOnInit(): void {
-    this.initForm();
-  }
-
-  initForm(){
     this.medecinForm = this.formBuilder.group({
-      telephone: ['', Validators.required],
-      email : ['', [Validators.required], Validators.email],
-      number: ['', Validators.required],
-      etat: ['', Validators.required],
-      nom: ['', Validators.required],
-      id: ['', Validators.required],
+     telephone: ['', Validators.required], 
+     email : ['', [Validators.required, Validators.email]],
+     cin: ['', Validators.required],
+     speciality: ['', Validators.required],
+     nom: ['', Validators.required],
+     password:['', Validators.required],
+     id: ['', Validators.required]
     });
-  }
-  onSaveMedecin(){
-    
-      const telephone = this.medecinForm.get('telephone')?.value;
-      const email = this.medecinForm.get('email')?.value;
-      const number = this.medecinForm.get('number')?.value;
-      const etat = this.medecinForm.get('etat')?.value;
-      const nom = this.medecinForm.get('nom')?.value;
-      const id = this.medecinForm.get('id')?.value;
 
-      const newMedecin = new Medecin(telephone,email,number,etat,nom,id);
-
-     // this.userService.addMedecin(newMedecin)
-    this.router.navigate(['/superdocwelcpage']);
-  }
-
-  annuler(){
-    this.router.navigate(['/superdocwelcpage']);
-  }
-
-
+    if(this.editData){
+      this.actionBtn = "تحديث";
+      this.medecinForm.controls['telephone'].setValue(this.editData.telephone);
+      this.medecinForm.controls['email'].setValue(this.editData.email);
+      this.medecinForm.controls['cin'].setValue(this.editData.cin);
+      this.medecinForm.controls['speciality'].setValue(this.editData.speciality);
+      this.medecinForm.controls['nom'].setValue(this.editData.nom);
+      this.medecinForm.controls['password'].setValue(this.editData.password);
+      this.medecinForm.controls['id'].setValue(this.editData.id);
+  
+    }
+ 
 }
+
+
+addMedecin() {
+  if(!this.editData){
+    if(this.medecinForm.valid){
+      this.api.postMedecin(this.medecinForm.value)
+      .subscribe({
+        next:(res)=>{
+          alert("إضافة الطبيب بنجاح");
+          this.medecinForm.reset();
+          this.dialogRef.close('تأكيد');
+          
+          
+        },
+        error:()=>{
+          alert("خطأ بينما يضاف");
+        }
+      })
+    }
+  }
+  else {
+    this.modifierMedecin();
+        }
+}
+
+modifierMedecin(){
+  this.api.putMedecin(this.medecinForm.value, this.editData.id)
+  .subscribe({
+    next:(res)=>{
+      alert("تم تحديث الطبيب خليفة");
+      this.medecinForm.reset();
+      this.dialogRef.close('تحديث');
+    },
+    error:()=>{
+      alert("خطأ أثناء تحديث السجل");
+    }
+  });
+}
+}
+

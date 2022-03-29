@@ -1,7 +1,6 @@
-import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileComponent } from './screens/form/profile/profile.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MedecinFormComponent } from './screens/form/medecin-form/medecin-form.component';
-import { AjouterMedecinComponent } from './components/ajouter-medecin/ajouter-medecin.component';
 import { SuperDoctorComponent } from './components/super-doctor/super-doctor.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -22,6 +21,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatInputModule} from '@angular/material/input';
 import {MatSortModule} from '@angular/material/sort';
 import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
@@ -42,7 +42,8 @@ const MaterialComponents = [
   MatSnackBarModule,
   MatInputModule,
   MatSortModule,
-  MatCardModule
+  MatCardModule,
+  MatGridListModule
 ]
 const routes: Routes = [
   {path: 'medecins', component : SuperDoctorComponent},

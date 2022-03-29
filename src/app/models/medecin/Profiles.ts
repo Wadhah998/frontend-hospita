@@ -12,7 +12,7 @@ export class Medecins {
         this.email = email;
         this.cin = cin;
         this.speciality = speciality;
-        //this.password = password;
+        this.password = password;
         this.nom = nom;
         this.id = id;
     }

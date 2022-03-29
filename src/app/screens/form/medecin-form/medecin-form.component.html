@@ -1,51 +1,40 @@
-<!--
-<div class="row">
-    <div class="col-sm-8 col-sm-offset-2" >
-        <mat-toolbar >
-            <h2 style="margin-right:50%">إضافة طبيب</h2>
-        </mat-toolbar>
-        <form [formGroup]="medecinForm" (ngSubmit)="onSaveMedecin()" >
-            <div class="form-group">
-                <label for="telephone">
-                            هاتف
-                </label>        
-                <input type="text" class="form-control" id="telephone"  formControlName="telephone" ngModel required> 
-                
-            </div>
-            <div class="form-group">
-                <label for="email">
-                    البريد الإلكتروني
-                </label>
-                <input type="text" class="form-control" id="email" formControlName="email" ngModel required>
-            </div>
-            <div class="form-group">
-                <label for="number">
-                    ب.ت.و
-                </label>
-                <input type="text" class="form-control" id="number" formControlName="number" ngModel required>
-            </div>
-            <div class="form-group">
-                <label for="etat">
-                    الولاية 
-                </label>
-                <input type="text" class="form-control" id="etat"  formControlName="etat" ngModel required>
-            </div>
-            <div class="form-group">
-                <label for="nom">
-                    اسم
-                </label>
-                <input type="text" class="form-control" id="nom"  formControlName="nom" ngModel required>
-            </div>
-            <div class="form-group">
-                <label for="id">
-                    رقم
-                </label>
-                <input type="text" class="form-control" id="id" formControlName="id" ngModel required>
-            </div>
-            <button class="btn btn-success" [disabled]="medecinForm.invalid" type="submit">يضيف</button>
-            <button class="btn btn-danger" (click)="annuler()" >يلغي</button>
-        </form>
-    </div>
+<h1 mat-dialog-title style="margin-left:40%;  color:rgb(7, 107, 221)">إضافة طبيب</h1>
+<div mat-dialog-content dir="rtl">
+    <form [formGroup]="medecinForm">
+        <mat-form-field class="class1" appearance="outline">
+            <mat-label>الاسم واللقب</mat-label>
+            <input formControlName="nom" matInput placeholder="الاسم واللقب">
+        </mat-form-field>
+        <mat-form-field class="class1" appearance="outline">
+            <mat-label>رقم التسجيل</mat-label>
+            <input formControlName="cin" matInput placeholder="رقم التسجيل">
+        </mat-form-field>
+        <mat-form-field class="class1" appearance="outline">
+            <mat-label>الهاتف</mat-label>
+            <input formControlName="telephone" matInput placeholder="الهاتف">
+        </mat-form-field>
+        <mat-form-field class="class1" appearance="outline">
+            <mat-label>البريد الاكتروني</mat-label>
+            <input formControlName="email" matInput placeholder="البريد الاكتروني">
+        </mat-form-field >
+        <mat-form-field class="class1" appearance="outline">
+            <mat-label>الولاية</mat-label>
+            <input formControlName="password" matInput placeholder="كلمة السر">
+        </mat-form-field>
+        
+        <mat-form-field class="class2" appearance="outline" style="margin-left: 20%;">
+            <mat-label>الولاية</mat-label>
+            <input formControlName="speciality" matInput placeholder="الولاية">
+        </mat-form-field>
+    
+        <mat-form-field class="class2" appearance="outline" >
+            <mat-label>الترقيم البريدي</mat-label>
+            <input formControlName="id" matInput placeholder="الترقيم البريدي">
+        </mat-form-field>
+    </form>
 </div>
 
--->
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="primary" (click)="addMedecin()">{{actionBtn}}</button>
+    <button mat-raised-button color="warn" mat-dialog-close>إلغاء</button> 
+</div>
