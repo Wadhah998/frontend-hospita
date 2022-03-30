@@ -7,6 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { UserFormComponent } from '../form/user-form/user-form.component';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-admin',
@@ -54,6 +55,7 @@ export class AdminComponent implements OnInit {
   ajouteruser(){
     this.router.navigate(['/ajouteruser']);
   }
+  
 
 
   editUsers(index:number){
@@ -65,6 +67,13 @@ export class AdminComponent implements OnInit {
     disableClose:true,
     autoFocus :true})
 }
+chercheMedecin($event: any){
+  let filteredData = _.filter(this.listUsers,(item) =>{
+    return item.TypeUser.toLowerCase() == $event.value.toLowerCase();
+  })
+  this.dataSource = new MatTableDataSource(filteredData);
 
 
 }
+}
+  

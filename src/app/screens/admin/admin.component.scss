@@ -54,20 +54,12 @@ mat-sidenav-container{
     height: calc(100vh - 65px);
 }
 
-table {
-    width: 100%;
 
-
-  }
-
-th {
-    width: 16.5%;
-    padding-left: 1rem;
-}
 
 .pointer {
     cursor: pointer;
 }
+
 .mat-select-value {
     display: table-cell;
     max-width: 0;
@@ -75,8 +67,12 @@ th {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    color: #d5e9fd;
+}
+
+element.style {
+    height: 46%;
+    margin-top: 14px;
+    width: 164px;
     text-align: center;
-    color: #ddd;
-}.mat-select-arrow {
-    color: #ddd;
 }
