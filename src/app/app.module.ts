@@ -1,7 +1,6 @@
 import { DialogService } from './services/shared/dialog.service';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SuperDoctorComponent } from './components/super-doctor/super-doctor.component';
 import { MedecinFormComponent } from './screens/form/medecin-form/medecin-form.component';
-
 import { LandingComponent } from './components/landing/landing.component';
 import { NavBar1Component } from './components/nav-bar1/nav-bar1.component';
 import { SignInComponent } from './screens/sign-in/sign-in.component';

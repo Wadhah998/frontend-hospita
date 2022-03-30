@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from './user';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+
+
+
+
+
 
 @Component({
   selector: 'app-sign-up',
@@ -8,20 +15,47 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor( private router: Router) { }
+ public user : User = new User(); 
+ public registerForm!: FormGroup;
+  constructor( private router: Router, private fb: FormBuilder) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit() {
+    this.registerForm = this.fb.group({
+      nom: '',
+      prenom: ['', Validators.minLength(4)],
+      cin: '' ,
+      tel:'',
+      email: ['', Validators.email ] ,
+      mdp: ['',
+       ],
+      mdpp:'',
+      gouv:'',
+      pos:'',
+      check:''
+    },
+    )
+}
+
   onSignin(): void {
-
+    this.router.navigateByUrl(``);
   }
   
   onSignup(): void {
     
-    this.router.navigateByUrl(``);
+    
   }
   onForget(): void{
   
   }
 
+  public saveData(registerForm: NgForm) {
+    console.log(registerForm.form);
+    console.log('valeurs: ', JSON.stringify(registerForm.value));
+    console.log('hello');
+  }
+
+  hide = true;
+ 
 }
+
+

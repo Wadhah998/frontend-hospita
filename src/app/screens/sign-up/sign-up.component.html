@@ -1,85 +1,265 @@
 <app-nav-bar></app-nav-bar>
-<div  style="margin-top: 5%; margin-left: 2%; margin-right: 2%;">
+<div style="margin-top: 3%; margin-left: 2%; margin-right: 2%;">
    <div style=" margin-right:15%; color: rgba(26,125,183,1); ">
-    <span>إفهمني</span>
+    <span class="h2">إفهمني</span>
   </div>
-  <div style="margin-top: 3%; color:  rgba(100,109,130,1); margin-right: 10%; ">
-    <span>الرجاء إكمال إنشاء حسابك</span>
+  <div style="margin-top: 2%; color:  rgba(100,109,130,1); margin-right: 13%; ">
+    <span class="h5">الرجاء إكمال إنشاء حسابك</span>
   </div>
   
+  <form class="form-inline" style="margin-top: 3%; margin-right: 5%; ">
 
-
-  <form class="form-inline" style="margin-top: 2%; margin-right: 5%;">
-    <div class="form-group">
-      
-      <input type="text" id="prenom" name="prenom" placeholder="اللقب">
-    </div>
-    <div class="form-group ml-3" style="margin-right:3%;">
-      
-      <input type="email" id="mail" name="mail" placeholder="الاسم">
-    </div>
-  </form>
-  <form class="form-inline" style="margin-top: 1%; margin-right: 5%;">
-    <div class="form-group">
-      
-      <input type="text" id="prenom" name="prenom" placeholder="رقم بطاقة الهوية الوطنية">
-    </div>
-    <div class="form-group ml-3" style="margin-right:3%;">
-      
-      <input type="email" id="mail" name="mail" placeholder="رقم الهاتف">
-    </div>
-  </form>
-
-  <form class="form-inline" style="margin-top: 1%; margin-right: 5%; ">
-    <div class="form-group">
-      
-      <input type="text" id="prenom" name="prenom" style="width: 383px;" placeholder="البريد الإلكتروني">
-    </div>
+      <form novalidate (ngSubmit)="saveData(registerForm)" #registerForm="ngForm">
     
-  </form>
 
-  <form class="form-inline" style="margin-top: 1%; margin-right: 5%; ">
-    <div class="form-group">
       
-      <input type="text" id="prenom" name="prenom" style="width: 383px;" placeholder="كلمة السر">
-    </div>
+       <div class="form-group">
+      
+       <input type="text" 
+
+       class="form-control"
+       placeholder="اللقب" 
+       [(ngModel)]="user.prenom"
+       id="prenom"
+       name="prenom" 
+       required
+       #prenomVar="ngModel"
+       [ngClass]="{
+        'is-invalid': prenomVar.touched && !prenomVar.valid
+       }" />
+       
+       </div>
+
+
+       <div class="form-group">
+
+       <input type="text"
+       id="nom"
+       style=" margin-right: 5%;"
+    class="form-control"
+     placeholder="الاسم"
+     [(ngModel)]="user.nom"
+     name="nom" 
+     required
+     #nomVar="ngModel"
+     [ngClass]="{
+       'is-invalid': nomVar.touched && !nomVar.valid
+     }" />
+   
+  </div>
+
+       <br>
+       <br>
+   
     
-  </form>
+       <div class="form-group">
+        
+        <input type="text" 
+        id="cin"
+        minlength="8"
+        maxlength="8"
+        class="form-control"
+        placeholder="رقم بطاقة الهوية الوطنية" 
+        [(ngModel)]="user.cin"
+        name="cin" 
+        required 
+        #cinVar="ngModel"
+        [ngClass]="{
+          'is-invalid': cinVar.touched && !cinVar.valid
+        }" />
 
-  <form class="form-inline" style="margin-top: 1%; margin-right: 5%; ">
-    <div class="form-group">
-      
-      <input type="text" id="prenom" name="prenom" style="width: 383px;" placeholder="تأكيد كلمة السر">
-    </div>
+       
+       </div>
+
+       <div class="form-group">
+        
+        <input 
+        id="tel"
+        type="tel"
+        style="margin-right: 5%;"
+        minlength="8"
+        maxlength="8"
+    class="form-control"
+     placeholder="رقم الهاتف"
+     [(ngModel)]="user.tel"
+     name="tel" 
+     required
+     #telVar="ngModel"
+     [ngClass]="{
+       'is-invalid': telVar.touched && !telVar.valid
+     }" />
     
-  </form>
-
-  <form class="form-inline" style="margin-top: 1%; margin-right: 5%;">
-    <div class="form-group">
+  </div>
       
-      <input type="text" id="prenom" name="prenom" placeholder="الرمز البريدي">
-    </div>
-    <div class="form-group ml-3" style="margin-right:3%;">
-      
-      <input type="email" id="mail" name="mail" placeholder="الولاية">
-    </div>
-  </form>
+       <br>
+       <br>
 
-  <div style="margin-right: 10%; margin-top: 3%;" class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+       <div class="form-group">
+      
+       <input type="email" 
+       id="email"
+       style="width: 387px;"
+       class="form-control"
+       placeholder="البريد الإلكتروني" 
+       ngModel [email]="true"
+       [(ngModel)]="user.email"
+       name="email" 
+        required
+       #emailVar="ngModel"
+       [ngClass]="{
+        'is-invalid': emailVar.touched && !emailVar.valid
+       }" />
+       <div class="invalid-feedback">
+        <span *ngIf="emailVar.errors?.['email']">
+          البريد الإلكتروني غير صحيح
+        </span>
+        
+       
+      </div>
+       
+        
+       </div>
+      
+       
+       <br>
+       <br>
+   
+    
+      
+
+      <div class="form-group">
+        <input 
+        id="mdp"
+        type="password"
+        name="mdp"
+        minlength="8"
+      
+        ngModel ="true"
+        
+        style="width: 360px;"
+        class="form-control"
+        placeholder="كلمة السر" 
+        [(ngModel)]="user.mdp"
+        
+        required 
+        #mdpVar="ngModel"
+        [ngClass]="{
+          'is-invalid': mdpVar.touched && !mdpVar.valid 
+        }" 
+       
+        matInput [type]="hide ? 'password' : 'text'" />
+
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon style="color: 	#C0C0C0; margin-left:100% ; " >  {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+
+
+
+      </div>
+       
+       <br>
+       <br>
+       <div class="form-group">
+        
+        <input 
+        id="Confmdp"
+        type="password"
+        name="mdp"
+        minlength="8"
+      
+        ngModel ="true"
+        
+        style="width: 360px;"
+        pattern="{{ mdpVar.value }}"
+        class="form-control"
+        placeholder="تأكيد كلمة السر" 
+        [(ngModel)]="user.mdpp"
+        name="mdpp" 
+        required 
+        #mdppVar="ngModel"
+        [ngClass]="{
+          'is-invalid': mdppVar.touched && !mdppVar.valid
+        }"  matInput [type]="hide ? 'password' : 'text'" />
+
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon style="color: 	#C0C0C0; margin-left:100% ; " >  {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+
+
+
+  
+        
+         
+          <div *ngIf="mdpVar.value!=mdppVar.value"> كلمة السر و تأكيد كلمة السر غير متطابقين  </div>    
+         
+
+     </div>
+       
+       <br>
+       <br>
+       <div class="form-group">
+        
+        <input type="text" 
+        id="pos"
+        class="form-control"
+        placeholder="الرمز البريدي" 
+        [(ngModel)]="user.pos"
+        name="pos" 
+        required 
+        #posVar="ngModel"
+        [ngClass]="{
+          'is-invalid': posVar.touched && !posVar.valid
+        }" />
+        <div class="invalid-feedback">
+          
+         </div>
+       </div>
+       <div class="form-group">
+        
+        <input type="text"
+        id="gouv"
+        style="margin-right: 5%;"
+    class="form-control"
+     placeholder="الولاية"
+     [(ngModel)]="user.gouv"
+     name="gouv" 
+     required
+     #gouvVar="ngModel"
+     [ngClass]="{
+       'is-invalid': gouvVar.touched && !gouvVar.valid
+     }" />
+     <div class="invalid-feedback">
+   
+      
+    </div>
+  </div>
+
+  
+  <div style="margin-right: 1%; margin-top: 2%;" class="form-check">
+    <input class="form-check-input" type="checkbox" 
+    class="form-control"  [(ngModel)]="user.check"
+    name="check" 
+    required
+    #checkVar="ngModel"
+    [ngClass]="{
+      'is-invalid': checkVar.touched && !checkVar.valid
+    }" />
+     
     <label class="form-check-label" for="flexCheckChecked">
-       أقبل الأحكام والشروط
+         أقبل الأحكام والشروط  
     </label>
   </div>
 
 
-  <button style="width: 180px;  margin-right: 15%; margin-top: 5%; " class="btn btn-primary" (click)="onSignin()" >سجل</button>
+  <button style="width: 180px;  margin-right: 10%; margin-top: 2%; " class="btn btn-primary"
+   type="submit" [disabled]="!registerForm.valid" (click)="onSignin()" >سجل</button>
 
-  <div style="color: rgba(100,109,130,1); margin-right: 15%; margin-top: 2%;" >
+  <div style="color: rgba(100,109,130,1); margin-right: 11.5%; margin-top: 1%;" >
     <a routerLink="/signin" routerLinkActive="active">بالفعل عضو ؟ تسجيل الدخول
   </a>
   </div>
-  <div style="margin-top: -45.5%; margin-right: 50%;">
+
+  <div style="margin-top: -46%; margin-right: 50%;">
   <img  src="assets/img1.png" id="img1" >
   </div>
 

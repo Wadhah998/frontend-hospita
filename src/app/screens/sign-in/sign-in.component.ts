@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+
+import { User } from './user';
 
 @Component({
   selector: 'app-sign-in',
@@ -8,10 +11,18 @@ import { Router } from '@angular/router';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private router: Router ) { }
 
-  ngOnInit(): void {
+
+  
+  public user: User = new User();
+  constructor(private router: Router) {
   }
+
+  ngOnInit() {
+
+  }
+ 
+
   onSignin(): void {
     this.router.navigate([''])
 
@@ -21,4 +32,11 @@ export class SignInComponent implements OnInit {
   this.router.navigate([`signup`]);
 
   }
+  public saveData(registerForm: NgForm) {
+    console.log(registerForm.form);
+    console.log('valeurs: ', JSON.stringify(registerForm.value));
+    console.log('hello');
+  }
+
+ 
 }
