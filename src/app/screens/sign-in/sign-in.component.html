@@ -1,19 +1,28 @@
 <app-nav-bar></app-nav-bar>
+<div class="row">
+  <div class="col-sm-6">
+    <img  src="assets/img1.png" id="img1">
+  </div>
+
 <div  style="margin-top: 5%; margin-left: 2%; margin-right: 2%;">
+  <div class="col-sm-6">
   <div style=" margin-right:15%; color: rgba(26,125,183,1); ">
     <span class="h2">إفهمني</span>
  </div>
  <div style="margin-top: 3%; color:  rgba(100,109,130,1); margin-right: 13%; ">
    <span class="h5">مرحبا ، من فضلك سجل الدخول</span>
  </div>
-
-
+ 
+  
+ 
+ 
 <form  class="form-inline" style="margin-top: 3%; margin-right: 5%; ">
  <form novalidate (ngSubmit)="saveData(registerForm)" #registerForm="ngForm"> 
  
    <div class="form-group">
       
       <input type="email"
+      id="email"
       style="width: 383px;"
       class="form-control"
       placeholder="البريد الإلكتروني"
@@ -39,7 +48,9 @@
  
     <div class="form-group">
        
-       <input type="password"
+       <input 
+       id="mdp"
+       type="password"
        style="width: 383px;"
        class="form-control"
        placeholder="كلمة السر" 
@@ -54,24 +65,28 @@
    </form>
 
 
+   <button  type="submit"
+   [disabled]="!registerForm.valid" 
+   style="width: 180px;  margin-right: 8%; margin-top: 3%; " 
+   class="btn btn-primary" (click)="onSignin()" >تسجيل الدخول 
+   
+   </button>
  
- 
- <div style="color: rgba(100,109,130,1); margin-right: 11%; margin-top: 2%;" >
+ <div style="color: rgba(100,109,130,1); margin-right: 13%; margin-top: 2%;" >
   <a routerLink="/forgetpassword" routerLinkActive="active">نسيت كلمة السر ؟
 </a>
 </div>
 
-<button  type="submit"
-[disabled]="!registerForm.valid" 
-style="width: 180px;  margin-right: 8%; margin-top: 2%; " 
-class="btn btn-primary" (click)="onSignup()" >التسجيل
-
+<button type="button"
+ style="width: 180px;  margin-right: 8%; margin-top: 3%; " 
+ class="btn btn-primary" (click)="onSignup()" >التسجيل 
+   
 </button>
 
-<div style="margin-top: -32%; margin-right: 50%;">
-  <img  src="assets/img1.png" id="img1" >
-  </div>
+</form>
+</div>
 
+ </div>
 
 
 
