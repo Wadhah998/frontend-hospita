@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgApexchartsModule } from 'ng-apexcharts';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SuperDoctorComponent } from './components/super-doctor/super-doctor.component';
 import { MedecinFormComponent } from './screens/form/medecin-form/medecin-form.component';
@@ -20,6 +21,18 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './screens/form/profile/profile.component';
 import { ApiService } from './services/api/api.service';
 import { MatConfirmDialogComponent } from './screens/mat-confirm-dialog/mat-confirm-dialog.component';
+import { AngularMaterialModule } from './angular-material.module';
+import { HeaderComponent } from './components/header/header.component';
+import { UserComponent } from './components/header/user/user.component';
+
+import { NotificationsComponent } from './components/header/notifications/notifications.component';
+import { DoctorComponent } from './screens/doctor/components/doctor/doctor.component';
+import { DoctorAppointmentComponent } from './screens/doctor/components/doctor-appointment/doctor-appointment.component';
+import { FullCasesComponent } from './screens/doctor/components/charts/full-cases/full-cases.component';
+import { MeatingsComponent } from './screens/doctor/components/charts/meatings/meatings.component';
+import { CancelledCasesComponent } from './screens/doctor/components/charts/cancelled-cases/cancelled-cases.component';
+import { ChildrenComponent } from './screens/doctor/components/charts/children/children.component';
+import { ChealdrenProfileComponent } from './screens/doctor/components/charts/chealdren-profile/chealdren-profile.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +50,16 @@ import { MatConfirmDialogComponent } from './screens/mat-confirm-dialog/mat-conf
     DashboardComponent,
     ProfileComponent,
     MatConfirmDialogComponent,
+    HeaderComponent,
+    UserComponent,
+    NotificationsComponent,
+    DoctorComponent,
+    DoctorAppointmentComponent,
+    FullCasesComponent,
+    MeatingsComponent,
+    CancelledCasesComponent,
+    ChildrenComponent,
+    ChealdrenProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,17 +67,13 @@ import { MatConfirmDialogComponent } from './screens/mat-confirm-dialog/mat-conf
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgApexchartsModule,
+    AngularMaterialModule,
   ],
-  providers: [
-    ApiService,
-    DialogService
-  ],
+  providers: [ApiService, DialogService],
   bootstrap: [AppComponent],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ],
-  entryComponents : [MatConfirmDialogComponent]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  entryComponents: [MatConfirmDialogComponent],
 })
-
-export class AppModule { }
+export class AppModule {}

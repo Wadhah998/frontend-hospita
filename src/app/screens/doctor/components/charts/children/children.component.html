@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-title>
+    <p class="chart-title">عدد الأطفال المنخرطين</p>
+  </mat-card-title>
+  <mat-card-content>
+    <div class="labels">
+      <p class="label-number">3,137</p>
+      <p class="label-title" fxLayoutAlign="">
+        2.3% <i class="fa fa-arrow-up icon"></i>
+      </p>
+    </div>
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis"
+      [grid]="chartOptions.grid"
+      [stroke]="chartOptions.stroke"
+      [tooltip]="chartOptions.tooltip"
+      [dataLabels]="chartOptions.dataLabels"
+      [colors]="chartOptions.colors"
+    ></apx-chart>
+  </mat-card-content>
+</mat-card>

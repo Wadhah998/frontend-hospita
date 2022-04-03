@@ -1,0 +1,26 @@
+.bg-success{
+    background:#E94E60;
+    
+}
+.chart-percent{
+    padding:2px 8px;
+    color:#FFFFFF;
+    font-size:16px;
+}
+mat-card{
+       height:120px;
+
+}
+mat-card-content{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    height:50px;
+}
+.labels .label-number{
+    font-size: 30px;
+    font-weight: bolder;
+}
+.labels .label-title{
+    font-size:16px;
+}
