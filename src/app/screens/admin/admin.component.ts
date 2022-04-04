@@ -1,6 +1,6 @@
-import { UserService } from 'src/app/services/user.service';
+import { ApiService } from 'src/app/services/api/api.service';
 import { User } from 'src/app/models/user/user.module';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -8,6 +8,8 @@ import { FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { UserFormComponent } from '../form/user-form/user-form.component';
 import * as _ from 'lodash';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-admin',
@@ -15,65 +17,60 @@ import * as _ from 'lodash';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-  typeUser: any;
+  
   isSuperDoctor !: boolean;
   formGroup !: FormGroup;
   displayPerson = false;
   typeDisplayedPerson !: string;
   listUsers: User[]= [];
-  displayedColumns: string[] = ['modifier','password','loginNumber','email','telephone','prenom','nom','TypeUser','id'];
+  displayedColumns: string[] = ['modifier','password','loginNumber','email','telephone','nom','TypeUser','id'];
   dataSource! : MatTableDataSource<any>;
-  constructor(private userService:UserService,public dialog:MatDialog, private _snackBar: MatSnackBar, private router : Router) {}
-
+ 
+  constructor(public dialog:MatDialog, public api:ApiService, private _snackBar: MatSnackBar, private router : Router) {}
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   ngOnInit(): void {
-    this.chargeUsers();
+    this.getallusers();
+   
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
-  chargeUsers(){
-    this.listUsers=this.userService.getUser();
-    this.dataSource= new MatTableDataSource(this.listUsers);
-  }
-
-  deleteUsers(index:number){
-    this.userService.removeUsers(index);
-    
-    this.chargeUsers();
-
-    this._snackBar.open('تم حذف المستخدم بنجاح', '', {
-      duration:1500,
-      horizontalPosition : 'center',
-      verticalPosition: 'bottom'
+  getallusers(){
+    this.api.getuser()
+    .subscribe({
+      next:(res)=>{
+        this.listUsers=res
+        this.dataSource=new MatTableDataSource(res);
+        this.dataSource.paginator=this.paginator;
+      }
     })
+  }  
+  
 
-  }
+ 
 
-  ajouteruser(){
-    this.router.navigate(['/ajouteruser']);
-  }
+    
+   
+
+    
+
+  
   
 
 
-  editUsers(index:number){
-
-  }
+ 
   openUserDialog(): void {
     this.dialog.open(UserFormComponent,{
     width:'60%',
     disableClose:true,
-    autoFocus :true})
-}
-chercheMedecin($event: any){
-  let filteredData = _.filter(this.listUsers,(item) =>{
-    return item.TypeUser.toLowerCase() == $event.value.toLowerCase();
-  })
-  this.dataSource = new MatTableDataSource(filteredData);
+    autoFocus :true}).afterClosed().subscribe(val=>{
+      this.getallusers();
+    })
+  }
 
 
-}
 }
   

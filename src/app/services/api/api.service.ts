@@ -1,6 +1,8 @@
+
 import { Medecins } from './../../models/medecin/Profiles';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from 'src/app/models/user/user.module';
 
 
 
@@ -14,6 +16,12 @@ export class ApiService {
 
   postMedecin(data: any){
     return this.http.post<Medecins[]>("http://localhost:3000/listMedecins/", data);
+  }
+  postuser(data: any){
+    return this.http.post<User[]>("http://localhost:3000/listUsers/", data);
+  }
+  getuser(){
+    return this.http.get<User[]>("http://localhost:3000/listUsers/");
   }
 
   getMedecin (){
