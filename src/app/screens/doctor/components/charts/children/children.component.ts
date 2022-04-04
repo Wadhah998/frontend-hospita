@@ -54,7 +54,7 @@ export class ChildrenComponent implements OnInit {
         },
       ],
       chart: {
-        height: 140,
+        height: 100,
         width: 200,
         type: 'area',
         zoom: {

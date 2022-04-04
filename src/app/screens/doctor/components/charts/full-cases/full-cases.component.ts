@@ -36,7 +36,7 @@ export class FullCasesComponent implements OnInit {
       series: [20, 80],
       chart: {
         type: 'pie',
-        height: 140,
+        height: 100,
         //width: '280px',
       },
       labels: ['الحالات الموكدة', 'الحالات المنفية'],

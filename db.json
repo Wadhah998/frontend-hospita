@@ -16,16 +16,78 @@
       "speciality": "spécialité2",
       "nom": "Wadhah",
       "id": "2"
+    },
+    {
+      "typeUser": "school",
+      "name": "wadhah",
+      "telephone": "24259043",
+      "loginNumber": "242592",
+      "password": "24259043",
+      "email": "wadhah@gmail.com",
+      "delegation": "tunis",
+      "governorate": "tunis",
+      "zipCode": "3700",
+      "id": "w0AmgpU"
     }
   ],
-  "comments": [
+  "listUsers": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "TypeUser": "admin",
+      "nom": "wadhah",
+      
+      "telephone": 52454782,
+      "email": "wadhah@gmail.com",
+      "loginNumber": 123456,
+      "password": 121212
+    },
+    {
+      "typeUser": "",
+      "nom": "rjab",
+      "telephone": "24259043",
+      "loginNumber": "2425963",
+      "password": "24259662",
+      "email": "wadhah@gmail.com",
+      "delegation": "tunis",
+      "governorate": "tunuk",
+      "zipCode": "3700",
+      "id": 2
+    },
+    {
+      "TypeUser": "",
+      "nom": "rjab",
+      "telephone": "24259043",
+      "loginNumber": "2425963",
+      "password": "24259662",
+      "email": "wadhah@gmail.com",
+      "delegation": "tunis",
+      "governorate": "tunuk",
+      "zipCode": "3700",
+      "id": 3
+    },
+    {
+      "typeUser": "",
+      "nom": "",
+      "telephone": "28107877",
+      "loginNumber": "2425963",
+      "password": "24259662",
+      "email": "wadhah@gmail.com",
+      "delegation": "tunis",
+      "governorate": "tunuk",
+      "zipCode": "3700",
+      "id": 4
+    },
+    {
+      "typeUser": "",
+      "nom": "khadija",
+      "telephone": "24259043",
+      "loginNumber": "2425963",
+      "password": "24259662",
+      "email": "wadhah@gmail.com",
+      "delegation": "tunis",
+      "governorate": "tunuk",
+      "zipCode": "3700",
+      "id": 5
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
