@@ -10,11 +10,15 @@
       "id": "1"
     },
     {
-      "telephone": "5665134",
-      "email": "daoidwadhah@gmail.com",
-      "cin": "77444",
-      "speciality": "spécialité2",
-      "nom": "Wadhah",
+      "typeUser": "",
+      "nom": "rwadhah",
+      "telephone": "24259043",
+      "loginNumber": "",
+      "password": "",
+      "email": "",
+      "delegation": "",
+      "governorate": "",
+      "zipCode": "",
       "id": "2"
     },
     {
@@ -32,61 +36,27 @@
   ],
   "listUsers": [
     {
-      "id": 1,
-      "TypeUser": "admin",
-      "nom": "wadhah",
-      
-      "telephone": 52454782,
-      "email": "wadhah@gmail.com",
-      "loginNumber": 123456,
-      "password": 121212
-    },
-    {
       "typeUser": "",
-      "nom": "rjab",
+      "nom": "wadhah",
       "telephone": "24259043",
-      "loginNumber": "2425963",
-      "password": "24259662",
-      "email": "wadhah@gmail.com",
-      "delegation": "tunis",
-      "governorate": "tunuk",
-      "zipCode": "3700",
+      "loginNumber": "12345678",
+      "password": "123456789",
+      "email": "daoidll@gmail.com",
+      "delegation": "",
+      "governorate": "",
+      "zipCode": "",
       "id": 2
     },
     {
-      "TypeUser": "",
-      "nom": "rjab",
-      "telephone": "24259043",
-      "loginNumber": "2425963",
-      "password": "24259662",
-      "email": "wadhah@gmail.com",
-      "delegation": "tunis",
-      "governorate": "tunuk",
-      "zipCode": "3700",
-      "id": 3
-    },
-    {
       "typeUser": "",
-      "nom": "",
-      "telephone": "28107877",
-      "loginNumber": "2425963",
-      "password": "24259662",
-      "email": "wadhah@gmail.com",
-      "delegation": "tunis",
-      "governorate": "tunuk",
-      "zipCode": "3700",
-      "id": 4
-    },
-    {
-      "typeUser": "",
-      "nom": "khadija",
+      "nom": "sedak",
       "telephone": "24259043",
-      "loginNumber": "2425963",
-      "password": "24259662",
-      "email": "wadhah@gmail.com",
-      "delegation": "tunis",
-      "governorate": "tunuk",
-      "zipCode": "3700",
+      "loginNumber": "",
+      "password": "",
+      "email": "wadha@gmail.com",
+      "delegation": "",
+      "governorate": "",
+      "zipCode": "",
       "id": 5
     }
   ]

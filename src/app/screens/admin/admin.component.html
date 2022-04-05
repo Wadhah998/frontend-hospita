@@ -88,12 +88,12 @@
                 
                 <ng-container matColumnDef="modifier">
                     <th style="text-align: end;" mat-header-cell *matHeaderCellDef>modifier</th>
-                    <td style="text-align: end;" mat-cell *matCellDef="let element; let i of index"> 
+                    <td style="text-align: end;" mat-cell *matCellDef="let element"> 
                         <a  class="pointer" style="color:rgb(0, 255, 128)" matTooltip="تحرير هذا المستخدم">
-                            <mat-icon>edit</mat-icon>
+                            <mat-icon (click)="edituser(element)" >edit</mat-icon>
                         </a>
                         <a class="pointer" style="color:rgb(255, 0, 0)" matTooltip="حذف هذا المستخدم">
-                            <mat-icon>delete</mat-icon>
+                            <mat-icon (click)="deleteuser(element.id)">delete </mat-icon>
                         </a>
                     </td>
                   </ng-container>                

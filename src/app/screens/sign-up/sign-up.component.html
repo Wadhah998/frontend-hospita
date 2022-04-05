@@ -1,5 +1,11 @@
 <app-header></app-header>
 <div style="margin-top: 3%; margin-left: 2%; margin-right: 2%;">
+<div class="row">
+  <div class="col-sm-6">
+    <img  src="assets/img1.png" id="img1">
+  </div>
+<div style="margin-top: 3%; margin-left: 2%; margin-right: 2%;">
+  <div class="col-sm-6">
    <div style=" margin-right:15%; color: rgba(26,125,183,1); ">
     <span class="h2">إفهمني</span>
   </div>
@@ -7,6 +13,7 @@
     <span class="h5">الرجاء إكمال إنشاء حسابك</span>
   </div>
   
+ 
   <form class="form-inline" style="margin-top: 3%; margin-right: 2%; ">
 
       <form novalidate (ngSubmit)="saveData(registerForm)" #registerForm="ngForm">
@@ -71,6 +78,7 @@
        
        </div>
 
+      
        <div class="form-group">
         
         <input 
@@ -90,7 +98,7 @@
      }" />
     
   </div>
-      
+     
        <br>
        <br>
 
@@ -119,12 +127,12 @@
        
         
        </div>
-      
+       
        
        <br>
        <br>
    
-    
+     
       
 
       <div class="form-group">
@@ -132,7 +140,7 @@
         id="mdp"
         type="password"
         name="mdp"
-        minlength="8"
+        
       
         ngModel ="true"
         
@@ -145,12 +153,15 @@
         #mdpVar="ngModel"
         [ngClass]="{
           'is-invalid': mdpVar.touched && !mdpVar.valid 
-        }" 
-       
+        }"  
+        
+      
         matInput [type]="hide ? 'password' : 'text'" />
 
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-          <mat-icon style="color: 	#C0C0C0; margin-left:100% ; " >  {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <mat-icon style="color: 	#C0C0C0; margin-left:100% ; " >  
+            {{hide ? 'visibility_off' : 'visibility'}}
+          </mat-icon>
           </button>
 
 
@@ -159,13 +170,15 @@
        
        <br>
        <br>
+
+
        <div class="form-group">
         
         <input 
         id="Confmdp"
         type="password"
         name="mdp"
-        minlength="8"
+       
       
         ngModel ="true"
         
@@ -179,14 +192,18 @@
         #mdppVar="ngModel"
         [ngClass]="{
           'is-invalid': mdppVar.touched && !mdppVar.valid
-        }"  matInput [type]="hide ? 'password' : 'text'" />
+        }"  
+       
+        
+        
+        matInput [type]="hide ? 'password' : 'text'" />
 
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon style="color: 	#C0C0C0; margin-left:100% ; " >  {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
 
 
-
+     
   
         
          
@@ -210,9 +227,7 @@
         [ngClass]="{
           'is-invalid': posVar.touched && !posVar.valid
         }" />
-        <div class="invalid-feedback">
-          
-         </div>
+        
        </div>
        <div class="form-group">
         
@@ -228,16 +243,15 @@
      [ngClass]="{
        'is-invalid': gouvVar.touched && !gouvVar.valid
      }" />
-     <div class="invalid-feedback">
-   
-      
-    </div>
+    
   </div>
 
   
   <div style="margin-right: 1%; margin-top: 2%;" class="form-check">
     <input class="form-check-input" type="checkbox" 
-    class="form-control"  [(ngModel)]="user.check"
+    class="form-control" 
+     [(ngModel)]="user.check"
+    id="check"
     name="check" 
     required
     #checkVar="ngModel"
@@ -251,25 +265,22 @@
   </div>
 
 
-  <button style="width: 180px;  margin-right: 10%; margin-top: 2%; " class="btn btn-primary"
-   type="submit" [disabled]="!registerForm.valid" (click)="onSignin()" >سجل</button>
+
+  
+
+  <button  type="submit"
+  [disabled]="!registerForm.valid" 
+  style="width: 180px;  margin-right: 10%; margin-top: 2%; " 
+  class="btn btn-primary" (click)="onSignin()"> سجل </button>
+
+</form>
+  </form>
+  
 
   <div style="color: rgba(100,109,130,1); margin-right: 11.5%; margin-top: 1%;" >
     <a routerLink="/signin" routerLinkActive="active">بالفعل عضو ؟ تسجيل الدخول
   </a>
   </div>
-
-  <div style="margin-top: -46%; margin-right: 50%;">
-  <img  src="assets/img1.png" id="img1" >
+  
   </div>
-
-
-
-
-
-    
-
-   
-
-
-
+</div>

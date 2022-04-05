@@ -10,6 +10,7 @@ import { UserFormComponent } from '../form/user-form/user-form.component';
 import * as _ from 'lodash';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { DialogService } from 'src/app/services/shared/dialog.service';
 
 @Component({
   selector: 'app-admin',
@@ -26,7 +27,7 @@ export class AdminComponent implements OnInit {
   displayedColumns: string[] = ['modifier','password','loginNumber','email','telephone','nom','TypeUser','id'];
   dataSource! : MatTableDataSource<any>;
  
-  constructor(public dialog:MatDialog, public api:ApiService, private _snackBar: MatSnackBar, private router : Router) {}
+  constructor(public dialog:MatDialog,private dialogService : DialogService, public api:ApiService, private _snackBar: MatSnackBar, private router : Router) {}
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -70,7 +71,43 @@ export class AdminComponent implements OnInit {
       this.getallusers();
     })
   }
+  deleteuser(id:number){
 
-
+    this.dialogService.openConfirmDialog('هل أنت متأكد أنك تريد حذف هذا الطبيب؟')
+    .afterClosed().subscribe(res =>{
+      if(res){
+        this.api.deleteuser(id)
+    .subscribe({
+      next:(res)=>{
+        alert("حذف الدكتور بنجاح")
+        this.getallusers();
+      },
+      error:()=>{
+        alert("خطأ اثناء حذف هذا الطبيب !!")
+      }
+    })
+      }
+    })
+    
+  }
+  edituser(row : any) {
+    this.dialog.open(UserFormComponent,{
+      width : '50%',
+      data:row,
+      disableClose:true,
+      autoFocus :true
+    }).afterClosed().subscribe(val=>{
+      if(val==='تحديث'){
+        this.getallusers();
+      }
+    });
+  }    
 }
+   
+        
+  
+
+
+
+
   

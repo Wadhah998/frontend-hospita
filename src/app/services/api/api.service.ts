@@ -30,6 +30,10 @@ export class ApiService {
 
   putMedecin(data:any, id : number){
     return this.http.put<Medecins[]>("http://localhost:3000/listMedecins/"+id, data)
+    
+  }
+  putuser(data:any, id : number){
+    return this.http.put<User[]>("http://localhost:3000/listUsers/"+id, data)
   }
 
   deleteMedecin(id:number){
@@ -37,6 +41,9 @@ export class ApiService {
   }
   getSingleMedecin(id:number){
     return this.http.get<Medecins[]>("http://localhost:3000/listMedecins/"+id);
+  }
+  deleteuser(id:number){
+    return this.http.delete<User[]>("http://localhost:3000/listUsers/"+id);
   }
 
 }
