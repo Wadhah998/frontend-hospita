@@ -1,0 +1,41 @@
+<div fxLayout="row wrap">
+  <!-- column -->
+  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="25" fxFlex="100">
+    <div class="box">
+      <p class="box-title">ماهي وضعيتك الان ؟</p>
+      <div fxLayout="row wrap" fxLayoutAlign="space-around">
+        <a mat-raised-button color="primary" href="">قبل الحمل</a>
+        <a mat-raised-button color="primary" href="">فترة الحمل</a>
+      </div>
+      <div class="event-button">
+        <button
+          mat-raised-button
+          color="primary"
+          [matMenuTriggerFor]="menu"
+          aria-label="Example icon-button with a menu"
+        >
+          <mat-icon>arrow_drop_down</mat-icon> بعدالحمل
+        </button>
+        <mat-menu #menu="matMenu">
+          <a mat-menu-item>
+            <span>بعد شهر</span>
+          </a>
+          <a mat-menu-item>
+            <span>بعد 3 أشهر </span>
+          </a>
+          <a mat-menu-item>
+            <span>بعد 6 أشهر </span>
+          </a>
+          <a mat-menu-item>
+            <span>بعد 12 شهر أو أكثر </span>
+          </a>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+  <!-- column -->
+  <div fxFlex.gt-lg="75" fxFlex.gt-md="75" fxFlex.gt-xs="75" fxFlex="100">
+    <app-list-chealdren></app-list-chealdren>
+  </div>
+  <!-- column -->
+</div>

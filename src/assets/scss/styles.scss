@@ -42,9 +42,6 @@ mat-card {
   right: 0;
 }
 
-/* .mat-drawer-container {
-  background: $bodycolor;
-} */
 .html .page-wrapper .page-content {
   padding: 15px;
 }
@@ -63,10 +60,14 @@ mat-card {
   border-radius: 4px;
 }
 
-html .page-wrapper {
+/* html .page-wrapper {
   height: calc(100vh - 64px);
-}
+} */
 .page-content {
   padding: 15px;
   background: #d8eae6;
+}
+.page-content-white {
+  padding: 15px;
+  background: #ffffff;
 }

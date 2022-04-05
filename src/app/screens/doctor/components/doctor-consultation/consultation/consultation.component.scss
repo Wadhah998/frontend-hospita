@@ -1,0 +1,28 @@
+.img-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.patient {
+  display: inline-block;
+  width: 73%;
+  vertical-align: middle;
+}
+.docter-img {
+  margin-left: 10px;
+}
+.patient h5 {
+  margin: 5px 0px 0;
+  color: #212121;
+}
+.patient .age {
+  color: #212121;
+  font-size: 14px;
+}
+.last-login .time {
+  font-size: 14px;
+}
