@@ -18,6 +18,8 @@ import { DialogService } from 'src/app/services/shared/dialog.service';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+
+  users : User[] = [];
   
   isSuperDoctor !: boolean;
   formGroup !: FormGroup;
@@ -101,7 +103,18 @@ export class AdminComponent implements OnInit {
         this.getallusers();
       }
     });
-  }    
+  }  
+  
+  chercheUser($event: any){
+    let filteredData = _.filter(this.users,(item) =>{
+     // return item..toLowerCase() == $event.value.toLowerCase();
+     // this.selectedSpeciality = false;
+      
+      
+    })
+    this.dataSource = new MatTableDataSource(filteredData);
+
+  }
 }
    
         

@@ -33,6 +33,7 @@ import { MeatingsComponent } from './screens/doctor/components/charts/meatings/m
 import { CancelledCasesComponent } from './screens/doctor/components/charts/cancelled-cases/cancelled-cases.component';
 import { ChildrenComponent } from './screens/doctor/components/charts/children/children.component';
 import { ChealdrenProfileComponent } from './screens/doctor/components/charts/chealdren-profile/chealdren-profile.component';
+import { MessagerieComponent } from './screens/SuperDoctor/messagerie/messagerie.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { ChealdrenProfileComponent } from './screens/doctor/components/charts/ch
     CancelledCasesComponent,
     ChildrenComponent,
     ChealdrenProfileComponent,
+    MessagerieComponent,
   ],
   imports: [
     BrowserModule,

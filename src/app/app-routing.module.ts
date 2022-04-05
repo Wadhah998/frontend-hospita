@@ -29,6 +29,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { DoctorComponent } from './screens/doctor/components/doctor/doctor.component';
 import { DoctorAppointmentComponent } from './screens/doctor/components/doctor-appointment/doctor-appointment.component';
+import { MessagerieComponent } from './screens/SuperDoctor/messagerie/messagerie.component';
 const MaterialComponents = [
   MatButtonModule,
   MatToolbarModule,
@@ -57,6 +58,7 @@ const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
   { path: 'forgetpassword', component: ForgetPasswordComponent },
   { path: 'admin', component: AdminComponent },
+  { path: 'messagerieSuper', component: MessagerieComponent },
 
   { path: 'medecins', component: SuperDoctorComponent },
   { path: 'ajouterMedecin', component: MedecinFormComponent },
