@@ -46,6 +46,7 @@ export class AdminComponent implements OnInit {
     .subscribe({
       next:(res)=>{
         this.listUsers=res
+        console.log(this.listUsers);
         this.dataSource=new MatTableDataSource(res);
         this.dataSource.paginator=this.paginator;
       }

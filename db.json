@@ -4,34 +4,10 @@
       "telephone": "52358423",
       "email": "orl.ndonse@gmail.com",
       "cin": "5888877",
-      "speciality": "specilaté1",
+      "speciality": "spécialité 1",
       "nom": "Orly",
       "password": "46666",
       "id": "1"
-    },
-    {
-      "typeUser": "",
-      "nom": "rwadhah",
-      "telephone": "24259043",
-      "loginNumber": "",
-      "password": "",
-      "email": "",
-      "delegation": "",
-      "governorate": "",
-      "zipCode": "",
-      "id": "2"
-    },
-    {
-      "typeUser": "school",
-      "name": "wadhah",
-      "telephone": "24259043",
-      "loginNumber": "242592",
-      "password": "24259043",
-      "email": "wadhah@gmail.com",
-      "delegation": "tunis",
-      "governorate": "tunis",
-      "zipCode": "3700",
-      "id": "w0AmgpU"
     }
   ],
   "listUsers": [

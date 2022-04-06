@@ -30,6 +30,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { DoctorComponent } from './screens/doctor/components/doctor/doctor.component';
 import { DoctorAppointmentComponent } from './screens/doctor/components/doctor-appointment/doctor-appointment.component';
 import { MessagerieComponent } from './screens/SuperDoctor/messagerie/messagerie.component';
+import { SuperMedecinComponent } from './screens/SuperDoctor/components/super-medecin/super-medecin.component';
+import { SuperDoctorApointementComponent } from './screens/SuperDoctor/components/super-doctor-apointement/super-doctor-apointement.component';
+import { DashboardSuperDoctorComponent } from './screens/SuperDoctor/components/dashboard-super-doctor/dashboard-super-doctor.component';
+import { ListMedecinsComponent } from './screens/SuperDoctor/components/list-medecins/list-medecins.component';
 const MaterialComponents = [
   MatButtonModule,
   MatToolbarModule,
@@ -64,11 +68,20 @@ const routes: Routes = [
   { path: 'ajouterMedecin', component: MedecinFormComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'superDoctorDashboard', component: DashboardSuperDoctorComponent },
+  { path: 'listMedecins', component: ListMedecinsComponent },
   {
     path: '',
     component: DoctorComponent,
     children: [
       { path: 'doctor-appointment', component: DoctorAppointmentComponent },
+    ],
+  },
+  {
+    path: '',
+    component: SuperMedecinComponent,
+    children: [
+      { path: 'superDoctor-appointment', component: SuperDoctorApointementComponent },
     ],
   },
 ];
