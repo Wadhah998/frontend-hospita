@@ -29,6 +29,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { DoctorComponent } from './screens/doctor/components/doctor/doctor.component';
 import { DoctorAppointmentComponent } from './screens/doctor/components/doctor-appointment/doctor-appointment.component';
+import { DoctorConsultationComponent } from './screens/doctor/components/doctor-consultation/doctor-consultation.component';
+import { ParentComponent } from './screens/parents/components/parent/parent.component';
+import { ParentDashboardComponent } from './screens/parents/components/parent-dashboard/parent-dashboard.component';
 const MaterialComponents = [
   MatButtonModule,
   MatToolbarModule,
@@ -67,6 +70,21 @@ const routes: Routes = [
     component: DoctorComponent,
     children: [
       { path: 'doctor-appointment', component: DoctorAppointmentComponent },
+      {
+        path: 'doctor-consultation',
+        component: DoctorConsultationComponent,
+      },
+    ],
+  },
+  {
+    path: '',
+    component: ParentComponent,
+    children: [
+      { path: 'doctor-appointment', component: DoctorAppointmentComponent },
+      {
+        path: 'parent-dashboard',
+        component: ParentDashboardComponent,
+      },
     ],
   },
 ];

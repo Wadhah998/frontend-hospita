@@ -33,6 +33,13 @@ import { MeatingsComponent } from './screens/doctor/components/charts/meatings/m
 import { CancelledCasesComponent } from './screens/doctor/components/charts/cancelled-cases/cancelled-cases.component';
 import { ChildrenComponent } from './screens/doctor/components/charts/children/children.component';
 import { ChealdrenProfileComponent } from './screens/doctor/components/charts/chealdren-profile/chealdren-profile.component';
+import { DoctorConsultationComponent } from './screens/doctor/components/doctor-consultation/doctor-consultation.component';
+import { PatientProfileComponent } from './screens/doctor/components/doctor-consultation/patient-profile/patient-profile.component';
+import { ConsultationComponent } from './screens/doctor/components/doctor-consultation/consultation/consultation.component';
+import { ParentHeaderComponent } from './screens/parents/components/parent-header/parent-header.component';
+import { ParentComponent } from './screens/parents/components/parent/parent.component';
+import { ParentDashboardComponent } from './screens/parents/components/parent-dashboard/parent-dashboard.component';
+import { ListChealdrenComponent } from './screens/parents/components/list-chealdren/list-chealdren.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +67,13 @@ import { ChealdrenProfileComponent } from './screens/doctor/components/charts/ch
     CancelledCasesComponent,
     ChildrenComponent,
     ChealdrenProfileComponent,
+    DoctorConsultationComponent,
+    PatientProfileComponent,
+    ConsultationComponent,
+    ParentHeaderComponent,
+    ParentComponent,
+    ParentDashboardComponent,
+    ListChealdrenComponent,
   ],
   imports: [
     BrowserModule,
