@@ -40,6 +40,14 @@ import { ParentHeaderComponent } from './screens/parents/components/parent-heade
 import { ParentComponent } from './screens/parents/components/parent/parent.component';
 import { ParentDashboardComponent } from './screens/parents/components/parent-dashboard/parent-dashboard.component';
 import { ListChealdrenComponent } from './screens/parents/components/list-chealdren/list-chealdren.component';
+import { MessagerieComponent } from './screens/SuperDoctor/messagerie/messagerie.component';
+import { SuperMedecinComponent } from './screens/SuperDoctor/components/super-medecin/super-medecin.component';
+import { SuperDoctorApointementComponent } from './screens/SuperDoctor/components/super-doctor-apointement/super-doctor-apointement.component';
+import { HeaderSuperDoctorComponent } from './screens/SuperDoctor/components/header-super-doctor/header-super-doctor.component';
+import { DashboardSuperDoctorComponent } from './screens/SuperDoctor/components/dashboard-super-doctor/dashboard-super-doctor.component';
+import { ListMedecinsComponent } from './screens/SuperDoctor/components/list-medecins/list-medecins.component';
+import { ProfileDoctorComponent } from './screens/SuperDoctor/components/profile-doctor/profile-doctor.component';
+
 
 @NgModule({
   declarations: [
@@ -74,6 +82,14 @@ import { ListChealdrenComponent } from './screens/parents/components/list-cheald
     ParentComponent,
     ParentDashboardComponent,
     ListChealdrenComponent,
+    MessagerieComponent,
+    SuperMedecinComponent,
+    SuperDoctorApointementComponent,
+    HeaderSuperDoctorComponent,
+    DashboardSuperDoctorComponent,
+    ListMedecinsComponent,
+    ProfileDoctorComponent
+  
   ],
   imports: [
     BrowserModule,

@@ -4,39 +4,52 @@
       "telephone": "52358423",
       "email": "orl.ndonse@gmail.com",
       "cin": "5888877",
-      "speciality": "specilaté1",
+      "speciality": "spécialité 1",
       "nom": "Orly",
       "password": "46666",
       "id": "1"
     },
     {
-      "typeUser": "",
-      "nom": "rwadhah",
       "telephone": "24259043",
-      "loginNumber": "",
-      "password": "",
-      "email": "",
-      "delegation": "",
-      "governorate": "",
-      "zipCode": "",
-      "id": "2"
+      "email": "wadhah@gmail.com",
+      "loginNumber": "123456",
+      "speciality": "tunis",
+      "nom": "foulenbenfoulen",
+      "password": "tunis",
+      "id": "3700"
     },
     {
-      "typeUser": "school",
-      "name": "wadhah",
-      "telephone": "24259043",
-      "loginNumber": "242592",
-      "password": "24259043",
+      "telephone": "2425963",
       "email": "wadhah@gmail.com",
-      "delegation": "tunis",
-      "governorate": "tunis",
-      "zipCode": "3700",
-      "id": "w0AmgpU"
+      "loginNumber": "123456",
+      "speciality": "tunis",
+      "nom": "wadhah",
+      "password": "24259662",
+      "id": "tunuk"
+    },
+    {
+      "telephone": "24259043",
+      "email": "daoid@gmail.com",
+      "loginNumber": "123456",
+      "speciality": "24259043",
+      "nom": "rjab",
+      "password": "123456",
+      "id": "tunis"
+    },
+    {
+      "typeUser": "طبيب",
+      "telephone": "2425963",
+      "email": "wadhah@gmail.com",
+      "loginNumber": "24259043",
+      "speciality": "tunis",
+      "nom": "khadija",
+      "password": "24259662",
+      "id": "20"
     }
   ],
   "listUsers": [
     {
-      "typeUser": "",
+      "typeUser": "طبيب أول",
       "nom": "wadhah",
       "telephone": "24259043",
       "loginNumber": "12345678",
@@ -99,6 +112,30 @@
       "governorate": "sfax",
       "check": true,
       "id": 11
+    },
+    {
+      "typeUser": "طبيب",
+      "telephone": "52358423",
+      "email": "orl.ndonse@gmail.com",
+      "loginNumber": "5888877",
+      "speciality": "spécialité 1",
+      "nom": "Orly",
+      "password": "46666",
+      "id": "1"
+    },
+    {
+      "typeUser": "ولي",
+      "prenom": "ryhem",
+      "nom": "ben ghozzi",
+      "loginNumber": "07249583",
+      "telephone": "58752555",
+      "email": "imedtunisia2012@gmail.com",
+      "password": "123456",
+      "mdpp": "123456",
+      "zipCode": "3700",
+      "governorate": "tunis",
+      "check": true,
+      "id": 12
     }
   ]
 }

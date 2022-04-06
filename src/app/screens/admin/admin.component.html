@@ -9,17 +9,26 @@
         <div class="contents">
           
  
-
+         <!-- <mat-form-field appearance="fill">
+            <mat-label>spécialité</mat-label>
+            <mat-select (selectionChange)="chercheMedecin($event)" #input>
+              <mat-option *ngFor="let specialities of medecins" value="{{specialities.speciality}}">
+                {{specialities.speciality}}
+              </mat-option>
+            </mat-select>
+           </mat-form-field>
+          -->
           
           
-            <select  #input class="btn-lg" class="form-floating w-25" style="margin-left:50% ; margin-top: -125px; padding: 5px; width: 200px; text-align: center;" class="bg-primary">
-              <option style="background-color: aliceblue;"class="text-primary" selected>نوع المستخدم</option>
-              <option  style="background-color: aliceblue;"class="text-primary"value="1">طبيب</option>
-              <option style="background-color: aliceblue;"class="text-primary" value="2">ولي
+            <select  (selectionChange)="chercheUser($event)"  #input class="btn-lg" class="form-floating w-25" style="margin-left:50% ; margin-top: -125px; padding: 5px; width: 200px; text-align: center;" class="bg-primary">
+              <option style="background-color: aliceblue;"class="text-primary" selected value="نوع المستخدم">نوع المستخدم</option>
+              <option  style="background-color: aliceblue;"class="text-primary"value="طبيب">طبيب</option>
+              <option style="background-color: aliceblue;"class="text-primary" value="ولي
+              ">ولي
               </option>
-              <option style="background-color: aliceblue;"class="text-primary"value="3">مربي</option>
-              <option style="background-color: aliceblue;"class="text-primary"value="3">طبيب أول</option>
-              <option style="background-color: aliceblue;"class="text-primary"value="3">مدرسة</option>
+              <option style="background-color: aliceblue;"class="text-primary"value="مربي">مربي</option>
+              <option style="background-color: aliceblue;"class="text-primary"value="طبيب أول">طبيب أول</option>
+              <option style="background-color: aliceblue;"class="text-primary"value="مدرسة">مدرسة</option>
             </select>
           
             
@@ -49,8 +58,8 @@
               
                 
                 <ng-container matColumnDef="TypeUser">
-                  <th  style="text-align: center;" mat-header-cell *matHeaderCellDef>typeuser</th>
-                  <td   style="text-align: end;"mat-cell *matCellDef="let element" class="text-center"> {{element.TypeUser}} </td>
+                  <th style="text-align: center;" mat-header-cell *matHeaderCellDef >Type User</th>
+                  <td style="text-align: end;" mat-cell *matCellDef="let element" class="text-center" > {{element.typeUser}} </td>
                 </ng-container>
                 
                 

@@ -1,6 +1,6 @@
 export class User_parent{
 
-    public typeUser= "parent";
+    public typeUser= "ولي";
     public prenom!: string; 
     public nom!: string;
     public loginNumber!: string;

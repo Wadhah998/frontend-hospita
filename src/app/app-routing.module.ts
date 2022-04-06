@@ -32,6 +32,11 @@ import { DoctorAppointmentComponent } from './screens/doctor/components/doctor-a
 import { DoctorConsultationComponent } from './screens/doctor/components/doctor-consultation/doctor-consultation.component';
 import { ParentComponent } from './screens/parents/components/parent/parent.component';
 import { ParentDashboardComponent } from './screens/parents/components/parent-dashboard/parent-dashboard.component';
+import { MessagerieComponent } from './screens/SuperDoctor/messagerie/messagerie.component';
+import { SuperMedecinComponent } from './screens/SuperDoctor/components/super-medecin/super-medecin.component';
+import { SuperDoctorApointementComponent } from './screens/SuperDoctor/components/super-doctor-apointement/super-doctor-apointement.component';
+import { DashboardSuperDoctorComponent } from './screens/SuperDoctor/components/dashboard-super-doctor/dashboard-super-doctor.component';
+import { ListMedecinsComponent } from './screens/SuperDoctor/components/list-medecins/list-medecins.component';
 const MaterialComponents = [
   MatButtonModule,
   MatToolbarModule,
@@ -60,11 +65,14 @@ const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
   { path: 'forgetpassword', component: ForgetPasswordComponent },
   { path: 'admin', component: AdminComponent },
+  { path: 'messagerieSuper', component: MessagerieComponent },
 
   { path: 'medecins', component: SuperDoctorComponent },
   { path: 'ajouterMedecin', component: MedecinFormComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'superDoctorDashboard', component: DashboardSuperDoctorComponent },
+  { path: 'listMedecins', component: ListMedecinsComponent },
   {
     path: '',
     component: DoctorComponent,
@@ -85,6 +93,13 @@ const routes: Routes = [
         path: 'parent-dashboard',
         component: ParentDashboardComponent,
       },
+    ],
+  },
+  {
+    path: '',
+    component: SuperMedecinComponent,
+    children: [
+      { path: 'superDoctor-appointment', component: SuperDoctorApointementComponent },
     ],
   },
 ];

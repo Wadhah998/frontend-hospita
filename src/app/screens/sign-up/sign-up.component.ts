@@ -45,7 +45,7 @@ export class SignUpComponent implements OnInit {
     this.http.post<any>("http://localhost:3000/listUsers/",this.user)
     .subscribe(res=>{
       alert("c bon");
-      this.router.navigate(['admin']);
+      this.router.navigate(['']);
     },err=>{
       alert("cest pas bon")
     })

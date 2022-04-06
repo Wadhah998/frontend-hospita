@@ -12,6 +12,7 @@ import { User } from 'src/app/models/user/user.module';
   styleUrls: ['./user-form.component.scss']
 })
 export class UserFormComponent implements OnInit {
+  List = [ "مدرسة","heloo"]
   userForm! : FormGroup;
   actionBtn : string = "تأكيد";
   school : "school" | undefined
@@ -34,12 +35,13 @@ export class UserFormComponent implements OnInit {
   })
   if(this.editData){
     this.actionBtn = "تحديث";
+    
     this.userForm.controls['typeUser'].setValue(this.editData.typeUser);
+    this.userForm.controls['loginNumber'].setValue(this.editData.loginNumber);
+    this.userForm.controls['email'].setValue(this.editData.email);
     this.userForm.controls['nom'].setValue(this.editData.nom);
     this.userForm.controls['telephone'].setValue(this.editData.telephone);
-    this.userForm.controls['loginnumber'].setValue(this.editData.loginNumber);
     this.userForm.controls['password'].setValue(this.editData.password);
-    this.userForm.controls['email'].setValue(this.editData.email);
     this.userForm.controls['delegation'].setValue(this.editData.delegation);
     this.userForm.controls['governorate'].setValue(this.editData.governorate);
     this.userForm.controls['zipCode'].setValue(this.editData.zipCode);

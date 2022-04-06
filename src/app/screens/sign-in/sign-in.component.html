@@ -18,7 +18,7 @@
  
  
 <form  class="form-inline" style="margin-top: 3%; margin-right: 5%; ">
- <form novalidate (ngSubmit)="saveData(registerForm)" #registerForm="ngForm"> 
+ <form novalidate (ngSubmit)="onSignup()" #registerForm="ngForm"> 
  
    <div class="form-group">
       
@@ -55,7 +55,7 @@
        style="width: 383px;"
        class="form-control"
        placeholder="كلمة السر" 
-       [(ngModel)]="user.mdp"
+       [(ngModel)]="user.password"
        name="mdp"
        required
        #mdpVar="ngModel"

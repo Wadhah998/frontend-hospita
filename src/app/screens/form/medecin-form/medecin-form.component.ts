@@ -20,9 +20,10 @@ export class MedecinFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.medecinForm = this.formBuilder.group({
+      typeUser: ['طبيب', Validators.required], 
      telephone: ['', Validators.required], 
      email : ['', [Validators.required, Validators.email]],
-     cin: ['', Validators.required],
+     loginNumber: ['', Validators.required],
      speciality: ['', Validators.required],
      nom: ['', Validators.required],
      password:['', Validators.required],
@@ -33,7 +34,7 @@ export class MedecinFormComponent implements OnInit {
       this.actionBtn = "تحديث";
       this.medecinForm.controls['telephone'].setValue(this.editData.telephone);
       this.medecinForm.controls['email'].setValue(this.editData.email);
-      this.medecinForm.controls['cin'].setValue(this.editData.cin);
+      this.medecinForm.controls['cin'].setValue(this.editData.loginNumber);
       this.medecinForm.controls['speciality'].setValue(this.editData.speciality);
       this.medecinForm.controls['nom'].setValue(this.editData.nom);
       this.medecinForm.controls['password'].setValue(this.editData.password);
