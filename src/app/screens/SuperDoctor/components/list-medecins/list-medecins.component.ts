@@ -107,7 +107,6 @@ export class ListMedecinsComponent implements OnInit {
   chercheMedecin($event: any){
     let filteredData = _.filter(this.medecins,(item) =>{
       return item.speciality.toLowerCase() == $event.value.toLowerCase();
-      this.selectedSpeciality = false;
       
       
     })

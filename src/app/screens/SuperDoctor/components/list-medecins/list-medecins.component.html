@@ -2,9 +2,8 @@
   <mat-card-title>
     <div fxLayout="row" fxLayoutAlign="space-between">
       <span>
-        <mat-form-field appearance="fill">
-          <mat-label>spécialité</mat-label>
-          <mat-select (selectionChange)="chercheMedecin($event)" #input>
+        <mat-form-field >
+          <mat-select (selectionChange)="chercheMedecin($event)" placeholder="تخصص" #input>
             <mat-option  value="spécialité 1">
               spécialité 1
             </mat-option>

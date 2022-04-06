@@ -20,6 +20,7 @@ export class MedecinFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.medecinForm = this.formBuilder.group({
+     typerUser: ['Doctor', Validators.required],
      telephone: ['', Validators.required], 
      email : ['', [Validators.required, Validators.email]],
      cin: ['', Validators.required],

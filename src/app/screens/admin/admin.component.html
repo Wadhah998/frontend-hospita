@@ -17,7 +17,7 @@
               </mat-option>
             </mat-select>
            </mat-form-field>
-          -->
+          
           
           
             <select  (selectionChange)="chercheUser($event)"  #input class="btn-lg" class="form-floating w-25" style="margin-left:50% ; margin-top: -125px; padding: 5px; width: 200px; text-align: center;" class="bg-primary">
@@ -29,7 +29,37 @@
               <option style="background-color: aliceblue;"class="text-primary"value="مربي">مربي</option>
               <option style="background-color: aliceblue;"class="text-primary"value="طبيب أول">طبيب أول</option>
               <option style="background-color: aliceblue;"class="text-primary"value="مدرسة">مدرسة</option>
-            </select>
+            </select>-->
+
+            <mat-form-field  style="margin-left:50% ; margin-top: -125px; padding: 5px; width: 150px; height: 80px; text-align: center;" class="bg-primary">
+              <mat-label>Type User</mat-label>
+              <mat-select (selectionChange)="chercheUser($event)" #input>
+                <mat-option  value="نوع المستخدم
+                ">
+                  نوع المستخدم
+                </mat-option>
+
+                <mat-option value=" طبيب 
+                ">
+                 </mat-option>
+                 طبيب
+                <mat-option value="مدرسة">
+                  ولي
+                  ولي                </mat-option>
+                <mat-option  value="نوع المستخدم
+                ">
+                  نوع المستخدم
+                </mat-option>
+                
+                <mat-option value="مدرسة">
+                  مدرسة         
+                </mat-option>
+                <mat-option  value="نوع المستخدم
+                ">
+                  نوع المستخدم
+                </mat-option>
+              </mat-select>
+             </mat-form-field>
           
             
         
@@ -113,7 +143,14 @@
                   
                   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow style="text-align: right;">
+            <td class="mat-cell" colspan="4" style="text-align: right;">No data matching the filter "{{input.value}}"</td>
+          </tr>
               </table>
+              
              
 
               <h2 *ngIf="listUsers.length ==0">لا يوجد مستخدمون لعرضهم </h2>

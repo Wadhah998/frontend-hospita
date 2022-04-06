@@ -33,13 +33,15 @@ import { MeatingsComponent } from './screens/doctor/components/charts/meatings/m
 import { CancelledCasesComponent } from './screens/doctor/components/charts/cancelled-cases/cancelled-cases.component';
 import { ChildrenComponent } from './screens/doctor/components/charts/children/children.component';
 import { ChealdrenProfileComponent } from './screens/doctor/components/charts/chealdren-profile/chealdren-profile.component';
-import { MessagerieComponent } from './screens/SuperDoctor/messagerie/messagerie.component';
 import { SuperMedecinComponent } from './screens/SuperDoctor/components/super-medecin/super-medecin.component';
 import { SuperDoctorApointementComponent } from './screens/SuperDoctor/components/super-doctor-apointement/super-doctor-apointement.component';
 import { HeaderSuperDoctorComponent } from './screens/SuperDoctor/components/header-super-doctor/header-super-doctor.component';
 import { DashboardSuperDoctorComponent } from './screens/SuperDoctor/components/dashboard-super-doctor/dashboard-super-doctor.component';
 import { ListMedecinsComponent } from './screens/SuperDoctor/components/list-medecins/list-medecins.component';
 import { ProfileDoctorComponent } from './screens/SuperDoctor/components/profile-doctor/profile-doctor.component';
+import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie/messagerie.component';
+import { AllChartsComponent } from './screens/SuperDoctor/components/all-charts/all-charts.component';
+
 
 
 @NgModule({
@@ -74,8 +76,8 @@ import { ProfileDoctorComponent } from './screens/SuperDoctor/components/profile
     HeaderSuperDoctorComponent,
     DashboardSuperDoctorComponent,
     ListMedecinsComponent,
-    ProfileDoctorComponent
-  
+    ProfileDoctorComponent,
+    AllChartsComponent
   ],
   imports: [
     BrowserModule,

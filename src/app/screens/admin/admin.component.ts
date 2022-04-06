@@ -107,9 +107,8 @@ export class AdminComponent implements OnInit {
   }  
   
   chercheUser($event: any){
-    let filteredData = _.filter(this.users,(item) =>{
-     // return item..toLowerCase() == $event.value.toLowerCase();
-     // this.selectedSpeciality = false;
+    let filteredData = _.filter(this.listUsers,(item) =>{
+      return item.typeUser.toLowerCase() == $event.value.toLowerCase();
       
       
     })
