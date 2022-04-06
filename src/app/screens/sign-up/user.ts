@@ -1,15 +1,15 @@
-export class User{
+export class User_parent{
 
-
+    public typeUser= "parent";
     public prenom!: string; 
     public nom!: string;
-    public cin!: string;
-    public tel!: string;
+    public loginNumber!: string;
+    public telephone!: string;
     public email!: string;
     public mdpp!: string;
-    public mdp! : string;
-    public pos!: string;
-    public gouv!: string;
+    public password! : string;
+    public zipCode!: string;
+    public governorate!: string;
     public check! : any ;
 
  

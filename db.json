@@ -58,6 +58,47 @@
       "governorate": "",
       "zipCode": "",
       "id": 5
+    },
+    {
+      "prenom": "DAOUD",
+      "nom": "WADHAH",
+      "cin": "07249583",
+      "tel": "58752555",
+      "email": "Daoidwadhah@gmail.com",
+      "mdp": "123456",
+      "mdpp": "123456",
+      "pos": "3700",
+      "gouv": "tunis",
+      "check": true,
+      "id": 6
+    },
+    {
+      "typeUser": "parent",
+      "prenom": "abid ",
+      "nom": "cyrin",
+      "cin": "11137088",
+      "tel": "44106155",
+      "email": "imedtunisia2012@gmail.com",
+      "mdp": "123456",
+      "mdpp": "123456",
+      "pos": "3041",
+      "gouv": "sfax",
+      "check": true,
+      "id": 8
+    },
+    {
+      "typeUser": "parent",
+      "prenom": "DAOUD",
+      "nom": "khdija",
+      "loginNumber": "07249583",
+      "telephone": "58752555",
+      "email": "dalisaad51@gmail.com",
+      "password": "123",
+      "mdpp": "123",
+      "zipCode": "3700",
+      "governorate": "sfax",
+      "check": true,
+      "id": 11
     }
   ]
 }

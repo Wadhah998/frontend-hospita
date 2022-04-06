@@ -16,7 +16,7 @@
  
   <form class="form-inline" style="margin-top: 3%; margin-right: 2%; ">
 
-      <form novalidate (ngSubmit)="saveData(registerForm)" #registerForm="ngForm">
+      <form novalidate #registerForm="ngForm">
     
 
       
@@ -67,7 +67,7 @@
         maxlength="8"
         class="form-control"
         placeholder="رقم بطاقة الهوية الوطنية" 
-        [(ngModel)]="user.cin"
+        [(ngModel)]="user.loginNumber"
         name="cin" 
         required 
         #cinVar="ngModel"
@@ -89,7 +89,7 @@
         maxlength="8"
     class="form-control"
      placeholder="رقم الهاتف"
-     [(ngModel)]="user.tel"
+     [(ngModel)]="user.telephone"
      name="tel" 
      required
      #telVar="ngModel"
@@ -137,9 +137,9 @@
 
       <div class="form-group">
         <input 
-        id="mdp"
+        id="password"
         type="password"
-        name="mdp"
+        name="password"
         
       
         ngModel ="true"
@@ -147,12 +147,12 @@
         style="width: 360px;"
         class="form-control"
         placeholder="كلمة السر" 
-        [(ngModel)]="user.mdp"
+        [(ngModel)]="user.password"
         
         required 
-        #mdpVar="ngModel"
+        #passwordVar="ngModel"
         [ngClass]="{
-          'is-invalid': mdpVar.touched && !mdpVar.valid 
+          'is-invalid': passwordVar.touched && !passwordVar.valid 
         }"  
         
       
@@ -183,7 +183,7 @@
         ngModel ="true"
         
         style="width: 360px;"
-        pattern="{{ mdpVar.value }}"
+        pattern="{{ passwordVar.value }}"
         class="form-control"
         placeholder="تأكيد كلمة السر" 
         [(ngModel)]="user.mdpp"
@@ -207,7 +207,7 @@
   
         
          
-          <div *ngIf="mdpVar.value!=mdppVar.value"> كلمة السر و تأكيد كلمة السر غير متطابقين  </div>    
+          <div *ngIf="passwordVar.value!=mdppVar.value"> كلمة السر و تأكيد كلمة السر غير متطابقين  </div>    
          
 
      </div>
@@ -220,7 +220,7 @@
         id="pos"
         class="form-control"
         placeholder="الرمز البريدي" 
-        [(ngModel)]="user.pos"
+        [(ngModel)]="user.zipCode"
         name="pos" 
         required 
         #posVar="ngModel"
@@ -236,7 +236,7 @@
         style="margin-right: 5%;"
     class="form-control"
      placeholder="الولاية"
-     [(ngModel)]="user.gouv"
+     [(ngModel)]="user.governorate"
      name="gouv" 
      required
      #gouvVar="ngModel"
@@ -271,7 +271,7 @@
   <button  type="submit"
   [disabled]="!registerForm.valid" 
   style="width: 180px;  margin-right: 10%; margin-top: 2%; " 
-  class="btn btn-primary" (click)="onSignin()"> سجل </button>
+  class="btn btn-primary" (click)="onSignup()"> سجل </button>
 
 </form>
   </form>
