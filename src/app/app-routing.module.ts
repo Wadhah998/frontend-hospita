@@ -32,11 +32,16 @@ import { DoctorAppointmentComponent } from './screens/doctor/components/doctor-a
 import { DoctorConsultationComponent } from './screens/doctor/components/doctor-consultation/doctor-consultation.component';
 import { ParentComponent } from './screens/parents/components/parent/parent.component';
 import { ParentDashboardComponent } from './screens/parents/components/parent-dashboard/parent-dashboard.component';
-import { MessagerieComponent } from './screens/SuperDoctor/messagerie/messagerie.component';
 import { SuperMedecinComponent } from './screens/SuperDoctor/components/super-medecin/super-medecin.component';
 import { SuperDoctorApointementComponent } from './screens/SuperDoctor/components/super-doctor-apointement/super-doctor-apointement.component';
 import { DashboardSuperDoctorComponent } from './screens/SuperDoctor/components/dashboard-super-doctor/dashboard-super-doctor.component';
 import { ListMedecinsComponent } from './screens/SuperDoctor/components/list-medecins/list-medecins.component';
+import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie/messagerie.component';
+import { AllChartsComponent } from './screens/SuperDoctor/components/all-charts/all-charts.component';
+import { HeaderSuperDoctorComponent } from './screens/SuperDoctor/components/header-super-doctor/header-super-doctor.component';
+
+
+
 const MaterialComponents = [
   MatButtonModule,
   MatToolbarModule,
@@ -73,6 +78,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'superDoctorDashboard', component: DashboardSuperDoctorComponent },
   { path: 'listMedecins', component: ListMedecinsComponent },
+  { path: 'allCharts', component : AllChartsComponent},
+  { path: 'headerSuper', component : HeaderSuperDoctorComponent},
   {
     path: '',
     component: DoctorComponent,
