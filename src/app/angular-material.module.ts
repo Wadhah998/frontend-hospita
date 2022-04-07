@@ -33,6 +33,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [],
@@ -72,6 +73,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatToolbarModule,
     MatTooltipModule,
     MatNativeDateModule,
+    ScrollingModule,
     FlexLayoutModule,
   ],
   exports: [
@@ -109,6 +111,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatToolbarModule,
     MatTooltipModule,
     MatNativeDateModule,
+    ScrollingModule,
     FlexLayoutModule,
   ],
 })

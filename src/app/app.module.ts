@@ -40,6 +40,10 @@ import { ParentHeaderComponent } from './screens/parents/components/parent-heade
 import { ParentComponent } from './screens/parents/components/parent/parent.component';
 import { ParentDashboardComponent } from './screens/parents/components/parent-dashboard/parent-dashboard.component';
 import { ListChealdrenComponent } from './screens/parents/components/list-chealdren/list-chealdren.component';
+import { ListPatientsComponent } from './screens/doctor/components/doctor-consultation/list-patients/list-patients.component';
+import { TensionComponent } from './screens/doctor/components/charts/tension/tension.component';
+import { SugarComponent } from './screens/doctor/components/charts/sugar/sugar.component';
+import { HartComponent } from './screens/doctor/components/charts/hart/hart.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +78,10 @@ import { ListChealdrenComponent } from './screens/parents/components/list-cheald
     ParentComponent,
     ParentDashboardComponent,
     ListChealdrenComponent,
+    ListPatientsComponent,
+    TensionComponent,
+    SugarComponent,
+    HartComponent,
   ],
   imports: [
     BrowserModule,
