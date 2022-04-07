@@ -56,11 +56,12 @@ export class SignInComponent implements OnInit {
     )
 
   }
-  public saveData(registerForm: NgForm) {
-    console.log(registerForm.form);
-    console.log('valeurs: ', JSON.stringify(registerForm.value));
-    console.log('hello');
-  }
+  
+  // public saveData(registerForm: NgForm) {
+  //   console.log(registerForm.form);
+  //   console.log('valeurs: ', JSON.stringify(registerForm.value));
+  //   console.log('hello');
+  // }
 
  
 }

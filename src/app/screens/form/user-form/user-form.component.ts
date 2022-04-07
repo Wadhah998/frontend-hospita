@@ -12,7 +12,7 @@ import { User } from 'src/app/models/user/user.module';
   styleUrls: ['./user-form.component.scss']
 })
 export class UserFormComponent implements OnInit {
-  List = [ "مدرسة","heloo"]
+  List = [ "مدرسة","طبيب أول"]
   userForm! : FormGroup;
   actionBtn : string = "تأكيد";
   school : "school" | undefined

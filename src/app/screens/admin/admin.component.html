@@ -1,7 +1,8 @@
 <app-header></app-header>
 
-
+ 
 <mat-sidenav>
+
   
 </mat-sidenav>
   
@@ -19,6 +20,7 @@
            </mat-form-field>
           -->
           
+        
           
             <select  (selectionChange)="chercheUser($event)"  #input class="btn-lg" class="form-floating w-25" style="margin-left:50% ; margin-top: -125px; padding: 5px; width: 200px; text-align: center;" class="bg-primary">
               <option style="background-color: aliceblue;"class="text-primary" selected value="نوع المستخدم">نوع المستخدم</option>
@@ -46,6 +48,7 @@
         </div>
         
         <div class="content">
+          
                 
             <table mat-table [dataSource]="dataSource" class="table mt-5">
 
@@ -118,14 +121,14 @@
 
               <h2 *ngIf="listUsers.length ==0">لا يوجد مستخدمون لعرضهم </h2>
         
-              
+             
                 
               
                 
-              
+            </div> 
       
       
-      </div>
+      
   
 
 

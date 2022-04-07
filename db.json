@@ -73,19 +73,6 @@
       "id": 5
     },
     {
-      "prenom": "DAOUD",
-      "nom": "WADHAH",
-      "cin": "07249583",
-      "tel": "58752555",
-      "email": "Daoidwadhah@gmail.com",
-      "mdp": "123456",
-      "mdpp": "123456",
-      "pos": "3700",
-      "gouv": "tunis",
-      "check": true,
-      "id": 6
-    },
-    {
       "typeUser": "parent",
       "prenom": "abid ",
       "nom": "cyrin",
