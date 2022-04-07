@@ -44,6 +44,7 @@ import { ListPatientsComponent } from './screens/doctor/components/doctor-consul
 import { TensionComponent } from './screens/doctor/components/charts/tension/tension.component';
 import { SugarComponent } from './screens/doctor/components/charts/sugar/sugar.component';
 import { HartComponent } from './screens/doctor/components/charts/hart/hart.component';
+import { LandingNavbarComponent } from './components/landing-navbar/landing-navbar.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { HartComponent } from './screens/doctor/components/charts/hart/hart.comp
     TensionComponent,
     SugarComponent,
     HartComponent,
+    LandingNavbarComponent,
   ],
   imports: [
     BrowserModule,
