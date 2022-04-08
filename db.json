@@ -1,40 +1,28 @@
 {
   "listMedecins": [
     {
+      "typerUser": "Doctor",
       "telephone": "52358423",
       "email": "orl.ndonse@gmail.com",
       "cin": "5888877",
       "speciality": "spécialité 1",
-      "nom": "Orly",
+      "nom": "Imed",
       "password": "46666",
-      "id": "1"
+      "id": "1",
+      "gouvernat": "",
+      "CodePostal": ""
     },
     {
+      "typerUser": "Doctor",
       "telephone": "5235343",
       "email": "orl.ndonse@gmail.com",
       "cin": "566556",
       "speciality": "spécialité 2",
-      "nom": "orly",
+      "nom": "Rabeb",
       "password": "46666",
-      "id": "2"
-    },
-    {
-      "telephone": "52358423",
-      "email": "orl.ndonse@gmail.com",
-      "cin": "5888877",
-      "speciality": "spécialité 1",
-      "nom": "Orly",
-      "password": "46666",
-      "id": "3"
-    },
-    {
-      "telephone": "52358423",
-      "email": "orl.ndonse@gmail.com",
-      "cin": "5888877",
-      "speciality": "spécialité 3",
-      "nom": "Orly",
-      "password": "46666",
-      "id": "4"
+      "id": "2",
+      "gouvernat": "Sfax",
+      "CodePostal": ""
     },
     {
       "telephone": "52358423",

@@ -41,6 +41,7 @@ import { ListMedecinsComponent } from './screens/SuperDoctor/components/list-med
 import { ProfileDoctorComponent } from './screens/SuperDoctor/components/profile-doctor/profile-doctor.component';
 import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie/messagerie.component';
 import { AllChartsComponent } from './screens/SuperDoctor/components/all-charts/all-charts.component';
+import { ProfileApointementComponent } from './screens/superDoctor/components/profile-apointement/profile-apointement.component';
 
 
 
@@ -77,7 +78,8 @@ import { AllChartsComponent } from './screens/SuperDoctor/components/all-charts/
     DashboardSuperDoctorComponent,
     ListMedecinsComponent,
     ProfileDoctorComponent,
-    AllChartsComponent
+    AllChartsComponent,
+    ProfileApointementComponent
   ],
   imports: [
     BrowserModule,

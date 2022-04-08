@@ -1,22 +1,20 @@
-<mat-card class="profile-content">
+<mat-card dir="rtl" class="profile-content">
     <mat-card-content class="">
       <div class="item">
         <img src="./assets/images/users/user-1.jpg" mat-card-avatar />
         <div class="item-box">
           <div class="description">
-            <h3>Molka Trabelsi</h3>
-            <span class="status">Eleve </span>
+            <h3>{{nom}}</h3>
+            <span class="status">Médecin</span>
           </div>
   
           <div class="details" fxLayout="row" fxLayoutAlign="center">
             <mat-list role="list" class="list">
-              <mat-list-item role="listitem">Class:1</mat-list-item>
-              <mat-list-item role="listitem">Tel:+247896644</mat-list-item>
+              <mat-list-item role="listitem">Tel:{{telephone}}</mat-list-item>
               <mat-list-item role="listitem"
-                >Email:imed.akroutui@gmail.com</mat-list-item
+                >Email:{{email}}</mat-list-item
               >
-              <mat-list-item role="listitem">Region:Sfax</mat-list-item>
-              <mat-list-item role="listitem">Ajouter par:Hédi Tmar</mat-list-item>
+              <mat-list-item role="listitem">Region:{{gouvernat}}</mat-list-item>
             </mat-list>
           </div>
         </div>

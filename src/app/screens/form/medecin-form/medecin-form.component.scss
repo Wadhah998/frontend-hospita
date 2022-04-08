@@ -1,10 +1,17 @@
 mat-form-field.class1{
     width: 80%;
+    display: block;
+    margin: auto;
 }
 
-
-mat-form-field.class2{
-    width: 30%;
+.class2{
+    display: flex;
+    margin: auto;
+    width: 80%;
+    justify-content: space-between;
+}
+.class2 mat-form-field{
+    width: 125px;
     
 }
 

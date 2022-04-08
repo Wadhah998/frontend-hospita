@@ -10,6 +10,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Medecins } from 'src/app/models/medecin/Profiles';
 import { MedecinFormComponent } from 'src/app/screens/form/medecin-form/medecin-form.component';
 import { ProfileComponent } from 'src/app/screens/form/profile/profile.component';
+import { ProfileDoctorComponent } from '../profile-doctor/profile-doctor.component';
 
 
 @Component({
@@ -93,8 +94,8 @@ export class ListMedecinsComponent implements OnInit {
 
 
   showMedecin(row: any){
-    const dialogRef = this.dialog.open(ProfileComponent,{
-      width : '20%',
+    const dialogRef = this.dialog.open(ProfileDoctorComponent,{
+      width : '32%',
       data:row,
       autoFocus :true,
 
