@@ -1,0 +1,40 @@
+<mat-toolbar class="header">
+  <div class="header-toolbar">
+    <div class="search">
+      <input class="search-input" placeholder="بحث" />
+      <mat-icon class="search-icon">search</mat-icon>
+    </div>
+    <div class="nav-title">
+      <mat-nav-list class="nav-list">
+        <a
+          mat-list-item
+          [routerLink]=""
+          routerLinkActive="link-active"
+          class="link"
+          >وجهني</a
+        >
+        <a
+          mat-list-item
+          [routerLink]="['/signin']"
+          routerLinkActive="link-active"
+          class="link"
+          >تسجيل الدخول</a
+        >
+        <a
+          mat-list-item
+          [routerLink]="['/signup']"
+          routerLinkActive="link-active"
+          class="link"
+        >
+          التسجيل</a
+        >
+      
+      </mat-nav-list>
+    </div>
+    
+      <div class="logo">
+        <a mat-list-item href="" class="">افهمني</a>
+      </div>
+   
+  </div>
+</mat-toolbar>

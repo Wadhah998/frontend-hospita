@@ -47,7 +47,7 @@
             القائمة               
         </div>
         
-        <div class="content">
+        <div class="content mat-elevation-z8">
           
                 
             <table mat-table [dataSource]="dataSource" class="table mt-5">
@@ -117,11 +117,12 @@
                   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
               </table>
+     
              
 
               <h2 *ngIf="listUsers.length ==0">لا يوجد مستخدمون لعرضهم </h2>
         
-             
+
                 
               
                 

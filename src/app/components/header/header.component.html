@@ -20,7 +20,13 @@
   </div>
   <div class="nav-title">
     <mat-nav-list class="nav-list">
-      <a mat-list-item href="" class="link">التشخيص</a>
+      <a
+        mat-list-item
+        [routerLink]="['/doctor-consultation']"
+        routerLinkActive="link-active"
+        class="link"
+        >التشخيص</a
+      >
       <a mat-list-item href="" class="link">الرسائل</a>
       <a mat-list-item href="" class="link">جدول المواعيد</a>
       <a

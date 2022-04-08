@@ -50,6 +50,11 @@ import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie
 import { AllChartsComponent } from './screens/SuperDoctor/components/all-charts/all-charts.component';
 
 
+import { ListPatientsComponent } from './screens/doctor/components/doctor-consultation/list-patients/list-patients.component';
+import { TensionComponent } from './screens/doctor/components/charts/tension/tension.component';
+import { SugarComponent } from './screens/doctor/components/charts/sugar/sugar.component';
+import { HartComponent } from './screens/doctor/components/charts/hart/hart.component';
+import { LandingNavbarComponent } from './components/landing-navbar/landing-navbar.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +96,12 @@ import { AllChartsComponent } from './screens/SuperDoctor/components/all-charts/
     DashboardSuperDoctorComponent,
     ListMedecinsComponent,
     ProfileDoctorComponent,
-    AllChartsComponent
+    AllChartsComponent,
+    ListPatientsComponent,
+    TensionComponent,
+    SugarComponent,
+    HartComponent,
+    LandingNavbarComponent,
   ],
   imports: [
     BrowserModule,
