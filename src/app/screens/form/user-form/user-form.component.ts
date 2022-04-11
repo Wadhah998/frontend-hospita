@@ -15,8 +15,7 @@ export class UserFormComponent implements OnInit {
   userForm! : FormGroup;
   actionBtn : string = "تأكيد";
   school : "school" | undefined
-  superdoctor : "superdocter" | undefined 
-  
+  superdoctor : "superdocter" | undefined
   isSuperDoctor: boolean | undefined;
   constructor(private api : ApiService ,private formBuilder:FormBuilder ,private dialogRef:MatDialogRef<UserFormComponent>) { }
 
@@ -35,7 +34,6 @@ export class UserFormComponent implements OnInit {
 
   }
   postUser(){
-
      {
       this.api.postuser(this.userForm.value)
       .subscribe({
@@ -49,16 +47,16 @@ export class UserFormComponent implements OnInit {
         }
       })
     }
-    
-    
-        
-     
 
-     
-     
+
+
+
+
+
+
 
 }
 test(){
   console.log(this.userForm.value)
-} 
+}
 }

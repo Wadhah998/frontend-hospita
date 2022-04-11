@@ -6,7 +6,7 @@
       <input class="search-input" placeholder="بحث" />
     </div>
     <mat-nav-list>
-      <a
+      <!--   <a
         mat-list-item
         [routerLink]="['/doctor-appointment']"
         class="link active"
@@ -21,11 +21,19 @@
         <p matLine>
           <span> Imed Akrouti</span>
         </p>
-      </a>
-      <a mat-list-item [routerLink]="['']" class="link">
-        <img matListAvatar src="./assets/images/users/user-2.jpg" alt="..." />
+      </a> -->
+
+      <a
+        mat-list-item
+        *ngFor="let item of patients; let i = index"
+        [routerLink]=""
+        [ngClass]="{ active: item === patient }"
+        (click)="onSelect(item)"
+        class="link"
+      >
+        <img matListAvatar src="{{ item.image }}" alt="..." />
         <p matLine>
-          <span> Wadhah Dawed</span>
+          <span> {{ item.name }}</span>
         </p>
       </a>
       <!--   <mat-list-item class="contact-box">

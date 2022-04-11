@@ -27,6 +27,12 @@
   padding: 0 30px 0 10px;
   color: rgba(17, 13, 240, 0.35);
 }
+.contact {
+  margin: 10px 0;
+}
+.contact:hover {
+  background: transparent !important;
+}
 .link {
   border: 2px solid rgb(213 213 227 / 35%);
   cursor: pointer;
@@ -65,4 +71,7 @@
   height: 200px;
   width: 200px;
   border: 1px solid black;
+}
+.mat-list-item-content {
+  padding: 0 !important;
 }

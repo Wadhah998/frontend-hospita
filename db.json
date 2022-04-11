@@ -35,7 +35,7 @@
       "id": 1,
       "TypeUser": "admin",
       "nom": "wadhah",
-      
+
       "telephone": 52454782,
       "email": "wadhah@gmail.com",
       "loginNumber": 123456,
@@ -88,6 +88,23 @@
       "governorate": "tunuk",
       "zipCode": "3700",
       "id": 5
+    }
+  ],
+  "listPatients": [
+    {
+      "name": "wadhah",
+      "image": "./assets/images/users/user-1.jpg",
+      "id": 1
+    },
+    {
+      "name": "imed",
+      "image": "./assets/images/users/user-2.jpg",
+      "id": 2
+    },
+    {
+      "name": "orly",
+      "image": "./assets/images/users/user-3.jpg",
+      "id": 3
     }
   ]
 }
