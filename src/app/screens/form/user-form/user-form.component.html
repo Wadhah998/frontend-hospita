@@ -3,8 +3,20 @@
     <form [formGroup]="userForm">
 
         <div >
-            <div>
-                <span class="form-check form-check-inline ml-5">
+
+
+
+            <label for="">
+                <h1>نوع المستعمل</h1>
+
+            </label>
+            <mat-radio-group formControlName="typeUser">
+                <mat-radio-button *ngFor="let list of List" [value]="list">
+                    {{list}}
+                </mat-radio-button>
+            </mat-radio-group>
+            
+              <!--  <span class="form-check form-check-inline ml-5">
                     <label class="form-check-label text-center" for="inlineRadio1" class="text-primary"><h1>نوع المستعمل</h1></label>
                 </span>
                 <span class="form-check form-check-inline">
@@ -19,8 +31,8 @@
                            value='nchalla'>
                     <label class="form-check-label" for="inlineRadio2">طبيب أول</label>
                 </span>
-
-        </div>
+-->
+    
         </div>
 
         <mat-form-field class="class1" appearance="outline">

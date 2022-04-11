@@ -1,6 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from './user';
+import {  User_parent } from './user';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 
@@ -15,9 +16,9 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 })
 export class SignUpComponent implements OnInit {
 
- public user : User = new User(); 
+ public user : User_parent= new User_parent()
  public registerForm!: FormGroup;
-  constructor( private router: Router, private fb: FormBuilder) { }
+  constructor( private router: Router, private fb: FormBuilder, private http :HttpClient) { }
 
   ngOnInit() {
     this.registerForm = this.fb.group({
@@ -36,11 +37,18 @@ export class SignUpComponent implements OnInit {
     )
 }
 
-  onSignin(): void {
+  onSignin(){
     this.router.navigateByUrl(``);
   }
   
-  onSignup(): void {
+  onSignup(){
+    this.http.post<any>("http://localhost:3000/listUsers/",this.user)
+    .subscribe(res=>{
+      alert("تم التسجيل بنجاح");
+      this.router.navigate(['']);
+    },err=>{
+      alert("cest pas bon")
+    })
     
     
   }
@@ -48,11 +56,7 @@ export class SignUpComponent implements OnInit {
   
   }
 
-  public saveData(registerForm: NgForm) {
-    console.log(registerForm.form);
-    console.log('valeurs: ', JSON.stringify(registerForm.value));
-    console.log('hello');
-  }
+  
 
   hide = true;
  

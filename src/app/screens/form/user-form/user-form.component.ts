@@ -1,9 +1,9 @@
 
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder,Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/api/api.service';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { User } from 'src/app/models/user/user.module';
 
 @Component({
@@ -12,13 +12,14 @@ import { User } from 'src/app/models/user/user.module';
   styleUrls: ['./user-form.component.scss']
 })
 export class UserFormComponent implements OnInit {
+  List = [ "مدرسة","طبيب أول"]
   userForm! : FormGroup;
   actionBtn : string = "تأكيد";
   school : "school" | undefined
   superdoctor : "superdocter" | undefined
   isSuperDoctor: boolean | undefined;
-  constructor(private api : ApiService ,private formBuilder:FormBuilder ,private dialogRef:MatDialogRef<UserFormComponent>) { }
-
+   constructor(private api : ApiService ,private formBuilder:FormBuilder ,private dialogRef:MatDialogRef<UserFormComponent>,@Inject(MAT_DIALOG_DATA) public editData :any) { }
+  
   ngOnInit(): void {
     this.userForm = this.formBuilder.group({
       typeUser:['', Validators.required],
@@ -31,9 +32,28 @@ export class UserFormComponent implements OnInit {
       governorate:['', Validators.required],
       zipCode: ['', Validators.required]
   })
+  if(this.editData){
+    this.actionBtn = "تحديث";
+    
+    this.userForm.controls['typeUser'].setValue(this.editData.typeUser);
+    this.userForm.controls['loginNumber'].setValue(this.editData.loginNumber);
+    this.userForm.controls['email'].setValue(this.editData.email);
+    this.userForm.controls['nom'].setValue(this.editData.nom);
+    this.userForm.controls['telephone'].setValue(this.editData.telephone);
+    this.userForm.controls['password'].setValue(this.editData.password);
+    this.userForm.controls['delegation'].setValue(this.editData.delegation);
+    this.userForm.controls['governorate'].setValue(this.editData.governorate);
+    this.userForm.controls['zipCode'].setValue(this.editData.zipCode);
+
+  }
 
   }
   postUser(){
+<<<<<<< HEAD
+=======
+    if(!this.editData){
+
+>>>>>>> 6620bc3bb7b1a8efbb6c62849c58b2dd7cb6c134
      {
       this.api.postuser(this.userForm.value)
       .subscribe({
@@ -47,6 +67,16 @@ export class UserFormComponent implements OnInit {
         }
       })
     }
+<<<<<<< HEAD
+=======
+  } else {
+    this.modifieruser();
+        }
+    
+    
+        
+     
+>>>>>>> 6620bc3bb7b1a8efbb6c62849c58b2dd7cb6c134
 
 
 
@@ -56,7 +86,23 @@ export class UserFormComponent implements OnInit {
 
 
 }
+<<<<<<< HEAD
 test(){
   console.log(this.userForm.value)
 }
+=======
+modifieruser(){
+  this.api.putuser(this.userForm.value, this.editData.id)
+  .subscribe({
+    next:(res)=>{
+      alert("تم تحديث الطبيب خليفة");
+      this.userForm.reset();
+      this.dialogRef.close('تحديث');
+    },
+    error:()=>{
+      alert("خطأ أثناء تحديث السجل");
+    }
+  });
+} 
+>>>>>>> 6620bc3bb7b1a8efbb6c62849c58b2dd7cb6c134
 }

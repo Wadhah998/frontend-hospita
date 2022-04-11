@@ -27,11 +27,20 @@ export class ApiService {
     return this.http.get<Medecins[]>('http://localhost:3000/listMedecins/');
   }
 
+<<<<<<< HEAD
   putMedecin(data: any, id: number) {
     return this.http.put<Medecins[]>(
       'http://localhost:3000/listMedecins/' + id,
       data
     );
+=======
+  putMedecin(data:any, id : number){
+    return this.http.put<Medecins[]>("http://localhost:3000/listMedecins/"+id, data)
+    
+  }
+  putuser(data:any, id : number){
+    return this.http.put<User[]>("http://localhost:3000/listUsers/"+id, data)
+>>>>>>> 6620bc3bb7b1a8efbb6c62849c58b2dd7cb6c134
   }
 
   deleteMedecin(id: number) {
@@ -50,4 +59,11 @@ export class ApiService {
   getSinglePatient(id: number) {
     return this.http.get<Patient>('http://localhost:3000/listPatients/' + id);
   }
+<<<<<<< HEAD
+=======
+  deleteuser(id:number){
+    return this.http.delete<User[]>("http://localhost:3000/listUsers/"+id);
+  }
+
+>>>>>>> 6620bc3bb7b1a8efbb6c62849c58b2dd7cb6c134
 }

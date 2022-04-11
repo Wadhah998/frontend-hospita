@@ -12,8 +12,7 @@
    <mat-form-field appearance="fill">
     <mat-label>spécialité</mat-label>
     <mat-select (selectionChange)="chercheMedecin($event)" #input>
-      <mat-option *ngFor="let specialities of medecins" value="{{specialities.speciality}}">
-        {{specialities.speciality}}
+      <mat-option  value="">
       </mat-option>
     </mat-select>
    </mat-form-field>

@@ -47,7 +47,7 @@ export class DashboardComponent implements OnInit {
     this.dialog.open(MedecinFormComponent, {
       width:'50%',
       disableClose:true,
-      autoFocus :true
+      autoFocus :true 
       
 
     }).afterClosed().subscribe(val=>{
