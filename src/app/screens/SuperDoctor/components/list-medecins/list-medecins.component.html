@@ -43,13 +43,17 @@
         <!-- Name Column -->
         <ng-container matColumnDef="nom">
           <th style="text-align: left;" mat-header-cell *matHeaderCellDef>اسم</th>
-          <td style="text-align: left;"mat-cell *matCellDef="let element">{{ element.nom }}</td>
+          <td style="text-align: left;"mat-cell *matCellDef="let element">
+            <button mat-flat-button (click)="showMedecin(element)" >
+              {{element.nom}}
+            </button> 
+          </td>
         </ng-container>
 
         
         <!-- Symbol Column -->
         <ng-container matColumnDef="gouvernat">
-          <th  style="text-align: left;" mat-header-cell *matHeaderCellDef>هاتف</th>
+          <th  style="text-align: left;" mat-header-cell *matHeaderCellDef>الولاية </th>
           <td  style="text-align: left;" mat-cell *matCellDef="let element">{{ element.gouvernat }}</td>
         </ng-container>
         <!-- Action Column -->

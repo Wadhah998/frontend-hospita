@@ -12,6 +12,7 @@ export class MedecinFormComponent implements OnInit {
 
   medecinForm! : FormGroup;
   actionBtn : string = "تأكيد";
+  fileUploaded = true;
 
   constructor(
     
@@ -27,7 +28,9 @@ export class MedecinFormComponent implements OnInit {
      speciality: ['', Validators.required],
      nom: ['', Validators.required],
      password:['', Validators.required],
-     id: ['', Validators.required]
+     id: ['', Validators.required],
+     gouvernat : ['', Validators.required],
+     CodePostal :  ['', Validators.required]
     });
 
     if(this.editData){
@@ -39,6 +42,7 @@ export class MedecinFormComponent implements OnInit {
       this.medecinForm.controls['nom'].setValue(this.editData.nom);
       this.medecinForm.controls['password'].setValue(this.editData.password);
       this.medecinForm.controls['id'].setValue(this.editData.id);
+      this.medecinForm.controls['codePostal'].setValue(this.editData.codePostal);
   
     }
  
@@ -80,6 +84,11 @@ modifierMedecin(){
       alert("خطأ أثناء تحديث السجل");
     }
   });
+}
+
+
+onUploadFile(file:File){
+  this.api.uploadFile(file);
 }
 }
 

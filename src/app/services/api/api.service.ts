@@ -45,5 +45,7 @@ export class ApiService {
   deleteuser(id:number){
     return this.http.delete<User[]>("http://localhost:3000/listUsers/"+id);
   }
+  uploadFile(file : File){
+  }
 
 }
