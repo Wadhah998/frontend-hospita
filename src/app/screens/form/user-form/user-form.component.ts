@@ -16,8 +16,7 @@ export class UserFormComponent implements OnInit {
   userForm! : FormGroup;
   actionBtn : string = "تأكيد";
   school : "school" | undefined
-  superdoctor : "superdocter" | undefined 
-  
+  superdoctor : "superdocter" | undefined
   isSuperDoctor: boolean | undefined;
    constructor(private api : ApiService ,private formBuilder:FormBuilder ,private dialogRef:MatDialogRef<UserFormComponent>,@Inject(MAT_DIALOG_DATA) public editData :any) { }
   
@@ -50,8 +49,11 @@ export class UserFormComponent implements OnInit {
 
   }
   postUser(){
+<<<<<<< HEAD
+=======
     if(!this.editData){
 
+>>>>>>> 6620bc3bb7b1a8efbb6c62849c58b2dd7cb6c134
      {
       this.api.postuser(this.userForm.value)
       .subscribe({
@@ -65,6 +67,8 @@ export class UserFormComponent implements OnInit {
         }
       })
     }
+<<<<<<< HEAD
+=======
   } else {
     this.modifieruser();
         }
@@ -72,11 +76,21 @@ export class UserFormComponent implements OnInit {
     
         
      
+>>>>>>> 6620bc3bb7b1a8efbb6c62849c58b2dd7cb6c134
 
-     
-     
+
+
+
+
+
+
 
 }
+<<<<<<< HEAD
+test(){
+  console.log(this.userForm.value)
+}
+=======
 modifieruser(){
   this.api.putuser(this.userForm.value, this.editData.id)
   .subscribe({
@@ -90,4 +104,5 @@ modifieruser(){
     }
   });
 } 
+>>>>>>> 6620bc3bb7b1a8efbb6c62849c58b2dd7cb6c134
 }

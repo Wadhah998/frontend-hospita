@@ -1,5 +1,62 @@
 <app-header></app-header>
 
+<<<<<<< HEAD
+<mat-sidenav> </mat-sidenav>
+
+<div class="contents">
+  <select
+    #input
+    class="btn-lg"
+    class="form-floating w-25"
+    style="
+      margin-left: 50%;
+      margin-top: -125px;
+      padding: 5px;
+      width: 200px;
+      text-align: center;
+    "
+    class="bg-primary"
+  >
+    <option style="background-color: aliceblue" class="text-primary" selected>
+      نوع المستخدم
+    </option>
+    <option style="background-color: aliceblue" class="text-primary" value="1">
+      طبيب
+    </option>
+    <option style="background-color: aliceblue" class="text-primary" value="2">
+      ولي
+    </option>
+    <option style="background-color: aliceblue" class="text-primary" value="3">
+      مربي
+    </option>
+    <option style="background-color: aliceblue" class="text-primary" value="3">
+      طبيب أول
+    </option>
+    <option style="background-color: aliceblue" class="text-primary" value="3">
+      مدرسة
+    </option>
+  </select>
+
+  <button class="btn btn-lg btn-primary" (click)="openUserDialog()">
+    إضافة طبيب أول أو مدرسة
+  </button>
+</div>
+<div class="contents">القائمة</div>
+
+<div class="content">
+  <table mat-table [dataSource]="dataSource" class="table mt-5">
+    <ng-container matColumnDef="id">
+      <th style="text-align: center" mat-header-cell *matHeaderCellDef>id</th>
+      <td
+        style="text-align: end"
+        mat-cell
+        *matCellDef="let element"
+        class="text-center"
+      >
+        {{ element.id }}
+      </td>
+    </ng-container>
+=======
  
 <mat-sidenav>
 
@@ -73,8 +130,51 @@
                   
                 
                
+>>>>>>> 6620bc3bb7b1a8efbb6c62849c58b2dd7cb6c134
 
+    <ng-container matColumnDef="TypeUser">
+      <th style="text-align: center" mat-header-cell *matHeaderCellDef>
+        typeuser
+      </th>
+      <td
+        style="text-align: end"
+        mat-cell
+        *matCellDef="let element"
+        class="text-center"
+      >
+        {{ element.TypeUser }}
+      </td>
+    </ng-container>
 
+<<<<<<< HEAD
+    <ng-container matColumnDef="nom">
+      <th style="text-align: center" mat-header-cell *matHeaderCellDef>nom</th>
+      <td
+        style="text-align: end"
+        mat-cell
+        *matCellDef="let element"
+        class="text-center"
+      >
+        {{ element.nom }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="telephone">
+      <th style="text-align: end" mat-header-cell *matHeaderCellDef>
+        telephone
+      </th>
+      <td style="text-align: end" mat-cell *matCellDef="let element">
+        {{ element.telephone }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th style="text-align: end" mat-header-cell *matHeaderCellDef>email</th>
+      <td style="text-align: end" mat-cell *matCellDef="let element">
+        {{ element.email }}
+      </td>
+    </ng-container>
+=======
                   
                 <ng-container matColumnDef="telephone">
                     <th  style="text-align: end;" mat-header-cell *matHeaderCellDef>telephone</th>
@@ -131,5 +231,54 @@
       
       
   
+>>>>>>> 6620bc3bb7b1a8efbb6c62849c58b2dd7cb6c134
 
+    <ng-container matColumnDef="loginNumber">
+      <th style="text-align: end" mat-header-cell *matHeaderCellDef>
+        loginnumber
+      </th>
+      <td style="text-align: end" mat-cell *matCellDef="let element">
+        {{ element.loginNumber }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="password">
+      <th style="text-align: end" mat-header-cell *matHeaderCellDef>
+        password
+      </th>
+      <td style="text-align: end" mat-cell *matCellDef="let element">
+        {{ element.password }}
+      </td>
+    </ng-container>
 
+    <ng-container matColumnDef="modifier">
+      <th style="text-align: end" mat-header-cell *matHeaderCellDef>
+        modifier
+      </th>
+      <td
+        style="text-align: end"
+        mat-cell
+        *matCellDef="let element; let i; of: index"
+      >
+        <a
+          class="pointer"
+          style="color: rgb(0, 255, 128)"
+          matTooltip="تحرير هذا المستخدم"
+        >
+          <mat-icon>edit</mat-icon>
+        </a>
+        <a
+          class="pointer"
+          style="color: rgb(255, 0, 0)"
+          matTooltip="حذف هذا المستخدم"
+        >
+          <mat-icon>delete</mat-icon>
+        </a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <h2 *ngIf="listUsers.length == 0">لا يوجد مستخدمون لعرضهم</h2>
+</div>

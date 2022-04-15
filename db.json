@@ -24,6 +24,18 @@
     {
       "typeUser": "مدرسة",
       "nom": "wadhah",
+<<<<<<< HEAD
+
+      "telephone": 52454782,
+      "email": "wadhah@gmail.com",
+      "loginNumber": 123456,
+      "password": 121212
+    },
+    {
+      "typeUser": "",
+      "nom": "rjab",
+=======
+>>>>>>> 6620bc3bb7b1a8efbb6c62849c58b2dd7cb6c134
       "telephone": "24259043",
       "loginNumber": "12345678",
       "password": "123456789",
@@ -78,6 +90,23 @@
       "governorate": "sfax",
       "check": true,
       "id": 6
+    }
+  ],
+  "listPatients": [
+    {
+      "name": "wadhah",
+      "image": "./assets/images/users/user-1.jpg",
+      "id": 1
+    },
+    {
+      "name": "imed",
+      "image": "./assets/images/users/user-2.jpg",
+      "id": 2
+    },
+    {
+      "name": "orly",
+      "image": "./assets/images/users/user-3.jpg",
+      "id": 3
     }
   ]
 }

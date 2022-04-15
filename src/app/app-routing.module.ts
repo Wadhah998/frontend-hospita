@@ -95,7 +95,7 @@ const routes: Routes = [
     path: '',
     component: ParentComponent,
     children: [
-      { path: 'doctor-appointment', component: DoctorAppointmentComponent },
+      /*  { path: 'doctor-appointment', component: DoctorAppointmentComponent }, */
       {
         path: 'parent-dashboard',
         component: ParentDashboardComponent,
