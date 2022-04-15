@@ -49,11 +49,8 @@ export class UserFormComponent implements OnInit {
 
   }
   postUser(){
-<<<<<<< HEAD
-=======
     if(!this.editData){
 
->>>>>>> 6620bc3bb7b1a8efbb6c62849c58b2dd7cb6c134
      {
       this.api.postuser(this.userForm.value)
       .subscribe({
@@ -67,8 +64,6 @@ export class UserFormComponent implements OnInit {
         }
       })
     }
-<<<<<<< HEAD
-=======
   } else {
     this.modifieruser();
         }
@@ -76,7 +71,6 @@ export class UserFormComponent implements OnInit {
     
         
      
->>>>>>> 6620bc3bb7b1a8efbb6c62849c58b2dd7cb6c134
 
 
 
@@ -86,11 +80,6 @@ export class UserFormComponent implements OnInit {
 
 
 }
-<<<<<<< HEAD
-test(){
-  console.log(this.userForm.value)
-}
-=======
 modifieruser(){
   this.api.putuser(this.userForm.value, this.editData.id)
   .subscribe({
@@ -104,5 +93,4 @@ modifieruser(){
     }
   });
 } 
->>>>>>> 6620bc3bb7b1a8efbb6c62849c58b2dd7cb6c134
 }

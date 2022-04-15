@@ -18,31 +18,6 @@ import { DialogService } from 'src/app/services/shared/dialog.service';
   styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent implements OnInit {
-<<<<<<< HEAD
-  isSuperDoctor!: boolean;
-  formGroup!: FormGroup;
-  displayPerson = false;
-  typeDisplayedPerson!: string;
-  listUsers: User[] = [];
-  displayedColumns: string[] = [
-    'modifier',
-    'password',
-    'loginNumber',
-    'email',
-    'telephone',
-    'nom',
-    'TypeUser',
-    'id',
-  ];
-  dataSource!: MatTableDataSource<any>;
-
-  constructor(
-    public dialog: MatDialog,
-    public api: ApiService,
-    private _snackBar: MatSnackBar,
-    private router: Router
-  ) {}
-=======
 
   users : User[] = [];
   
@@ -55,7 +30,6 @@ export class AdminComponent implements OnInit {
   dataSource! : MatTableDataSource<any>;
  
   constructor(public dialog:MatDialog,private dialogService : DialogService, public api:ApiService, private _snackBar: MatSnackBar, private router : Router) {}
->>>>>>> 6620bc3bb7b1a8efbb6c62849c58b2dd7cb6c134
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   ngAfterViewInit() {
@@ -69,17 +43,6 @@ export class AdminComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-<<<<<<< HEAD
-  getallusers() {
-    this.api.getuser().subscribe({
-      next: (res) => {
-        this.listUsers = res;
-        this.dataSource = new MatTableDataSource(res);
-        this.dataSource.paginator = this.paginator;
-      },
-    });
-  }
-=======
   getallusers(){
     this.api.getuser()
     .subscribe({
@@ -103,7 +66,6 @@ export class AdminComponent implements OnInit {
   
   
 
->>>>>>> 6620bc3bb7b1a8efbb6c62849c58b2dd7cb6c134
 
   openUserDialog(): void {
     this.dialog
@@ -117,9 +79,6 @@ export class AdminComponent implements OnInit {
         this.getallusers();
       });
   }
-<<<<<<< HEAD
-}
-=======
   deleteuser(id:number){
 
     this.dialogService.openConfirmDialog('هل أنت متأكد أنك تريد حذف هذا الطبيب؟')
@@ -170,4 +129,3 @@ export class AdminComponent implements OnInit {
 
 
   
->>>>>>> 6620bc3bb7b1a8efbb6c62849c58b2dd7cb6c134
