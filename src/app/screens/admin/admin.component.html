@@ -1,13 +1,11 @@
 <app-header></app-header>
-
+<div fxLayout="row wrap">
+<div fxFlex.gt-lg="66" fxFlex.gt-md="33" fxFlex.gt-xs="100" fxFlex="100">
+   <app-user-profile [User]="User" ></app-user-profile>
+</div>
  
-<mat-sidenav>
-
-  
-</mat-sidenav>
-  
-      
-        <div class="contents">
+<div fxFlex.gt-lg="63" fxFlex.gt-md="63" fxFlex.gt-xs="100" fxFlex="100">
+        <div class="header-content">
           
  
          <!-- <mat-form-field appearance="fill">
@@ -22,7 +20,7 @@
           
         
           
-            <select  (selectionChange)="chercheUser($event)"  #input class="btn-lg" class="form-floating w-25" style="margin-left:50% ; margin-top: -125px; padding: 5px; width: 200px; text-align: center;" class="bg-primary">
+            <select  (selectionChange)="chercheUser($event)"  #input class="btn-lg" class="form-floating w-25" style="  padding: 5px; width: 200px; text-align: center;" class="bg-primary">
               <option style="background-color: aliceblue;"class="text-primary" selected value="نوع المستخدم">نوع المستخدم</option>
               <option  style="background-color: aliceblue;"class="text-primary"value="طبيب">طبيب</option>
               <option style="background-color: aliceblue;"class="text-primary" value="ولي
@@ -43,7 +41,7 @@
             </button>
           
           </div>
-        <div class="contents">
+        <div class="contents"style=" margin: 1rem 0;">
             القائمة               
         </div>
         
@@ -62,7 +60,10 @@
                 
                 <ng-container matColumnDef="TypeUser">
                   <th style="text-align: center;" mat-header-cell *matHeaderCellDef >Type User</th>
-                  <td style="text-align: end;" mat-cell *matCellDef="let element" class="text-center" > {{element.typeUser}} </td>
+                  <td style="text-align: end;" mat-cell *matCellDef="let element" class="text-center"  > 
+                    <button class="btn btn-primary" style=" width:100px" (click)="onSelect(element)" >
+                     {{element.typeUser}}
+                    </button> </td>
                 </ng-container>
                 
                 
@@ -127,3 +128,5 @@
               
                 
             </div>
+          </div>
+        </div>

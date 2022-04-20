@@ -1,6 +1,6 @@
 import { ApiService } from 'src/app/services/api/api.service';
 import { User } from 'src/app/models/user/user.module';
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -18,7 +18,7 @@ import { DialogService } from 'src/app/services/shared/dialog.service';
   styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent implements OnInit {
-
+  public select: EventEmitter<User> = new EventEmitter();
   users : User[] = [];
   
   isSuperDoctor !: boolean;
@@ -28,6 +28,7 @@ export class AdminComponent implements OnInit {
   listUsers: User[]= [];
   displayedColumns: string[] = ['modifier','password','loginNumber','email','telephone','nom','TypeUser','id'];
   dataSource! : MatTableDataSource<any>;
+  User!: User;
  
   constructor(public dialog:MatDialog,private dialogService : DialogService, public api:ApiService, private _snackBar: MatSnackBar, private router : Router) {}
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -119,6 +120,14 @@ export class AdminComponent implements OnInit {
     })
     this.dataSource = new MatTableDataSource(filteredData);
 
+  }
+  onSelect(item: User) {
+    // this.selectedtIndex = index;
+    this.User = item;
+    console.log('from list', this.User);
+    this.select.emit(item);
+    //console.log('from list' + this.gePatients());
+    console.log('from list', item);
   }
 }
    

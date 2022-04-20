@@ -56,6 +56,7 @@ import { TensionComponent } from './screens/doctor/components/charts/tension/ten
 import { SugarComponent } from './screens/doctor/components/charts/sugar/sugar.component';
 import { HartComponent } from './screens/doctor/components/charts/hart/hart.component';
 import { LandingNavbarComponent } from './components/landing-navbar/landing-navbar.component';
+import { UserProfileComponent } from './screens/admin/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +104,7 @@ import { LandingNavbarComponent } from './components/landing-navbar/landing-navb
     SugarComponent,
     HartComponent,
     LandingNavbarComponent,
+    UserProfileComponent
     
   ],
   imports: [
