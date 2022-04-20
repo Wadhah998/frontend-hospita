@@ -24,7 +24,6 @@
     {
       "typeUser": "مدرسة",
       "nom": "wadhah",
-
       "telephone": 52454782,
       "email": "wadhah@gmail.com",
       "loginNumber": 123456,
@@ -76,16 +75,13 @@
     },
     {
       "typeUser": "ولي",
-      "prenom": "ryhem",
       "nom": "ben ghozzi",
-      "loginNumber": "07249583",
       "telephone": "58752555",
-      "email": "rihem@gmail.com",
+      "loginNumber": "07249583",
       "password": "123456",
-      "mdpp": "123456",
-      "zipCode": "3700",
+      "email": "rihem@gmail.com",
       "governorate": "sfax",
-      "check": true,
+      "zipCode": "3700",
       "id": 6
     }
   ],
