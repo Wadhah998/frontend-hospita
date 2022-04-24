@@ -56,5 +56,9 @@ export class ApiService {
   }
   uploadFile(file : File){
   }
+  deletePatient(id: number) {
+    return this.http.delete<Patient[]>(
+      'http://localhost:3000/listPatients/' + id
+    );
 
-}
+    }}

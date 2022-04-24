@@ -12,6 +12,16 @@
     {
       "typeUser": "طبيب",
       "telephone": "2425963",
+      "email": "wadhah@gmail.com",
+      "loginNumber": "24259043",
+      "speciality": "TDAH",
+      "nom": "khadija",
+      "password": "24259662",
+      "id": "20"
+    },
+    {
+      "typeUser": "طبيب",
+      "telephone": "2425963",
       "email": "rabeb@gmail.com",
       "loginNumber": "24259043",
       "speciality": "autisme",
@@ -54,16 +64,6 @@
       "id": 5
     },
     {
-      "typeUser": "طبيب",
-      "telephone": "52358423",
-      "email": "orl.ndonse@gmail.com",
-      "loginNumber": "5888877",
-      "speciality": "spécialité 1",
-      "nom": "Orly",
-      "password": "46666",
-      "id": "1"
-    },
-    {
       "typeUser": "admin",
       "telephone": "52358423",
       "email": "admin@gmail.com",
@@ -87,19 +87,85 @@
   ],
   "listPatients": [
     {
-      "name": "wadhah",
+      "name": "maha",
       "image": "./assets/images/users/user-1.jpg",
-      "id": 1
+      "id": 8,
+      "age": 4,
+      "state": "He ",
+      "email": "imed.akrouti@gmail.com",
+      "phone": 2741780
     },
     {
-      "name": "imed",
-      "image": "./assets/images/users/user-2.jpg",
-      "id": 2
+      "name": "maha",
+      "image": "./assets/images/users/user-1.jpg",
+      "id": 8,
+      "age": 4,
+      "state": "He ",
+      "email": "imed.akrouti@gmail.com",
+      "phone": 2741780
     },
     {
-      "name": "orly",
-      "image": "./assets/images/users/user-3.jpg",
-      "id": 3
+      "name": "maha",
+      "image": "./assets/images/users/user-1.jpg",
+      "id": 8,
+      "age": 4,
+      "state": "He ",
+      "email": "imed.akrouti@gmail.com",
+      "phone": 2741780
+    },
+    {
+      "name": "maha",
+      "image": "./assets/images/users/user-1.jpg",
+      "id": 8,
+      "age": 4,
+      "state": "He ",
+      "email": "imed.akrouti@gmail.com",
+      "phone": 2741780
+    },
+    {
+      "name": "maha",
+      "image": "./assets/images/users/user-1.jpg",
+      "id": 8,
+      "age": 4,
+      "state": "He ",
+      "email": "imed.akrouti@gmail.com",
+      "phone": 2741780
+    },
+    {
+      "name": "maha",
+      "image": "./assets/images/users/user-1.jpg",
+      "id": 8,
+      "age": 4,
+      "state": "He ",
+      "email": "imed.akrouti@gmail.com",
+      "phone": 2741780
+    },
+    {
+      "name": "maha",
+      "image": "./assets/images/users/user-1.jpg",
+      "id": 8,
+      "age": 4,
+      "state": "He ",
+      "email": "imed.akrouti@gmail.com",
+      "phone": 2741780
+    },
+    {
+      "name": "maha",
+      "image": "./assets/images/users/user-1.jpg",
+      "id": 8,
+      "age": 4,
+      "state": "He ",
+      "email": "imed.akrouti@gmail.com",
+      "phone": 2741780
+    },
+    {
+      "name": "maha",
+      "image": "./assets/images/users/user-1.jpg",
+      "id": 8,
+      "age": 4,
+      "state": "He ",
+      "email": "imed.akrouti@gmail.com",
+      "phone": 2741780
     }
   ]
 }

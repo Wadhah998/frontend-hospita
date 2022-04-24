@@ -36,7 +36,7 @@ export class FullCasesComponent implements OnInit {
       series: [20, 80],
       chart: {
         type: 'pie',
-        height: 100,
+        height: 85,
         //width: '280px',
       },
       labels: ['الحالات الموكدة', 'الحالات المنفية'],
@@ -46,10 +46,13 @@ export class FullCasesComponent implements OnInit {
           breakpoint: 480,
           options: {
             chart: {
-              height: 100,
+              height: 85,
             },
             legend: {
-              position: 'bottom',
+              position: 'right',
+              horizontalAlign: 'center',
+              verticalAlign: 'middle',
+              fontSize: '14px',
             },
           },
         },
@@ -57,7 +60,7 @@ export class FullCasesComponent implements OnInit {
           breakpoint: 320,
           options: {
             chart: {
-              height: 0,
+              height: 85,
             },
           },
         },

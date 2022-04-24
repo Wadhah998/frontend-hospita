@@ -1,22 +1,19 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Patient } from 'src/app/models/patient/patient.model';
 import { ApiService } from 'src/app/services/api/api.service';
-
 @Component({
-  selector: 'app-list-patients',
-  templateUrl: './list-patients.component.html',
-  styleUrls: ['./list-patients.component.scss'],
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.scss'],
 })
-export class ListPatientsComponent implements OnInit {
+export class ContactComponent implements OnInit {
   @Output()
-  public select: EventEmitter<Patient> = new EventEmitter();
-  status: boolean = false;
+  public conversation: EventEmitter<Patient> = new EventEmitter();
   patients: Patient[] = [];
-  userName:string="";
-  //selectedtIndex: number = 0;
+  userName: string = '';
   patient!: Patient;
+  options: Object = { direction: 'ltr' };
   constructor(public api: ApiService) {}
-
   ngOnInit(): void {
     this.gePatients();
   }
@@ -27,7 +24,7 @@ export class ListPatientsComponent implements OnInit {
         console.log(this.patients);
         this.patient = this.patients[0];
         console.log(this.patient);
-        this.select.emit(this.patient);
+        this.conversation.emit(this.patient);
       },
     });
   }
@@ -35,7 +32,7 @@ export class ListPatientsComponent implements OnInit {
     // this.selectedtIndex = index;
     this.patient = item;
     console.log('from list', this.patient);
-    this.select.emit(item);
+    this.conversation.emit(item);
     //console.log('from list' + this.gePatients());
     console.log('from list', item);
   }
