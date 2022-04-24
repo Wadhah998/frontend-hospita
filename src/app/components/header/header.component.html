@@ -18,7 +18,10 @@
     </div>
     <div class="divider"></div>
   </div>
-  <div class="nav-title">
+  <button mat-icon-button fxShow="true" fxHide.gt-sm [matMenuTriggerFor]="bell">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="nav-title" fxShow="true" fxHide.lt-md>
     <mat-nav-list class="nav-list">
       <a
         mat-list-item
@@ -27,7 +30,14 @@
         class="link"
         >التشخيص</a
       >
-      <a mat-list-item href="" class="link">الرسائل</a>
+      <a
+        mat-list-item
+        [routerLink]="['/doctor-chat']"
+        routerLinkActive="link-active"
+        href=""
+        class="link"
+        >الرسائل</a
+      >
       <a mat-list-item href="" class="link">جدول المواعيد</a>
       <a
         mat-list-item
@@ -37,8 +47,40 @@
         class="link"
         >لوحة المتابعة</a
       >
-      <a mat-list-item href="" class="logo">افهمني</a>
+      <a mat-list-item href="" fxShow="true" fxShow.lt class="logo">افهمني</a>
     </mat-nav-list>
   </div>
 </mat-toolbar>
 <mat-toolbar class="hello"> مرحبا </mat-toolbar>
+<mat-menu #bell="matMenu" xPosition="before" class="mobile-menu">
+  <mat-nav-list class="nav-list-mobile">
+    <a
+      mat-list-item
+      [routerLink]="['/doctor-consultation']"
+      routerLinkActive="link-active"
+      class="link"
+      >التشخيص</a
+    >
+    <mat-divider></mat-divider>
+    <a
+      mat-list-item
+      [routerLink]="['/doctor-chat']"
+      routerLinkActive="link-active"
+      href=""
+      class="link"
+      >الرسائل</a
+    >
+    <mat-divider></mat-divider>
+    <a mat-list-item href="" class="link">جدول المواعيد</a>
+    <mat-divider></mat-divider>
+    <a
+      mat-list-item
+      [routerLink]="['/doctor-appointment']"
+      routerLinkActive="link-active"
+      href=""
+      class="link"
+      >لوحة المتابعة</a
+    >
+    <mat-divider></mat-divider>
+  </mat-nav-list>
+</mat-menu>

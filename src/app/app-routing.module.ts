@@ -39,8 +39,7 @@ import { ListMedecinsComponent } from './screens/SuperDoctor/components/list-med
 import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie/messagerie.component';
 import { AllChartsComponent } from './screens/SuperDoctor/components/all-charts/all-charts.component';
 import { HeaderSuperDoctorComponent } from './screens/SuperDoctor/components/header-super-doctor/header-super-doctor.component';
-
-
+import { DoctorMessagerieComponent } from './screens/doctor/components/doctor-messagerie/doctor-messagerie.component';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -78,8 +77,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'superDoctorDashboard', component: DashboardSuperDoctorComponent },
   { path: 'listMedecins', component: ListMedecinsComponent },
-  { path: 'allCharts', component : AllChartsComponent},
-  { path: 'headerSuper', component : HeaderSuperDoctorComponent},
+  { path: 'allCharts', component: AllChartsComponent },
+  { path: 'headerSuper', component: HeaderSuperDoctorComponent },
   {
     path: '',
     component: DoctorComponent,
@@ -88,6 +87,10 @@ const routes: Routes = [
       {
         path: 'doctor-consultation',
         component: DoctorConsultationComponent,
+      },
+      {
+        path: 'doctor-chat',
+        component: DoctorMessagerieComponent,
       },
     ],
   },
@@ -106,7 +109,10 @@ const routes: Routes = [
     path: '',
     component: SuperMedecinComponent,
     children: [
-      { path: 'superDoctor-appointment', component: SuperDoctorApointementComponent },
+      {
+        path: 'superDoctor-appointment',
+        component: SuperDoctorApointementComponent,
+      },
     ],
   },
 ];

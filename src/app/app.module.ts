@@ -50,12 +50,16 @@ import { ProfileDoctorComponent } from './screens/SuperDoctor/components/profile
 import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie/messagerie.component';
 import { AllChartsComponent } from './screens/SuperDoctor/components/all-charts/all-charts.component';
 
-
 import { ListPatientsComponent } from './screens/doctor/components/doctor-consultation/list-patients/list-patients.component';
 import { TensionComponent } from './screens/doctor/components/charts/tension/tension.component';
 import { SugarComponent } from './screens/doctor/components/charts/sugar/sugar.component';
 import { HartComponent } from './screens/doctor/components/charts/hart/hart.component';
 import { LandingNavbarComponent } from './components/landing-navbar/landing-navbar.component';
+import { FilterUsersPipe } from './components/pipes/filter-users.pipe';
+import { DoctorMessagerieComponent } from './screens/doctor/components/doctor-messagerie/doctor-messagerie.component';
+import { ChatComponent } from './screens/doctor/components/doctor-messagerie/chat/chat.component';
+import { ContactComponent } from './screens/doctor/components/doctor-messagerie/contact/contact.component';
+import { SimplebarAngularModule } from 'simplebar-angular';
 
 @NgModule({
   declarations: [
@@ -103,6 +107,10 @@ import { LandingNavbarComponent } from './components/landing-navbar/landing-navb
     SugarComponent,
     HartComponent,
     LandingNavbarComponent,
+    FilterUsersPipe,
+    DoctorMessagerieComponent,
+    ChatComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -114,6 +122,7 @@ import { LandingNavbarComponent } from './components/landing-navbar/landing-navb
     FormsModule,
     NgApexchartsModule,
     AngularMaterialModule,
+    SimplebarAngularModule,
   ],
   providers: [ApiService, DialogService],
   bootstrap: [AppComponent],
