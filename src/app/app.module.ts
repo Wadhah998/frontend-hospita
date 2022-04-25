@@ -57,6 +57,10 @@ import { SugarComponent } from './screens/doctor/components/charts/sugar/sugar.c
 import { HartComponent } from './screens/doctor/components/charts/hart/hart.component';
 import { LandingNavbarComponent } from './components/landing-navbar/landing-navbar.component';
 import { UserProfileComponent } from './screens/admin/user-profile/user-profile.component';
+import { MaitredashboardComponent } from './screens/maitre/components/maitredashboard/maitredashboard.component';
+import { ListEnfantsComponent } from './screens/maitre/components/list-enfants/list-enfants.component';
+import { AjouterEnfantComponent } from './screens/maitre/forms/ajouter-enfant/ajouter-enfant.component';
+import { ProfilEnfantsComponent } from './screens/maitre/components/profil-enfants/profil-enfants.component';
 
 @NgModule({
   declarations: [
@@ -104,7 +108,11 @@ import { UserProfileComponent } from './screens/admin/user-profile/user-profile.
     SugarComponent,
     HartComponent,
     LandingNavbarComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    MaitredashboardComponent,
+    ListEnfantsComponent,
+    AjouterEnfantComponent,
+    ProfilEnfantsComponent
     
   ],
   imports: [

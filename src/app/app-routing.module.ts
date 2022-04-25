@@ -39,6 +39,8 @@ import { ListMedecinsComponent } from './screens/SuperDoctor/components/list-med
 import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie/messagerie.component';
 import { AllChartsComponent } from './screens/SuperDoctor/components/all-charts/all-charts.component';
 import { HeaderSuperDoctorComponent } from './screens/SuperDoctor/components/header-super-doctor/header-super-doctor.component';
+import { MaitredashboardComponent } from './screens/maitre/components/maitredashboard/maitredashboard.component';
+import { ListEnfantsComponent } from './screens/maitre/components/list-enfants/list-enfants.component';
 
 
 
@@ -80,6 +82,9 @@ const routes: Routes = [
   { path: 'listMedecins', component: ListMedecinsComponent },
   { path: 'allCharts', component : AllChartsComponent},
   { path: 'headerSuper', component : HeaderSuperDoctorComponent},
+  { path: 'maitreDashboard', component: MaitredashboardComponent },
+
+  { path :  'listeEnfants', component : ListEnfantsComponent },
   {
     path: '',
     component: DoctorComponent,

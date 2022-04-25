@@ -1,0 +1,97 @@
+<mat-card class="list-etudiant" >
+    <mat-card-title>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+
+        <span></span>
+        
+        <span>
+          <button mat-raised-button color="primary" style=" margin-left: 30px;"   (click)=" ajouterEnfantDialog()"> اضافة تلميذ
+  
+          </button>
+        </span>
+      </div>
+    </mat-card-title>
+    <mat-card-subtitle style="text-align: left;">
+      <button mat-flat-button (click)="afficherTousEnfant()">القائمة</button>
+    </mat-card-subtitle>
+      <mat-card-content>
+        <table mat-table [dataSource]="dataSource">
+
+    
+          <ng-container  matColumnDef="id">
+            <th style="text-align: left;" mat-header-cell *matHeaderCellDef>رقم</th>
+            <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.id }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="nomEnfant">
+            <th style="text-align: left;" mat-header-cell *matHeaderCellDef>الاسم واللقب</th>
+            <td style="text-align: left;"mat-cell *matCellDef="let element">
+              <button mat-flat-button 
+                [ngClass]="{ active: element === enfant }"
+                (click)="onSelect(element)" >
+                  {{element.nomEnfant}}
+                </button> 
+            </td>
+          </ng-container>
+  
+ 
+          <ng-container matColumnDef="date">
+            <th  style="text-align: left;" mat-header-cell *matHeaderCellDef>العمر</th>
+            <td  style="text-align: left;" mat-cell *matCellDef="let element">{{ element.date }}</td>
+          </ng-container>
+
+    
+        
+    
+
+          <ng-container matColumnDef="situation">
+            <th  style="text-align: left;"mat-header-cell *matHeaderCellDef>الوضع
+            </th>
+            <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.situation }}</td>
+          </ng-container>
+
+          
+
+          <ng-container matColumnDef="email">
+            <th style="text-align: left;" mat-header-cell *matHeaderCellDef>البريد الإلكتروني</th>
+            <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.email }}</td>
+          </ng-container>
+
+          
+
+          <ng-container matColumnDef="telephone">
+            <th style="text-align: left;" mat-header-cell *matHeaderCellDef>هاتف</th>
+            <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.telephone }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th style="text-align: right;" mat-header-cell *matHeaderCellDef>تغيير</th>
+            <td mat-cell *matCellDef="let element">
+              <a class="pointer">
+                <button  mat-icon-button (click)="deleteEnfant(element.id)" color="warn" matTooltip="حذف">
+                  <mat-icon>delete</mat-icon>
+              </button>
+              </a>
+              <a class="pointer">
+                <button  mat-icon-button (click)="editEnfant(element)" color="primary" matTooltip="تحرير">
+                  <mat-icon>edit</mat-icon>
+              </button>
+              </a>
+            </td>
+          </ng-container>
+    
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  
+  
+        
+  
+  
+        </table>
+  
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" style="text-align: right;"></mat-paginator>
+      </mat-card-content>
+    </mat-card>
+
+
+ 

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from 'src/app/models/user/user.module';
 import { Patient } from './../../models/patient/patient.model';
+import { Enfants } from 'src/app/models/enfant/Enfant';
 
 @Injectable({
   providedIn: 'root',
@@ -57,4 +58,26 @@ export class ApiService {
   uploadFile(file : File){
   }
 
+
+  getEnfant() {
+    return this.http.get<Enfants[]>('http://localhost:3000/listEnfants/');
+  }
+
+  deleteEnfants(id: number){
+    return this.http.delete<Enfants[]>(
+      'http://localhost:3000/listEnfants/' + id
+    );
+  }
+
+  postEnfant(data: any) {
+    return this.http.post<Enfants[]>(
+      'http://localhost:3000/listEnfants/',
+      data
+    );
+  }
+
+  putEnfant(data:any, id : number){
+    return this.http.put<Enfants[]>("http://localhost:3000/listEnfants/"+id, data)
+    
+  }
 }
