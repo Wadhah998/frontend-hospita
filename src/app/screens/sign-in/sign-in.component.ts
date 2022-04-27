@@ -18,6 +18,7 @@ export class SignInComponent implements OnInit {
 
   
   public user: User = new User();
+  public currentUser = User;
   constructor(private router: Router,private http:HttpClient) {
   }
 
@@ -38,6 +39,8 @@ export class SignInComponent implements OnInit {
       return a.email === this.user.email && a.password === this.user.password
     });
     if (User){
+      localStorage.setItem('currentUser',JSON.stringify(User))
+      
       if(User.typeUser=="ولي"){
         this.router.navigate(['/parent-dashboard'])
       }else if (User.typeUser=="طبيب"){

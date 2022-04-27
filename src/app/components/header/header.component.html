@@ -22,15 +22,16 @@
     <mat-icon>menu</mat-icon>
   </button>
   <div class="nav-title" fxShow="true" fxHide.lt-md>
-    <mat-nav-list class="nav-list">
-      <a
-        mat-list-item
-        [routerLink]="['/doctor-consultation']"
+    <mat-nav-list class="nav-list" >
+      <a *ngFor="let item of menu"
+        mat-list-item 
+        [routerLink]="item.redirect"
         routerLinkActive="link-active"
         class="link"
-        >التشخيص</a
+        >{{item.link}}</a
       >
-      <a
+     
+      <!-- <a
         mat-list-item
         [routerLink]="['/doctor-chat']"
         routerLinkActive="link-active"
@@ -46,7 +47,7 @@
         href=""
         class="link"
         >لوحة المتابعة</a
-      >
+      > -->
       <a mat-list-item href="" fxShow="true" fxShow.lt class="logo">افهمني</a>
     </mat-nav-list>
   </div>
