@@ -10,7 +10,7 @@
       "id": "3700"
     },
     {
-      "typeUser": "طبيب",
+      "typeUser": "doctor",
       "telephone": "2425963",
       "email": "wadhah@gmail.com",
       "loginNumber": "24259043",
@@ -20,7 +20,7 @@
       "id": "20"
     },
     {
-      "typeUser": "طبيب",
+      "typeUser": "doctor",
       "telephone": "2425963",
       "email": "rabeb@gmail.com",
       "loginNumber": "24259043",
@@ -40,19 +40,19 @@
       "password": 121212
     },
     {
-      "typeUser": "طبيب",
-      "nom": "rjab",
+      "typeUser": "doctor",
+      "nom": "imed",
       "telephone": "24259043",
       "loginNumber": "12345678",
       "password": "123456789",
-      "email": "daoidll@gmail.com",
+      "email": "imed.akrouti@gmail.com",
       "delegation": "",
       "governorate": "",
       "zipCode": "",
       "id": 2
     },
     {
-      "typeUser": "طبيب أول",
+      "typeUser": "superDoctor",
       "nom": "imed",
       "telephone": "24259043",
       "loginNumber": "1234567",
@@ -74,7 +74,7 @@
       "id": "1"
     },
     {
-      "typeUser": "ولي",
+      "typeUser": "parent",
       "nom": "ben ghozzi",
       "telephone": "58752555",
       "loginNumber": "07249583",

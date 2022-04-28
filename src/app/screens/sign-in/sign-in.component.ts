@@ -41,11 +41,11 @@ export class SignInComponent implements OnInit {
     if (User){
       localStorage.setItem('currentUser',JSON.stringify(User))
       
-      if(User.typeUser=="ولي"){
+      if(User.typeUser=="parent"){
         this.router.navigate(['/parent-dashboard'])
-      }else if (User.typeUser=="طبيب"){
+      }else if (User.typeUser=="doctor"){
         this.router.navigate(['/doctor-appointment'])
-      }else if (User.typeUser=="طبيب أول"){
+      }else if (User.typeUser=="superDoctor"){
         this.router.navigate(['/superDoctorDashboard'])
       }else if (User.typeUser=="admin"){
         this.router.navigate(['/admin'])

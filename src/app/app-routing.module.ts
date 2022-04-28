@@ -40,6 +40,10 @@ import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie
 import { AllChartsComponent } from './screens/SuperDoctor/components/all-charts/all-charts.component';
 import { HeaderSuperDoctorComponent } from './screens/SuperDoctor/components/header-super-doctor/header-super-doctor.component';
 import { DoctorMessagerieComponent } from './screens/doctor/components/doctor-messagerie/doctor-messagerie.component';
+import { AuthGuard } from './guards/auth.guard';
+import { DoctorGuard } from './guards/doctor.guard';
+import { AdminGuard } from './guards/admin.guard';
+
 
 const MaterialComponents = [
   MatButtonModule,
@@ -68,7 +72,7 @@ const routes: Routes = [
   { path: 'signin', component: SignInComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'forgetpassword', component: ForgetPasswordComponent },
-  { path: 'admin', component: AdminComponent },
+  { path: 'admin', component: AdminComponent,canActivate:[AuthGuard,AdminGuard] },
   { path: 'messagerieSuper', component: MessagerieComponent },
 
   { path: 'medecins', component: SuperDoctorComponent },
@@ -82,8 +86,10 @@ const routes: Routes = [
   {
     path: '',
     component: DoctorComponent,
+    canActivate:[AuthGuard],
     children: [
-      { path: 'doctor-appointment', component: DoctorAppointmentComponent },
+      { path: 'doctor-appointment', component: DoctorAppointmentComponent ,
+      canActivate:[AuthGuard,DoctorGuard]},
       {
         path: 'doctor-consultation',
         component: DoctorConsultationComponent,

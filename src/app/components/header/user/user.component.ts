@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-user',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent implements OnInit {
-  constructor() {}
+  constructor(private authService:AuthService) {}
   user = {
     name: 'Imed',
     lastName: 'Akrouti',
   };
   ngOnInit(): void {}
+  logOut(){
+    this.authService.logOut();
+  }
 }
