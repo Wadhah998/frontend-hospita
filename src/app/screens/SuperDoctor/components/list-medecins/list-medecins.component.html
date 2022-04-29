@@ -1,118 +1,126 @@
-<mat-card class="list-etudiant" >
-  <mat-card-title>
-    <div fxLayout="row" fxLayoutAlign="space-between">
-      <span>
-        <mat-form-field >
-          <mat-select (selectionChange)="chercheMedecin($event)" placeholder="تخصص" #input>
-            <mat-option  value="spécialité 1">
-              spécialité 1
-            </mat-option>
-            <mat-option  value="spécialité 2">
-              spécialité 2
-            </mat-option>
-            <mat-option  value="spécialité 3">
-              spécialité 3
-            </mat-option>
-            <mat-option  value="spécialité 4">
-              spécialité 4
-            </mat-option>
-          </mat-select>
-         </mat-form-field>
-      </span>
-      <span>
-        <button mat-raised-button color="primary" style="margin-left:90%;"  (click)="ajouterMedecinDialog()">إضافة طبيب
-
-        </button>
-      </span>
-    </div>
-  </mat-card-title>
-  <mat-card-subtitle style="text-align: left;">
-    <button mat-flat-button (click)="afficherTousMedecin()">القائمة</button>
-  </mat-card-subtitle>
-    <mat-card-content>
-      <table mat-table [dataSource]="dataSource">
-        <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-  
-        <!-- Position Column -->
-        <ng-container  matColumnDef="id">
-          <th style="text-align: left;" mat-header-cell *matHeaderCellDef>رقم</th>
-          <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.id }}</td>
-        </ng-container>
-  
-        <!-- Name Column -->
-        <ng-container matColumnDef="nom">
-          <th style="text-align: left;" mat-header-cell *matHeaderCellDef>اسم</th>
-          <td style="text-align: left;"mat-cell *matCellDef="let element">
-            <button mat-flat-button (click)="showMedecin(element)" >
-              {{element.nom}}
-            </button> 
-          </td>
-        </ng-container>
-
-        
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="gouvernat">
-          <th  style="text-align: left;" mat-header-cell *matHeaderCellDef>الولاية </th>
-          <td  style="text-align: left;" mat-cell *matCellDef="let element">{{ element.gouvernat }}</td>
-        </ng-container>
-        <!-- Action Column -->
-  
-        <!-- Weight Column -->
-        <ng-container matColumnDef="cin">
-          <th style="text-align: left;" mat-header-cell *matHeaderCellDef>ب.ت.و
-          </th>
-          <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.cin }}</td>
-        </ng-container>
-  
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="speciality">
-          <th  style="text-align: left;"mat-header-cell *matHeaderCellDef>تخصص</th>
-          <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.speciality }}</td>
-        </ng-container>
-        <!-- Action Column -->
-        
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="email">
-          <th style="text-align: left;" mat-header-cell *matHeaderCellDef>البريد الإلكتروني</th>
-          <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.email }}</td>
-        </ng-container>
-        <!-- Action Column -->
-        
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="telephone">
-          <th style="text-align: left;" mat-header-cell *matHeaderCellDef>هاتف</th>
-          <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.telephone }}</td>
-        </ng-container>
-        <!-- Action Column -->
-        <ng-container matColumnDef="action">
-          <th style="text-align: right;" mat-header-cell *matHeaderCellDef>تغيير</th>
-          <td mat-cell *matCellDef="let element">
-            <a class="pointer">
-              <button  mat-icon-button (click)="deleteMedecin(element.id)" color="warn" matTooltip="حذف">
-                <mat-icon>delete</mat-icon>
+<div fxLayout="row">
+  <div fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card class="list-etudiant" >
+      <mat-card-title>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+          <span>
+            <mat-form-field >
+              <mat-select (selectionChange)="chercheMedecin($event)" placeholder="تخصص" #input>
+                <mat-option  value="spécialité 1">
+                  spécialité 1
+                </mat-option>
+                <mat-option  value="spécialité 2">
+                  spécialité 2
+                </mat-option>
+                <mat-option  value="spécialité 3">
+                  spécialité 3
+                </mat-option>
+                <mat-option  value="spécialité 4">
+                  spécialité 4
+                </mat-option>
+              </mat-select>
+             </mat-form-field>
+          </span>
+          <span>
+            <button mat-raised-button color="primary" style="margin-left:30%;"  (click)="ajouterMedecinDialog()">إضافة طبيب
+    
             </button>
-            </a>
-            <a class="pointer">
-              <button  mat-icon-button (click)="editMedecin(element)" color="primary" matTooltip="تحرير">
-                <mat-icon>edit</mat-icon>
-            </button>
-            </a>
-          </td>
-        </ng-container>
+          </span>
+        </div>
+      </mat-card-title>
+      <mat-card-subtitle style="text-align: left;">
+        <button mat-flat-button (click)="afficherTousMedecin()">القائمة</button>
+      </mat-card-subtitle>
+        <mat-card-content>
+          <table mat-table [dataSource]="dataSource">
+            <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+            <!-- Position Column -->
+            <ng-container  matColumnDef="id">
+              <th style="text-align: left;" mat-header-cell *matHeaderCellDef>رقم</th>
+              <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.id }}</td>
+            </ng-container>
+      
+            <!-- Name Column -->
+            <ng-container matColumnDef="nom">
+              <th style="text-align: left;" mat-header-cell *matHeaderCellDef>اسم</th>
+              <td style="text-align: left;"mat-cell *matCellDef="let element">
+                <button mat-flat-button 
+                [ngClass]="{ active: element === medecin }"
+                (click)="onSelect(element)" >
+                  {{element.nom}}
+                </button> 
+              </td>
+            </ng-container>
+    
+            
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="gouvernat">
+              <th  style="text-align: left;" mat-header-cell *matHeaderCellDef>الولاية </th>
+              <td  style="text-align: left;" mat-cell *matCellDef="let element">{{ element.gouvernat }}</td>
+            </ng-container>
+            <!-- Action Column -->
+      
+            <!-- Weight Column -->
+            <ng-container matColumnDef="cin">
+              <th style="text-align: left;" mat-header-cell *matHeaderCellDef>ب.ت.و
+              </th>
+              <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.cin }}</td>
+            </ng-container>
+      
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="speciality">
+              <th  style="text-align: left;"mat-header-cell *matHeaderCellDef>تخصص</th>
+              <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.speciality }}</td>
+            </ng-container>
+            <!-- Action Column -->
+            
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="email">
+              <th style="text-align: left;" mat-header-cell *matHeaderCellDef>البريد الإلكتروني</th>
+              <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.email }}</td>
+            </ng-container>
+            <!-- Action Column -->
+            
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="telephone">
+              <th style="text-align: left;" mat-header-cell *matHeaderCellDef>هاتف</th>
+              <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.telephone }}</td>
+            </ng-container>
+            <!-- Action Column -->
+            <ng-container matColumnDef="action">
+              <th style="text-align: right;" mat-header-cell *matHeaderCellDef>تغيير</th>
+              <td mat-cell *matCellDef="let element">
+                <a class="pointer">
+                  <button  mat-icon-button (click)="deleteMedecin(element.id)" color="warn" matTooltip="حذف">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                </a>
+                <a class="pointer">
+                  <button  mat-icon-button (click)="editMedecin(element)" color="primary" matTooltip="تحرير">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                </a>
+              </td>
+            </ng-container>
+      
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    
+    
+            <tr class="mat-row" *matNoDataRow style="text-align: right;">
+              <td class="mat-cell" colspan="4" style="text-align: center;">الأطباء في التخصص "{{input.value}}" غير متاحين</td>
+            </tr>
+    
+    
+          </table>
+    
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" style="text-align: right;"></mat-paginator>
+        </mat-card-content>
+      </mat-card>
+      
+  </div>
   
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-
-
-        <tr class="mat-row" *matNoDataRow style="text-align: right;">
-          <td class="mat-cell" colspan="4" style="text-align: center;">الأطباء في التخصص "{{input.value}}" غير متاحين</td>
-        </tr>
-
-
-      </table>
-
-      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" style="text-align: right;"></mat-paginator>
-    </mat-card-content>
-  </mat-card>
+  </div>
   

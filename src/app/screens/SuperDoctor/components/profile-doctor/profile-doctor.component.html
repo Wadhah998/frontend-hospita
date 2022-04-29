@@ -1,24 +1,44 @@
-<mat-card dir="rtl" class="profile-content">
+<mat-card class="profile-content">
+  <mat-card-content class="">
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <img src="./assets/images/users/user-1.jpg"  mat-card-avatar />
+      <h3 class="name">{{ medecin?.nom}}</h3>
+      <p class="age">Médecin</p>
+    </div>
+    <div class="details" fxLayout="row" fxLayoutAlign="">
+      <mat-list role="list" class="list">
+        <mat-list-item role="listitem">ب.ت.و:{{medecin.cin}}</mat-list-item>
+        <mat-list-item role="listitem"> الهاتف:{{medecin.telephone}}</mat-list-item>
+        <mat-list-item role="listitem"> البريد الإلكتروني : {{medecin.email}}</mat-list-item>
+        <mat-list-item role="listitem">الولاية :{{medecin.gouvernat}}</mat-list-item>
+
+      </mat-list>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+
+<!--<mat-card dir="rtl" class="profile-content">
     <mat-card-content class="">
       <div class="item">
         <img src="./assets/images/users/user-1.jpg" mat-card-avatar />
         <div class="item-box">
           <div class="description">
-            <h3>{{nom}}</h3>
+            <h3>{{medecin.nom}}</h3>
             <span class="status">Médecin</span>
           </div>
   
           <div class="details" fxLayout="row" fxLayoutAlign="center">
             <mat-list role="list" class="list">
-              <mat-list-item role="listitem">Tel:{{telephone}}</mat-list-item>
+              <mat-list-item role="listitem">Tel:{{medecin.telephone}}</mat-list-item>
               <mat-list-item role="listitem"
-                >Email:{{email}}</mat-list-item
+                >Email:{{medecin.email}}</mat-list-item
               >
-              <mat-list-item role="listitem">Region:{{gouvernat}}</mat-list-item>
+              <mat-list-item role="listitem">Region:{{medecin.gouvernat}}</mat-list-item>
             </mat-list>
           </div>
         </div>
       </div>
     </mat-card-content>
   </mat-card>
-  
+-->

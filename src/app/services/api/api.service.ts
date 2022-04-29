@@ -1,8 +1,9 @@
 
-import { Medecins } from './../../models/medecin/Profiles';
+import { Medecins, message } from './../../models/medecin/Profiles';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from 'src/app/models/user/user.module';
+import { Patient } from 'src/app/models/patient/patient.model';
 
 
 
@@ -47,5 +48,14 @@ export class ApiService {
   }
   uploadFile(file : File){
   }
+
+  getPatients() {
+    return this.http.get<Patient[]>('http://localhost:3000/listPatients/');
+  }
+
+  getmessage(m:message){
+    return this.http.get<message[]>("http://localhost:3000/listMedecins/"+m);
+  }
+
 
 }

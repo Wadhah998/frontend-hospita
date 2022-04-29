@@ -2,7 +2,7 @@ import { FormGroup } from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit,EventEmitter , Output, ViewChild } from '@angular/core';
 import { DialogService } from 'src/app/services/shared/dialog.service';
 import { ApiService } from 'src/app/services/api/api.service';
 import * as _ from 'lodash';
@@ -21,6 +21,10 @@ import { ProfileDoctorComponent } from '../profile-doctor/profile-doctor.compone
 export class ListMedecinsComponent implements OnInit {
 
   medecins : Medecins []= [];
+  medecin!: Medecins;
+
+  @Output()
+  public select: EventEmitter<Medecins> = new EventEmitter();
 
   selectedSpeciality!: boolean;
    
@@ -121,9 +125,11 @@ export class ListMedecinsComponent implements OnInit {
         next:(res)=>{
           console.log(res);
           this.medecins = res
+          this.medecin = this.medecins[0];
           this.dataSource = new MatTableDataSource(res);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
+          this.select.emit(this.medecin)
         },
         error:(error)=>{
           alert("خطأ أثناء جلب السجلات")
@@ -133,6 +139,15 @@ export class ListMedecinsComponent implements OnInit {
 
   afficherTousMedecin(){
     this.getAllMedecins();
+  }
+
+  onSelect(element: Medecins) {
+    // this.selectedtIndex = index;
+    this.medecin = element;
+    console.log('from list', this.medecins);
+    this.select.emit(element);
+    //console.log('from list' + this.gePatients());
+    console.log('from list', element);
   }
 
 

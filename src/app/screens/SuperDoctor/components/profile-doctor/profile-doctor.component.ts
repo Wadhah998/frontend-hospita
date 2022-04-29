@@ -1,14 +1,20 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ApiService } from 'src/app/services/api/api.service';
+import { Medecins } from 'src/app/models/medecin/Profiles';
 
 @Component({
   selector: 'app-profile-doctor',
   templateUrl: './profile-doctor.component.html',
   styleUrls: ['./profile-doctor.component.scss']
 })
-export class ProfileDoctorComponent implements OnInit {
+export class ProfileDoctorComponent  {
+
+  @Input()
+  public medecin!: Medecins;
+
+  /*
 
   medecinForm! : FormGroup;
   actionBtn : string = "تأكيد";
@@ -31,7 +37,7 @@ export class ProfileDoctorComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.medecinForm = this.formBuilder.group({
+   /* this.medecinForm = this.formBuilder.group({
      telephone: ['', Validators.required], 
      email : ['', Validators.required],
      cin: ['', Validators.required],
@@ -72,6 +78,6 @@ export class ProfileDoctorComponent implements OnInit {
     right: `0px`});
 
 
-  }
+  }*/
 
 }

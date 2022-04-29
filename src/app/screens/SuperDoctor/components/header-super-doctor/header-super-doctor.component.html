@@ -1,55 +1,56 @@
+
+
 <mat-toolbar class="header">
-    <div class="header-toolbar">
-      <!--  <app-search></app-search>
-  
-      <app-email [emails]="emails$ | async"></app-email>-->
-      <!-- <div
-        class="search"
-         (click)="showInput()"
-        [ngClass]="{ 'show-search-input': isShowInput }"-->
-      <app-user></app-user>
-      <div class="divider"></div>
-      <app-notifications></app-notifications>
-      <div class="divider"></div>
-  
-      <div class="search">
-        <input class="search-input" placeholder="بحث" />
-        <mat-icon class="search-icon">search</mat-icon>
-      </div>
-      <div class="divider"></div>
-    </div>
-    <div class="nav-title">
-      <mat-nav-list class="nav-list">
-        <a
-          mat-list-item
-          [routerLink]="['/messagerieSuper']"
-          routerLinkActive="link-active"
-          href=""
-          class="link"
-          >الرسائل</a
-        >
+  <div class="header-toolbar">
+    <!--  <app-search></app-search>
 
-        <a
-          mat-list-item
-          [routerLink]="['/superDoctor-appointment']"
-          routerLinkActive="link-active"
-          href=""
-          class="link"
-          >الأطباء</a
-        >
-        <a
-          mat-list-item
-          [routerLink]="['/superDoctorDashboard']"
-          routerLinkActive="link-active"
-          href=""
-          class="link"
-          >لوحة متابعة</a
-        >
+    <app-email [emails]="emails$ | async"></app-email>-->
+    <!-- <div
+      class="search"
+       (click)="showInput()"
+      [ngClass]="{ 'show-search-input': isShowInput }"-->
+    <app-user></app-user>
+    <div class="divider"></div>
+    <app-notifications></app-notifications>
+    <div class="divider"></div>
 
-        
-        <a mat-list-item  class="logo">افهمني</a>
-      </mat-nav-list>
+    <div class="search">
+      <input class="search-input" placeholder="بحث" />
+      <mat-icon class="search-icon">search</mat-icon>
     </div>
-  </mat-toolbar>
-  <mat-toolbar class="hello"> مرحبا </mat-toolbar>
-  
+    <div class="divider"></div>
+  </div>
+  <div class="nav-title">
+    <mat-nav-list class="nav-list">
+      <a
+        mat-list-item
+        [routerLink]="['/messagerieSuper']"
+        routerLinkActive="link-active"
+        href=""
+        class="link"
+        >الرسائل</a
+      >
+
+      <a
+        mat-list-item
+        [routerLink]="['/superDoctor-appointment']"
+        routerLinkActive="link-active"
+        href=""
+        class="link"
+        >الأطباء</a
+      >
+      <a
+        mat-list-item
+        [routerLink]="['/superDoctorDashboard']"
+        routerLinkActive="link-active"
+        href=""
+        class="link"
+        >لوحة متابعة</a
+      >
+
+      
+      <a mat-list-item  class="logo">افهمني</a>
+    </mat-nav-list>
+  </div>
+</mat-toolbar>
+
