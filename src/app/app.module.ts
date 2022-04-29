@@ -64,6 +64,10 @@ import { DoctorMessagerieComponent } from './screens/doctor/components/doctor-me
 import { ChatComponent } from './screens/doctor/components/doctor-messagerie/chat/chat.component';
 import { ContactComponent } from './screens/doctor/components/doctor-messagerie/contact/contact.component';
 import { SimplebarAngularModule } from 'simplebar-angular';
+import { MaitredashboardComponent } from './screens/maitre/components/maitredashboard/maitredashboard.component';
+import { ListEnfantsComponent } from './screens/maitre/components/list-enfants/list-enfants.component';
+import { AjouterEnfantComponent } from './screens/maitre/forms/ajouter-enfant/ajouter-enfant.component';
+import { ProfilEnfantsComponent } from './screens/maitre/components/profil-enfants/profil-enfants.component';
 
 @NgModule({
   declarations: [
@@ -112,6 +116,10 @@ import { SimplebarAngularModule } from 'simplebar-angular';
     HartComponent,
     LandingNavbarComponent,
     UserProfileComponent,
+    MaitredashboardComponent,
+    ListEnfantsComponent,
+    AjouterEnfantComponent,
+    ProfilEnfantsComponent,
     
     FilterUsersPipe,
     DoctorMessagerieComponent,

@@ -46,6 +46,8 @@ import { AdminGuard } from './guards/admin.guard';
 import { ProfileApointementComponent } from './screens/superDoctor/components/profile-apointement/profile-apointement.component';
 import { ProfileMedecinComponent } from './screens/superDoctor/components/profile-medecin/profile-medecin.component';
 
+import { MaitredashboardComponent } from './screens/maitre/components/maitredashboard/maitredashboard.component';
+import { ListEnfantsComponent } from './screens/maitre/components/list-enfants/list-enfants.component';
 
 
 
@@ -89,6 +91,9 @@ const routes: Routes = [
   { path: 'headerSuper', component : HeaderSuperDoctorComponent},
   { path: 'profileApoint', component : ProfileApointementComponent},
   { path: 'profileApoint/singleDoctor/:id', component : ProfileMedecinComponent },
+  { path: 'maitreDashboard', component: MaitredashboardComponent },
+
+  { path :  'listeEnfants', component : ListEnfantsComponent },
   {
     path: '',
     component: DoctorComponent,
