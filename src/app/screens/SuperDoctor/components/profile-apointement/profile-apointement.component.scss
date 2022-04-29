@@ -1,112 +1,106 @@
 mat-card {
-    margin: 16px;
-  }
-  .profile-content img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-  }
-  .profile-content {
-    /*  display: flex;
-    align-items: center;
-    justify-content: space-between; */
-  }
-  .status {
-    text-align: center;
-    color: rgb(141, 138, 133);
-  }
-  .item {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-  /* .image-box {
-    width: 50%;
-  } */
-  .item-content {
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
-  }
-  
-  .description {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-  }
-  .description h3 {
-    margin-bottom: 0px;
-  }
-  .details mat-list mat-list-item {
-    height: 30px;
-    padding: 0;
-  }
-  .details .mat-list-base .mat-list-item .mat-list-item-content {
-    padding: 0 !important;
-  }
-  .mat-list-item-content {
-    padding: 0 !important;
-  }
-  .children-detail {
-    margin: 8px 0px 0px 80px;
-    display: flex;
-    flex-direction: column;
-  }
-  .children-detail .address {
-    margin-bottom: 0;
-    align-self: flex-end;
-  }
-  .children-detail .date {
-    display: flex;
-    justify-content: space-between;
-  }
-  .card-button {
-    margin: 0 !important;
-    width: 50%;
-    height: 100%;
-    box-sizing: border-box;
-    position: relative;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    -webkit-tap-highlight-color: transparent;
-    display: inline-block;
-    white-space: nowrap;
-    text-decoration: none;
-    vertical-align: baseline;
-    text-align: center;
-    margin: 0;
-    min-width: 64px;
-    line-height: 36px;
-    padding: 0 16px;
-    color: black;
-    font-size: 18px;
-  }
-  .mat-card-actions {
-    padding: 0 !important;
-    margin: 0 !important;
-    width: 100% !important;
-  }
-  .mat-card {
-    padding-bottom: 0px;
-  }
-  .card-button-left {
-    border-right: 2px solid #b5a8a84f;
-  }
-  .switch {
-    color: #1355d9;
-    margin-left: 12px;
-  }
-  .done {
-    color: #2cd889;
-    margin-left: 12px;
-  }
-  .ml-12 {
-    margin-left: 12px;
-  }
-  
+  margin: 16px;
+}
+.profile-content img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.status {
+  text-align: center;
+  color: rgb(141, 138, 133);
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
+}
+/* .image-box {
+  width: 50%;
+} */
+.item-content {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.description h3 {
+  margin-bottom: 0px;
+}
+.details mat-list mat-list-item {
+  height: 30px;
+  padding: 0;
+}
+.details .mat-list-base .mat-list-item .mat-list-item-content {
+  padding: 0 !important;
+}
+.mat-list-item-content {
+  padding: 0 !important;
+}
+.children-detail {
+  margin: 8px 0px 0px 80px;
+  display: flex;
+  flex-direction: column;
+}
+.children-detail .address {
+  margin-bottom: 0;
+  align-self: flex-end;
+}
+.children-detail .date {
+  display: flex;
+  justify-content: space-between;
+}
+.card-button {
+  margin: 0 !important;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  margin: 0;
+  min-width: 64px;
+  line-height: 36px;
+  padding: 0 16px;
+  color: black;
+  font-size: 18px;
+}
+.mat-card-actions {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+.mat-card {
+  padding-bottom: 0px;
+}
+.card-button-left {
+  border-right: 2px solid #b5a8a84f;
+}
+.switch {
+  color: #1355d9;
+  margin-left: 12px;
+}
+.done {
+  color: #2cd889;
+  margin-left: 12px;
+}
+.ml-12 {
+  margin-left: 12px;
+}

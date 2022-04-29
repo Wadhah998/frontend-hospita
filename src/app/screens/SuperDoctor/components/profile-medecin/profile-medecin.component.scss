@@ -1,0 +1,39 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Cairo&display=swap");
+* {
+  font-family: "Cairo", sans-serif;
+}
+.profile-content img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.name {
+  margin-bottom: 0;
+}
+.status {
+  text-align: center;
+  color: rgb(141, 138, 133);
+}
+.details mat-list mat-list-item {
+  height: 30px;
+  padding: 0;
+}
+.details .mat-list-base .mat-list-item .mat-list-item-content {
+  padding: 0 !important;
+}
+.mat-list-item-content {
+  padding: 0 !important;
+}
+.note .note-title {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+
+.hello {
+  background: #cfe7ec !important;
+  color: #07468f;
+  display: flex;
+  justify-content: end;
+}

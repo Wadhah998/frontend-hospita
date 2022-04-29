@@ -43,6 +43,10 @@ import { DoctorMessagerieComponent } from './screens/doctor/components/doctor-me
 import { AuthGuard } from './guards/auth.guard';
 import { DoctorGuard } from './guards/doctor.guard';
 import { AdminGuard } from './guards/admin.guard';
+import { ProfileApointementComponent } from './screens/superDoctor/components/profile-apointement/profile-apointement.component';
+import { ProfileMedecinComponent } from './screens/superDoctor/components/profile-medecin/profile-medecin.component';
+
+
 
 
 const MaterialComponents = [
@@ -81,8 +85,10 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'superDoctorDashboard', component: DashboardSuperDoctorComponent },
   { path: 'listMedecins', component: ListMedecinsComponent },
-  { path: 'allCharts', component: AllChartsComponent },
-  { path: 'headerSuper', component: HeaderSuperDoctorComponent },
+  { path: 'allCharts', component : AllChartsComponent},
+  { path: 'headerSuper', component : HeaderSuperDoctorComponent},
+  { path: 'profileApoint', component : ProfileApointementComponent},
+  { path: 'profileApoint/singleDoctor/:id', component : ProfileMedecinComponent },
   {
     path: '',
     component: DoctorComponent,
@@ -111,7 +117,7 @@ const routes: Routes = [
       },
     ],
   },
-  {
+  /*{
     path: '',
     component: SuperMedecinComponent,
     children: [
@@ -120,7 +126,10 @@ const routes: Routes = [
         component: SuperDoctorApointementComponent,
       },
     ],
-  },
+  },*/
+  { path: 'superDoctor-appointment', component : SuperDoctorApointementComponent }
+
+
 ];
 
 @NgModule({

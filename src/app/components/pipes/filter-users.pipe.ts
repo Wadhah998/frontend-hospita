@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'filterUsers',
 })
 export class FilterUsersPipe implements PipeTransform {
-  transform(listUsers: any, userName: string): any {
+  transform(listUsers: any[], userName: string): any {
     if (listUsers && userName) {
       return listUsers.filter((d) => d.name.indexOf(userName) > -1);
     }

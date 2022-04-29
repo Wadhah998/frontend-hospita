@@ -49,7 +49,10 @@ import { ListMedecinsComponent } from './screens/SuperDoctor/components/list-med
 import { ProfileDoctorComponent } from './screens/SuperDoctor/components/profile-doctor/profile-doctor.component';
 import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie/messagerie.component';
 import { AllChartsComponent } from './screens/SuperDoctor/components/all-charts/all-charts.component';
-
+import { ProfileApointementComponent } from './screens/superDoctor/components/profile-apointement/profile-apointement.component';
+import { ProfileMedecinComponent } from './screens/superDoctor/components/profile-medecin/profile-medecin.component';
+import { RendezVousFormComponent } from './screens/superDoctor/form/rendez-vous-form/rendez-vous-form.component';
+import { SidebarComponent } from './screens/superDoctor/components/messagerie/sidebar/sidebar.component';
 import { ListPatientsComponent } from './screens/doctor/components/doctor-consultation/list-patients/list-patients.component';
 import { TensionComponent } from './screens/doctor/components/charts/tension/tension.component';
 import { SugarComponent } from './screens/doctor/components/charts/sugar/sugar.component';
@@ -114,6 +117,12 @@ import { SimplebarAngularModule } from 'simplebar-angular';
     DoctorMessagerieComponent,
     ChatComponent,
     ContactComponent,
+    ProfileApointementComponent,
+    ProfileMedecinComponent,
+    RendezVousFormComponent,
+    FilterUsersPipe,
+    SidebarComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

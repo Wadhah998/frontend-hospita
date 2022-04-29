@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
- role:string;
+ role!:string;
  constructor(private http: HttpClient,private router:Router) { }
  isLoggedIn(){
    if(localStorage.getItem('currentUser')){
@@ -19,7 +19,7 @@ export class AuthService {
    this.router.navigate(['/'])
  }
  getRole(){
-   let user=JSON.parse(localStorage.getItem("currentUser"));
+   let user=JSON.parse(localStorage.getItem("currentUser")!);
    return this.role=user.typeUser;
  }
 }

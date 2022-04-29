@@ -1,0 +1,30 @@
+<h1 mat-dialog-title style="margin-right:45%;  color:rgb(7, 107, 221)">إسناد موعد </h1>
+<div mat-dialog-content >
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <img src="./assets/images/users/user-1.jpg"  mat-card-avatar />
+    <h3 class="name">{{ doctor?.nom}}</h3>
+    <p class="age">Enfant</p>
+  </div>
+    <form >
+        <mat-form-field  class="class1" appearance="outline">
+            <mat-select (selectionChange)="chercheMedecin($event) " placeholder="قائمة الأطباء" #input>
+                <mat-option *ngFor="let medecin of medecins"  value="{{medecin.nom}}">
+                  {{medecin.nom}}
+                </mat-option>
+              </mat-select>
+        </mat-form-field>
+        <mat-form-field  class="class1" appearance="outline">
+          <mat-select  (selectionChange)="chercheMedecin($event)"   placeholder="قائمة الأطباء حسب ب.ت.و
+          " #input>
+              <mat-option *ngFor="let medecin of medecins"  value="{{medecin.nom}}">
+                {{medecin.loginNumber}}
+              </mat-option>
+            </mat-select>
+      </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-actions [align]="'end'" style="margin-left: 65%;">
+    <button mat-raised-button color="warn" mat-dialog-close>إلغاء</button> 
+    <button mat-raised-button color="primary" (click)="affecterMedecin()">تأكيد</button>
+</div>

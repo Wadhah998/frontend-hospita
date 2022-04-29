@@ -1,26 +1,19 @@
-<p class="page-title">المواعيد</p>
+<app-header-super-doctor></app-header-super-doctor>
+<mat-toolbar class="hello"> 
+  مرحبا </mat-toolbar>   
+<div style="background-color: rgb(224, 235, 247);">
 
+  <p class="page-title" style="font-size: 100%;">قائمة الأطباء</p>
 <div class="box" fxLayout="row wrap" fxLayoutAlign="space-between center">
 
 
 </div>
-<div fxLayout="row wrap">
-  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="100">
-    <app-chealdren-profile></app-chealdren-profile>
-  </div>
-  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="50">
-    <app-chealdren-profile></app-chealdren-profile>
-  </div>
-  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="100">
-    <app-chealdren-profile></app-chealdren-profile>
-  </div>
-  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="100">
-    <app-chealdren-profile></app-chealdren-profile>
-  </div>
-  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="100">
-    <app-chealdren-profile></app-chealdren-profile>
-  </div>
-  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="100">
-    <app-chealdren-profile></app-chealdren-profile>
+
+<div fxFlex.gt-lg="33" fxFlex.gt-md="33" fxFlex.gt-xs="100" fxFlex="100">
+  <app-rendez-vous-form  [doctor]="medecin"></app-rendez-vous-form>
+</div>
+<div fxFlex.gt-lg="66" fxFlex.gt-md="66" fxFlex.gt-xs="100" fxFlex="100">
+  <div fxLayout="row wrap">
+    <app-profile-apointement  (select)="onLogin($event)"></app-profile-apointement>   
   </div>
 </div>

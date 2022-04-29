@@ -9,8 +9,8 @@ import { User } from 'src/app/models/user/user.module';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public test : User
-  menu:Menu[];
+  public test! : User
+  menu!:Menu[];
   menuMedecin=[ 
     {
         "link":"الرسائل",
@@ -116,7 +116,7 @@ menuParent=[
   constructor() { }
 
   ngOnInit(): void {
-    this.test=JSON.parse(localStorage.getItem("currentUser"));
+    this.test=JSON.parse(localStorage.getItem("currentUser")!);
     console.log("from navbar",this.test.typeUser);
     // if (this.test.typeUser=="طبيب")
     // {
