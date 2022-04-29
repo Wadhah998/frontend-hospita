@@ -1,3 +1,4 @@
+import { PatientService } from './guards/patient.service';
 import { AdminComponent } from './screens/admin/admin.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { ProfileComponent } from './screens/form/profile/profile.component';
@@ -43,11 +44,15 @@ import { DoctorMessagerieComponent } from './screens/doctor/components/doctor-me
 import { AuthGuard } from './guards/auth.guard';
 import { DoctorGuard } from './guards/doctor.guard';
 import { AdminGuard } from './guards/admin.guard';
+
+
 import { ProfileApointementComponent } from './screens/superDoctor/components/profile-apointement/profile-apointement.component';
 import { ProfileMedecinComponent } from './screens/superDoctor/components/profile-medecin/profile-medecin.component';
 
 import { MaitredashboardComponent } from './screens/maitre/components/maitredashboard/maitredashboard.component';
 import { ListEnfantsComponent } from './screens/maitre/components/list-enfants/list-enfants.component';
+import { sample } from 'lodash';
+import { SuperdocService } from './guards/superdoc.service';
 
 
 
@@ -85,7 +90,7 @@ const routes: Routes = [
   { path: 'ajouterMedecin', component: MedecinFormComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'superDoctorDashboard', component: DashboardSuperDoctorComponent },
+  { path: 'superDoctorDashboard', component: DashboardSuperDoctorComponent,canActivate:[AuthGuard,SuperdocService] },
   { path: 'listMedecins', component: ListMedecinsComponent },
   { path: 'allCharts', component : AllChartsComponent},
   { path: 'headerSuper', component : HeaderSuperDoctorComponent},
@@ -97,17 +102,17 @@ const routes: Routes = [
   {
     path: '',
     component: DoctorComponent,
-    canActivate:[AuthGuard],
+    canActivate:[AuthGuard,DoctorGuard],
     children: [
       { path: 'doctor-appointment', component: DoctorAppointmentComponent ,
-      canActivate:[AuthGuard,DoctorGuard]},
+      },
       {
         path: 'doctor-consultation',
-        component: DoctorConsultationComponent,
+        component: DoctorConsultationComponent
       },
       {
         path: 'doctor-chat',
-        component: DoctorMessagerieComponent,
+        component: DoctorMessagerieComponent
       },
     ],
   },
@@ -118,7 +123,7 @@ const routes: Routes = [
       /*  { path: 'doctor-appointment', component: DoctorAppointmentComponent }, */
       {
         path: 'parent-dashboard',
-        component: ParentDashboardComponent,
+        component: ParentDashboardComponent,canActivate :[AuthGuard,PatientService],
       },
     ],
   },
@@ -132,7 +137,7 @@ const routes: Routes = [
       },
     ],
   },*/
-  { path: 'superDoctor-appointment', component : SuperDoctorApointementComponent }
+  { path: 'superDoctor-appointment', component : SuperDoctorApointementComponent,canActivate:[AuthGuard,SuperdocService] }
 
 
 ];
