@@ -1,8 +1,17 @@
 {
   "listMedecins": [
     {
-      "idMedecin": "Doctor",
-      "id": "1"
+      "typerUser": "Doctor",
+      "telephone": "5235343",
+      "email": "orl.ndonse@gmail.com",
+      "cin": "566556",
+      "speciality": "spécialité 2",
+      "nom": "Imed",
+      "prenom": "BebeaR",
+      "password": "46666",
+      "id": "2",
+      "gouvernat": "",
+      "CodePostal": ""
     },
     {
       "typerUser": "Doctor",
