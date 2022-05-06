@@ -6,10 +6,12 @@ import { User } from 'src/app/models/user/user.module';
 import { Patient } from './../../models/patient/patient.model';
 import { Enfants } from 'src/app/models/enfant/Enfant';
 
+
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
+  
   constructor(private http: HttpClient) {}
 
   postMedecin(data: any) {
@@ -18,6 +20,9 @@ export class ApiService {
       data
     );
   }
+   login(email: string, password: string): Promise<any> {
+    return this.http.post<any>(`http://localhost:8000/api/persons/login`, {email, password}).toPromise();
+}
   postuser(data: any) {
     return this.http.post<User[]>('http://localhost:3000/listUsers/', data);
   }

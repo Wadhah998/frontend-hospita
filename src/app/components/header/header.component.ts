@@ -13,23 +13,24 @@ export class HeaderComponent implements OnInit {
   menu!:Menu[];
   menuMedecin=[ 
     {
+        "link":"التشخيص",
+        "redirect":"doctor-consultation"
+    },
+    {
         "link":"الرسائل",
-        "redirect":""
+        "redirect":"doctor-chat"
 
     },
    
     {
-        "link":"الأطباء",
-        "redirect":""
+        "link":"جدول المواعيد",
+        "redirect":"doctor-consultation"
     },
     {
         "link":"لوحة متابعة",
-        "redirect":"/medecins"
+        "redirect":"doctor-appointment"
     },
-    {
-        "link":"افهمني",
-        "redirect":""
-    }    
+      
        
   ]
   menuAdmin=[
@@ -162,21 +163,21 @@ menuParent=[
 
     // }
     switch (this.test.typeUser) {
-      case "طبيب":
+      case "doctor":
         this.menu=this.menuMedecin
         break;
         case "admin":
         this.menu=this.menuMedecin
-    break;
-    case "طبيب أول":
+        break;
+    case  "superDoctor":
       this.menu=this.menuSuperDoctor;
       break;
-      case "ولي":
+      case "parent":
       this.menu=this.menuParent;
       break;
 
       default:
-        this.menu=this.menuSuperDoctor;
+        this.menu=this.menuMedecin;
         break;
     }
 
