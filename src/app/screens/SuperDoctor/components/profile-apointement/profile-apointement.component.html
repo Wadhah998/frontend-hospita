@@ -1,12 +1,12 @@
 <div fxLayout="row wrap">
-  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="100"*ngFor="let m of medecins; let i = index">
+  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="100"*ngFor="let enfant of enfants; let i = index">
     <mat-card  class="profile-content">
     
       <mat-card-content   >
         <div  class="item-content">
           <div class="description">
-            <img [src]="img" mat-card-avatar />
-            <h3  class="name">{{m.nom}}</h3>
+              <img [src]="img" mat-card-avatar />
+            <h3  class="name">{{enfant.nomEnfant}}</h3>
             <span class="age">طبيب مختص</span>
           </div>
           <div class="image-box">
@@ -19,10 +19,7 @@
       <mat-divider class="lignes"></mat-divider>
       <mat-card-actions>
         <a class="card-button"
-           style="margin-left: 30%;font-size: 55%;"
-           [ngClass]="{ active: m === doctor }"
-           (click)="onSelect(m)"
-          ><i class="fa-solid fa-user switch"></i>إسناد موعد </a>
+           style="margin-left: 30%;font-size: 55%;" (click)="rendezvous(enfant)"><i class="fa-solid fa-user switch"></i>إسناد موعد </a>
       </mat-card-actions>
     </mat-card>
        

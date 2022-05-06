@@ -2,13 +2,14 @@
   "listMedecins": [
     {
       "typerUser": "Doctor",
-      "telephone": "52358423",
+          "telephone": "5235343",
       "email": "orl.ndonse@gmail.com",
-      "cin": "5888877",
-      "speciality": "spécialité 1",
+      "cin": "566556",
+      "speciality": "spécialité 2",
       "nom": "Imed",
+      "prenom": "BebeaR",
       "password": "46666",
-      "id": "1",
+      "id": "2",
       "gouvernat": "",
       "CodePostal": "",
       "latestMessageRead": true,
@@ -48,80 +49,15 @@
       "cin": "566556",
       "speciality": "spécialité 2",
       "nom": "Rabeb",
+      "prenom": "BebeaR",
       "password": "46666",
       "id": "2",
-      "gouvernat": "Sfax",
-      "CodePostal": "",
-      "latestMessageRead": false,
-      "latestMessage": "Bonjour",
-      "time": "PM 11:21",
-      "messages": [
-        {
-          "id": "1",
-          "body": "uvp",
-          "time": "8:21",
-          "me": true
-        },
-        {
-          "id": "2",
-          "body": "how are you?",
-          "time": "8:21",
-          "me": false
-        },
-        {
-          "id": "3",
-          "body": "im fine thanks",
-          "time": "8:21",
-          "me": true
-        },
-        {
-          "id": "4",
-          "body": "Glad tjjjjjjjjjjjjo hear that",
-          "time": "8:21",
-          "me": false
-        }
-      ]
+      "gouvernat": "",
+      "CodePostal": ""
     },
     {
-      "typerUser": "Doctor",
-      "telephone": "df",
-      "email": "gfd@gmail.com",
-      "cin": "fdgd",
-      "speciality": "fgd",
-      "nom": "orly",
-      "password": "fg",
-      "id": "3",
-      "gouvernat": "fdg",
-      "CodePostal": "fdg",
-      "latestMessageRead": false,
-      "latestMessage": "bien réçu",
-      "time": "AM 12:00",
-      "messages": [
-        {
-          "id": "1",
-          "body": "Hello world",
-          "time": "8:21",
-          "me": true
-        },
-        {
-          "id": "2",
-          "body": "how are you?",
-          "time": "8:21",
-          "me": false
-        },
-        {
-          "id": "3",
-          "body": "im fine tmmmmmmmmmmmmmhanks",
-          "time": "8:21",
-          "me": true
-        },
-        {
-          "id": "4",
-          "body": "Glad to hear that",
-          "time": "8:21",
-          "me": false
-        }
-      ]
+      "idMedecin": "Doctor",
+      "id": "3"
     },
     {
       "typerUser": "Doctor",
@@ -130,39 +66,11 @@
       "cin": "yer",
       "speciality": "ey",
       "nom": "tert",
+      "prenom": "gfbgn",
       "password": "yer",
       "id": "4",
-      "gouvernat": "ery",
-      "CodePostal": "yery",
-      "latestMessageRead": true,
-      "latestMessage": "Good Morning",
-      "time": "AM 5:15",
-      "messages": [
-        {
-          "id": "1",
-          "body": "Hello world",
-          "time": "8:21",
-          "me": true
-        },
-        {
-          "id": "2",
-          "body": "how aregggggggggggggg you?",
-          "time": "8:21",
-          "me": false
-        },
-        {
-          "id": "3",
-          "body": "im fine thanks",
-          "time": "8:21",
-          "me": true
-        },
-        {
-          "id": "4",
-          "body": "Glad to hear that",
-          "time": "8:21",
-          "me": false
-        }
-      ]
+      "gouvernat": "",
+      "CodePostal": ""
     },
     {
       "typerUser": "Doctor",
@@ -173,37 +81,8 @@
       "nom": "utyu",
       "password": "sdf",
       "id": "5",
-      "gouvernat": "tyj",
-      "CodePostal": "jty",
-      "latestMessageRead": true,
-      "latestMessage": "Ok",
-      "time": "PM 11:15",
-      "messages": [
-        {
-          "id": "1",
-          "body": "ddddddddddHello world",
-          "time": "8:21",
-          "me": true
-        },
-        {
-          "id": "2",
-          "body": "how are you?",
-          "time": "8:21",
-          "me": false
-        },
-        {
-          "id": "3",
-          "body": "im fine thanks",
-          "time": "8:21",
-          "me": true
-        },
-        {
-          "id": "4",
-          "body": "Glad to hear that",
-          "time": "8:21",
-          "me": false
-        }
-      ]
+      "gouvernat": "htrhr",
+      "CodePostal": "htthrt"
     },
     {
       "typerUser": "Doctor",
@@ -365,6 +244,19 @@
           "me": false
         }
       ]
+    },
+    {
+      "typerUser": "Doctor",
+      "telephone": "trh",
+      "email": "trh@gmail.com",
+      "cin": "rth",
+      "speciality": "rth",
+      "nom": "thger",
+      "prenom": "hthr",
+      "password": "thr",
+      "id": "thrtherhzezrh",
+      "gouvernat": "ezrh",
+      "CodePostal": "erhhzh"
     }
   ],
   "listUsers": [
@@ -499,4 +391,6 @@
       "CodePostal": ""
     }
   ]
-}
+  
+  
+  }

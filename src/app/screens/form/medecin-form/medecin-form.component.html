@@ -2,8 +2,12 @@
 <div mat-dialog-content >
     <form [formGroup]="medecinForm">
         <mat-form-field class="class1" appearance="outline">
-            <mat-label>الاسم واللقب</mat-label>
-            <input formControlName="nom" matInput placeholder="الاسم واللقب">
+            <mat-label>اسم</mat-label>
+            <input formControlName="nom" matInput placeholder="اسم">
+        </mat-form-field>
+        <mat-form-field class="class1" appearance="outline">
+            <mat-label>الاسم الأول</mat-label>
+            <input formControlName="prenom" matInput placeholder="الاسم الأول">
         </mat-form-field>
         <mat-form-field class="class1" appearance="outline">
             <mat-label>رقم التسجيل</mat-label>

@@ -1,20 +1,33 @@
-mat-form-field.class1{
-    width: 80%;
-    display: block;
-    margin: auto;
-}
-
-.class2{
+mat-card {
+    margin: 16px;
+  }
+  .profile-content {
+    background: #17eb1e0d;
+  }
+  .profile-content img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  .status {
+    text-align: center;
+    color: rgb(141, 138, 133);
+  }
+  .item {
     display: flex;
-    margin: auto;
-    width: 80%;
     justify-content: space-between;
-}
-.class2 mat-form-field{
-    width: 125px;
-    
-}
-
-.mat-dialog-actions{
-    justify-content: flex-end;
-    }
+  }
+  .item .description span {
+    padding-left: 30px;
+  }
+  .details mat-list mat-list-item {
+    height: 30px;
+    padding: 0;
+  }
+  .details .mat-list-base .mat-list-item .mat-list-item-content {
+    padding: 0 !important;
+  }
+  .mat-list-item-content {
+    padding: 0 !important;
+  }
+  

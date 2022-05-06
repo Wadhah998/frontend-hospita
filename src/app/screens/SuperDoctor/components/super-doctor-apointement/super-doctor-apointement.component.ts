@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Medecins } from 'src/app/models/medecin/Profiles';
 import { RendezVousFormComponent } from '../../form/rendez-vous-form/rendez-vous-form.component';
 import { ProfileDoctorComponent } from '../profile-doctor/profile-doctor.component';
 
@@ -10,8 +9,6 @@ import { ProfileDoctorComponent } from '../profile-doctor/profile-doctor.compone
   styleUrls: ['./super-doctor-apointement.component.scss']
 })
 export class SuperDoctorApointementComponent implements OnInit {
-
-  medecin!: Medecins;
 
   constructor(private dialog : MatDialog) { }
 
@@ -26,9 +23,5 @@ export class SuperDoctorApointementComponent implements OnInit {
       disableClose:true
 
     });
-  }
-
-  onLogin(event: Medecins) {
-    this.medecin = event;
   }
 }

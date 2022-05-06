@@ -1,28 +1,33 @@
 <h1 mat-dialog-title style="margin-right:45%;  color:rgb(7, 107, 221)">إسناد موعد </h1>
-<div mat-dialog-content >
-  <div fxLayout="column" fxLayoutAlign="center center">
-    <img src="./assets/images/users/user-1.jpg"  mat-card-avatar />
-    <h3 class="name">{{ doctor?.nom}}</h3>
-    <p class="age">Enfant</p>
-  </div>
-    <form >
-        <mat-form-field  class="class1" appearance="outline">
-            <mat-select (selectionChange)="chercheMedecin($event) " placeholder="قائمة الأطباء" #input>
-                <mat-option *ngFor="let medecin of medecins"  value="{{medecin.nom}}">
-                  {{medecin.nom}}
-                </mat-option>
-              </mat-select>
-        </mat-form-field>
-        <mat-form-field  class="class1" appearance="outline">
-          <mat-select  (selectionChange)="chercheMedecin($event)"   placeholder="قائمة الأطباء حسب ب.ت.و
-          " #input>
-              <mat-option *ngFor="let medecin of medecins"  value="{{medecin.nom}}">
-                {{medecin.loginNumber}}
+<mat-card class="profile-content">
+  <mat-card-content class="">
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <img src="./assets/images/users/user-1.jpg"  mat-card-avatar />
+      <h3 class="name">{{ nomEnfant}}</h3>
+      <p class="age">Médecin</p>
+    </div>
+    <div class="details" fxLayout="row" fxLayoutAlign="">
+      <mat-list role="list" class="list">
+        <mat-list-item role="listitem">اسم الوالدين:{{ nomParent}}</mat-list-item>
+        <mat-list-item role="listitem"> الهاتف:{{ telephone}}</mat-list-item>
+        <mat-list-item role="listitem"> البريد الإلكتروني : {{ email}}</mat-list-item>
+        <mat-list-item role="listitem">نتيجة:{{ situation}}</mat-list-item>
+        <mat-list-item role="listitem">المدرسة:{{ ecole}}</mat-list-item>
+
+      </mat-list>
+    </div>
+    <form [formGroup]="enfantForm">
+      <mat-form-field  class="class1" appearance="outline">
+          <mat-select  formControlName="idMedecin" (selectionChange)="chercheMedecin($event)" placeholder="قائمة الأطباء" #input>
+              <mat-option *ngFor="let medecin of medecins"  value="{{medecin.id}} ">
+                {{medecin.nom}}
+                {{medecin.prenom}}
               </mat-option>
             </mat-select>
       </mat-form-field>
-    </form>
-</div>
+  </form>
+  </mat-card-content>
+</mat-card>
 
 <div mat-dialog-actions [align]="'end'" style="margin-left: 65%;">
     <button mat-raised-button color="warn" mat-dialog-close>إلغاء</button> 

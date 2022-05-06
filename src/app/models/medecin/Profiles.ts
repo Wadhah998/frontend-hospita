@@ -8,6 +8,7 @@ export class message {
     }
 }
 export class Medecins {
+
     telephone: number;
     email: string;
     addedBy : number;
@@ -16,6 +17,7 @@ export class Medecins {
     speciality: string;
     password: string;
     nom : string;
+    prenom: string;
     id: number;
     codePostal : number;
     image: string;
@@ -28,7 +30,7 @@ export class Medecins {
     time : string;
     
 
-    constructor(telephone: number,codePostal : number, email: string ,gouvernat: string ,loginNumber : number, speciality : string, password: string, nom : string, id : number, image: string, latestMessageRead :boolean, latestMessage : string, time : string, addedBy : number , messages:message , typerUser :string ){
+    constructor(telephone: number,codePostal : number, email: string ,gouvernat: string ,loginNumber : number, speciality : string, password: string, nom : string, prenom : string, id : number, image: string, latestMessageRead :boolean, latestMessage : string, time : string, addedBy : number , messages:message , typerUser :string ){
         this.telephone = telephone;
         this.email = email;
         this.loginNumber = loginNumber;
@@ -45,5 +47,6 @@ export class Medecins {
         this.addedBy = addedBy; 
         this.messages = messages;
         this.typerUser = typerUser;
+        this.prenom = prenom;
     }
 }

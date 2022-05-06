@@ -29,6 +29,7 @@ export class MedecinFormComponent implements OnInit {
      loginNumber: ['', Validators.required],
      speciality: ['', Validators.required],
      nom: ['', Validators.required],
+     prenom: ['', Validators.required],
      password:['', Validators.required],
      id: ['', Validators.required],
      gouvernat : ['', Validators.required],
@@ -44,6 +45,7 @@ export class MedecinFormComponent implements OnInit {
         this.editData.speciality
       );
       this.medecinForm.controls['nom'].setValue(this.editData.nom);
+      this.medecinForm.controls['prenom'].setValue(this.editData.prenom);
       this.medecinForm.controls['password'].setValue(this.editData.password);
       this.medecinForm.controls['id'].setValue(this.editData.id);
     }

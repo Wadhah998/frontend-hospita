@@ -46,13 +46,14 @@ import { DoctorGuard } from './guards/doctor.guard';
 import { AdminGuard } from './guards/admin.guard';
 
 
-import { ProfileApointementComponent } from './screens/superDoctor/components/profile-apointement/profile-apointement.component';
-import { ProfileMedecinComponent } from './screens/superDoctor/components/profile-medecin/profile-medecin.component';
 
 import { MaitredashboardComponent } from './screens/maitre/components/maitredashboard/maitredashboard.component';
 import { ListEnfantsComponent } from './screens/maitre/components/list-enfants/list-enfants.component';
 import { sample } from 'lodash';
 import { SuperdocService } from './guards/superdoc.service';
+import { ProfileApointementComponent } from './screens/superDoctor/components/profile-apointement/profile-apointement.component';
+import { ProfileMedecinComponent } from './screens/superDoctor/components/profile-medecin/profile-medecin.component';
+
 
 
 
@@ -116,7 +117,7 @@ const routes: Routes = [
       },
     ],
   },
-  {
+  /*{
     path: '',
     component: ParentComponent,
     children: [
@@ -125,22 +126,14 @@ const routes: Routes = [
         path: 'parent-dashboard',
         component: ParentDashboardComponent,canActivate :[AuthGuard,PatientService],
       },
-    ],
-  },
-  /*{
-    path: '',
-    component: SuperMedecinComponent,
-    children: [
-      {
-        path: 'superDoctor-appointment',
-        component: SuperDoctorApointementComponent,
-      },
-    ],
-  },*/
-  { path: 'superDoctor-appointment', component : SuperDoctorApointementComponent,canActivate:[AuthGuard,SuperdocService] }
+      { path: 'superDoctor-appointment', component : SuperDoctorApointementComponent,canActivate:[AuthGuard,SuperdocService] }
+
+    ];
+  
 
 
-];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes), MaterialComponents],
