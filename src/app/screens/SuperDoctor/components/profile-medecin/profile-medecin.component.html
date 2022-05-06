@@ -1,0 +1,112 @@
+<app-header-super-doctor></app-header-super-doctor>
+<mat-toolbar class="hello">
+      مرحبا
+
+
+  </mat-toolbar>
+<div fxLayout="row">
+  <div fxFlex.gt-lg="33" fxFlex.gt-md="33" fxFlex.gt-xs="100" fxFlex="100">
+      <mat-card class="profile-content">
+        <mat-card-content class="">
+          <div fxLayout="column" fxLayoutAlign="center center">
+            <img src="./assets/images/users/user-1.jpg"  mat-card-avatar />
+            <h3 class="name">{{ medecin?.nom}}</h3>
+            <p class="age">Médecin</p>
+          </div>
+          <div class="details" fxLayout="row" fxLayoutAlign="">
+            <mat-list role="list" class="list">
+              <mat-list-item role="listitem">ب.ت.و:{{medecin.cin}}</mat-list-item>
+              <mat-list-item role="listitem"> الهاتف:{{medecin.telephone}}</mat-list-item>
+              <mat-list-item role="listitem"> البريد الإلكتروني : {{medecin.email}}</mat-list-item>
+              <mat-list-item role="listitem">الولاية :{{medecin.gouvernat}}</mat-list-item>
+      
+            </mat-list>
+          </div>
+          <mat-divider></mat-divider>
+    <div class="note">
+      <p class="note-title"><button mat-raised-button color="primary"  (click)="onBack()">إرجاع</button></p>
+    </div>
+        </mat-card-content>
+      </mat-card>
+      
+      
+      <!--<mat-card dir="rtl" class="profile-content">
+          <mat-card-content class="">
+            <div class="item">
+              <img src="./assets/images/users/user-1.jpg" mat-card-avatar />
+              <div class="item-box">
+                <div class="description">
+                  <h3>{{medecin.nom}}</h3>
+                  <span class="status">Médecin</span>
+                </div>
+        
+                <div class="details" fxLayout="row" fxLayoutAlign="center">
+                  <mat-list role="list" class="list">
+                    <mat-list-item role="listitem">Tel:{{medecin.telephone}}</mat-list-item>
+                    <mat-list-item role="listitem"
+                      >Email:{{medecin.email}}</mat-list-item
+                    >
+                    <mat-list-item role="listitem">Region:{{medecin.gouvernat}}</mat-list-item>
+                  </mat-list>
+                </div>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      -->
+      
+    </div>
+    <div fxFlex.gt-lg="66" fxFlex.gt-md="66" fxFlex.gt-xs="100" fxFlex="100">
+      <img   src="assets/img1.png" style=" width: 55%; height: 65%; margin-right: 20%; margin-top: 3%;" >
+    </div>
+</div>
+
+
+
+  <!--
+<div class="row wrap">
+
+
+  <div class="col-sm-6">
+    
+  </div>
+
+  <div class="item">
+    <img class="img1" src="./assets/images/users/user-1.jpg"  />
+    <div class="item-box">
+      <div class="description">
+        <h3>{{medecin.nom}}</h3>
+        <span class="status">طبيب</span>
+        <div style="margin-top: 10%; text-align:left;">{{medecin.cin}}</div>
+        <div style=" text-align:left;">{{medecin.telephone}}</div>
+        <div style="text-align:left;">{{medecin.email}}</div>
+        <div style="margin-top: 10%; text-align:left;"> {{medecin.gouvernat}} </div>
+      </div>
+    </div>
+  </div>
+<button mat-raised-button color="primary"  (click)="onBack()">إرجاع</button>
+
+</div>
+
+
+  <div style="display: block;
+  margin: auto;">
+  <span>
+    <img src="./assets/images/users/user-1.jpg"/>
+  </span>
+
+    <span class="titre">{{medecin.nom}}</span>
+    <span class="sousTitre"> طبيب</span>
+    <span class="content">
+      <h3>ب.ت.و:{{medecin.cin}}</h3>
+      <h3>الهاتف : {{medecin.telephone}}</h3>
+      <h3>البريد الإلكتروني : {{medecin.email}}</h3>
+      <h3>{{medecin.gouvernat}}</h3>
+
+  </span>
+    <div class="col-xs-12">
+      
+      
+      <button mat-raised-button color="primary" (click)="onBack()">إرجاع</button>
+    </div>
+  </div>-->

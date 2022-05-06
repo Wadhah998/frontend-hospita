@@ -1,9 +1,13 @@
-<h1 mat-dialog-title style="margin-left:40%;  color:rgb(7, 107, 221)">إضافة طبيب</h1>
+<h1 mat-dialog-title style="margin-right:40%;  color:rgb(7, 107, 221)">إضافة طبيب</h1>
 <div mat-dialog-content >
     <form [formGroup]="medecinForm">
         <mat-form-field class="class1" appearance="outline">
-            <mat-label>الاسم واللقب</mat-label>
-            <input formControlName="nom" matInput placeholder="الاسم واللقب">
+            <mat-label>اسم</mat-label>
+            <input formControlName="nom" matInput placeholder="اسم">
+        </mat-form-field>
+        <mat-form-field class="class1" appearance="outline">
+            <mat-label>الاسم الأول</mat-label>
+            <input formControlName="prenom" matInput placeholder="الاسم الأول">
         </mat-form-field>
         <mat-form-field class="class1" appearance="outline">
             <mat-label>رقم التسجيل</mat-label>

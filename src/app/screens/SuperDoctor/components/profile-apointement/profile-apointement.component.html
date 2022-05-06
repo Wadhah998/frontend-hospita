@@ -1,49 +1,28 @@
-<!--<mat-card *ngFor="let medecin of medecins" dir="rtl" class="profile-content">
-    <mat-card-content class="">
-      <div class="item">
-        <img src="./assets/images/users/user-1.jpg" mat-card-avatar />
-        <div class="item-box">
+<div fxLayout="row wrap">
+  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="100"*ngFor="let enfant of enfants; let i = index">
+    <mat-card  class="profile-content">
+    
+      <mat-card-content   >
+        <div  class="item-content">
           <div class="description">
-            <h3>{{medecin.nom}}</h3>
-            <span class="status">Médecin</span>
+              <img [src]="img" mat-card-avatar />
+            <h3  class="name">{{enfant.nomEnfant}}</h3>
+            <span class="age">طبيب مختص</span>
           </div>
-  
-          <div class="details" fxLayout="row" fxLayoutAlign="center">
-            <mat-list role="list" class="list">
-              <mat-list-item role="listitem">Tel:{{medecin.telephone}}</mat-list-item>
-              <mat-list-item role="listitem"
-                >Email:{{medecin.email}}</mat-list-item
-              >
-              <mat-list-item role="listitem">Region:{{medecin.gouvernat}}</mat-list-item>
-            </mat-list>
+          <div class="image-box">
+            
           </div>
         </div>
-      </div>
-    </mat-card-content>
-  </mat-card>
-
--->
-  
-<mat-card *ngFor="let medecin of medecins" class="profile-content">
-    <mat-card-content>
-      <div class="item-content">
-        <div class="description">
-          <h3 class="name">{{medecin.nom}}</h3>
-          <span class="age">طبيب مختص</span>
-        </div>
-        <div class="image-box">
-          <img [src]="img" mat-card-avatar />
-        </div>
-      </div>
-    </mat-card-content>
-    <mat-divider></mat-divider>
-    <mat-card-actions>
-      <a class="card-button"
-        ><i class="fa-solid fa-circle-arrow-up switch"></i>تحويل
-      </a>
-      <a class="card-button card-button-left">
-        <i class="fa-solid fa-circle-check done"></i>تاكيد</a
-      >
-    </mat-card-actions>
-  </mat-card>
-  
+    
+        
+      </mat-card-content>
+      <mat-divider class="lignes"></mat-divider>
+      <mat-card-actions>
+        <a class="card-button"
+           style="margin-left: 30%;font-size: 55%;" (click)="rendezvous(enfant)"><i class="fa-solid fa-user switch"></i>إسناد موعد </a>
+      </mat-card-actions>
+    </mat-card>
+       
+  </div>
+</div>
+    

@@ -42,6 +42,12 @@ import { ProfileDoctorComponent } from './screens/SuperDoctor/components/profile
 import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie/messagerie.component';
 import { AllChartsComponent } from './screens/SuperDoctor/components/all-charts/all-charts.component';
 import { ProfileApointementComponent } from './screens/superDoctor/components/profile-apointement/profile-apointement.component';
+import { ProfileMedecinComponent } from './screens/superDoctor/components/profile-medecin/profile-medecin.component';
+import { RendezVousFormComponent } from './screens/superDoctor/form/rendez-vous-form/rendez-vous-form.component';
+import { SidebarComponent } from './screens/superDoctor/components/messagerie/sidebar/sidebar.component';
+import { ChatComponent } from './screens/superDoctor/components/messagerie/chat/chat.component';
+import { FilterUsersPipe } from './components/pipes/filter-users.pipe';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -79,7 +85,12 @@ import { ProfileApointementComponent } from './screens/superDoctor/components/pr
     ListMedecinsComponent,
     ProfileDoctorComponent,
     AllChartsComponent,
-    ProfileApointementComponent
+    ProfileApointementComponent,
+    ProfileMedecinComponent,
+    RendezVousFormComponent,
+    FilterUsersPipe,
+    SidebarComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -90,6 +101,7 @@ import { ProfileApointementComponent } from './screens/superDoctor/components/pr
     FormsModule,
     NgApexchartsModule,
     AngularMaterialModule,
+    CommonModule
   ],
   providers: [ApiService, DialogService],
   bootstrap: [AppComponent],

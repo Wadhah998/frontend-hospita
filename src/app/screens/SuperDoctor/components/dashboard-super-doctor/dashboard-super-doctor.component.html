@@ -1,13 +1,19 @@
 <app-header-super-doctor></app-header-super-doctor>
-<div fxLayout="row wrap">
-    <div fxFlex.gt-lg="66" fxFlex.gt-md="33" fxFlex.gt-xs="100" fxFlex="100">
-  
-    </div>
-    <div fxFlex.gt-lg="63" fxFlex.gt-md="63" fxFlex.gt-xs="100" fxFlex="100">
-        
-        <app-all-charts></app-all-charts>
-        <app-list-medecins></app-list-medecins>
-    </div>
+<mat-toolbar class="hello"> مرحبا </mat-toolbar>
 
-</div>
+<div fxLayout="row">
+        <div fxFlex.gt-lg="33" fxFlex.gt-md="33" fxFlex.gt-xs="100" fxFlex="100">
+          <app-profile-doctor [medecin]="medecin"></app-profile-doctor>    
+        </div>
+        <div fxFlex.gt-lg="66" fxFlex.gt-md="66" fxFlex.gt-xs="100" fxFlex="100">
+          <div fxLayout="row wrap">
+            <div class="class1"></div>
+              <app-all-charts></app-all-charts>
+            </div>   
+            <app-list-medecins (select)="onLogin($event)"></app-list-medecins>
+          </div>
+        </div>    
+  
+
+    
   

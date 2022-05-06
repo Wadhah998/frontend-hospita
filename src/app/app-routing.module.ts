@@ -36,6 +36,9 @@ import { ListMedecinsComponent } from './screens/SuperDoctor/components/list-med
 import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie/messagerie.component';
 import { AllChartsComponent } from './screens/SuperDoctor/components/all-charts/all-charts.component';
 import { HeaderSuperDoctorComponent } from './screens/SuperDoctor/components/header-super-doctor/header-super-doctor.component';
+import { ProfileApointementComponent } from './screens/superDoctor/components/profile-apointement/profile-apointement.component';
+import { ProfileMedecinComponent } from './screens/superDoctor/components/profile-medecin/profile-medecin.component';
+
 
 
 
@@ -77,6 +80,8 @@ const routes: Routes = [
   { path: 'listMedecins', component: ListMedecinsComponent },
   { path: 'allCharts', component : AllChartsComponent},
   { path: 'headerSuper', component : HeaderSuperDoctorComponent},
+  { path: 'profileApoint', component : ProfileApointementComponent},
+  { path: 'profileApoint/singleDoctor/:id', component : ProfileMedecinComponent },
   {
     path: '',
     component: DoctorComponent,
@@ -84,13 +89,16 @@ const routes: Routes = [
       { path: 'doctor-appointment', component: DoctorAppointmentComponent },
     ],
   },
-  {
+  /*{
     path: '',
     component: SuperMedecinComponent,
     children: [
       { path: 'superDoctor-appointment', component: SuperDoctorApointementComponent },
     ],
-  },
+  },*/
+  { path: 'superDoctor-appointment', component : SuperDoctorApointementComponent }
+
+
 ];
 
 @NgModule({

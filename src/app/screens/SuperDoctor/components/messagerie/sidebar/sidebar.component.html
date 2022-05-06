@@ -1,0 +1,109 @@
+<!--<div id="sidebar">
+    <div id="row1">
+        <div id="sidebarHeader">
+            <div class="avatarContainer">
+                <img src="./assets/images/users/user-1.jpg">
+            </div>
+            <div class="actionsContainer">
+                <img width="14" height="14" src="./assets/images/toppng.com-settings-icon-android-kitkat-512x512.png"  />
+            </div>
+        </div>
+        <div id="searchBox">
+            <img width="13" src="../assets/images/chercher.png" />
+            <input type="text" placeholder="Search or start the new chat"/>
+        </div>
+    </div>
+    
+    <div id="sidebarContent" fxLayout="row wrap">
+        <div 
+        class="conversation"  fxLayout="row" 
+        *ngFor="let medecin of medecins"
+        (click)="convesationClicked.emit(medecin)">
+            <div class="picture" fxFlex.gt-lg="22" fxFlex.gt-md="22" fxFlex.gt-xs="100" fxFlex="100">
+                <img src="./assets/images/blank-profile-picture-973460_640.png">
+            </div>
+            <div class="content" fxFlex.gt-lg="78" fxFlex.gt-md="78" fxFlex.gt-xs="100" fxFlex="100">
+                <div  class="conversationHeader" fxLayout="row">
+                    <div  class="time" fxFlex.gt-lg="78" fxFlex.gt-md="78" fxFlex.gt-xs="100" fxFlex="100">{{medecin.time}}</div>
+                    <div class="name" fxFlex.gt-lg="22" fxFlex.gt-md="22" fxFlex.gt-xs="100" fxFlex="100">{{medecin.nom}}</div>
+                </div>
+                <div class="message">
+                    {{medecin.latestMessage}}
+                    <img *ngIf="!medecin.latestMessageRead" width="12" height="12" src="./assets/images/orange-dot-md.png"  />
+                    
+                    <img *ngIf="medecin.latestMessageRead" width="12" height="12" src="./assets/images/Basic_green_dot.png"  />
+                    </div>
+            </div>
+        </div>
+</div>
+</div>-->
+<div class="contact-header" fxLayout="row" fxLayoutAlign="space-between ">
+  <i class="fa-solid fa-gear setting"></i>
+  <div class="doctor" fxLayout="row">
+    <div
+      class="doctor-detils"
+      fxShow="true"
+      fxHide.sm="true"
+      fxShow.md="true"
+      fxShow.lg="true"
+    >
+      <p class="name">Imed</p>
+      <p class="detail">طبيب مختص</p>
+      <p class="staus">متصل</p>
+    </div>
+    <img src="./assets/images/users/user-1.jpg" alt="user" class="img-circle" />
+  </div>
+</div>
+<div class="sidebar" fxLayout="row" fxLayoutAlign="space-between center">
+  <span>الدردشات النشطة</span>
+  <i class="fa-duotone fa-plus plus"></i>
+</div>
+<div class="search" fxLayout="row">
+  <mat-icon class="search-icon">search</mat-icon>
+  <input
+    type="search"
+    class="search-input"
+    placeholder="بحث"
+    [(ngModel)]="userName"
+  />
+</div>
+
+<div id="sidebarContent">
+<div class="list-contact">
+  <ngx-simplebar
+    [options]="options"
+    data-simplebar-direction="ltr"
+    style="position: relative; height: 100%"
+    #scrollEle
+  >
+    <mat-nav-list dir="ltr">
+      <a
+        mat-list-item
+        *ngFor="let item of medecins | filterUsers: userName"
+        [routerLink]=""
+        [ngClass]="{ active: item === medecin }"
+        (click)="onSelect(item)"
+        class="link"
+      >
+        <p>
+          <span> {{ item.time }}</span>
+        </p>
+        <p matLine>
+          <span class="contact-name"> {{ item.nom }}</span>
+        </p>
+        <p matLine>
+          <span>{{ item.latestMessage }} </span>
+        </p>
+        <div class="connected"></div>
+        <img
+          matListAvatar
+          class="img-contact"
+          src="./assets/images/blank-profile-picture-973460_640.png"
+          alt="..."
+        />
+      </a>
+    </mat-nav-list>
+  </ngx-simplebar>
+</div>
+</div>
+
