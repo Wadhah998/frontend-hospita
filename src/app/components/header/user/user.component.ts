@@ -8,11 +8,11 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class UserComponent implements OnInit {
   constructor(private authService:AuthService) {}
-  user = {
-    name: 'Imed',
-    lastName: 'Akrouti',
-  };
-  ngOnInit(): void {}
+   user=JSON.parse(localStorage.getItem("currentUser")!);
+   
+  ngOnInit(): void {
+    console.log(this.user);
+  }
   logOut(){
     this.authService.logOut();
   }
