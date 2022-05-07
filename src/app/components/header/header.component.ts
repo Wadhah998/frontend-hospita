@@ -39,39 +39,29 @@ export class HeaderComponent implements OnInit {
         "redirect":""
 
     },
-   
-    {
-        "link":"الأطباء",
-        "redirect":""
-    },
+
     {
         "link":"لوحة متابعة",
-        "redirect":"/medecins"
+        "redirect":"/admin"
     },
-    {
-        "link":"افهمني",
-        "redirect":""
-    }
+    
 ]
 menuSuperDoctor=[
   {
       "link":"الرسائل",
-      "redirect":""
+      "redirect":"/messagerieSuper"
 
   },
  
   {
-      "link":"الأطباء",
-      "redirect":""
+      "link":"الأطفال",
+      "redirect":"/superDoctor-appointment"
   },
   {
       "link":"لوحة متابعة",
-      "redirect":"/medecins"
+      "redirect":"/superDoctorDashboard"
   },
-  {
-      "link":"افهمني",
-      "redirect":""
-  }
+  
 ]
 menuMaitre=[
   {
@@ -100,17 +90,10 @@ menuParent=[
 
   },
  
-  {
-      "link":"الأطباء",
-      "redirect":""
-  },
+
   {
       "link":"لوحة متابعة",
-      "redirect":"/medecins"
-  },
-  {
-      "link":"افهمني",
-      "redirect":""
+      "redirect":"/parent-dashboard"
   }
 ]
 
@@ -167,7 +150,7 @@ menuParent=[
         this.menu=this.menuMedecin
         break;
         case "admin":
-        this.menu=this.menuMedecin
+        this.menu=this.menuAdmin
         break;
     case  "superDoctor":
       this.menu=this.menuSuperDoctor;

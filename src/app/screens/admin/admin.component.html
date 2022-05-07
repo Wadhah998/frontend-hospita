@@ -59,7 +59,7 @@
               
                 
                 <ng-container matColumnDef="TypeUser">
-                  <th style="text-align: center;" mat-header-cell *matHeaderCellDef >Type User</th>
+                  <th style="text-align: center;" mat-header-cell *matHeaderCellDef >نوع المستخدم</th>
                   <td style="text-align: end;" mat-cell *matCellDef="let element" class="text-center"  > 
                     <button class="btn btn-primary" style=" width:100px" (click)="onSelect(element)" >
                      {{element.typeUser}}
@@ -68,7 +68,7 @@
                 
                 
                 <ng-container matColumnDef="nom">
-                    <th  style="text-align: center;" mat-header-cell *matHeaderCellDef>nom</th>
+                    <th  style="text-align: center;" mat-header-cell *matHeaderCellDef>الأسم</th>
                     <td style="text-align: end;" mat-cell *matCellDef="let element"  class="text-center"> {{element.nom}} </td>
                   </ng-container>
                   
@@ -78,29 +78,29 @@
 
                   
                 <ng-container matColumnDef="telephone">
-                    <th  style="text-align: end;" mat-header-cell *matHeaderCellDef>telephone</th>
+                    <th  style="text-align: end;" mat-header-cell *matHeaderCellDef>الهاتف</th>
                     <td  style="text-align: end;" mat-cell *matCellDef="let element"> {{element.telephone}} </td>
                   </ng-container>
                   
                 
                 <ng-container matColumnDef="email">
-                    <th  style="text-align: end;" mat-header-cell *matHeaderCellDef>email</th>
+                    <th  style="text-align: end;" mat-header-cell *matHeaderCellDef>البريد الإلكتروني</th>
                     <td style="text-align: end;" mat-cell *matCellDef="let element"> {{element.email}} </td>
                   </ng-container>
                     
                   <ng-container matColumnDef="loginNumber">
-                    <th  style="text-align: end;"  mat-header-cell *matHeaderCellDef> loginnumber </th>
+                    <th  style="text-align: end;"  mat-header-cell *matHeaderCellDef> رقم الدخول </th>
                     <td style="text-align: end;" mat-cell *matCellDef="let element"> {{element.loginNumber}} </td>
                   </ng-container>
                   <ng-container matColumnDef="password">
-                    <th  style="text-align: end;" mat-header-cell *matHeaderCellDef>password</th>
+                    <th  style="text-align: end;" mat-header-cell *matHeaderCellDef>كلمه السر</th>
                     <td  style="text-align: end;" mat-cell *matCellDef="let element"> {{element.password}} </td>
                   </ng-container>  
                 
                     
                 
                 <ng-container matColumnDef="modifier">
-                    <th style="text-align: end;" mat-header-cell *matHeaderCellDef>modifier</th>
+                    <th style="text-align: end;" mat-header-cell *matHeaderCellDef>تعديل</th>
                     <td style="text-align: end;" mat-cell *matCellDef="let element"> 
                         <a  class="pointer" style="color:rgb(0, 255, 128)" matTooltip="تحرير هذا المستخدم">
                             <mat-icon (click)="edituser(element)" >edit</mat-icon>
