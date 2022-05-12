@@ -1,3 +1,4 @@
+import { Localisation } from './screens/sign-up/localisation/localisation.module';
 import { PatientService } from './guards/patient.service';
 import { AdminComponent } from './screens/admin/admin.component';
 import { LandingComponent } from './components/landing/landing.component';
@@ -47,6 +48,7 @@ import { AdminGuard } from './guards/admin.guard';
 
 
 
+
 import { MaitredashboardComponent } from './screens/maitre/components/maitredashboard/maitredashboard.component';
 import { ListEnfantsComponent } from './screens/maitre/components/list-enfants/list-enfants.component';
 import { sample } from 'lodash';
@@ -84,14 +86,14 @@ const routes: Routes = [
   { path: 'signin', component: SignInComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'forgetpassword', component: ForgetPasswordComponent },
-  { path: 'admin', component: AdminComponent,canActivate:[AuthGuard,AdminGuard] },
+  { path: 'admin', component: AdminComponent },
   { path: 'messagerieSuper', component: MessagerieComponent },
 
   { path: 'medecins', component: SuperDoctorComponent },
   { path: 'ajouterMedecin', component: MedecinFormComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'superDoctorDashboard', component: DashboardSuperDoctorComponent,canActivate:[AuthGuard,SuperdocService] },
+  { path: 'superDoctorDashboard', component: DashboardSuperDoctorComponent },
   { path: 'listMedecins', component: ListMedecinsComponent },
   { path: 'allCharts', component : AllChartsComponent},
   { path: 'headerSuper', component : HeaderSuperDoctorComponent},
@@ -124,7 +126,7 @@ const routes: Routes = [
       /*  { path: 'doctor-appointment', component: DoctorAppointmentComponent }, */
       {
         path: 'parent-dashboard',
-        component: ParentDashboardComponent,canActivate :[AuthGuard,PatientService],
+        component: ParentDashboardComponent,
       },
       { path: 'superDoctor-appointment', component : SuperDoctorApointementComponent,canActivate:[AuthGuard,SuperdocService] }
 

@@ -152,7 +152,7 @@ menuParent=[
         case "admin":
         this.menu=this.menuAdmin
         break;
-    case  "superDoctor":
+    case  "superdoctor":
       this.menu=this.menuSuperDoctor;
       break;
       case "parent":

@@ -17,23 +17,19 @@
  
  
 <form  class="form-inline" style="margin-top: 3%; margin-right: 5%; ">
- <form novalidate  #registerForm="ngForm"> 
+ <form [formGroup]="userForm"> 
  
    <div class="form-group">
       
-      <input type="email"
-      id="email"
+      <input type="loginNumber"
+      
       style="width: 383px;"
       class="form-control"
       placeholder="البريد الإلكتروني"
-      ngModel [email]="true"
-      [(ngModel)]="user.email"
-      name="email"
-      required
-      #emailVar="ngModel"
-       [ngClass]="{ 'is-invalid': emailVar.touched && !emailVar.valid }"  />
+      formControlName="loginNumber"
+        />
        <div class="invalid-feedback">
-        <span *ngIf="emailVar.errors?.['email']">
+        <span >
           البريد الإلكتروني غير صحيح
         </span>
         
@@ -46,7 +42,7 @@
   <br>
   <br>
  
-    <div class="form-group">
+    <div class="userForm">
        
        <input 
        id="mdp"
@@ -54,11 +50,10 @@
        style="width: 383px;"
        class="form-control"
        placeholder="كلمة السر" 
-       [(ngModel)]="user.password"
-       name="mdp"
+       formControlName="password"
+       
        required
-       #mdpVar="ngModel"
-        [ngClass]="{ 'is-invalid': mdpVar.touched && !mdpVar.valid }" />
+       />
         
      </div>
     
@@ -66,9 +61,9 @@
 
 
    <button  type="submit"
-   [disabled]="!registerForm.valid" 
+ 
    style="width: 180px;  margin-right: 8%; margin-top: 3%; " 
-   class="btn btn-primary" (click)="onSignin()" >تسجيل الدخول 
+   class="btn btn-primary" (click)="onSignin($event)" >تسجيل الدخول 
    
    </button>
  

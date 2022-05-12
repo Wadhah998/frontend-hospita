@@ -70,6 +70,11 @@ import { AjouterEnfantComponent } from './screens/maitre/forms/ajouter-enfant/aj
 import { ProfilEnfantsComponent } from './screens/maitre/components/profil-enfants/profil-enfants.component';
 import { ChatComponent } from './screens/superDoctor/components/messagerie/chat/chat.component';
 import { FilterUsersPipe } from './components/pipes/filter-users.pipe';
+import { SecureStorageService } from './services/api/secure-storage.service';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
+
+
 
 
 
@@ -135,7 +140,8 @@ import { FilterUsersPipe } from './components/pipes/filter-users.pipe';
     RendezVousFormComponent,
     FilterUsersPipe,
     SidebarComponent,
-    ChatComponent
+    ChatComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -148,7 +154,8 @@ import { FilterUsersPipe } from './components/pipes/filter-users.pipe';
     NgApexchartsModule,
     AngularMaterialModule,
     SimplebarAngularModule,
-    CommonModule
+    CommonModule,
+    CarouselModule
   ],
   providers: [ApiService, DialogService],
   bootstrap: [AppComponent],

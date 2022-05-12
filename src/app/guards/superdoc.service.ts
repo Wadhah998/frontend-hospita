@@ -14,7 +14,7 @@ export class SuperdocService implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-       if (this.authService.getRole() === 'superDoctor'){
+       if (this.authService.getRole() === 'superdoctor'){
             return true;
         }
         this.location.back();

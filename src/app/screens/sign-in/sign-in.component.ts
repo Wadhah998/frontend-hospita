@@ -1,10 +1,20 @@
+import { ApiService } from 'src/app/services/api/api.service';
 
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { User } from './user';
+import { SecureStorageService } from 'src/app/services/api/secure-storage.service';
+export interface Token{
+  access: string;
+  refresh: string;
+  userId: number;
+  typeUser: string;
+  name: string;
+  familyName: string | undefined;
+}
 
 
 @Component({
@@ -14,17 +24,24 @@ import { User } from './user';
 })
 export class SignInComponent implements OnInit {
 
+  validated !: boolean;
+  error !: string;
 
-
-  
-  public user: User = new User();
+  user!:Token;
+  userForm! : FormGroup;
   public currentUser = User;
-  constructor(private router: Router,private http:HttpClient) {
+  constructor(private router: Router,private http:HttpClient,public secureStorageService:SecureStorageService,private formBuilder:FormBuilder,public ApiService:ApiService) {
   }
 
   ngOnInit() {
+    this.userForm = this.formBuilder.group({
+      password: ['', Validators.required],
+      loginNumber: ['', [Validators.required, Validators.email]],
+      
+    
 
-  }
+  })}
+
  
 
   onSignup(): void {
@@ -32,33 +49,26 @@ export class SignInComponent implements OnInit {
 
   }
   
-  onSignin(): void {
-  this.http.get<any>("http://localhost:3000/listUsers/")
-  .subscribe (res=>{
-    const User = res.find((a:any)=>{
-      return a.email === this.user.email && a.password === this.user.password
-    });
-    if (User){
-      localStorage.setItem('currentUser',JSON.stringify(User))
-      
-      if(User.typeUser=="parent"){
-        this.router.navigate(['/parent-dashboard'])
-      }else if (User.typeUser=="doctor"){
-        this.router.navigate(['/doctor-appointment'])
-      }else if (User.typeUser=="superDoctor"){
-        this.router.navigate(['/superDoctorDashboard'])
-      }else if (User.typeUser=="admin"){
-        this.router.navigate(['/admin'])
-      }else {
-        alert("typeuser not identifiant")
-      }
-    }else{
-      alert("الرجاء التثبت من المعطيات الشخصية")
-    }
-  }
-    )
+  onSignin($event: Event): void {
+    $event.preventDefault();
+        this.ApiService.login(this.userForm.value.loginNumber, this.userForm.value.password).then(async (response: Token) => {
+            response.access = this.secureStorageService.setToken(response.access);
+            response.refresh = this.secureStorageService.setToken(response.refresh);
+            if (response.typeUser=='admin'){
+              this.router.navigate(['/admin'])
+            }else if (response.typeUser=='parent'){
+              this.router.navigate(['/parent-dashboard'])
+            }else if (response.typeUser=='superdoctor'){
+              this.router.navigate(['/superDoctorDashboard'])
+            }else if (response.typeUser=='doctor'){
+              this.router.navigate(['/doctor-appointment'])}
+     localStorage.setItem("currentUser",JSON.stringify(response));
 
-  }
+
+  }).catch((err) => {
+    this.validated = false;
+    this.error = err.error.error;
+     alert("الرجاء التثبت من المعطيات الشخصية")})}
   
    public saveData(registerForm: NgForm) {
      console.log(registerForm.form);

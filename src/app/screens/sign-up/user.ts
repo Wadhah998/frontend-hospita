@@ -1,16 +1,16 @@
+import { Localisation } from './localisation/localisation.module';
 export class User_parent{
 
     public typeUser= "ولي";
-    public prenom!: string; 
-    public nom!: string;
+    public familyName!: string; 
+    public name!: string;
     public loginNumber!: string;
     public telephone!: string;
     public email!: string;
-    public mdpp!: string;
     public password! : string;
-    public zipCode!: string;
-    public governorate!: string;
-    public check! : any ;
+    
+    
+    localisation!: Localisation | null;
 
  
 

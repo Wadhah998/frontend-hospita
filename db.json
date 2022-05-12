@@ -218,15 +218,6 @@
   "listPatients": [
     {
       "name": "maha",
-      "image": "./assets/images/users/user-1.jpg",
-      "id": 8,
-      "age": 4,
-      "state": "He ",
-      "email": "imed.akrouti@gmail.com",
-      "phone": 2741780
-    },
-    {
-      "name": "maha",
       "image": "./assets/images/users/user-2.jpg",
       "id": 8,
       "age": 4,

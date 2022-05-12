@@ -5,6 +5,15 @@ import { Injectable } from '@angular/core';
 import { User } from 'src/app/models/user/user.module';
 import { Patient } from './../../models/patient/patient.model';
 import { Enfants } from 'src/app/models/enfant/Enfant';
+import { User_parent } from 'src/app/screens/sign-up/user';
+export interface Token{
+  access: string;
+  refresh: string;
+  userId: number;
+  typeUser: string;
+  name: string;
+  familyName: string | undefined;
+}
 
 
 @Injectable({
@@ -20,8 +29,11 @@ export class ApiService {
       data
     );
   }
-   login(email: string, password: string): Promise<any> {
-    return this.http.post<any>(`http://localhost:8000/api/persons/login`, {email, password}).toPromise();
+   login(loginNumber: string, password: string): Promise<any> {
+    return this.http.post<Token>(`http://localhost:8000/api/persons/login`, {loginNumber, password}).toPromise();
+}
+public signup(person: User_parent): Promise<void> {
+  return this.http.post<void>(`http://localhost:8000/api/persons/signup`, person).toPromise();
 }
   postuser(data: any) {
     return this.http.post<User[]>('http://localhost:3000/listUsers/', data);
