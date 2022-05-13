@@ -2,6 +2,7 @@ import { ApiService } from './../../../services/api/api.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-medecin-form',
@@ -18,7 +19,8 @@ export class MedecinFormComponent implements OnInit {
     private formBuilder: FormBuilder,
     private api: ApiService,
     private dialogRef: MatDialogRef<MedecinFormComponent>,
-    @Inject(MAT_DIALOG_DATA) public editData: any
+    @Inject(MAT_DIALOG_DATA) public editData: any,
+    private _snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -56,12 +58,18 @@ export class MedecinFormComponent implements OnInit {
       if (this.medecinForm.valid) {
         this.api.postMedecin(this.medecinForm.value).subscribe({
           next: (res) => {
-            alert('إضافة الطبيب بنجاح');
+            this._snackBar.open('إضافة الطبيب بنجاح','',
+            { 
+              duration: 3000
+          });
             this.medecinForm.reset();
             this.dialogRef.close('تأكيد');
           },
           error: () => {
-            alert('خطأ بينما يضاف');
+            this._snackBar.open('خطأ بينما يضاف','',
+    { 
+      duration: 3000
+  });
           },
         });
       }
@@ -73,12 +81,18 @@ export class MedecinFormComponent implements OnInit {
   modifierMedecin() {
     this.api.putMedecin(this.medecinForm.value, this.editData.id).subscribe({
       next: (res) => {
-        alert('تم تحديث الطبيب خليفة');
+        this._snackBar.open('تم تحديث الطبيب خليفة','',
+    { 
+      duration: 3000
+  });
         this.medecinForm.reset();
         this.dialogRef.close('تحديث');
       },
       error: () => {
-        alert('خطأ أثناء تحديث السجل');
+        this._snackBar.open('خطأ أثناء تحديث السجل','',
+    { 
+      duration: 3000
+  });
       },
     });
   }

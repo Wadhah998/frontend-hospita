@@ -5,12 +5,12 @@
       "telephone": "5235343",
       "email": "orl.ndonse@gmail.com",
       "loginNumber": "",
-      "speciality": "specialite 4",
-      "nom": "imed",
+      "speciality": "",
+      "nom": "Imed",
       "prenom": "",
-      "password": "akrouti",
+      "password": "",
       "id": "2",
-      "gouvernat": "akrouti",
+      "gouvernat": "",
       "CodePostal": ""
     },
     {
@@ -51,113 +51,6 @@
       "id": "6",
       "gouvernat": "fridhi",
       "CodePostal": ""
-    },
-    {
-      "typeUser": "طبيب",
-      "telephone": "52545782",
-      "email": "rihem@gmail.com",
-      "loginNumber": "",
-      "speciality": "specialite 8",
-      "nom": "rihem",
-      "prenom": "",
-      "password": "",
-      "id": "fgd",
-      "gouvernat": "ben ghozzi",
-      "CodePostal": ""
-    },
-    {
-      "typerUser": "Doctor",
-      "telephone": "sd",
-      "email": "sd@gmail.com",
-      "cin": "sdf",
-      "speciality": "sdf",
-      "nom": "cyrin",
-      "prenom": "abid",
-      "password": "sdf",
-      "id": "dfhf",
-      "gouvernat": "sdf",
-      "CodePostal": "gfd",
-      "latestMessageRead": false,
-      "latestMessage": "Salem",
-      "time": "AM 10:12",
-      "messages": [
-        {
-          "id": "1",
-          "body": "Hello",
-          "time": "8:21",
-          "me": true
-        },
-        {
-          "id": "2",
-          "body": "how are you?",
-          "time": "8:21",
-          "me": false
-        },
-        {
-          "id": "3",
-          "body": "im fine thanks",
-          "time": "8:21",
-          "me": true
-        },
-        {
-          "id": "4",
-          "body": "Glad to hear that",
-          "time": "8:21",
-          "me": false
-        }
-      ]
-    },
-    {
-      "typerUser": "Doctor",
-      "telephone": "gfd",
-      "email": "dfgd@gmail.com",
-      "cin": "gfdg",
-      "speciality": "dfv",
-      "nom": "wadhah",
-      "prenom": "daoud",
-      "password": "dfgd",
-      "id": "vdfv",
-      "gouvernat": "fdv",
-      "CodePostal": "dfv",
-      "messages": [
-        {
-          "id": "1",
-          "body": "Hello ",
-          "time": "8:21",
-          "me": true
-        },
-        {
-          "id": "2",
-          "body": "how are you?",
-          "time": "8:21",
-          "me": false
-        },
-        {
-          "id": "3",
-          "body": "im fine thanks",
-          "time": "8:21",
-          "me": true
-        },
-        {
-          "id": "4",
-          "body": "Glad to hear that",
-          "time": "8:21",
-          "me": false
-        }
-      ]
-    },
-    {
-      "typerUser": "Doctor",
-      "telephone": "trh",
-      "email": "trh@gmail.com",
-      "cin": "eya",
-      "speciality": "rth",
-      "nom": "mohamed",
-      "prenom": "affes",
-      "password": "thr",
-      "id": "thrtherhzezrh",
-      "gouvernat": "ezrh",
-      "CodePostal": "erhhzh"
     }
   ],
   "listUsers": [
@@ -274,13 +167,13 @@
       "ecole": "taher haded",
       "date": "12",
       "password": "",
-      "situation": "50%",
+      "situation": 40,
       "codePostal": null,
       "confirm": false,
       "id": 1
     },
     {
-      "idMedecin": "1 ",
+      "idMedecin": "5 ",
       "nomEnfant": "Rabeb",
       "nomParent": "abid",
       "telephone": "52567141",
@@ -290,13 +183,13 @@
       "ecole": "taher haded",
       "date": "12",
       "password": "",
-      "situation": "50%",
+      "situation": 10,
       "codePostal": null,
       "confirm": false,
       "id": 2
     },
     {
-      "idMedecin": null,
+      "idMedecin": "2 ",
       "nomEnfant": "Radhija",
       "nomParent": "abid",
       "telephone": "52567141",
@@ -306,8 +199,9 @@
       "ecole": "taher haded",
       "date": "12",
       "password": "",
-      "situation": "50%",
+      "situation": 20,
       "codePostal": null,
+      "confirm": false,
       "id": 3
     },
     {
@@ -321,24 +215,26 @@
       "ecole": "taher haded",
       "date": "12",
       "password": "",
-      "situation": "50%",
+      "situation": 90,
       "codePostal": null,
       "confirm": false,
       "id": 4
     },
     {
+      "idMedecin": "2 ",
+      "nomEnfant": "salma",
+      "nomParent": "abid",
       "telephone": "52567141",
       "cin": "",
+      "email": "orly@gmail.com",
+      "gouvernat": "",
       "ecole": "taher haded",
       "date": "12",
-      "email": "orly@gmail.com",
-      "situation": "50%",
-      "nomParent": "abid",
-      "nomEnfant": "salma",
       "password": "",
-      "id": 5,
-      "gouvernat": "",
-      "CodePostal": ""
+      "situation": 60,
+      "codePostal": null,
+      "confirm": false,
+      "id": 5
     },
     {
       "telephone": "52567141",
@@ -346,7 +242,7 @@
       "ecole": "taher haded",
       "date": "12",
       "email": "orly@gmail.com",
-      "situation": "50%",
+      "situation": 20,
       "nomParent": "abid",
       "nomEnfant": "salma",
       "password": "",
@@ -355,18 +251,20 @@
       "CodePostal": ""
     },
     {
+      "idMedecin": "dfhf ",
+      "nomEnfant": "salma",
+      "nomParent": "abid",
       "telephone": "52567141",
       "cin": "",
+      "email": "orly@gmail.com",
+      "gouvernat": "",
       "ecole": "taher haded",
       "date": "12",
-      "email": "orly@gmail.com",
-      "situation": "50%",
-      "nomParent": "abid",
-      "nomEnfant": "salma",
       "password": "",
-      "id": 8,
-      "gouvernat": "",
-      "CodePostal": ""
+      "situation": 80,
+      "codePostal": null,
+      "confirm": false,
+      "id": 8
     },
     {
       "telephone": "52567141",
@@ -374,7 +272,7 @@
       "ecole": "taher haded",
       "date": "12",
       "email": "orly@gmail.com",
-      "situation": "50%",
+      "situation": 60,
       "nomParent": "abid",
       "nomEnfant": "salma",
       "password": "",
@@ -388,7 +286,7 @@
       "ecole": "taher haded",
       "date": "12",
       "email": "orly@gmail.com",
-      "situation": "50%",
+      "situation": 80,
       "nomParent": "abid",
       "nomEnfant": "salma",
       "password": "",
@@ -402,7 +300,7 @@
       "ecole": "taher haded",
       "date": "12",
       "email": "orly@gmail.com",
-      "situation": "50%",
+      "situation": 70,
       "nomParent": "abid",
       "nomEnfant": "salma",
       "password": "",
@@ -411,18 +309,19 @@
       "CodePostal": ""
     },
     {
+      "idMedecin": null,
+      "nomEnfant": "salma",
+      "nomParent": "abid",
       "telephone": "52567141",
       "cin": "",
+      "email": "orly@gmail.com",
+      "gouvernat": "",
       "ecole": "taher haded",
       "date": "12",
-      "email": "orly@gmail.com",
-      "situation": "50%",
-      "nomParent": "abid",
-      "nomEnfant": "salma",
       "password": "",
-      "id": 12,
-      "gouvernat": "",
-      "CodePostal": ""
+      "situation": 50,
+      "codePostal": null,
+      "id": 12
     },
     {
       "telephone": "52567141",
@@ -430,7 +329,7 @@
       "ecole": "taher haded",
       "date": "12",
       "email": "orly@gmail.com",
-      "situation": "50%",
+      "situation": 30,
       "nomParent": "abid",
       "nomEnfant": "salma",
       "password": "",
@@ -444,7 +343,7 @@
       "ecole": "taher haded",
       "date": "12",
       "email": "orly@gmail.com",
-      "situation": "50%",
+      "situation": 30,
       "nomParent": "abid",
       "nomEnfant": "salma",
       "password": "",
@@ -458,7 +357,7 @@
       "ecole": "taher haded",
       "date": "12",
       "email": "orly@gmail.com",
-      "situation": "50%",
+      "situation": 17,
       "nomParent": "abid",
       "nomEnfant": "salma",
       "password": "",
@@ -472,7 +371,7 @@
       "ecole": "taher haded",
       "date": "12",
       "email": "orly@gmail.com",
-      "situation": "50%",
+      "situation": 75,
       "nomParent": "abid",
       "nomEnfant": "salma",
       "password": "",
@@ -486,7 +385,7 @@
       "ecole": "taher haded",
       "date": "12",
       "email": "orly@gmail.com",
-      "situation": "50%",
+      "situation": 50,
       "nomParent": "abid",
       "nomEnfant": "salma",
       "password": "",
