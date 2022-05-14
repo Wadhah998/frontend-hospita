@@ -1,3 +1,8 @@
+import { SecureStorageService } from './../../../services/api/secure-storage.service';
+import { User } from './../../../screens/sign-in/user';
+import { AbstractRestService } from 'src/app/services/genericservice.service';
+
+
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -6,12 +11,17 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss'],
 })
-export class UserComponent implements OnInit {
-  constructor(private authService:AuthService) {}
+export class UserComponent  implements OnInit {
+  constructor(public SecureStorageService:SecureStorageService, private authService:AuthService,public service:AbstractRestService<any>) {}
    user=JSON.parse(localStorage.getItem("currentUser")!);
    
-  ngOnInit(): void {
-    console.log(this.user);
+   
+async  ngOnInit(): Promise <void> {
+  const access = localStorage.getItem("access")  ;
+  if (access !== null){
+  const id = Number (localStorage.getItem("userId")  );
+  this.user=await this.service.get('http://localhost:8000/api/persons',id,{headers: {Authorization : `Bearer ${this.SecureStorageService.getToken(access)}`}})}
+
   }
   logOut(){
     this.authService.logOut();

@@ -1,3 +1,6 @@
+import { AbstractRestService } from 'src/app/services/genericservice.service';
+
+
 import { ApiService } from 'src/app/services/api/api.service';
 import { User } from 'src/app/models/user/user.module';
 import { AfterViewInit, Component, EventEmitter, OnInit, ViewChild } from '@angular/core';
@@ -11,13 +14,16 @@ import * as _ from 'lodash';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { DialogService } from 'src/app/services/shared/dialog.service';
+import { DynamicTableCrud } from './dynamic-table.crud.service';
+import { SecureStorageService } from 'src/app/services/api/secure-storage.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss'],
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
   public select: EventEmitter<User> = new EventEmitter();
   users : User[] = [];
   
@@ -26,38 +32,34 @@ export class AdminComponent implements OnInit {
   displayPerson = false;
   typeDisplayedPerson !: string;
   listUsers: User[]= [];
-  displayedColumns: string[] = ['modifier','password','loginNumber','email','telephone','nom','TypeUser','id'];
+  displayedColumns: string[] = ['modifier','loginNumber','email','telephone','nom','TypeUser','id'];
   dataSource! : MatTableDataSource<any>;
   User!: User;
  
-  constructor(public dialog:MatDialog,private dialogService : DialogService, public api:ApiService, private _snackBar: MatSnackBar, private router : Router) {}
+  constructor( service:AbstractRestService<any>, public dialog:MatDialog,private dialogService : DialogService,  secureStorageService : SecureStorageService ,public api:ApiService, private _snackBar: MatSnackBar, private router : Router, private httpClient: HttpClient,) {
+    super(  service, 'http://localhost:8000/api/persons', secureStorageService);
+  }
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
 
-  ngOnInit(): void {
-    this.getallusers();
+  async ngOnInit(): Promise<void> {
+    
+    await this.getData();
+    
+    
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  getallusers(){
-    this.api.getuser()
-    .subscribe({
-      next:(res)=>{
-        this.listUsers=res
-        console.log(this.listUsers);
-        this.dataSource=new MatTableDataSource(res);
-        this.dataSource.paginator=this.paginator;
-      }
-    })
-  }  
   
-
+  
  
+ 
+  
 
     
    
@@ -77,28 +79,14 @@ export class AdminComponent implements OnInit {
       })
       .afterClosed()
       .subscribe((val) => {
-        this.getallusers();
+        if (val == 'تأكيد') {
+          console.log(val)
+           this.getData();
+        }
       });
-  }
-  deleteuser(id:number){
-
-    this.dialogService.openConfirmDialog('هل أنت متأكد أنك تريد حذف هذا الطبيب؟')
-    .afterClosed().subscribe(res =>{
-      if(res){
-        this.api.deleteuser(id)
-    .subscribe({
-      next:(res)=>{
-        alert("حذف الدكتور بنجاح")
-        this.getallusers();
-      },
-      error:()=>{
-        alert("خطأ اثناء حذف هذا الطبيب !!")
-      }
-    })
-      }
-    })
     
   }
+ 
   edituser(row : any) {
     this.dialog.open(UserFormComponent,{
       width : '50%',
@@ -107,7 +95,7 @@ export class AdminComponent implements OnInit {
       autoFocus :true
     }).afterClosed().subscribe(val=>{
       if(val==='تحديث'){
-        this.getallusers();
+        this.getData;
       }
     });
   }  

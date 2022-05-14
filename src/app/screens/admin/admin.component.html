@@ -48,14 +48,14 @@
         <div class="content mat-elevation-z8">
           
                 
-            <table mat-table [dataSource]="dataSource" class="table mt-5">
+            <table mat-table [dataSource]="data" class="table mt-5">
 
+              <ng-container matColumnDef="id">
+                <th style="text-align: center;" mat-header-cell *matHeaderCellDef >id</th>
+                <td style="text-align: end;" mat-cell *matCellDef="let element " class="text-center" > {{element.id}} </td>
+              </ng-container>  
                 
                 
-                <ng-container matColumnDef="id">
-                  <th style="text-align: center;" mat-header-cell *matHeaderCellDef >id</th>
-                  <td style="text-align: end;" mat-cell *matCellDef="let element" class="text-center" > {{element.id}} </td>
-                </ng-container>
               
                 
                 <ng-container matColumnDef="TypeUser">
@@ -69,7 +69,7 @@
                 
                 <ng-container matColumnDef="nom">
                     <th  style="text-align: center;" mat-header-cell *matHeaderCellDef>الأسم</th>
-                    <td style="text-align: end;" mat-cell *matCellDef="let element"  class="text-center"> {{element.nom}} </td>
+                    <td style="text-align: end;" mat-cell *matCellDef="let element  "  class="text-center"> {{element.name}} </td>
                   </ng-container>
                   
                 
@@ -92,31 +92,28 @@
                     <th  style="text-align: end;"  mat-header-cell *matHeaderCellDef> رقم الدخول </th>
                     <td style="text-align: end;" mat-cell *matCellDef="let element"> {{element.loginNumber}} </td>
                   </ng-container>
-                  <ng-container matColumnDef="password">
-                    <th  style="text-align: end;" mat-header-cell *matHeaderCellDef>كلمه السر</th>
-                    <td  style="text-align: end;" mat-cell *matCellDef="let element"> {{element.password}} </td>
-                  </ng-container>  
+            
                 
                     
                 
                 <ng-container matColumnDef="modifier">
                     <th style="text-align: end;" mat-header-cell *matHeaderCellDef>تعديل</th>
-                    <td style="text-align: end;" mat-cell *matCellDef="let element"> 
+                    <td style="text-align: end;" mat-cell *matCellDef="let element;index as i"> 
                         <a  class="pointer" style="color:rgb(0, 255, 128)" matTooltip="تحرير هذا المستخدم">
                             <mat-icon (click)="edituser(element)" >edit</mat-icon>
                         </a>
                         <a class="pointer" style="color:rgb(255, 0, 0)" matTooltip="حذف هذا المستخدم">
-                            <mat-icon (click)="deleteuser(element.id)">delete </mat-icon>
+                            <mat-icon (click)="delete(element.id,i)">delete </mat-icon>
                         </a>
                     </td>
                   </ng-container>                
 
               
-                
+    
               
                   
                   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;let i= index;"></tr>
               </table>
      
              

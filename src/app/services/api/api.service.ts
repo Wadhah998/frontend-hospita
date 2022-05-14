@@ -39,7 +39,7 @@ public signup(person: User_parent): Promise<void> {
     return this.http.post<User[]>('http://localhost:3000/listUsers/', data);
   }
   getuser() {
-    return this.http.get<User[]>('http://localhost:3000/listUsers/');
+    return this.http.get<any[]>('http://localhost:8000/api/persons');
   }
 
   getMedecin() {

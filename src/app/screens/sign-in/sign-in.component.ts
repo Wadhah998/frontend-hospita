@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 
 import { User } from './user';
 import { SecureStorageService } from 'src/app/services/api/secure-storage.service';
+import { saveDataToLocalhost } from 'src/app/services/genericservice.service';
 export interface Token{
   access: string;
   refresh: string;
@@ -37,12 +38,8 @@ export class SignInComponent implements OnInit {
     this.userForm = this.formBuilder.group({
       password: ['', Validators.required],
       loginNumber: ['', [Validators.required, Validators.email]],
-      
     
-
   })}
-
- 
 
   onSignup(): void {
     this.router.navigate(['/signup'])
@@ -54,6 +51,7 @@ export class SignInComponent implements OnInit {
         this.ApiService.login(this.userForm.value.loginNumber, this.userForm.value.password).then(async (response: Token) => {
             response.access = this.secureStorageService.setToken(response.access);
             response.refresh = this.secureStorageService.setToken(response.refresh);
+            saveDataToLocalhost(response);
             if (response.typeUser=='admin'){
               this.router.navigate(['/admin'])
             }else if (response.typeUser=='parent'){
@@ -63,8 +61,7 @@ export class SignInComponent implements OnInit {
             }else if (response.typeUser=='doctor'){
               this.router.navigate(['/doctor-appointment'])}
      localStorage.setItem("currentUser",JSON.stringify(response));
-
-
+     
   }).catch((err) => {
     this.validated = false;
     this.error = err.error.error;
