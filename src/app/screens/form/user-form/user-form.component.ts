@@ -16,7 +16,7 @@ interface Option {
   styleUrls: ['./user-form.component.scss']
 })
 export class UserFormComponent implements OnInit {
-  List = [ "مدرسة","superdoctor"]
+  List = [ "school","superdoctor"]
   userForm! : FormGroup;
   actionBtn : string = "تأكيد";
   school : "school" | undefined
@@ -128,6 +128,7 @@ console.log(this.isSuperDoctor)
         },this.options)
 
         this.dialogRef.close('تأكيد');
+        
 }
 modifieruser(){
   this.api.putuser(this.userForm.value, this.editData.id)

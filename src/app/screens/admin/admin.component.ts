@@ -17,6 +17,7 @@ import { DialogService } from 'src/app/services/shared/dialog.service';
 import { DynamicTableCrud } from './dynamic-table.crud.service';
 import { SecureStorageService } from 'src/app/services/api/secure-storage.service';
 import { HttpClient } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-admin',
@@ -35,6 +36,7 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
   displayedColumns: string[] = ['modifier','loginNumber','email','telephone','nom','TypeUser','id'];
   dataSource! : MatTableDataSource<any>;
   User!: User;
+   updateSubscription!: Subscription;
  
   constructor( service:AbstractRestService<any>, public dialog:MatDialog,private dialogService : DialogService,  secureStorageService : SecureStorageService ,public api:ApiService, private _snackBar: MatSnackBar, private router : Router, private httpClient: HttpClient,) {
     super(  service, 'http://localhost:8000/api/persons', secureStorageService);
@@ -45,9 +47,10 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  async ngOnInit(): Promise<void> {
+   ngOnInit(): void {
     
-    await this.getData();
+     this.getData();
+    
     
     
   }
@@ -70,7 +73,7 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
   
 
 
-  openUserDialog(): void {
+  async openUserDialog(): Promise<void> {
     this.dialog
       .open(UserFormComponent, {
         width: '60%',
@@ -78,11 +81,11 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
         autoFocus: true,
       })
       .afterClosed()
-      .subscribe((val) => {
-        if (val == 'تأكيد') {
-          console.log(val)
-           this.getData();
-        }
+      .subscribe(async (val) => {
+        this.router.navigate(['/admin'])
+  .then(() => {
+    window.location.reload();
+  });
       });
     
   }
