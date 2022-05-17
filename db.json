@@ -1,19 +1,6 @@
 {
   "listMedecins": [
     {
-      "typeUser": "طبيب",
-      "telephone": "5235343",
-      "email": "orl.ndonse@gmail.com",
-      "loginNumber": "",
-      "speciality": "",
-      "nom": "Imed",
-      "prenom": "",
-      "password": "",
-      "id": "2",
-      "gouvernat": "",
-      "CodePostal": ""
-    },
-    {
       "typerUser": "Doctor",
       "telephone": "5235343",
       "email": "orl.ndonse@gmail.com",
