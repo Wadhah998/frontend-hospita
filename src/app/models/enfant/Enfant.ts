@@ -9,13 +9,13 @@ export class Enfants {
     date: string;
     password: string;
     id: number;
-    situation: string;
+    situation: number;
     codePostal: number;
     idMedecin : number;
 
     
         
-    constructor(telephone: number,codePostal : number, email: string ,gouvernat: string ,cin : number, ecole: string, password: string,   nomEnfant : string, id : number, nomParent:string, date: string, situation: string,  idMedecin : number ){
+    constructor(telephone: number,codePostal : number, email: string ,gouvernat: string ,cin : number, ecole: string, password: string,   nomEnfant : string, id : number, nomParent:string, date: string, situation: number,  idMedecin : number ){
       this.date = date;
       this.telephone = telephone;
       this.situation = situation;

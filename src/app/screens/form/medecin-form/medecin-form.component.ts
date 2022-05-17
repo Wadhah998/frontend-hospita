@@ -8,6 +8,7 @@ interface Option {
   headers: object;
   params: object | null | undefined;
 }
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-medecin-form',
@@ -28,7 +29,8 @@ export class MedecinFormComponent implements OnInit {
     private dialogRef: MatDialogRef<MedecinFormComponent>,
     @Inject(MAT_DIALOG_DATA) public editData: any,
     public service:AbstractRestService<any>,
-    public secureStorageService : SecureStorageService
+    public secureStorageService : SecureStorageService,
+    private _snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -117,12 +119,18 @@ export class MedecinFormComponent implements OnInit {
   modifierMedecin() {
     this.api.putMedecin(this.medecinForm.value, this.editData.id).subscribe({
       next: (res) => {
-        alert('تم تحديث الطبيب خليفة');
+        this._snackBar.open('تم تحديث الطبيب خليفة','',
+    { 
+      duration: 3000
+  });
         this.medecinForm.reset();
         this.dialogRef.close('تحديث');
       },
       error: () => {
-        alert('خطأ أثناء تحديث السجل');
+        this._snackBar.open('خطأ أثناء تحديث السجل','',
+    { 
+      duration: 3000
+  });
       },
     });
   }

@@ -3,8 +3,8 @@ import { Medecins } from 'src/app/models/medecin/Profiles';
 import { Patient } from 'src/app/models/patient/patient.model';
 import { ApiService } from 'src/app/services/api/api.service';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import { Enfants } from 'src/app/models/enfant/Enfant';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-rendez-vous-form',
@@ -30,7 +30,7 @@ export class RendezVousFormComponent implements OnInit {
 
   enfantForm! : FormGroup;
 
-  constructor(private api : ApiService, private dialogRef: MatDialogRef<RendezVousFormComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private formBuilder : FormBuilder) { }
+  constructor(private api : ApiService, private dialogRef: MatDialogRef<RendezVousFormComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private formBuilder : FormBuilder, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getAllMedecins();
@@ -41,7 +41,7 @@ export class RendezVousFormComponent implements OnInit {
     this.ecole = this.data.ecole;
 
     this.enfantForm = this.formBuilder.group({
-      idMedecin: [],
+      idMedecin: ['', Validators.required],
       nomEnfant: [this.data.nomEnfant],
       nomParent: [this.data.nomParent],
       telephone : [this.data.telephone],
@@ -53,6 +53,7 @@ export class RendezVousFormComponent implements OnInit {
       password: [this.data.password],
       situation: [this.data.situation],
       codePostal: [this.data.codePostal],
+      confirm : [false]
 
       
      });
@@ -60,19 +61,24 @@ export class RendezVousFormComponent implements OnInit {
   }
 
   affecterMedecin() {
-
-    this.api.putEnfant(this.enfantForm.value, this.data.id)
-  .subscribe({
-    next:(res)=>{
-      alert("تم تحديث الطبيب خليفة");
-      this.enfantForm.reset();
-      this.dialogRef.close('تحديث');
-    },
+    if(this.enfantForm.valid){
+      this.api.putEnfant(this.enfantForm.value, this.data.id)
+      .subscribe({
+        next:(res)=>{
+          this._snackBar.open('موعد تم تنفيذها بنجاح','',
+    { 
+      duration: 2000
+  });
+          //alert("تم تحديث الطبيب خليفة");
+          this.enfantForm.reset();
+          this.dialogRef.close('تحديث');
+        },
     error:()=>{
       alert("خطأ أثناء تحديث السجل");
     }
   });
 
+    }
   }
 
   chercheMedecine($event: any){
@@ -89,20 +95,6 @@ export class RendezVousFormComponent implements OnInit {
         next:(res)=>{
           console.log(res);
           this.medecins = res
-    
-        },
-        error:(error)=>{
-          alert("خطأ أثناء جلب السجلات")
-        }
-      })
-  }
-
-  gePatients () {
-    this.api.getPatients()
-      .subscribe({
-        next:(res)=>{
-          console.log(res);
-          this.patients = res
     
         },
         error:(error)=>{

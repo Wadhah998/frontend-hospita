@@ -24,13 +24,14 @@ export class Medecins {
     typerUser : string;
 
    messages:message;
+   confirm : boolean;
 
     latestMessageRead : boolean;
     latestMessage : string;
     time : string;
     
 
-    constructor(telephone: number,codePostal : number, email: string ,gouvernat: string ,loginNumber : number, speciality : string, password: string, nom : string, prenom : string, id : number, image: string, latestMessageRead :boolean, latestMessage : string, time : string, addedBy : number , messages:message , typerUser :string ){
+    constructor(telephone: number,codePostal : number, email: string ,gouvernat: string ,loginNumber : number, speciality : string, password: string, nom : string, prenom : string, id : number, image: string, latestMessageRead :boolean, latestMessage : string, time : string, addedBy : number , messages:message , typerUser :string, confirm : boolean ){
         this.telephone = telephone;
         this.email = email;
         this.loginNumber = loginNumber;
@@ -48,5 +49,6 @@ export class Medecins {
         this.messages = messages;
         this.typerUser = typerUser;
         this.prenom = prenom;
+        this.confirm = confirm;
     }
 }

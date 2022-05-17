@@ -9,8 +9,8 @@ import * as _ from 'lodash';
 import { MatTableDataSource } from '@angular/material/table';
 import { Medecins } from 'src/app/models/medecin/Profiles';
 import { MedecinFormComponent } from 'src/app/screens/form/medecin-form/medecin-form.component';
-import { ProfileComponent } from 'src/app/screens/form/profile/profile.component';
 import { ProfileDoctorComponent } from '../profile-doctor/profile-doctor.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-list-medecins',
@@ -50,7 +50,8 @@ export class ListMedecinsComponent implements OnInit {
   constructor(
     private api: ApiService,
     private dialog: MatDialog,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private _snackBar: MatSnackBar
   ) {}
 
   ajouterMedecinDialog() {
@@ -92,7 +93,10 @@ export class ListMedecinsComponent implements OnInit {
         if (res) {
           this.api.deleteMedecin(id).subscribe({
             next: (res) => {
-              alert('حذف الدكتور بنجاح');
+              this._snackBar.open('حذف الدكتور بنجاح','',
+    { 
+      duration: 3000
+  });
               this.getAllMedecins();
             },
             error: () => {
