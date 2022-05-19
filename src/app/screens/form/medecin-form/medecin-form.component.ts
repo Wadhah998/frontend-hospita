@@ -83,7 +83,10 @@ export class MedecinFormComponent implements OnInit {
       next: (res) => {
         this._snackBar.open('تم تحديث الطبيب خليفة','',
     { 
-      duration: 3000
+      duration: 3000,
+      verticalPosition:'bottom',
+      horizontalPosition : 'left',
+      panelClass: ['blue-snackbar']
   });
         this.medecinForm.reset();
         this.dialogRef.close('تحديث');
@@ -91,7 +94,9 @@ export class MedecinFormComponent implements OnInit {
       error: () => {
         this._snackBar.open('خطأ أثناء تحديث السجل','',
     { 
-      duration: 3000
+      duration: 3000,
+      verticalPosition:'top',
+      horizontalPosition : 'left'
   });
       },
     });

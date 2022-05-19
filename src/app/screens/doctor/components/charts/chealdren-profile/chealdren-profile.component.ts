@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-chealdren-profile',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chealdren-profile.component.scss'],
 })
 export class ChealdrenProfileComponent implements OnInit {
+
+  formm !: FormGroup;
   img: string = './assets/images/users/user-1.jpg';
   constructor() {}
 

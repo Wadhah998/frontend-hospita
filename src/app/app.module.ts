@@ -70,6 +70,7 @@ import { AjouterEnfantComponent } from './screens/maitre/forms/ajouter-enfant/aj
 import { ProfilEnfantsComponent } from './screens/maitre/components/profil-enfants/profil-enfants.component';
 import { ChatComponent } from './screens/superDoctor/components/messagerie/chat/chat.component';
 import { FilterUsersPipe } from './components/pipes/filter-users.pipe';
+import { DiagnosticComponent } from './screens/parents/components/diagnostic/diagnostic.component';
 
 
 
@@ -135,7 +136,8 @@ import { FilterUsersPipe } from './components/pipes/filter-users.pipe';
     RendezVousFormComponent,
     FilterUsersPipe,
     SidebarComponent,
-    ChatComponent
+    ChatComponent,
+    DiagnosticComponent
   ],
   imports: [
     BrowserModule,

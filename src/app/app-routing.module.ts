@@ -53,6 +53,7 @@ import { sample } from 'lodash';
 import { SuperdocService } from './guards/superdoc.service';
 import { ProfileApointementComponent } from './screens/superDoctor/components/profile-apointement/profile-apointement.component';
 import { ProfileMedecinComponent } from './screens/superDoctor/components/profile-medecin/profile-medecin.component';
+import { DiagnosticComponent } from './screens/parents/components/diagnostic/diagnostic.component';
 
 
 
@@ -97,6 +98,7 @@ const routes: Routes = [
   { path: 'headerSuper', component : HeaderSuperDoctorComponent},
   { path: 'profileApoint', component : ProfileApointementComponent},
   { path: 'profileApoint/singleDoctor/:id', component : ProfileMedecinComponent },
+  { path: 'diagnostic', component : DiagnosticComponent },
   { path: 'maitreDashboard', component: MaitredashboardComponent },
 
   { path :  'listeEnfants', component : ListEnfantsComponent },

@@ -31,12 +31,12 @@
       "telephone": "24259043",
       "email": "fatmag@gmail.com",
       "loginNumber": "",
-      "speciality": "specialite 5",
-      "nom": "fatma",
+      "speciality": "",
+      "nom": "",
       "prenom": "",
       "password": "",
       "id": "6",
-      "gouvernat": "fridhi",
+      "gouvernat": "",
       "CodePostal": ""
     }
   ],
@@ -176,7 +176,7 @@
       "id": 2
     },
     {
-      "idMedecin": "2 ",
+      "idMedecin": "5 ",
       "nomEnfant": "Radhija",
       "nomParent": "abid",
       "telephone": "52567141",
