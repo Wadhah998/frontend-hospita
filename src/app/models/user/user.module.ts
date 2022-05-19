@@ -1,3 +1,5 @@
+import { Localisation } from "src/app/screens/sign-up/localisation/localisation.module";
+
 export class User{
   public id!: number;
   public typeUser!: String;
@@ -7,7 +9,5 @@ export class User{
   public telephone!: number;
   public loginNumber!:number;
   public password!:number;
-  public delegation!:string;
-  public governorate!:string;
-  public zipCode!:string;
+  localisation!: Localisation ;
 }

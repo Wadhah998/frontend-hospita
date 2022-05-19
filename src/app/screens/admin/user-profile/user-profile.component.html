@@ -10,6 +10,9 @@
           <mat-list-item role="listitem"> رقم الهاتف: {{User?.telephone}} </mat-list-item>
           <mat-list-item role="listitem"> البريد الألكتروني: {{User?.email}} </mat-list-item>
           <mat-list-item role="listitem"> رقم الدخول: {{User?.loginNumber}} </mat-list-item>
+          <mat-list-item role="listitem"> الولاية {{User?.localisation?.governorate}} </mat-list-item>
+          <mat-list-item role="listitem"> الترقيم البريدي{{User?.localisation?.zipCode}} </mat-list-item>
+          <mat-list-item role="listitem"> المعتمدية{{User?.localisation?.delegation}} </mat-list-item>
           
         </mat-list>
       </div>

@@ -6,17 +6,17 @@
           <span>
             <mat-form-field >
               <mat-select style="font-size: medium;" (selectionChange)="chercheMedecin($event)" placeholder="تخصص" #input>
-                <mat-option  value="spécialité 1">
-                  spécialité 1
+                <mat-option  value="Autisme">
+                  Autisme
                 </mat-option>
-                <mat-option  value="spécialité 2">
-                  spécialité 2
+                <mat-option  value="hyper-activity">
+                  hyper-activity
                 </mat-option>
-                <mat-option  value="spécialité 3">
-                  spécialité 3
+                <mat-option  value="Autisme">
+                  Autisme
                 </mat-option>
-                <mat-option  value="spécialité 4">
-                  spécialité 4
+                <mat-option  value="Autisme">
+                  Autisme
                 </mat-option>
               </mat-select>
              </mat-form-field>
@@ -32,7 +32,7 @@
         <button mat-flat-button (click)="afficherTousMedecin()">القائمة</button>
       </mat-card-subtitle>
         <mat-card-content>
-          <table mat-table [dataSource]="dataSource">
+          <table mat-table [dataSource]="data">
             <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
       
@@ -46,10 +46,9 @@
             <ng-container matColumnDef="nom">
               <th style="text-align: left;" mat-header-cell *matHeaderCellDef>اسم</th>
               <td style="text-align: left;"mat-cell *matCellDef="let element">
-                <button mat-Stroked-button  mat-flat-button 
-                [ngClass]="{ active: element === medecin }"
+                <button 
                 (click)="onSelect(element)" >
-                  {{element.nom}}
+                  {{element.name}}
                 </button> 
               </td>
             </ng-container>
@@ -57,8 +56,8 @@
             
             <!-- Symbol Column -->
             <ng-container matColumnDef="gouvernat">
-              <th  style="text-align: left;" mat-header-cell *matHeaderCellDef>الولاية </th>
-              <td  style="text-align: left;" mat-cell *matCellDef="let element">{{ element.gouvernat }}</td>
+              <th  style="text-align: left;" mat-header-cell *matHeaderCellDef>اللقب </th>
+              <td  style="text-align: left;" mat-cell *matCellDef="let element">{{ element.familyName }}</td>
             </ng-container>
             <!-- Action Column -->
       
@@ -66,7 +65,7 @@
             <ng-container matColumnDef="cin">
               <th style="text-align: left;" mat-header-cell *matHeaderCellDef>ب.ت.و
               </th>
-              <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.cin }}</td>
+              <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.loginNumber}}</td>
             </ng-container>
       
             <!-- Symbol Column -->
@@ -91,9 +90,9 @@
             <!-- Action Column -->
             <ng-container matColumnDef="action">
               <th style="text-align: right;" mat-header-cell *matHeaderCellDef>تغيير</th>
-              <td mat-cell *matCellDef="let element">
+              <td mat-cell *matCellDef="let element,index as i">
                 <a class="pointer">
-                  <button  mat-icon-button (click)="deleteMedecin(element.id)" color="warn" matTooltip="حذف">
+                  <button  mat-icon-button (click)="delete(element.id,i)" color="warn" matTooltip="حذف">
                     <mat-icon>delete</mat-icon>
                 </button>
                 </a>
@@ -106,7 +105,7 @@
             </ng-container>
       
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;let i= index;"></tr>
     
     
             <tr class="mat-row" *matNoDataRow style="text-align: right;">

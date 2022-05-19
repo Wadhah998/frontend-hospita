@@ -11,13 +11,16 @@ import { Medecins } from 'src/app/models/medecin/Profiles';
 import { MedecinFormComponent } from 'src/app/screens/form/medecin-form/medecin-form.component';
 import { ProfileDoctorComponent } from '../profile-doctor/profile-doctor.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { DynamicTableCrud } from 'src/app/screens/admin/dynamic-table.crud.service';
+import { AbstractRestService } from 'src/app/services/genericservice.service';
+import { SecureStorageService } from 'src/app/services/api/secure-storage.service';
 
 @Component({
   selector: 'app-list-medecins',
   templateUrl: './list-medecins.component.html',
   styleUrls: ['./list-medecins.component.scss'],
 })
-export class ListMedecinsComponent implements OnInit {
+export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnInit {
 
   medecins : Medecins []= [];
   medecin!: Medecins;
@@ -28,7 +31,7 @@ export class ListMedecinsComponent implements OnInit {
   selectedSpeciality!: boolean;
 
   ngOnInit(): void {
-    this.getAllMedecins();
+    this.getData();
   }
 
   medecinForm!: FormGroup;
@@ -48,11 +51,14 @@ export class ListMedecinsComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
+    service:AbstractRestService<any>,
+    secureStorageService : SecureStorageService,
     private api: ApiService,
     private dialog: MatDialog,
     private dialogService: DialogService,
     private _snackBar: MatSnackBar
-  ) {}
+    
+  ) {super(  service, 'http://localhost:8000/api/persons', secureStorageService)}
 
   ajouterMedecinDialog() {
     this.dialog
@@ -64,7 +70,7 @@ export class ListMedecinsComponent implements OnInit {
       .afterClosed()
       .subscribe((val) => {
         if (val == 'تأكيد') {
-          this.getAllMedecins();
+          this.getData();
         }
       });
   }
@@ -100,7 +106,10 @@ export class ListMedecinsComponent implements OnInit {
               this.getAllMedecins();
             },
             error: () => {
-              alert('خطأ اثناء حذف هذا الطبيب !!');
+              this._snackBar.open('خطأ اثناء حذف هذا الطبيب !!','',
+    { 
+      duration: 3000
+  });
             },
           });
         }
@@ -140,7 +149,7 @@ export class ListMedecinsComponent implements OnInit {
           this.select.emit(this.medecin)
         },
         error:(error)=>{
-          alert("خطأ أثناء جلب السجلات")
+          //alert("خطأ أثناء جلب السجلات")
         }
       })
   }

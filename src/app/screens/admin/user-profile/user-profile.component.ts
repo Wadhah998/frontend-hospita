@@ -12,5 +12,6 @@ export class UserProfileComponent implements OnInit {
   }
   @Input()
   public User!: User;
-
+ 
 }
+

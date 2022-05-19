@@ -12,7 +12,7 @@ import { Medecins } from 'src/app/models/medecin/Profiles';
 export class ProfileDoctorComponent  {
 
   @Input()
-  public medecin!: Medecins;
+  public medecin!: any;
 
   /*
 

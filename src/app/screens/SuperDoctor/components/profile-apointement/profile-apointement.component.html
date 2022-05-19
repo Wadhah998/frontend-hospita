@@ -1,9 +1,9 @@
 <div fxLayout="row wrap">
-  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="100"*ngFor="let enfant of enfants; let i = index">
-    <mat-card *ngIf="enfant.situation>=70"
+  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="100"*ngFor="let enfant of data; let i = index">
+    <mat-card *ngIf="enfant.scoreParent>6"
     
      style="margin: 16px;
-    background-color: #0a71b3;" class="profile-content">
+    background-color: rgb(235, 78, 88);" class="profile-content">
     
       <mat-card-content   >
         <div  class="item-content">
@@ -12,8 +12,9 @@
               <img [src]="img" mat-card-avatar />
             </a>
               
-            <h3  class="name">{{enfant.nomEnfant}}</h3>
-            <span class="age">{{enfant.nomParent}}</span>
+            <h3  class="name">{{enfant.name}}</h3>
+             <span class="age">{{enfant.familyName}}</span>
+            
           </div>
           <div class="image-box">
             
@@ -28,10 +29,10 @@
            style="margin-left: 30%;font-size: 55%;" (click)="rendezvous(enfant)"><i class="fa-solid fa-user switch"></i>إسناد موعد </a>
       </mat-card-actions>
     </mat-card>
-    <mat-card *ngIf="enfant.situation<=30"
+    <mat-card  *ngIf="enfant.scoreParent > 3 && enfant.scoreParent<=6"
     
-      style="margin: 16px;
-     background-color: #8abbdb;" class="profile-content">
+      style="margin: 16px; 
+     background-color: #4791c2;" class="profile-content">
      
        <mat-card-content   >
          <div  class="item-content">
@@ -39,8 +40,9 @@
             <a  (click)="rendezvous(enfant)">
               <img [src]="img" mat-card-avatar />
             </a>
-             <h3  class="name">{{enfant.nomEnfant}}</h3>
-             <span class="age">{{enfant.nomParent}}</span>
+            <h3  class="name">{{enfant.name}}</h3>
+             <span class="age">{{enfant.familyName}}</span>
+            
            </div>
            <div class="image-box">
              
@@ -55,10 +57,10 @@
             style="margin-left: 30%;font-size: 55%;" (click)="rendezvous(enfant)"><i class="fa-solid fa-user switch"></i>إسناد موعد </a>
        </mat-card-actions>
      </mat-card>
-     <mat-card *ngIf="enfant.situation>30 && enfant.situation<70"
+     <mat-card *ngIf="enfant.scoreParent<=3"
     
       style="margin: 16px;
-     background-color: #549dca;" class="profile-content">
+     background-color: #9ddb4c;" class="profile-content">
      
        <mat-card-content   >
          <div  class="item-content">
@@ -66,8 +68,9 @@
             <a  (click)="rendezvous(enfant)">
               <img [src]="img" mat-card-avatar />
             </a>
-             <h3  class="name">{{enfant.nomEnfant}}</h3>
-             <span class="age">{{enfant.nomParent}}</span>
+            <h3  class="name">{{enfant.name}}</h3>
+             <span class="age">{{enfant.familyName}}</span>
+           
            </div>
            <div class="image-box">
              

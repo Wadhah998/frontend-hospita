@@ -2,15 +2,17 @@
   <mat-card-content class="">
     <div fxLayout="column" fxLayoutAlign="center center">
       <img src="./assets/images/users/user-1.jpg"  mat-card-avatar />
-      <h3 class="name">{{ medecin?.nom}}</h3>
+      <h3 class="name">{{medecin?.name}}</h3>
       <p class="age">Médecin</p>
     </div>
     <div class="details" fxLayout="row" fxLayoutAlign="">
       <mat-list role="list" class="list">
-        <mat-list-item role="listitem">ب.ت.و:{{medecin.loginNumber}}</mat-list-item>
-        <mat-list-item role="listitem"> الهاتف:{{medecin.telephone}}</mat-list-item>
-        <mat-list-item role="listitem"> البريد الإلكتروني : {{medecin.email}}</mat-list-item>
-        <mat-list-item role="listitem">الولاية :{{medecin.gouvernat}}</mat-list-item>
+        <mat-list-item role="listitem">ب.ت.و:{{medecin?.loginNumber}}</mat-list-item>
+        <mat-list-item role="listitem"> الهاتف:{{medecin?.telephone}}</mat-list-item>
+        <mat-list-item role="listitem"> البريد الإلكتروني : {{medecin?.email}}</mat-list-item>
+        <mat-list-item role="listitem"> الولاية {{medecin?.localisation?.governorate}} </mat-list-item>
+          <mat-list-item role="listitem"> الترقيم البريدي{{medecin?.localisation?.zipCode}} </mat-list-item>
+          <mat-list-item role="listitem"> المعتمدية{{medecin?.localisation?.delegation}} </mat-list-item>
 
       </mat-list>
     </div>
