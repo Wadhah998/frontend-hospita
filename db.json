@@ -25,6 +25,19 @@
       "id": "5",
       "gouvernat": "tahri",
       "CodePostal": ""
+    },
+    {
+      "typeUser": "طبيب",
+      "telephone": "24259043",
+      "email": "fatmag@gmail.com",
+      "loginNumber": "",
+      "speciality": "",
+      "nom": "",
+      "prenom": "",
+      "password": "",
+      "id": "6",
+      "gouvernat": "",
+      "CodePostal": ""
     }
   ],
   "listUsers": [
@@ -154,7 +167,7 @@
       "id": 2
     },
     {
-      "idMedecin": "2 ",
+      "idMedecin": "5 ",
       "nomEnfant": "Radhija",
       "nomParent": "abid",
       "telephone": "52567141",

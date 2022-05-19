@@ -75,6 +75,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 
+import { DiagnosticComponent } from './screens/parents/components/diagnostic/diagnostic.component';
 
 
 
@@ -142,6 +143,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     SidebarComponent,
     ChatComponent,
     
+    DiagnosticComponent
   ],
   imports: [
     BrowserModule,
