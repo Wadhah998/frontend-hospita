@@ -43,7 +43,7 @@ import { DoctorMessagerieComponent } from './screens/doctor/components/doctor-me
 import { AuthGuard } from './guards/auth.guard';
 import { DoctorGuard } from './guards/doctor.guard';
 import { AdminGuard } from './guards/admin.guard';
-
+import { DoctorCalendarComponent } from './screens/doctor/components/doctor-calendar/doctor-calendar.component';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -72,7 +72,11 @@ const routes: Routes = [
   { path: 'signin', component: SignInComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'forgetpassword', component: ForgetPasswordComponent },
-  { path: 'admin', component: AdminComponent,canActivate:[AuthGuard,AdminGuard] },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthGuard, AdminGuard],
+  },
   { path: 'messagerieSuper', component: MessagerieComponent },
 
   { path: 'medecins', component: SuperDoctorComponent },
@@ -86,17 +90,27 @@ const routes: Routes = [
   {
     path: '',
     component: DoctorComponent,
-    canActivate:[AuthGuard],
+    canActivate: [AuthGuard],
     children: [
-      { path: 'doctor-appointment', component: DoctorAppointmentComponent ,
-      canActivate:[AuthGuard,DoctorGuard]},
+      {
+        path: 'doctor-appointment',
+        component: DoctorAppointmentComponent,
+        canActivate: [AuthGuard, DoctorGuard],
+      },
       {
         path: 'doctor-consultation',
         component: DoctorConsultationComponent,
+        canActivate: [AuthGuard, DoctorGuard],
       },
       {
         path: 'doctor-chat',
         component: DoctorMessagerieComponent,
+        canActivate: [AuthGuard, DoctorGuard],
+      },
+      {
+        path: 'doctor-calendar',
+        component: DoctorCalendarComponent,
+        canActivate: [AuthGuard, DoctorGuard],
       },
     ],
   },

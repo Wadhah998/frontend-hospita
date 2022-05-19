@@ -11,26 +11,28 @@ import { User } from 'src/app/models/user/user.module';
 export class HeaderComponent implements OnInit {
   public test : User
   menu:Menu[];
-  menuMedecin=[ 
+  menuMedecin=[
     {
-        "link":"الرسائل",
-        "redirect":""
+        "link":"التشخيص",
+        "redirect":"/doctor-consultation"
 
     },
-   
     {
-        "link":"الأطباء",
-        "redirect":""
+        "link":"الرسائل",
+        "redirect":"/doctor-chat"
+
+    },
+
+    {
+        "link":" جدول المواعيد",
+        "redirect":"/doctor-calendar"
     },
     {
         "link":"لوحة متابعة",
-        "redirect":"/medecins"
+        "redirect":"/doctor-appointment"
     },
-    {
-        "link":"افهمني",
-        "redirect":""
-    }    
-       
+
+
   ]
   menuAdmin=[
     {
@@ -38,7 +40,7 @@ export class HeaderComponent implements OnInit {
         "redirect":""
 
     },
-   
+
     {
         "link":"الأطباء",
         "redirect":""
@@ -58,7 +60,7 @@ menuSuperDoctor=[
       "redirect":""
 
   },
- 
+
   {
       "link":"الأطباء",
       "redirect":""
@@ -78,7 +80,7 @@ menuMaitre=[
       "redirect":""
 
   },
- 
+
   {
       "link":"الأطباء",
       "redirect":""
@@ -98,7 +100,7 @@ menuParent=[
       "redirect":""
 
   },
- 
+
   {
       "link":"الأطباء",
       "redirect":""
@@ -125,9 +127,9 @@ menuParent=[
     //     {
     //         "link":"الرسائل",
     //         "redirect":""
-    
+
     //     },
-       
+
     //     {
     //         "link":"الأطباء",
     //         "redirect":""
@@ -162,7 +164,7 @@ menuParent=[
 
     // }
     switch (this.test.typeUser) {
-      case "طبيب":
+      case "doctor":
         this.menu=this.menuMedecin
         break;
         case "admin":

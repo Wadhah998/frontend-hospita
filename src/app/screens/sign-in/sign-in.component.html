@@ -1,92 +1,95 @@
 <app-landing-navbar></app-landing-navbar>
 <div class="row">
   <div class="col-sm-6">
-    <img  src="assets/img1.png" id="img1">
+    <img src="assets/img1.png" id="img1" />
   </div>
 
-<div  style="margin-top: 5%; margin-left: 2%; margin-right: 2%;">
-  <div class="col-sm-6">
-  <div style=" margin-right:15%; color: rgba(26,125,183,1); ">
-    <span class="h2">إفهمني</span>
- </div>
- <div style="margin-top: 3%; color:  rgba(100,109,130,1); margin-right: 13%; ">
-   <span class="h5">مرحبا ، من فضلك سجل الدخول</span>
- </div>
- 
-  
- 
- 
-<form  class="form-inline" style="margin-top: 3%; margin-right: 5%; ">
- <form novalidate  #registerForm="ngForm"> 
- 
-   <div class="form-group">
-      
-      <input type="email"
-      id="email"
-      style="width: 383px;"
-      class="form-control"
-      placeholder="البريد الإلكتروني"
-      ngModel [email]="true"
-      [(ngModel)]="user.email"
-      name="email"
-      required
-      #emailVar="ngModel"
-       [ngClass]="{ 'is-invalid': emailVar.touched && !emailVar.valid }"  />
-       <div class="invalid-feedback">
-        <span *ngIf="emailVar.errors?.['email']">
-          البريد الإلكتروني غير صحيح
-        </span>
-        
-       
+  <div style="margin-top: 5%; margin-left: 2%; margin-right: 2%">
+    <div class="col-sm-6">
+      <div style="margin-right: 15%; color: rgba(26, 125, 183, 1)">
+        <span class="h2">إفهمني</span>
       </div>
-  
+      <div
+        style="margin-top: 3%; color: rgba(100, 109, 130, 1); margin-right: 13%"
+      >
+        <span class="h5">مرحبا ، من فضلك سجل الدخول</span>
+      </div>
+
+      <form class="form-inline" style="margin-top: 3%; margin-right: 5%">
+        <form novalidate #registerForm="ngForm">
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              style="width: 383px"
+              class="form-control"
+              placeholder="البريد الإلكتروني"
+              ngModel
+              [email]="true"
+              [(ngModel)]="user.email"
+              name="email"
+              required
+              #emailVar="ngModel"
+              [ngClass]="{ 'is-invalid': emailVar.touched && !emailVar.valid }"
+            />
+            <div class="invalid-feedback">
+              <span *ngIf="emailVar.errors?.['email']">
+                البريد الإلكتروني غير صحيح
+              </span>
+            </div>
+          </div>
+
+          <br />
+          <br />
+          <br />
+
+          <div class="form-group">
+            <input
+              id="mdp"
+              type="password"
+              style="width: 383px"
+              class="form-control"
+              placeholder="كلمة السر"
+              [(ngModel)]="user.password"
+              name="mdp"
+              required
+              #mdpVar="ngModel"
+              [ngClass]="{ 'is-invalid': mdpVar.touched && !mdpVar.valid }"
+            />
+          </div>
+        </form>
+
+        <button
+          type="submit"
+          [disabled]="!registerForm.valid"
+          style="width: 180px; margin-right: 8%; margin-top: 3%"
+          class="btn btn-primary"
+          (click)="onSignin()"
+        >
+          تسجيل الدخول
+        </button>
+
+        <div
+          style="
+            color: rgba(100, 109, 130, 1);
+            margin-right: 13%;
+            margin-top: 2%;
+          "
+        >
+          <a routerLink="/forgetpassword" routerLinkActive="active"
+            >نسيت كلمة السر ؟
+          </a>
+        </div>
+
+        <button
+          type="button"
+          style="width: 180px; margin-right: 8%; margin-top: 3%"
+          class="btn btn-primary"
+          (click)="onSignup()"
+        >
+          التسجيل
+        </button>
+      </form>
     </div>
-   
-  <br>
-  <br>
-  <br>
- 
-    <div class="form-group">
-       
-       <input 
-       id="mdp"
-       type="password"
-       style="width: 383px;"
-       class="form-control"
-       placeholder="كلمة السر" 
-       [(ngModel)]="user.password"
-       name="mdp"
-       required
-       #mdpVar="ngModel"
-        [ngClass]="{ 'is-invalid': mdpVar.touched && !mdpVar.valid }" />
-        
-     </div>
-    
-   </form>
-
-
-   <button  type="submit"
-   [disabled]="!registerForm.valid" 
-   style="width: 180px;  margin-right: 8%; margin-top: 3%; " 
-   class="btn btn-primary" (click)="onSignin()" >تسجيل الدخول 
-   
-   </button>
- 
- <div style="color: rgba(100,109,130,1); margin-right: 13%; margin-top: 2%;" >
-  <a routerLink="/forgetpassword" routerLinkActive="active">نسيت كلمة السر ؟
-</a>
+  </div>
 </div>
-
-<button type="button"
- style="width: 180px;  margin-right: 8%; margin-top: 3%; " 
- class="btn btn-primary" (click)="onSignup()" >التسجيل 
-   
-</button>
-
-</form>
-</div>
-
- </div>
-
-
-

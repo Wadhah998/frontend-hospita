@@ -32,28 +32,13 @@
     <span class="dots">:</span>صنف حسب
   </div>
   <div>
-    <p class="cases">اليوم <span class="number-cases">(10)</span></p>
+    <p class="cases">اليوم <span class="number-cases">{{casesNumbers}}</span></p>
     <a href="" class="btn-outline-primary ml-3">الماضية </a
     ><a href="" class="btn-outline-primary"> المقبلة</a>
   </div>
 </div>
 <div fxLayout="row wrap">
-  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="100">
-    <app-chealdren-profile></app-chealdren-profile>
-  </div>
-  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="50">
-    <app-chealdren-profile></app-chealdren-profile>
-  </div>
-  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="100">
-    <app-chealdren-profile></app-chealdren-profile>
-  </div>
-  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="100">
-    <app-chealdren-profile></app-chealdren-profile>
-  </div>
-  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="100">
-    <app-chealdren-profile></app-chealdren-profile>
-  </div>
-  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="100">
-    <app-chealdren-profile></app-chealdren-profile>
+  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="100" *ngFor="let patient of patients">
+    <app-chealdren-profile [patient]=patient></app-chealdren-profile>
   </div>
 </div>

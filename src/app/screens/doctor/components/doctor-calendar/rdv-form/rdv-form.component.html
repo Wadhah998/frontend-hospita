@@ -1,0 +1,61 @@
+<div FxLayout="row" fxLayoutAlign="space-between center" class="mb-20">
+  <h1 class="dialog-title">إضافة موعد</h1>
+  <mat-icon class="red cursor" mat-dialog-close>close</mat-icon>
+</div>
+
+<div mat-dialog-content>
+  <form [formGroup]="eventForm">
+    <mat-form-field class="class1" appearance="outline">
+      <mat-label> عنوان الموعد</mat-label>
+      <input formControlName="title" matInput placeholder=" عنوان الموعد" />
+    </mat-form-field>
+    <!--  <mat-form-field appearance="outline">
+      <mat-label>Input type time</mat-label>
+      <input type="time" matInput name="week" min="09:00" max="18:00" />
+    </mat-form-field> -->
+    <div class="class2">
+      <mat-form-field appearance="outline">
+        <mat-label> بداية الموعد</mat-label>
+        <input
+          matInput
+          formControlName="start"
+          [ngxMatTimepicker]="pickerTime"
+          [format]="24"
+          placeholder=" بداية الموعد"
+        />
+        <ngx-mat-timepicker #pickerTime></ngx-mat-timepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>نهاية الموعد </mat-label>
+        <input
+          matInput
+          formControlName="end"
+          [ngxMatTimepicker]="picker"
+          [format]="24"
+          placeholder=" نهاية الموعد"
+        />
+        <ngx-mat-timepicker #picker></ngx-mat-timepicker>
+      </mat-form-field>
+    </div>
+  </form>
+  <!--  <mat-form-field appearance="outline">
+    <mat-label>Material Timepicker</mat-label>
+    <input
+      matInput
+      [(ngModel)]="time"
+      [ngxMatTimepicker]="picker"
+      [format]="24"
+    />
+    <ngx-mat-timepicker #picker></ngx-mat-timepicker>
+  </mat-form-field>
+
+  <pre>Selected time: {{ time | json }}</pre> -->
+  <!-- <ngx-mat-timepicker [(ngModel)]="start"></ngx-mat-timepicker> -->
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="primary" (click)="addEvent()">
+    {{ actionBtn }}
+  </button>
+  <button mat-raised-button color="warn" mat-dialog-close>إلغاء</button>
+</div>

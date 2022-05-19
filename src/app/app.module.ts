@@ -61,7 +61,28 @@ import { DoctorMessagerieComponent } from './screens/doctor/components/doctor-me
 import { ChatComponent } from './screens/doctor/components/doctor-messagerie/chat/chat.component';
 import { ContactComponent } from './screens/doctor/components/doctor-messagerie/contact/contact.component';
 import { SimplebarAngularModule } from 'simplebar-angular';
+import { DoctorCalendarComponent } from './screens/doctor/components/doctor-calendar/doctor-calendar.component';
+import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
+import timeGridPlugin from '@fullcalendar/timegrid'; // a plugin!
+import bootstrapPlugin from '@fullcalendar/bootstrap';
+import { RdvFormComponent } from './screens/doctor/components/doctor-calendar/rdv-form/rdv-form.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+FullCalendarModule.registerPlugins([
+  // register FullCalendar plugins
+  dayGridPlugin,
+  timeGridPlugin,
+  interactionPlugin,
+  bootstrapPlugin,
+]);
 
+import {
+  NgxMatDatetimePickerModule,
+  NgxMatNativeDateModule,
+  //NgxMatTimepickerModule,
+} from '@angular-material-components/datetime-picker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -109,11 +130,13 @@ import { SimplebarAngularModule } from 'simplebar-angular';
     HartComponent,
     LandingNavbarComponent,
     UserProfileComponent,
-    
+
     FilterUsersPipe,
     DoctorMessagerieComponent,
     ChatComponent,
     ContactComponent,
+    DoctorCalendarComponent,
+    RdvFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -126,6 +149,12 @@ import { SimplebarAngularModule } from 'simplebar-angular';
     NgApexchartsModule,
     AngularMaterialModule,
     SimplebarAngularModule,
+    FullCalendarModule,
+    MatDatepickerModule,
+    NgxMatDatetimePickerModule,
+    //NgxMatTimepickerModule,
+    NgxMatNativeDateModule,
+    CarouselModule 
   ],
   providers: [ApiService, DialogService],
   bootstrap: [AppComponent],

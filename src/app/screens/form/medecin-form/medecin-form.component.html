@@ -1,62 +1,80 @@
-<h1 mat-dialog-title style="margin-left:40%;  color:rgb(7, 107, 221)">إضافة طبيب</h1>
-<div mat-dialog-content >
+<div FxLayout="row" fxLayoutAlign="space-between center" class="mb-20">
+  <h1 class="dialog-title">إضافة طبيب</h1>
+  <mat-icon class="red cursor" mat-dialog-close>close</mat-icon>
+</div>
+
+<div mat-dialog-content>
+  <ngx-simplebar [options]="options" style="position: relative; height: 100%">
     <form [formGroup]="medecinForm">
-        <mat-form-field class="class1" appearance="outline">
-            <mat-label>الاسم واللقب</mat-label>
-            <input formControlName="nom" matInput placeholder="الاسم واللقب">
-        </mat-form-field>
-        <mat-form-field class="class1" appearance="outline">
-            <mat-label>رقم التسجيل</mat-label>
-            <input formControlName="loginNumber" matInput placeholder="رقم التسجيل">
+      <mat-form-field class="class1" appearance="outline">
+        <mat-label>الاسم واللقب</mat-label>
+        <input formControlName="nom" matInput placeholder="الاسم واللقب" />
+      </mat-form-field>
+      <mat-form-field class="class1" appearance="outline">
+        <mat-label>رقم التسجيل</mat-label>
+        <input
+          formControlName="loginNumber"
+          matInput
+          placeholder="رقم التسجيل"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="class1" appearance="outline">
+        <mat-label>الهاتف</mat-label>
+        <input formControlName="telephone" matInput placeholder="الهاتف" />
+      </mat-form-field>
+
+      <mat-form-field class="class1" appearance="outline">
+        <mat-label>البريد الاكتروني</mat-label>
+        <input
+          formControlName="email"
+          matInput
+          placeholder="البريد الاكتروني"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="class1" appearance="outline">
+        <mat-label>الولاية</mat-label>
+        <input formControlName="password" matInput placeholder="كلمة السر" />
+      </mat-form-field>
+
+      <mat-form-field class="class1" appearance="outline">
+        <mat-label>تخصص</mat-label>
+        <input formControlName="speciality" matInput placeholder="تخصص" />
+      </mat-form-field>
+
+      <mat-form-field class="class1" appearance="outline">
+        <mat-label>id</mat-label>
+        <input formControlName="id" matInput placeholder="ID" />
+      </mat-form-field>
+
+      <div class="class2">
+        <mat-form-field class="" appearance="outline">
+          <mat-label>الولاية</mat-label>
+          <input formControlName="gouvernat" matInput placeholder="الولاية" />
         </mat-form-field>
 
-        <mat-form-field class="class1" appearance="outline">
-            <mat-label>الهاتف</mat-label>
-            <input formControlName="telephone" matInput placeholder="الهاتف">
+        <mat-form-field class="" appearance="outline">
+          <mat-label>الترقيم البريدي</mat-label>
+          <input
+            formControlName="CodePostal"
+            matInput
+            placeholder="الترقيم البريدي"
+          />
         </mat-form-field>
-        
-        <mat-form-field class="class1" appearance="outline">
-            <mat-label>البريد الاكتروني</mat-label>
-            <input formControlName="email" matInput placeholder="البريد الاكتروني">
-        </mat-form-field >
-        
-        <mat-form-field class="class1" appearance="outline">
-            <mat-label>الولاية</mat-label>
-            <input formControlName="password" matInput placeholder="كلمة السر">
-        </mat-form-field>
-
-        <mat-form-field class="class1" appearance="outline">
-            <mat-label>تخصص</mat-label>
-            <input formControlName="speciality" matInput placeholder="تخصص">
-        </mat-form-field>
-
-        <mat-form-field class="class1" appearance="outline" >
-            <mat-label>id</mat-label>
-            <input formControlName="id" matInput placeholder="ID">
-        </mat-form-field>
-
-        
-        
-        <div class="class2">
-        <mat-form-field class="" appearance="outline" >
-            <mat-label>الولاية</mat-label>
-            <input formControlName="gouvernat" matInput placeholder="الولاية">
-        </mat-form-field>
-
-        <mat-form-field class="" appearance="outline" >
-            <mat-label>الترقيم البريدي</mat-label>
-            <input formControlName="CodePostal" matInput placeholder="الترقيم البريدي">
-        </mat-form-field>
-    </div>
-        <div class="form-group">
-            <h4>أضف صورة</h4>
-            <input type="file" class="form-control" accept="image/*">
-            <p class="text-success" *ngIf="fileUploaded">ملف مرفوع</p>
-        </div>
+      </div>
+      <div class="form-group">
+        <h4>أضف صورة</h4>
+        <input type="file" class="form-control" accept="image/*" />
+        <p class="text-success" *ngIf="fileUploaded">ملف مرفوع</p>
+      </div>
     </form>
+  </ngx-simplebar>
 </div>
 
 <div mat-dialog-actions [align]="'end'">
-    <button mat-raised-button color="primary" (click)="addMedecin()">{{actionBtn}}</button>
-    <button mat-raised-button color="warn" mat-dialog-close>إلغاء</button> 
+  <button mat-raised-button color="primary" (click)="addMedecin()">
+    {{ actionBtn }}
+  </button>
+  <button mat-raised-button color="warn" mat-dialog-close>إلغاء</button>
 </div>

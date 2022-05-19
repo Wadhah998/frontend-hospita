@@ -9,11 +9,10 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./medecin-form.component.scss'],
 })
 export class MedecinFormComponent implements OnInit {
-
-  medecinForm! : FormGroup;
-  actionBtn : string = "تأكيد";
+  medecinForm!: FormGroup;
+  actionBtn: string = 'تأكيد';
   fileUploaded = true;
-
+  options: Object = { autoHide: false, direction: 'rtl' };
   constructor(
     private formBuilder: FormBuilder,
     private api: ApiService,
@@ -23,16 +22,16 @@ export class MedecinFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.medecinForm = this.formBuilder.group({
-      typeUser: ['طبيب', Validators.required], 
-     telephone: ['', Validators.required], 
-     email : ['', [Validators.required, Validators.email]],
-     loginNumber: ['', Validators.required],
-     speciality: ['', Validators.required],
-     nom: ['', Validators.required],
-     password:['', Validators.required],
-     id: ['', Validators.required],
-     gouvernat : ['', Validators.required],
-     CodePostal :  ['', Validators.required]
+      typeUser: ['طبيب', Validators.required],
+      telephone: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      loginNumber: ['', Validators.required],
+      speciality: ['', Validators.required],
+      nom: ['', Validators.required],
+      password: ['', Validators.required],
+      id: ['', Validators.required],
+      gouvernat: ['', Validators.required],
+      CodePostal: ['', Validators.required],
     });
 
     if (this.editData) {
