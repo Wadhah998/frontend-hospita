@@ -36,6 +36,14 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import {
+  NgxMatDatetimePickerModule,
+  NgxMatNativeDateModule,
+  //NgxMatTimepickerModule,
+} from '@angular-material-components/datetime-picker';
+//import { MatTimepickerModule } from 'mat-timepicker';
+import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
+//import { MatFormFieldModule } from '@angular/material/form-field';
 @NgModule({
   declarations: [],
   imports: [
@@ -76,6 +84,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatNativeDateModule,
     ScrollingModule,
     FlexLayoutModule,
+    MatDatepickerModule,
+    MatInputModule,
+
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+    NgxMatNativeDateModule,
+    //MatTimepickerModule,
+    MatFormFieldModule,
+
+    NgxMatTimepickerModule,
   ],
   exports: [
     MatAutocompleteModule,
@@ -114,6 +132,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatNativeDateModule,
     ScrollingModule,
     FlexLayoutModule,
+    MatDatepickerModule,
+    MatInputModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+    NgxMatNativeDateModule,
+   // MatTimepickerModule,
+    MatFormFieldModule,
+    NgxMatTimepickerModule,
   ],
 })
 export class AngularMaterialModule {}

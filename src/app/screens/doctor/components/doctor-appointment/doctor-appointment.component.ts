@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Patient } from 'src/app/models/patient/patient.model';
+import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
   selector: 'app-doctor-appointment',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoctorAppointmentComponent implements OnInit {
 
-  constructor() { }
+   patients: Patient[] = [];
+   casesNumbers:number=0;
+  constructor(public api: ApiService) {}
 
-  ngOnInit(): void {
+ ngOnInit(): void {
+    this.gePatients();
+    
+  }
+  gePatients() {
+    this.api.getPatients().subscribe({
+      next: (res) => {
+        this.patients = res;
+        console.log(this.patients);
+        this.casesNumbers=this.patients.length;
+      },
+    });
   }
 
 }

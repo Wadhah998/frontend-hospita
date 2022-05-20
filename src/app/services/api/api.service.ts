@@ -15,6 +15,7 @@ export interface Token{
   familyName: string | undefined;
 }
 
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +23,6 @@ export interface Token{
 export class ApiService {
   
   constructor(private http: HttpClient) {}
-
   postMedecin(data: any) {
     return this.http.post<Medecins[]>(
       'http://localhost:3000/listMedecins/',
@@ -46,12 +46,14 @@ public signup(person: User_parent): Promise<void> {
     return this.http.get<Medecins[]>('http://localhost:3000/listMedecins/');
   }
 
-  putMedecin(data:any, id : number){
-    return this.http.put<Medecins[]>("http://localhost:3000/listMedecins/"+id, data)
-    
+  putMedecin(data: any, id: number) {
+    return this.http.put<Medecins[]>(
+      'http://localhost:3000/listMedecins/' + id,
+      data
+    );
   }
-  putuser(data:any, id : number){
-    return this.http.put<User[]>("http://localhost:3000/listUsers/"+id, data)
+  putuser(data: any, id: number) {
+    return this.http.put<User[]>('http://localhost:3000/listUsers/' + id, data);
   }
 
   deleteMedecin(id: number) {
@@ -70,11 +72,10 @@ public signup(person: User_parent): Promise<void> {
   getSinglePatient(id: number) {
     return this.http.get<Patient>('http://localhost:3000/listPatients/' + id);
   }
-  deleteuser(id:number){
-    return this.http.delete<User[]>("http://localhost:3000/listUsers/"+id);
+  deleteuser(id: number) {
+    return this.http.delete<User[]>('http://localhost:3000/listUsers/' + id);
   }
-  uploadFile(file : File){
-  }
+  uploadFile(file: File) {}
   deletePatient(id: number) {
     return this.http.delete<Patient[]>(
       'http://localhost:3000/listPatients/' + id

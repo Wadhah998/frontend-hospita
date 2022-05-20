@@ -45,7 +45,7 @@ import { DoctorMessagerieComponent } from './screens/doctor/components/doctor-me
 import { AuthGuard } from './guards/auth.guard';
 import { DoctorGuard } from './guards/doctor.guard';
 import { AdminGuard } from './guards/admin.guard';
-
+import { DoctorCalendarComponent } from './screens/doctor/components/doctor-calendar/doctor-calendar.component';
 
 
 
@@ -107,17 +107,27 @@ const routes: Routes = [
   {
     path: '',
     component: DoctorComponent,
-    canActivate:[AuthGuard,DoctorGuard],
+    // canActivate: [AuthGuard],
     children: [
-      { path: 'doctor-appointment', component: DoctorAppointmentComponent ,
+      {
+        path: 'doctor-appointment',
+        component: DoctorAppointmentComponent,
+        // canActivate: [AuthGuard, DoctorGuard],
       },
       {
         path: 'doctor-consultation',
-        component: DoctorConsultationComponent
+        component: DoctorConsultationComponent,
+        // canActivate: [AuthGuard, DoctorGuard],
       },
       {
         path: 'doctor-chat',
-        component: DoctorMessagerieComponent
+        component: DoctorMessagerieComponent,
+        // canActivate: [AuthGuard, DoctorGuard],
+      },
+      {
+        path: 'doctor-calendar',
+        component: DoctorCalendarComponent,
+        // canActivate: [AuthGuard, DoctorGuard],
       },
     ],
   },

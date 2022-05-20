@@ -71,7 +71,7 @@ import { ProfilEnfantsComponent } from './screens/maitre/components/profil-enfan
 import { ChatComponent } from './screens/superDoctor/components/messagerie/chat/chat.component';
 import { FilterUsersPipe } from './components/pipes/filter-users.pipe';
 import { SecureStorageService } from './services/api/secure-storage.service';
-import { CarouselModule } from 'ngx-owl-carousel-o';
+
 
 
 
@@ -79,7 +79,28 @@ import { DiagnosticComponent } from './screens/parents/components/diagnostic/dia
 
 
 
+import { DoctorCalendarComponent } from './screens/doctor/components/doctor-calendar/doctor-calendar.component';
+import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
+import timeGridPlugin from '@fullcalendar/timegrid'; // a plugin!
+import bootstrapPlugin from '@fullcalendar/bootstrap';
+import { RdvFormComponent } from './screens/doctor/components/doctor-calendar/rdv-form/rdv-form.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+FullCalendarModule.registerPlugins([
+  // register FullCalendar plugins
+  dayGridPlugin,
+  timeGridPlugin,
+  interactionPlugin,
+  bootstrapPlugin,
+]);
 
+import {
+  NgxMatDatetimePickerModule,
+  NgxMatNativeDateModule,
+  NgxMatTimepickerModule,
+} from '@angular-material-components/datetime-picker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -132,6 +153,7 @@ import { DiagnosticComponent } from './screens/parents/components/diagnostic/dia
     AjouterEnfantComponent,
     ProfilEnfantsComponent,
     
+
     FilterUsersPipe,
     DoctorMessagerieComponent,
     ChatComponent,
@@ -143,7 +165,9 @@ import { DiagnosticComponent } from './screens/parents/components/diagnostic/dia
     SidebarComponent,
     ChatComponent,
     
-    DiagnosticComponent
+    DiagnosticComponent,
+    DoctorCalendarComponent,
+    RdvFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -157,7 +181,13 @@ import { DiagnosticComponent } from './screens/parents/components/diagnostic/dia
     AngularMaterialModule,
     SimplebarAngularModule,
     CommonModule,
-    CarouselModule
+    CarouselModule,
+    FullCalendarModule,
+    MatDatepickerModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+    NgxMatNativeDateModule,
+    CarouselModule 
   ],
   providers: [ApiService, DialogService],
   bootstrap: [AppComponent],

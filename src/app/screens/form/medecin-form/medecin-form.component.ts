@@ -16,13 +16,13 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   styleUrls: ['./medecin-form.component.scss'],
 })
 export class MedecinFormComponent implements OnInit {
-
-  medecinForm! : FormGroup;
-  actionBtn : string = "تأكيد";
+  medecinForm!: FormGroup;
+  actionBtn: string = 'تأكيد';
   fileUploaded = true;
   typeUser!: string;
   public  options!: Option;
 
+  optionss: Object = { autoHide: false, direction: 'rtl' };
   constructor(
     private formBuilder: FormBuilder,
     private api: ApiService,

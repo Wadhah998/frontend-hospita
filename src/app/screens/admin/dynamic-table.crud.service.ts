@@ -26,7 +26,7 @@ export class DynamicTableCrud<T> {
                 this.options = {
                     headers: {Authorization : `Bearer ${this.secureStorageService.getToken(access)}`},
                     params: null
-                };
+                };+
                 console.log(this.options);
             }
         }

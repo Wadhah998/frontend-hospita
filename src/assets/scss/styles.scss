@@ -27,6 +27,12 @@ mat-card {
 .text-primary {
   color: #1355d9;
 }
+.bg-danger {
+  background-color: #f27474 !important;
+}
+.text-white {
+  color: white;
+}
 .mat-focus-indicator.mat-active.mat-selected {
   border: none;
   text-decoration: none;
@@ -126,13 +132,210 @@ mat-card {
 
 .simplebar-scrollbar:before {
   position: absolute;
-  content: '';
+  content: "";
   background: #a2adb7 !important;
   border-radius: 7px;
   left: 0;
   right: 0;
   opacity: 0;
-  width: 4px;
+  width: 6px;
   transition: opacity 0.2s linear;
 }
+.cursor {
+  cursor: pointer;
+}
+.dialog-title {
+  font-weight: 600;
+  color: #1355d9;
+  margin-bottom: 0 !important;
+  font-family: "Cairo", sans-serif !important;
+}
+.red {
+  color: #f46a6a;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+//fulCalendar custum css
+.fc-event {
+  border-radius: 2px;
+  border: none;
+  cursor: move;
+  font-size: 16px !important;
+  margin: 5px 7px;
+  padding: 4px 4px !important;
+  text-align: center;
+  font-weight: 600 !important;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
 
+/* .app-calendar .btn {
+  text-transform: capitalize;
+}
+
+.calendar {
+  float: left;
+  margin-bottom: 0;
+}
+
+.fc-view {
+  margin-top: 30px;
+}
+
+.none-border {
+  .modal-footer {
+    border-top: none;
+  }
+}
+
+.fc-toolbar {
+  margin: 10px 0 5px 0;
+
+  h2 {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    text-transform: uppercase;
+  }
+}
+
+.fc-day-grid-event {
+  .fc-time {
+    font-weight: 500;
+  }
+}
+
+th.fc-day-header {
+  padding: 0.5rem 0;
+}
+
+.fc-day {
+  background: transparent;
+}
+
+.fc-toolbar {
+  .fc-state-active,
+  .ui-state-active,
+  button:focus,
+  button:hover,
+  .ui-state-hover {
+    z-index: 0;
+  }
+}
+
+.fc {
+  th.fc-widget-header {
+    background: gray;
+    font-size: 13px;
+    line-height: 20px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+}
+
+.fc-unthemed {
+  th,
+  td,
+  thead,
+  tbody,
+  .fc-divider,
+  .fc-row,
+  .fc-popover {
+    border-color: gray;
+  }
+
+  td.fc-today,
+  .fc-divider {
+    background: gray;
+  }
+}
+
+.fc-button {
+  background: gray;
+  border: none;
+  color: gray;
+  text-transform: capitalize;
+  box-shadow: none;
+  border-radius: 3px;
+  margin: 0 3px;
+  padding: 6px 12px;
+  height: auto;
+}
+
+.fc-text-arrow {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.fc-state-hover {
+  background: gray;
+}
+
+.fc-state-highlight {
+  background: gray;
+}
+
+.fc-state-down,
+.fc-state-active,
+.fc-state-disabled {
+  background-color: blue;
+  color: white;
+  text-shadow: none;
+}
+
+.fc-cell-overlay {
+  background: gray;
+}
+
+.fc-unthemed {
+  .fc-today {
+    background: white;
+  }
+}
+
+.external-event {
+  cursor: move;
+  margin: 10px 0;
+  padding: 8px 10px;
+  color: white;
+  border-radius: 4px;
+}
+
+.fc-basic-view {
+  td.fc-week-number {
+    span {
+      padding-right: 8px;
+    }
+  }
+
+  td.fc-day-number {
+    padding-right: 8px;
+  }
+
+  .fc-content {
+    color: white;
+  }
+}
+
+.fc-time-grid-event {
+  .fc-content {
+    color: white;
+  }
+}
+
+.fc-timeGridDay-view {
+  .fc-content {
+    .fc-time {
+      display: inline-block;
+    }
+
+    .fc-title {
+      display: inline-block;
+      margin-left: 5px;
+    }
+  }
+}
+ */

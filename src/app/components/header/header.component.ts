@@ -11,27 +11,28 @@ import { User } from 'src/app/models/user/user.module';
 export class HeaderComponent implements OnInit {
   public test! : User
   menu!:Menu[];
-  menuMedecin=[ 
+  menuMedecin=[
     {
         "link":"التشخيص",
-        "redirect":"doctor-consultation"
+        "redirect":"/doctor-consultation"
+
     },
     {
         "link":"الرسائل",
-        "redirect":"doctor-chat"
+        "redirect":"/doctor-chat"
 
     },
-   
+
     {
-        "link":"جدول المواعيد",
-        "redirect":"doctor-consultation"
+        "link":" جدول المواعيد",
+        "redirect":"/doctor-calendar"
     },
     {
         "link":"لوحة متابعة",
-        "redirect":"doctor-appointment"
+        "redirect":"/doctor-appointment"
     },
-      
-       
+
+
   ]
   menuAdmin=[
     {
@@ -40,6 +41,10 @@ export class HeaderComponent implements OnInit {
 
     },
 
+    {
+        "link":"الأطباء",
+        "redirect":""
+    },
     {
         "link":"لوحة متابعة",
         "redirect":"/admin"
@@ -52,7 +57,7 @@ menuSuperDoctor=[
       "redirect":"/messagerieSuper"
 
   },
- 
+
   {
       "link":"الأطفال",
       "redirect":"/superDoctor-appointment"
@@ -69,7 +74,7 @@ menuMaitre=[
       "redirect":""
 
   },
- 
+
   {
       "link":"الأطباء",
       "redirect":""
@@ -89,8 +94,11 @@ menuParent=[
       "redirect":""
 
   },
- 
 
+  {
+      "link":"الأطباء",
+      "redirect":""
+  },
   {
       "link":"لوحة متابعة",
       "redirect":"/parent-dashboard"
@@ -109,9 +117,9 @@ menuParent=[
     //     {
     //         "link":"الرسائل",
     //         "redirect":""
-    
+
     //     },
-       
+
     //     {
     //         "link":"الأطباء",
     //         "redirect":""

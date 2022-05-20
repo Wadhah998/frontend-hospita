@@ -57,6 +57,7 @@ export class SignInComponent implements OnInit {
             }else if (response.typeUser=='parent'){
               this.router.navigate(['/parent-dashboard'])
             }else if (response.typeUser=='superdoctor'){
+              
               this.router.navigate(['/superDoctorDashboard'])
             }else if (response.typeUser=='doctor'){
               this.router.navigate(['/doctor-appointment'])}

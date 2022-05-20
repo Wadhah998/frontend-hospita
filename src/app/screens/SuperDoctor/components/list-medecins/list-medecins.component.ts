@@ -91,30 +91,30 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
       });
   }
 
-  deleteMedecin(id: number) {
-    this.dialogService
-      .openConfirmDialog('هل أنت متأكد أنك تريد حذف هذا الطبيب؟')
-      .afterClosed()
-      .subscribe((res) => {
-        if (res) {
-          this.api.deleteMedecin(id).subscribe({
-            next: (res) => {
-              this._snackBar.open('حذف الدكتور بنجاح','',
-    { 
-      duration: 3000
-  });
-              this.getAllMedecins();
-            },
-            error: () => {
-              this._snackBar.open('خطأ اثناء حذف هذا الطبيب !!','',
-    { 
-      duration: 3000
-  });
-            },
-          });
-        }
-      });
-  }
+  // deleteMedecin(id: number) {
+  //   this.dialogService
+  //     .openConfirmDialog('هل أنت متأكد أنك تريد حذف هذا الطبيب؟')
+  //     .afterClosed()
+  //     .subscribe((res) => {
+  //       if (res) {
+  //         this.api.deleteMedecin(id).subscribe({
+  //           next: (res) => {
+  //             this._snackBar.open('حذف الدكتور بنجاح','',
+  //   { 
+  //     duration: 3000
+  // });
+  //             this.getAllMedecins();
+  //           },
+  //           error: () => {
+  //             this._snackBar.open('خطأ اثناء حذف هذا الطبيب !!','',
+  //   { 
+  //     duration: 3000
+  // });
+  //           },
+  //         });
+  //       }
+  //     });
+  // }
 
 
   showMedecin(row: any){
@@ -155,7 +155,7 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
   }
 
   afficherTousMedecin() {
-    this.getAllMedecins();
+    this.getData();
   }
 
   onSelect(element: Medecins) {

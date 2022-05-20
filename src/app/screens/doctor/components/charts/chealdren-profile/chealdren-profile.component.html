@@ -3,11 +3,11 @@
   <mat-card-content>
     <div class="item-content">
       <div class="description">
-        <h3 class="name">ABC</h3>
-        <span class="age">3ans </span>
+        <h3 class="name">{{patient?.name}}</h3>
+        <span class="age">{{patient?.age}} </span>
       </div>
       <div class="image-box">
-        <img [src]="img" mat-card-avatar />
+        <img [src]="patient.image" mat-card-avatar />
       </div>
     </div>
 

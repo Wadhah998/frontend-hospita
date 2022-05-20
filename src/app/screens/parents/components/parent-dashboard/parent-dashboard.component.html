@@ -3,7 +3,7 @@
   <!-- column -->
   <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="25" fxFlex="100">
     <div class="box">
-      <p class="box-title">ماهي وضعيتك الان ؟</p>
+      <p class="box-title">الرجاء إختيار الوضع الحالي</p>
       <div fxLayout="row wrap" fxLayoutAlign="space-around">
         <a mat-raised-button color="primary" (click)="diagnostic()">قبل الحمل</a>
         <a mat-raised-button color="primary" href="">فترة الحمل</a>
@@ -15,12 +15,10 @@
           [matMenuTriggerFor]="menu"
           aria-label="Example icon-button with a menu"
         >
-          <mat-icon>arrow_drop_down</mat-icon> بعدالحمل
+          <mat-icon>arrow_drop_down</mat-icon> بعد الولادة
         </button>
         <mat-menu #menu="matMenu">
-          <a mat-menu-item>
-            <span>بعد شهر</span>
-          </a>
+      
           <a mat-menu-item>
             <span>بعد 3 أشهر </span>
           </a>
