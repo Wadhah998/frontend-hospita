@@ -1,0 +1,19 @@
+<app-header></app-header>
+
+
+<div fxLayout="row">
+        <div fxFlex.gt-lg="33" fxFlex.gt-md="33" fxFlex.gt-xs="100" fxFlex="100">
+          <app-profile-maitre [maitre]="maitre"></app-profile-maitre>    
+        </div>
+        <div fxFlex.gt-lg="66" fxFlex.gt-md="66" fxFlex.gt-xs="100" fxFlex="100">
+          <div fxLayout="row wrap">
+            <div class="class1"></div>
+              <app-all-charts></app-all-charts>
+            </div>   
+            <app-liste-maitres (select)="onLogin($event)"></app-liste-maitres>
+          </div>
+        </div>    
+  
+
+    
+  

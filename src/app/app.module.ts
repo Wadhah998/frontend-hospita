@@ -76,6 +76,10 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 import { DiagnosticComponent } from './screens/parents/components/diagnostic/diagnostic.component';
+import { EcoleDashboardComponent } from './screens/ecole/components/ecole-dashboard/ecole-dashboard.component';
+import { ListeMaitresComponent } from './screens/ecole/components/liste-maitres/liste-maitres.component';
+import { ProfileMaitreComponent } from './screens/ecole/components/profile-maitre/profile-maitre.component';
+import { AjouterMaitreComponent } from './screens/ecole/forms/ajouter-maitre/ajouter-maitre.component';
 
 
 
@@ -143,7 +147,11 @@ import { DiagnosticComponent } from './screens/parents/components/diagnostic/dia
     SidebarComponent,
     ChatComponent,
     
-    DiagnosticComponent
+    DiagnosticComponent,
+         EcoleDashboardComponent,
+         ListeMaitresComponent,
+         ProfileMaitreComponent,
+         AjouterMaitreComponent
   ],
   imports: [
     BrowserModule,

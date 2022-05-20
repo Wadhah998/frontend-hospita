@@ -1,0 +1,21 @@
+<mat-card class="profile-content">
+    <mat-card-content class="">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <img src="./assets/images/users/user-1.jpg"  mat-card-avatar />
+        <h3 class="name">{{maitre?.name}}</h3>
+        <p class="age">Maitre</p>
+      </div>
+      <div class="details" fxLayout="row" fxLayoutAlign="">
+        <mat-list role="list" class="list">
+          <mat-list-item role="listitem">ب.ت.و:{{maitre?.loginNumber}}</mat-list-item>
+          <mat-list-item role="listitem"> الهاتف:{{maitre?.telephone}}</mat-list-item>
+          <mat-list-item role="listitem"> البريد الإلكتروني : {{maitre?.email}}</mat-list-item>
+          <mat-list-item role="listitem"> الولاية {{maitre?.localisation?.governorate}} </mat-list-item>
+            <mat-list-item role="listitem"> الترقيم البريدي{{maitre?.localisation?.zipCode}} </mat-list-item>
+            <mat-list-item role="listitem"> المعتمدية{{maitre?.localisation?.delegation}} </mat-list-item>
+  
+        </mat-list>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
