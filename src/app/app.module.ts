@@ -72,6 +72,7 @@ import { ChatComponent } from './screens/superDoctor/components/messagerie/chat/
 import { FilterUsersPipe } from './components/pipes/filter-users.pipe';
 import { SecureStorageService } from './services/api/secure-storage.service';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { AjoutEnfantComponent } from './screens/parents/form/ajout-enfant/ajout-enfant.component';
 
 
 
@@ -141,6 +142,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     FilterUsersPipe,
     SidebarComponent,
     ChatComponent,
+    AjoutEnfantComponent,
     
   ],
   imports: [

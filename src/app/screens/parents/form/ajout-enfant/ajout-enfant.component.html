@@ -1,0 +1,68 @@
+<app-header></app-header>
+
+<div class="container">
+
+    <h1 mat-dialog-title style="margin-top:2% ;text-align: center;  color: rgba(26,125,183,1);">المعطيات الشخصية للطفل</h1>
+    <div mat-dialog-content >
+      <h3 style="text-align: center;  color: rgba(26,125,183,1);">المعطيات الشخصية للطفل مشفرة و محمية لا يمكن لأحد الإطلاع عليها سوى أنت و الطبيب الخاص</h3>
+  </div>
+  
+  <form  style= "margin-right:-10%;">
+  <form class="form-inline" style="margin-top: 3%; ">
+   
+  
+        <div class="input-group"  style="margin-top: 5%; margin-right: 25%;">
+            <div class="input-group-prepend">
+              
+              <span class="input-group-text">اسم و لقب الطفل</span>
+            </div>
+            <input 
+
+            type="text" 
+            id="name"
+            required
+            aria-label="name" 
+            class="form-control" 
+            placeholder="اسم الطفل"
+            style="width: 383px; height: 30px;"
+           >
+        
+            <input
+             type="text"
+             id="familyName" 
+             required
+             aria-label="familyName" 
+             class="form-control" 
+            placeholder="لقب الطفل"
+            style="width: 383px; height: 30px;"
+  
+            >
+            <br>
+            <br>
+            <div class="input-group-prepend">
+                <span class="input-group-text">تاريخ الولادة
+                </span>
+              </div>
+              <input type="date" 
+              id="birthday" 
+              required
+              aria-label="birthday" 
+              class="form-control" 
+              style="width: 769px; height: 30px;"
+              >
+  
+             
+              
+          
+          </div>
+        </form>
+        
+        <div style="text-align: center; margin-top: 3%; ">
+          <button  style="text-align: center; height: 40px;width: 10%;border: 0ch;color: rgb(255, 255, 255); background-color:rgba(26,125,183,1);"  class="btn btn-primary" (click)="changementDePage();"  type="submit">إضافة الطفل</button>
+        </div>
+  
+    
+  </form>
+  
+  </div>
+  
