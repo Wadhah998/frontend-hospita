@@ -76,6 +76,10 @@ import { SecureStorageService } from './services/api/secure-storage.service';
 
 
 import { DiagnosticComponent } from './screens/parents/components/diagnostic/diagnostic.component';
+import { EcoleDashboardComponent } from './screens/ecole/components/ecole-dashboard/ecole-dashboard.component';
+import { ListeMaitresComponent } from './screens/ecole/components/liste-maitres/liste-maitres.component';
+import { ProfileMaitreComponent } from './screens/ecole/components/profile-maitre/profile-maitre.component';
+import { AjouterMaitreComponent } from './screens/ecole/forms/ajouter-maitre/ajouter-maitre.component';
 
 
 
@@ -96,11 +100,11 @@ FullCalendarModule.registerPlugins([
   bootstrapPlugin,
 ]);
 
-import {
-  NgxMatDatetimePickerModule,
-  NgxMatNativeDateModule,
-  NgxMatTimepickerModule,
-} from '@angular-material-components/datetime-picker';
+// import {
+//   NgxMatDatetimePickerModule,
+//    NgxMatNativeDateModule,
+//   NgxMatTimepickerModule,
+// } from '@angular-material-components/datetime-picker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -168,6 +172,10 @@ import {
     DiagnosticComponent,
     DoctorCalendarComponent,
     RdvFormComponent,
+         EcoleDashboardComponent,
+         ListeMaitresComponent,
+         ProfileMaitreComponent,
+         AjouterMaitreComponent
   ],
   imports: [
     BrowserModule,
@@ -184,9 +192,9 @@ import {
     CarouselModule,
     FullCalendarModule,
     MatDatepickerModule,
-    NgxMatDatetimePickerModule,
-    NgxMatTimepickerModule,
-    NgxMatNativeDateModule,
+    // NgxMatDatetimePickerModule,
+    // NgxMatTimepickerModule,
+    // NgxMatNativeDateModule,
     CarouselModule 
   ],
   providers: [ApiService, DialogService],

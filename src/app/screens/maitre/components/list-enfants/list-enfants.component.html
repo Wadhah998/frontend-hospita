@@ -15,7 +15,7 @@
       <button mat-flat-button (click)="afficherTousEnfant()">القائمة</button>
     </mat-card-subtitle>
       <mat-card-content>
-        <table mat-table [dataSource]="dataSource">
+        <table mat-table [dataSource]="data">
 
     
           <ng-container  matColumnDef="id">
@@ -29,7 +29,7 @@
               <button mat-flat-button 
                 [ngClass]="{ active: element === enfant }"
                 (click)="onSelect(element)" >
-                  {{element.nomEnfant}}
+                  {{element.name}}
                 </button> 
             </td>
           </ng-container>
@@ -37,7 +37,7 @@
  
           <ng-container matColumnDef="date">
             <th  style="text-align: left;" mat-header-cell *matHeaderCellDef>العمر</th>
-            <td  style="text-align: left;" mat-cell *matCellDef="let element">{{ element.date }}</td>
+            <td  style="text-align: left;" mat-cell *matCellDef="let element">{{ element.birthdate }}</td>
           </ng-container>
 
     
@@ -61,14 +61,14 @@
 
           <ng-container matColumnDef="telephone">
             <th style="text-align: left;" mat-header-cell *matHeaderCellDef>هاتف</th>
-            <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.telephone }}</td>
+            <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.familyName }}</td>
           </ng-container>
 
           <ng-container matColumnDef="action">
             <th style="text-align: right;" mat-header-cell *matHeaderCellDef>تغيير</th>
-            <td mat-cell *matCellDef="let element">
+            <td mat-cell *matCellDef="let element;index as i">
               <a class="pointer">
-                <button  mat-icon-button (click)="deleteEnfant(element.id)" color="warn" matTooltip="حذف">
+                <button  mat-icon-button (click)="delete(element.id,i)" color="warn" matTooltip="حذف">
                   <mat-icon>delete</mat-icon>
               </button>
               </a>
@@ -81,7 +81,7 @@
           </ng-container>
     
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;let i= index;"></tr>
   
   
         

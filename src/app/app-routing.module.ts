@@ -1,3 +1,5 @@
+import { AjouterMaitreComponent } from './screens/ecole/forms/ajouter-maitre/ajouter-maitre.component';
+import { EcoleDashboardComponent } from './screens/ecole/components/ecole-dashboard/ecole-dashboard.component';
 import { Localisation } from './screens/sign-up/localisation/localisation.module';
 import { PatientService } from './guards/patient.service';
 import { AdminComponent } from './screens/admin/admin.component';
@@ -92,9 +94,11 @@ const routes: Routes = [
 
   { path: 'medecins', component: SuperDoctorComponent },
   { path: 'ajouterMedecin', component: MedecinFormComponent },
+  { path: 'ajouterMaitre', component: AjouterMaitreComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'superDoctorDashboard', component: DashboardSuperDoctorComponent },
+  { path: 'ecoleDashboard', component: EcoleDashboardComponent },
   { path: 'listMedecins', component: ListMedecinsComponent },
   { path: 'allCharts', component : AllChartsComponent},
   { path: 'headerSuper', component : HeaderSuperDoctorComponent},

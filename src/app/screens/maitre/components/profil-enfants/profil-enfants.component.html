@@ -2,13 +2,13 @@
     <mat-card-content class="">
       <div fxLayout="column" fxLayoutAlign="center center">
         <img src="./assets/images/users/user-1.jpg"  mat-card-avatar />
-        <h3 class="name">{{enfant?.nomEnfant}}</h3>
+        <h3 class="name">{{enfant?.name}}</h3>
         <p class="age">تلميذة</p>
       </div>
       <div class="details" fxLayout="row" fxLayoutAlign="">
         <mat-list role="list" class="list">
-          <mat-list-item role="listitem"> الهاتف:{{enfant?.telephone}}</mat-list-item>
-          <mat-list-item role="listitem"> البريد الإلكتروني : {{enfant?.email}}</mat-list-item>
+          <mat-list-item role="listitem"> الهاتف:{{enfant?.name}}</mat-list-item>
+          <mat-list-item role="listitem"> البريد الإلكتروني : {{enfant?.familyName}}</mat-list-item>
           <mat-list-item role="listitem">الولاية :{{enfant?.gouvernat}}</mat-list-item>
   
         </mat-list>

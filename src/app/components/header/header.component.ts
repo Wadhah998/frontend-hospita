@@ -41,10 +41,7 @@ export class HeaderComponent implements OnInit {
 
     },
 
-    {
-        "link":"الأطباء",
-        "redirect":""
-    },
+    
     {
         "link":"لوحة متابعة",
         "redirect":"/admin"
@@ -68,26 +65,7 @@ menuSuperDoctor=[
   },
   
 ]
-menuMaitre=[
-  {
-      "link":"الرسائل",
-      "redirect":""
 
-  },
-
-  {
-      "link":"الأطباء",
-      "redirect":""
-  },
-  {
-      "link":"لوحة متابعة",
-      "redirect":"/medecins"
-  },
-  {
-      "link":"افهمني",
-      "redirect":""
-  }
-]
 menuParent=[
   {
       "link":"الرسائل",
@@ -95,13 +73,36 @@ menuParent=[
 
   },
 
-  {
-      "link":"الأطباء",
-      "redirect":""
-  },
+
   {
       "link":"لوحة متابعة",
       "redirect":"/parent-dashboard"
+  }
+]
+menuMaitre=[
+  {
+      "link":"الرسائل",
+      "redirect":"maitreD"
+
+  },
+
+
+  {
+      "link":"لوحة متابعة",
+      "redirect":"/maitreDashboard"
+  }
+]
+school=[
+  {
+      "link":"الرسائل",
+      "redirect":""
+
+  },
+
+
+  {
+      "link":"لوحة متابعة",
+      "redirect":"/ecoleDashboard"
   }
 ]
 
@@ -110,49 +111,8 @@ menuParent=[
   ngOnInit(): void {
     this.test=JSON.parse(localStorage.getItem("currentUser")!);
     console.log("from navbar",this.test.typeUser);
-    // if (this.test.typeUser=="طبيب")
-    // {
-    //   this.menu=
-    //   [
-    //     {
-    //         "link":"الرسائل",
-    //         "redirect":""
-
-    //     },
-
-    //     {
-    //         "link":"الأطباء",
-    //         "redirect":""
-    //     },
-    //     {
-    //         "link":"لوحة متابعة",
-    //         "redirect":"/medecins"
-    //     },
-    //     {
-    //         "link":"افهمني",
-    //         "redirect":""
-    //     }
-    // ]
-    //    }
-    // else if (this.test.typeUser=="admin"){
-    //   console.log("admin")
-    //   this.menu=[
-
-    //   ]
-    // }
-    // else if(this.test.typeUser=="طبيب أول"){
-    //   this.menu=[
-
-    //   ]
-
-    // }
-    // else {
-    //   console.log("SuperDoc")
-    //   this.menu=[
-
-    //   ]
-
-    // }
+    console.log(this.test);
+  
     switch (this.test.typeUser) {
       case "doctor":
         this.menu=this.menuMedecin
@@ -166,10 +126,16 @@ menuParent=[
       case "parent":
       this.menu=this.menuParent;
       break;
+      case  "teacher":
+      this.menu=this.menuMaitre;
+      break;
+      case  "school":
+      this.menu=this.school;
+      break;
 
-      default:
-        this.menu=this.menuMedecin;
-        break;
+      // default:
+      //   this.menu=this.menuMedecin;
+      //   break;
     }
 
 

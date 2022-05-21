@@ -32,7 +32,7 @@
       "email": "fatmag@gmail.com",
       "loginNumber": "",
       "speciality": "",
-      "nom": "",
+      "nom": "wadhah",
       "prenom": "",
       "password": "",
       "id": "6",
@@ -97,7 +97,6 @@
   ],
   "listPatients": [
     {
-     
       "name": "sayf",
       "image": "./assets/images/users/user-5.jpg",
       "id": 8,
@@ -415,7 +414,9 @@
       "password": "",
       "id": 17,
       "gouvernat": "",
-      "CodePostal": ""}],
+      "CodePostal": ""
+    }
+  ],
   "listEvents": [
     {
       "title": "event 1",
@@ -630,6 +631,24 @@
       "end": "2022-05-11 09:34:34",
       "backgroundColor": "green",
       "borderColor": "green"
+    },
+    {
+      "title": "hghg",
+      "start": "2022-05-05 12:00:00",
+      "end": "2022-05-05 06:00:00",
+      "id": "WIjMOOt"
+    },
+    {
+      "title": "test",
+      "start": "2022-05-17 11:30:00",
+      "end": "2022-05-17 12:30:00",
+      "id": "-5W06Fc"
+    },
+    {
+      "title": "fffffff",
+      "start": "2022-05-04 01:00:00",
+      "end": "2022-05-04 11:54:00",
+      "id": "YU_X52M"
     }
   ]
 }

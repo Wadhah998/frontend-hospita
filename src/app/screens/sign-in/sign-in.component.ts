@@ -61,7 +61,11 @@ export class SignInComponent implements OnInit {
               this.router.navigate(['/superDoctorDashboard'])
             }else if (response.typeUser=='doctor'){
               this.router.navigate(['/doctor-appointment'])}
-     localStorage.setItem("currentUser",JSON.stringify(response));
+            else if (response.typeUser=='school')
+            this.router.navigate(['/ecoleDashboard']) 
+            else if (response.typeUser=="teacher") 
+            this.router.navigate(["/maitreDashboard"])
+            localStorage.setItem("currentUser",JSON.stringify(response));
      
   }).catch((err) => {
     this.validated = false;

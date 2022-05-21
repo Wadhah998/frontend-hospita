@@ -1,42 +1,4 @@
-<!--<div id="sidebar">
-    <div id="row1">
-        <div id="sidebarHeader">
-            <div class="avatarContainer">
-                <img src="./assets/images/users/user-1.jpg">
-            </div>
-            <div class="actionsContainer">
-                <img width="14" height="14" src="./assets/images/toppng.com-settings-icon-android-kitkat-512x512.png"  />
-            </div>
-        </div>
-        <div id="searchBox">
-            <img width="13" src="../assets/images/chercher.png" />
-            <input type="text" placeholder="Search or start the new chat"/>
-        </div>
-    </div>
-    
-    <div id="sidebarContent" fxLayout="row wrap">
-        <div 
-        class="conversation"  fxLayout="row" 
-        *ngFor="let medecin of medecins"
-        (click)="convesationClicked.emit(medecin)">
-            <div class="picture" fxFlex.gt-lg="22" fxFlex.gt-md="22" fxFlex.gt-xs="100" fxFlex="100">
-                <img src="./assets/images/blank-profile-picture-973460_640.png">
-            </div>
-            <div class="content" fxFlex.gt-lg="78" fxFlex.gt-md="78" fxFlex.gt-xs="100" fxFlex="100">
-                <div  class="conversationHeader" fxLayout="row">
-                    <div  class="time" fxFlex.gt-lg="78" fxFlex.gt-md="78" fxFlex.gt-xs="100" fxFlex="100">{{medecin.time}}</div>
-                    <div class="name" fxFlex.gt-lg="22" fxFlex.gt-md="22" fxFlex.gt-xs="100" fxFlex="100">{{medecin.nom}}</div>
-                </div>
-                <div class="message">
-                    {{medecin.latestMessage}}
-                    <img *ngIf="!medecin.latestMessageRead" width="12" height="12" src="./assets/images/orange-dot-md.png"  />
-                    
-                    <img *ngIf="medecin.latestMessageRead" width="12" height="12" src="./assets/images/Basic_green_dot.png"  />
-                    </div>
-            </div>
-        </div>
-</div>
-</div>-->
+
 <div class="contact-header" fxLayout="row" fxLayoutAlign="space-between ">
   <i class="fa-solid fa-gear setting"></i>
   <div class="doctor" fxLayout="row">
@@ -70,12 +32,12 @@
 
 <div id="sidebarContent">
 <div class="list-contact">
-  <ngx-simplebar
+  <!-- <ngx-simplebar
     [options]="options"
     data-simplebar-direction="ltr"
     style="position: relative; height: 100%"
     #scrollEle
-  >
+  > -->
     <mat-nav-list dir="ltr">
       <a
         mat-list-item
@@ -103,7 +65,7 @@
         />
       </a>
     </mat-nav-list>
-  </ngx-simplebar>
+  <!-- </ngx-simplebar> -->
 </div>
 </div>
 

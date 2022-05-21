@@ -42,7 +42,7 @@ import {
   //NgxMatTimepickerModule,
 } from '@angular-material-components/datetime-picker';
 //import { MatTimepickerModule } from 'mat-timepicker';
-import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
+import {NgxMatTimepickerModule} from 'ngx-mat-timepicker';
 //import { MatFormFieldModule } from '@angular/material/form-field';
 @NgModule({
   declarations: [],
@@ -88,12 +88,12 @@ import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
     MatInputModule,
 
     NgxMatDatetimePickerModule,
-    NgxMatTimepickerModule,
+    //NgxMatTimepickerModule,
     NgxMatNativeDateModule,
     //MatTimepickerModule,
     MatFormFieldModule,
 
-    NgxMatTimepickerModule,
+   // NgxMatTimepickerModule,
   ],
   exports: [
     MatAutocompleteModule,
@@ -135,7 +135,7 @@ import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
     MatDatepickerModule,
     MatInputModule,
     NgxMatDatetimePickerModule,
-    NgxMatTimepickerModule,
+    //NgxMatTimepickerModule,
     NgxMatNativeDateModule,
    // MatTimepickerModule,
     MatFormFieldModule,

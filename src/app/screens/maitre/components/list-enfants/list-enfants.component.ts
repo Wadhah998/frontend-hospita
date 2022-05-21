@@ -1,3 +1,4 @@
+import { AbstractRestService } from 'src/app/services/genericservice.service';
 
 import { FormGroup } from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
@@ -12,6 +13,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { AjouterEnfantComponent } from '../../forms/ajouter-enfant/ajouter-enfant.component';
 import { Enfants } from 'src/app/models/enfant/Enfant';
 import { ProfilEnfantsComponent } from '../profil-enfants/profil-enfants.component';
+import { DynamicTableCrud } from 'src/app/screens/admin/dynamic-table.crud.service';
+import { SecureStorageService } from 'src/app/services/api/secure-storage.service';
 
 
 @Component({
@@ -19,7 +22,7 @@ import { ProfilEnfantsComponent } from '../profil-enfants/profil-enfants.compone
   templateUrl: './list-enfants.component.html',
   styleUrls: ['./list-enfants.component.scss']
 })
-export class ListEnfantsComponent implements OnInit {
+export class ListEnfantsComponent extends DynamicTableCrud<any> implements OnInit {
 
   enfants : Enfants []= [];
 
@@ -28,7 +31,7 @@ export class ListEnfantsComponent implements OnInit {
   selectedSpeciality!: boolean;
    
   ngOnInit(): void {
-    this.getAllEnfants();
+    this.getData();
     
   }
 
@@ -45,8 +48,10 @@ export class ListEnfantsComponent implements OnInit {
   constructor(
     private api : ApiService,
     private dialog : MatDialog, 
-    private dialogService : DialogService
-    ) { }
+    private dialogService : DialogService,
+    service : AbstractRestService<any>,
+    secureStorageService:SecureStorageService
+    ) {super(service, 'http://localhost:8000/api/patients', secureStorageService) }
     
 
 

@@ -11,6 +11,6 @@ import { Enfants } from 'src/app/models/enfant/Enfant';
 export class ProfilEnfantsComponent {
 
   @Input()
-  public enfant!: Enfants;
+  public enfant!: any;
 
 }
