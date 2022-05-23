@@ -99,6 +99,7 @@ FullCalendarModule.registerPlugins([
   interactionPlugin,
   bootstrapPlugin,
 ]);
+import { AjoutEnfantComponent } from './screens/parents/form/ajout-enfant/ajout-enfant.component';
 
 // import {
 //   NgxMatDatetimePickerModule,
@@ -168,6 +169,7 @@ FullCalendarModule.registerPlugins([
     FilterUsersPipe,
     SidebarComponent,
     ChatComponent,
+    AjoutEnfantComponent,
     
     DiagnosticComponent,
     DoctorCalendarComponent,

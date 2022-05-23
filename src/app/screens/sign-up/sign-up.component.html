@@ -35,6 +35,8 @@
        <div class="form-group">
 
        <input type="text"
+       placeholder="الاسم" 
+
        id="nom"
        style=" margin-right: 5%;"
       formControlName="name" />
@@ -114,10 +116,8 @@
         placeholder="كلمة السر" 
         formControlName="password" />
 
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-          <mat-icon style="color: 	#C0C0C0; margin-left:100% ; " >  
-            {{hide ? 'visibility_off' : 'visibility'}}
-          </mat-icon>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon style="color: 	#C0C0C0; margin-left:100% ; " >  {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
 
 

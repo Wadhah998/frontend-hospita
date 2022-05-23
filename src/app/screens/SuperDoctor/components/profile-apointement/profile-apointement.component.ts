@@ -19,7 +19,9 @@ export class ProfileApointementComponent extends DynamicTableCrud<any> implement
   @Output()
   public select: EventEmitter<Medecins> = new EventEmitter();
 
-  img: string = './assets/images/users/user-1.jpg';
+  img: string = './assets/images/users/mon_enfant_a_3_ans_et_il_parle_mal.jpg';
+  img1: string = './assets/images/users/imageslm.jfif';
+  img2: string = './assets/images/users/imagesllk.jfif';
 
   indexe!: string;
 

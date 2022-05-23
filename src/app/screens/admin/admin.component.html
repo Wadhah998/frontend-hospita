@@ -84,8 +84,8 @@
                   
                 
                 <ng-container matColumnDef="email">
-                    <th  style="text-align: end;" mat-header-cell *matHeaderCellDef>البريد الإلكتروني</th>
-                    <td style="text-align: end;" mat-cell *matCellDef="let element"> {{element.email}} </td>
+                    <th  style="text-align: end;" mat-header-cell *matHeaderCellDef>الولاية</th>
+                    <td style="text-align: end;" mat-cell *matCellDef="let element"> {{element.localisation?.delegation}} </td>
                   </ng-container>
                     
                   <ng-container matColumnDef="loginNumber">

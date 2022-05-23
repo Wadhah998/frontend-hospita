@@ -43,4 +43,5 @@ export class LandingComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+  public ngAfterViewInit(): void {window.dispatchEvent(new Event('resize'));}
 }

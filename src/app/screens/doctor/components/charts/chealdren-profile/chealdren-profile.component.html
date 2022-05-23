@@ -1,4 +1,4 @@
-<form [formGroup]="formm">
+
   <mat-card class="profile-content">
   <mat-card-content>
     <div class="item-content">
@@ -26,10 +26,9 @@
     <a class="card-button"
       ><i class="fa-solid fa-circle-arrow-up switch"></i>تحويل
     </a>
-    <a class="card-button card-button-left">
-      <i class="fa-solid fa-circle-check done"></i>تاكيد</a
+    <a class="card-button card-button-left"(click)="handleDateClick()">
+      <i class="fa-solid fa-circle-check done"(click)="handleDateClick()"></i>تاكيد</a
     >
   </mat-card-actions>
 </mat-card>
 
-</form>

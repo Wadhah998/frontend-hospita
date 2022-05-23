@@ -69,7 +69,7 @@ menuSuperDoctor=[
 menuParent=[
   {
       "link":"الرسائل",
-      "redirect":""
+      "redirect":"/menu"
 
   },
 

@@ -12,8 +12,8 @@
               <img [src]="img" mat-card-avatar />
             </a>
               
-            <h3  class="name">{{enfant.name}}</h3>
-             <span class="age">{{enfant.familyName}}</span>
+            <h3  class="name"style="color: aliceblue">{{enfant.name}}</h3>
+             <span class="age"style="color: aliceblue">{{enfant.familyName}}</span>
             
           </div>
           <div class="image-box">
@@ -26,10 +26,10 @@
       <mat-divider class="lignes"></mat-divider>
       <mat-card-actions>
         <a class="card-button"
-           style="margin-left: 30%;font-size: 55%;" (click)="rendezvous(enfant)"><i class="fa-solid fa-user switch"></i>إسناد موعد </a>
+           style="margin-left: 30%;font-size: 115%;color: aliceblue;padding-right: 7rem;" (click)="rendezvous(enfant)"><i class="fa-solid fa-user switch"style="color: aliceblue;"></i>إسناد موعد </a>
       </mat-card-actions>
     </mat-card>
-    <mat-card  *ngIf="enfant.scoreParent > 3 && enfant.scoreParent<=6"
+    <mat-card  *ngIf="enfant.scoreParent >= 3 && enfant.scoreParent<=6"
     
       style="margin: 16px; 
      background-color: #4791c2;" class="profile-content">
@@ -38,10 +38,10 @@
          <div  class="item-content">
            <div class="description">
             <a  (click)="rendezvous(enfant)">
-              <img [src]="img" mat-card-avatar />
+              <img [src]="img1" mat-card-avatar />
             </a>
-            <h3  class="name">{{enfant.name}}</h3>
-             <span class="age">{{enfant.familyName}}</span>
+            <h3  class="name" style="color: aliceblue">{{enfant.name}}</h3>
+             <span class="age"style="color: aliceblue">{{enfant.familyName}}</span>
             
            </div>
            <div class="image-box">
@@ -54,10 +54,10 @@
        <mat-divider class="lignes"></mat-divider>
        <mat-card-actions>
          <a class="card-button"
-            style="margin-left: 30%;font-size: 55%;" (click)="rendezvous(enfant)"><i class="fa-solid fa-user switch"></i>إسناد موعد </a>
+            style="margin-left: 30%;font-size: 115%;color: aliceblue;padding-right: 7rem;" (click)="rendezvous(enfant)"><i class="fa-solid fa-user switch"style="color: aliceblue;"></i>إسناد موعد </a>
        </mat-card-actions>
      </mat-card>
-     <mat-card *ngIf="enfant.scoreParent<=3"
+     <mat-card *ngIf="enfant.scoreParent<3"
     
       style="margin: 16px;
      background-color: #9ddb4c;" class="profile-content">
@@ -66,10 +66,10 @@
          <div  class="item-content">
            <div class="description">
             <a  (click)="rendezvous(enfant)">
-              <img [src]="img" mat-card-avatar />
+              <img [src]="img2" mat-card-avatar />
             </a>
-            <h3  class="name">{{enfant.name}}</h3>
-             <span class="age">{{enfant.familyName}}</span>
+            <h3  class="name"style="color: aliceblue">{{enfant.name}}</h3>
+             <span class="age"style="color: aliceblue">{{enfant.familyName}}</span>
            
            </div>
            <div class="image-box">
@@ -82,7 +82,8 @@
        <mat-divider class="lignes"></mat-divider>
        <mat-card-actions>
          <a class="card-button"
-            style="margin-left: 30%;font-size: 55%;" (click)="rendezvous(enfant)"><i class="fa-solid fa-user switch"></i>إسناد موعد </a>
+            style="margin-right: 1000%;font-size: 115%; color: aliceblue;padding-right: 7rem;
+          " (click)="rendezvous(enfant)"><i class="fa-solid fa-user switch"style="color: aliceblue;"></i>إسناد موعد </a>
        </mat-card-actions>
      </mat-card>
     

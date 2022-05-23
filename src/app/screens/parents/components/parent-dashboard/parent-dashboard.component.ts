@@ -7,10 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./parent-dashboard.component.scss']
 })
 export class ParentDashboardComponent implements OnInit {
+ 
 
   constructor(private router : Router) { }
 
+  ajout(): void {
+    this.router.navigateByUrl('ajout-enfant');
+
+  }
   ngOnInit(): void {
+
   }
 
   diagnostic() {

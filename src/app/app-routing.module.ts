@@ -58,6 +58,7 @@ import { SuperdocService } from './guards/superdoc.service';
 import { ProfileApointementComponent } from './screens/superDoctor/components/profile-apointement/profile-apointement.component';
 import { ProfileMedecinComponent } from './screens/superDoctor/components/profile-medecin/profile-medecin.component';
 import { DiagnosticComponent } from './screens/parents/components/diagnostic/diagnostic.component';
+import { AjoutEnfantComponent } from './screens/parents/form/ajout-enfant/ajout-enfant.component';
 
 
 
@@ -144,8 +145,11 @@ const routes: Routes = [
         path: 'parent-dashboard',
         component: ParentDashboardComponent,
       },
-      { path: 'superDoctor-appointment', component : SuperDoctorApointementComponent,canActivate:[AuthGuard,SuperdocService] }
+      { path: 'superDoctor-appointment', component : SuperDoctorApointementComponent,canActivate:[AuthGuard,SuperdocService] },
 
+
+
+      { path: 'ajout-enfant', component: AjoutEnfantComponent }
     ];
   
 
