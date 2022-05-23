@@ -56,6 +56,7 @@ import { SuperdocService } from './guards/superdoc.service';
 import { ProfileApointementComponent } from './screens/superDoctor/components/profile-apointement/profile-apointement.component';
 import { ProfileMedecinComponent } from './screens/superDoctor/components/profile-medecin/profile-medecin.component';
 import { DiagnosticComponent } from './screens/parents/components/diagnostic/diagnostic.component';
+import { ThankYouComponent } from './screens/parents/components/thank-you/thank-you.component';
 
 
 
@@ -102,8 +103,8 @@ const routes: Routes = [
   { path: 'profileApoint/singleDoctor/:id', component : ProfileMedecinComponent },
   { path: 'diagnostic', component : DiagnosticComponent },
   { path: 'maitreDashboard', component: MaitredashboardComponent },
-
   { path :  'listeEnfants', component : ListEnfantsComponent },
+  { path: 'thankYou', component : ThankYouComponent },
   {
     path: '',
     component: DoctorComponent,

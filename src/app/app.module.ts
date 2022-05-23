@@ -80,6 +80,7 @@ import { EcoleDashboardComponent } from './screens/ecole/components/ecole-dashbo
 import { ListeMaitresComponent } from './screens/ecole/components/liste-maitres/liste-maitres.component';
 import { ProfileMaitreComponent } from './screens/ecole/components/profile-maitre/profile-maitre.component';
 import { AjouterMaitreComponent } from './screens/ecole/forms/ajouter-maitre/ajouter-maitre.component';
+import { ThankYouComponent } from './screens/parents/components/thank-you/thank-you.component';
 
 
 
@@ -151,7 +152,8 @@ import { AjouterMaitreComponent } from './screens/ecole/forms/ajouter-maitre/ajo
          EcoleDashboardComponent,
          ListeMaitresComponent,
          ProfileMaitreComponent,
-         AjouterMaitreComponent
+         AjouterMaitreComponent,
+         ThankYouComponent
   ],
   imports: [
     BrowserModule,
