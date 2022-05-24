@@ -1,6 +1,6 @@
 <app-landing-navbar></app-landing-navbar>
 <div style="margin-top: 3%; margin-left: 2%; margin-right: 2%;">
-<div class="row">
+<div class="">
   <div class="col-sm-6">
     <img  src="assets/img1.png" id="img1">
   </div>
@@ -36,15 +36,14 @@
 
        <input type="text"
        placeholder="الاسم" 
-
+       class="form-control"
        id="nom"
-       style=" margin-right: 5%;"
+      
       formControlName="name" />
    
   </div>
 
-       <br>
-       <br>
+     
    
     
        <div class="form-group">
@@ -65,8 +64,8 @@
         
         <input 
         id="tel"
-        type="tel"
-        style="margin-right: 5%;"
+        type="text"
+       
         minlength="8"
         maxlength="8"
     class="form-control"
@@ -75,14 +74,13 @@
     
   </div>
      
-       <br>
-       <br>
+     
 
        <div class="form-group">
       
        <input type="email" 
        id="email"
-       style="width: 387px;"
+       style="width: 350px;"
        class="form-control"
        placeholder="البريد الإلكتروني" 
       formControlName="email" />
@@ -96,36 +94,35 @@
        </div>
        
        
-       <br>
-       <br>
+       
    
      
       
 
       <div class="form-group">
-        <input 
-        id="password"
-        type="password"
-        name="password"
-        
-      
-        ngModel ="true"
-        
-        style="width: 360px;"
-        class="form-control"
-        placeholder="كلمة السر" 
-        formControlName="password" />
-
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-          <mat-icon style="color: 	#C0C0C0; margin-left:100% ; " >  {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
+        <div class="password">
+          <input 
+          id="password"
+          type="password"
+          name="password"
+          ngModel ="true"
+          
+         
+          class="form-control"
+          placeholder="كلمة السر" 
+          formControlName="password" />
+  
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon style="color: 	#C0C0C0; margin-left:100% ; " >  {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </div>
+       
 
 
 
       </div>
        
-       <br>
-       <br>
+     
 
 
        <!-- <div class="form-group">
@@ -168,8 +165,7 @@
 
      
        
-       <br>
-       <br>
+     
        <div class="form-group">
         
         <input type="text" 
@@ -183,19 +179,22 @@
         
         <input type="text"
         id="gouv"
-        style="margin-right: 5%;"
+       
     class="form-control"
      placeholder="الولاية"
     formControlName="governorate"/>
     
-  </div>
-  <input type="text"
-  id="gouv"
-  style="margin-right: 5%;"
-class="form-control"
-placeholder="الولاية"
-formControlName="delegation"/>
+        </div>
+        <div class="form-group">
+          <input type="text"
+          id="gouv"
+         
+        class="form-control"
+        placeholder="الولاية"
+        formControlName="delegation"/>
 
+        </div>
+         
 
   
   <!-- <div style="margin-right: 1%; margin-top: 2%;" class="form-check">

@@ -1,5 +1,5 @@
 <app-landing-navbar></app-landing-navbar>
-<div class="row">
+<div class="">
   <div class="col-sm-6">
     <img  src="assets/img1.png" id="img1">
   </div>
@@ -16,7 +16,7 @@
   
  
  
-<form  class="form-inline" style="margin-top: 3%; margin-right: 5%; ">
+
  <form [formGroup]="userForm"> 
  
    <div class="form-group">
@@ -56,29 +56,29 @@
        />
         
      </div>
+     <button  type="submit"
+ 
+     style="width: 180px;  margin-right: 8%; margin-top: 3%; " 
+     class="btn btn-primary" (click)="onSignin($event)" >تسجيل الدخول 
+     
+     </button>
+   
+   <div style="color: rgba(100,109,130,1); margin-right: 13%; margin-top: 2%;" >
+    <a routerLink="/forgetpassword" routerLinkActive="active">نسيت كلمة السر ؟
+  </a>
+  </div>
+  
+  <button type="button"
+   style="width: 180px;  margin-right: 8%; margin-top: 3%; " 
+   class="btn btn-primary" (click)="onSignup()" >التسجيل 
+     
+  </button>
     
    </form>
 
 
-   <button  type="submit"
- 
-   style="width: 180px;  margin-right: 8%; margin-top: 3%; " 
-   class="btn btn-primary" (click)="onSignin($event)" >تسجيل الدخول 
-   
-   </button>
- 
- <div style="color: rgba(100,109,130,1); margin-right: 13%; margin-top: 2%;" >
-  <a routerLink="/forgetpassword" routerLinkActive="active">نسيت كلمة السر ؟
-</a>
-</div>
+  
 
-<button type="button"
- style="width: 180px;  margin-right: 8%; margin-top: 3%; " 
- class="btn btn-primary" (click)="onSignup()" >التسجيل 
-   
-</button>
-
-</form>
 </div>
 
  </div>

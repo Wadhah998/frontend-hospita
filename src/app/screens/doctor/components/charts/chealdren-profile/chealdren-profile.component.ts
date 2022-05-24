@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit,Input } from '@angular/core';
 import { Patient } from 'src/app/models/patient/patient.model';
 import { FormGroup } from '@angular/forms';
@@ -18,30 +19,11 @@ export class ChealdrenProfileComponent implements OnInit {
   formm !: FormGroup;
   @Input() patient!: Patient;
   img: string = './assets/images/users/user-1.jpg';
-  constructor(    private dialog: MatDialog,) {}
+  constructor(    private dialog: MatDialog,public router:Router) {}
 
   ngOnInit(): void {}
   handleDateClick() {
-    console.log(event);
-   // let id = this.calendarEvents.length;
-    //alert('date click! ' + arg.dateStr);
-    this.dialog
-      .open(RdvFormComponent, {
-        width: '40%',
-        disableClose: true,
-        autoFocus: true,
-        data: event,
-      })
-      .afterClosed()
-      .subscribe((val) => {
-        console.log('value is', val);
-        if (val) {
-          /* const azert = this.getEvents();*/
-          console.log('list events', val);
-          this.calendarOptions.events = val;
-          console.log('list calendar', this.calendarOptions.events);
-        }
-      });
+  this.router.navigate(['/doctor-calendar'])
   }
 }
 

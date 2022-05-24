@@ -15,6 +15,7 @@ export interface Token{
   typeUser: string;
   name: string;
   familyName: string | undefined;
+  is_super:any;
 }
 
 
@@ -56,10 +57,10 @@ export class SignInComponent implements OnInit {
               this.router.navigate(['/admin'])
             }else if (response.typeUser=='parent'){
               this.router.navigate(['/parent-dashboard'])
-            }else if (response.typeUser=='superdoctor'){
+            }else if ((response.typeUser=='superdoctor')&& (response.is_super==true)){
               
               this.router.navigate(['/superDoctorDashboard'])
-            }else if (response.typeUser=='doctor'){
+            }else if ((response.typeUser=='superdoctor') && (response.is_super==false)){
               this.router.navigate(['/doctor-appointment'])}
             else if (response.typeUser=='school')
             this.router.navigate(['/ecoleDashboard']) 

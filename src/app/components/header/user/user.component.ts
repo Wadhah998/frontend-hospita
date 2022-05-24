@@ -18,10 +18,10 @@ export class UserComponent  implements OnInit {
    
    
 async  ngOnInit(): Promise <void> {
-  const access = localStorage.getItem("access")  ;
-  if (access !== null){
-  const id = Number (localStorage.getItem("userId")  );
-  this.user=await this.service.get('http://localhost:8000/api/persons',id,{headers: {Authorization : `Bearer ${this.SecureStorageService.getToken(access)}`}})}
+  // const access = localStorage.getItem("access")  ;
+  // if (access !== null){
+  // const id = Number (localStorage.getItem("userId")  );
+  // this.user=await this.service.get('http://localhost:8000/api/persons',id,{headers: {Authorization : `Bearer ${this.SecureStorageService.getToken(access)}`}})}
    
   }
   logOut(){

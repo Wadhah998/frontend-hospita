@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit {
   menuAdmin=[
     {
         "link":"الرسائل",
-        "redirect":""
+        "redirect":"/menu"
 
     },
 
@@ -89,13 +89,13 @@ menuMaitre=[
 
   {
       "link":"لوحة متابعة",
-      "redirect":"/maitreDashboard"
+      "redirect":"maitreDashboard"
   }
 ]
 school=[
   {
       "link":"الرسائل",
-      "redirect":""
+      "redirect":"/menu"
 
   },
 
@@ -111,27 +111,28 @@ school=[
   ngOnInit(): void {
     this.test=JSON.parse(localStorage.getItem("currentUser")!);
     console.log("from navbar",this.test.typeUser);
-    console.log(this.test);
+    console.log((this.test.is_super==true));
   
-    switch (this.test.typeUser) {
-      case "doctor":
-        this.menu=this.menuMedecin
-        break;
-        case "admin":
-        this.menu=this.menuAdmin
-        break;
-    case  "superdoctor":
-      this.menu=this.menuSuperDoctor;
-      break;
-      case "parent":
-      this.menu=this.menuParent;
-      break;
-      case  "teacher":
-      this.menu=this.menuMaitre;
-      break;
-      case  "school":
-      this.menu=this.school;
-      break;
+    
+      
+        if (this.test.typeUser=="admin"){
+        this.menu=this.menuAdmin}
+        else if (( this.test.typeUser=="superdoctor")&&(this.test.is_super==true)){
+        this.menu=this.menuSuperDoctor ;}
+        else if (( this.test.typeUser=="superdoctor")&&(this.test.is_super==false)){
+          this.menu=this.menuMedecin}
+        else if ( this.test.typeUser=="parent"){
+          this.menu=this.menuParent}
+          else if (this.test.typeUser=="teacher"){
+         this.menu=this.menuMaitre}
+         else if (this.test.typeUser=="school"){
+           this.menu=this.school
+         }
+        
+        
+      
+      
+
 
       // default:
       //   this.menu=this.menuMedecin;
@@ -139,6 +140,6 @@ school=[
     }
 
 
-  }
+  
 
 }

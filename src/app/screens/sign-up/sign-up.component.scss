@@ -1,0 +1,21 @@
+.password{
+    display: flex;
+    border:1px solid #ccc;
+    width:350px;
+    height: 36px;
+    justify-content: center;
+    
+    margin-bottom: 15px !important;
+}
+.password input{
+    border:none !important;
+    box-shadow:none !important;
+}
+#email::placeholder{
+    text-align: right;
+  
+}
+input{
+    width: 350px !important;
+    margin-bottom: 15px !important;
+}
