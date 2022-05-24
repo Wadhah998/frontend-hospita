@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Component({
@@ -56,7 +57,7 @@ export class DiagnosticComponent implements OnInit {
     },
   ];
 
-  constructor(private router : Router,private formBuilder: FormBuilder) { }
+  constructor(private router : Router,private formBuilder: FormBuilder,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.diagnosticForm = this.formBuilder.group({
@@ -76,5 +77,18 @@ export class DiagnosticComponent implements OnInit {
   goBack(){
 this.router.navigate(['parent-dashboard'])
   }
-
+  thankYoupage(){
+    if(this.diagnosticForm.valid){
+      this.router.navigate(['thankYou']);
+    }
+    else{
+      this._snackBar.open('الرجاء إكمال تعميرالاستمارة ','',
+{ 
+  duration: 10000,
+  verticalPosition:'bottom',
+  horizontalPosition : 'left',
+  panelClass: ['blue-snackbar'],
+});
+    }
+  }
 }

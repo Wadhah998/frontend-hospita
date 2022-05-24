@@ -33,11 +33,12 @@ export class RendezVousFormComponent extends DynamicTableCrud<any> implements On
   doctors !: any;
   typeUser!: string;
   access !: string | null;
+  parentId:number
 
 
   idMedecin !: number;
 
-  enfantForm! : FormGroup;
+  
 
   constructor(secureStorageService:SecureStorageService,service:AbstractRestService<any> ,private api : ApiService, private dialogRef: MatDialogRef<RendezVousFormComponent>, @Inject(MAT_DIALOG_DATA) public override data: any, private formBuilder : FormBuilder, private _snackBar: MatSnackBar) { 
     super( service, 'http://localhost:8000/api/persons', secureStorageService)
@@ -60,6 +61,7 @@ export class RendezVousFormComponent extends DynamicTableCrud<any> implements On
     this.nomParent=this.data.parent.name;
     this.score=this.data.scoreParent;
     this.telephone=this.data.parent.telephone
+    this.parentId=this.data.id
 
     // this.enfantForm = this.formBuilder.group({
     //   idMedecin: ['', Validators.required],
@@ -78,29 +80,25 @@ export class RendezVousFormComponent extends DynamicTableCrud<any> implements On
 
       
     //  });
+    
 
   }
 
-  affecterMedecin() {
-    if(this.enfantForm.valid){
-      this.api.putEnfant(this.enfantForm.value, this.data.id)
-      .subscribe({
-        next:(res)=>{
-          this._snackBar.open('موعد تم تنفيذها بنجاح','',
-    { 
-      duration: 2000
-  });
-          //alert("تم تحديث الطبيب خليفة");
-          this.enfantForm.reset();
-          this.dialogRef.close('تحديث');
-        },
-    error:()=>{
-     // alert("خطأ أثناء تحديث السجل");
+  affecterMedecin(doctorId: number | undefined, $event: Event): void {
+    $event.preventDefault();
+    const patientId = this.parentId;
+    console.log(patientId,doctorId);
+     if (patientId !== null && patientId !== undefined && doctorId !== null && doctorId !== undefined)
+    {
+        this.service.create('http://localhost:8000/api/patients/supervises',
+            {patient_id: patientId, doctor_id: doctorId, accepted: true}, this.options).then(() => {
+              console.log(patientId)
+                
+        });
     }
-  });
+    else  console.log( this.data.id,doctorId);
+}
 
-    }
-  }
 
   chercheMedecine($event: any){
 
@@ -109,10 +107,10 @@ export class RendezVousFormComponent extends DynamicTableCrud<any> implements On
     this.doctors =  this.service.list(`http://localhost:8000/api/persons`, this.options);
   }
 
-  getAllMedecins  (): Promise<void>   {
-    this.doctors =  this.service.list(`http://localhost:8000/api/persons`, this.options);
-    console.log(this.doctors.name)
-    return this.doctors
-  }
+  // getAllMedecins  (): Promise<void>   {
+  //   this.doctors =  this.service.list(`http://localhost:8000/api/persons`, this.options);
+  //   console.log(this.doctors.name)
+  //   return this.doctors
+  // }
 
 }

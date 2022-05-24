@@ -59,6 +59,7 @@ import { ProfileApointementComponent } from './screens/superDoctor/components/pr
 import { ProfileMedecinComponent } from './screens/superDoctor/components/profile-medecin/profile-medecin.component';
 import { DiagnosticComponent } from './screens/parents/components/diagnostic/diagnostic.component';
 import { AjoutEnfantComponent } from './screens/parents/form/ajout-enfant/ajout-enfant.component';
+import { ThankYouComponent } from './screens/parents/components/thank-you/thank-you.component';
 
 
 
@@ -107,8 +108,8 @@ const routes: Routes = [
   { path: 'profileApoint/singleDoctor/:id', component : ProfileMedecinComponent },
   { path: 'diagnostic', component : DiagnosticComponent },
   { path: 'maitreDashboard', component: MaitredashboardComponent },
-
   { path :  'listeEnfants', component : ListEnfantsComponent },
+  { path: 'thankYou', component : ThankYouComponent },
   {
     path: '',
     component: DoctorComponent,

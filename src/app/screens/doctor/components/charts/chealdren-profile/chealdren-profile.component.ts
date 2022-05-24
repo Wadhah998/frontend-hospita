@@ -17,8 +17,8 @@ export class ChealdrenProfileComponent implements OnInit {
   calendarOptions!: CalendarOptions;
 
   formm !: FormGroup;
-  @Input() patient!: Patient;
-  img: string = './assets/images/users/user-1.jpg';
+  @Input() patient!: any;
+  img: string = './assets/images/users/imageskkf.jfif';
   constructor(    private dialog: MatDialog,public router:Router) {}
 
   ngOnInit(): void {}

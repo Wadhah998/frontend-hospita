@@ -16,21 +16,21 @@
 
       </mat-list>
     </div>
-    <form [formGroup]="enfantForm">
+  
       <mat-form-field  class="class1" appearance="outline">
-          <mat-select  formControlName="idMedecin" (selectionChange)="chercheMedecin($event)" placeholder="قائمة الأطباء" #input>
-              <mat-option *ngFor="let medecin of data"  value="{{medecin.id}} ">
+          <mat-select [(value)]="idMedecin" formControlName="idMedecin" (selectionChange)="chercheMedecin($event)" placeholder="قائمة الأطباء" #input>
+              <mat-option *ngFor="let medecin of data"  value={{medecin.id}}>
                 {{medecin.name}}
                 {{medecin.familyName}}
-                
+              
               </mat-option>
             </mat-select>
       </mat-form-field>
-  </form>
+    
   </mat-card-content>
 </mat-card>
 
 <div mat-dialog-actions [align]="'end'" style="margin-left: 65%;">
     <button mat-raised-button color="warn" mat-dialog-close>إلغاء</button> 
-    <button mat-raised-button color="primary" (click)="affecterMedecin()">تأكيد</button>
+    <button  mat-raised-button color="primary" (click)="affecterMedecin(idMedecin,$event)">تأكيد</button>
 </div>
