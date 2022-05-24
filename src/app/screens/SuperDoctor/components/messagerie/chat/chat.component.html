@@ -17,7 +17,7 @@
 -->
 <div class="conversation-container">
   <div class="header">
-    <img [src]="medecin?.image" alt="" class="img-circle" />
+    <img src="./assets/images/blank-profile-picture-973460_640.png" alt="" class="img-circle" />
     <h3 class="contact-name">{{ medecin?.nom}}</h3>
   </div>
   <div class="content" dir="ltr">
@@ -35,9 +35,9 @@
       <input (keyup.enter)="SubmitMessage($event)" type="text" name="" id="" />
       <div class="chat-input-links">
         <a class="pointer"><i class="fa-solid fa-face-smile link"></i></a>
-        <a class="pointer"><i class="fa-solid fa-file-import link"></i></a>
+        <a  class="pointer"><i  class="fa-solid fa-file-import link"></i></a>
 
-        <button type="submit" class="sendbutton">
+        <button  type="submit" class="sendbutton">
           <i class="fa-solid fa-paper-plane-top"></i>
         </button>
       </div>

@@ -38,6 +38,7 @@ import { AllChartsComponent } from './screens/SuperDoctor/components/all-charts/
 import { HeaderSuperDoctorComponent } from './screens/SuperDoctor/components/header-super-doctor/header-super-doctor.component';
 import { ProfileApointementComponent } from './screens/superDoctor/components/profile-apointement/profile-apointement.component';
 import { ProfileMedecinComponent } from './screens/superDoctor/components/profile-medecin/profile-medecin.component';
+import { DoctorMessagerieComponent } from './screens/doctor/components/doctor-messagerie/doctor-messagerie.component';
 
 
 
@@ -96,7 +97,8 @@ const routes: Routes = [
       { path: 'superDoctor-appointment', component: SuperDoctorApointementComponent },
     ],
   },*/
-  { path: 'superDoctor-appointment', component : SuperDoctorApointementComponent }
+  { path: 'superDoctor-appointment', component : SuperDoctorApointementComponent },
+  { path: 'doctor-chat', component : DoctorMessagerieComponent }
 
 
 ];

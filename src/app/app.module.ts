@@ -48,6 +48,9 @@ import { SidebarComponent } from './screens/superDoctor/components/messagerie/si
 import { ChatComponent } from './screens/superDoctor/components/messagerie/chat/chat.component';
 import { FilterUsersPipe } from './components/pipes/filter-users.pipe';
 import { CommonModule } from '@angular/common';
+import { DoctorChatComponent } from './screens/doctor/components/doctor-messagerie/doctor-chat/doctor-chat.component';
+import { ContactComponent } from './screens/doctor/components/doctor-messagerie/contact/contact.component';
+import { DoctorMessagerieComponent } from './screens/doctor/components/doctor-messagerie/doctor-messagerie.component';
 
 
 
@@ -90,7 +93,11 @@ import { CommonModule } from '@angular/common';
     RendezVousFormComponent,
     FilterUsersPipe,
     SidebarComponent,
-    ChatComponent
+    ChatComponent,
+    ChatComponent,
+    DoctorChatComponent,
+    ContactComponent,
+    DoctorMessagerieComponent
   ],
   imports: [
     BrowserModule,

@@ -12,10 +12,11 @@ export class Enfants {
     situation: string;
     codePostal: number;
     idMedecin : number;
+    confirm : boolean;
 
     
         
-    constructor(telephone: number,codePostal : number, email: string ,gouvernat: string ,cin : number, ecole: string, password: string,   nomEnfant : string, id : number, nomParent:string, date: string, situation: string,  idMedecin : number ){
+    constructor(telephone: number,codePostal : number, email: string ,gouvernat: string ,cin : number, ecole: string, password: string,   nomEnfant : string, id : number, nomParent:string, date: string, situation: string,  idMedecin : number,confirm : boolean ){
       this.date = date;
       this.telephone = telephone;
       this.situation = situation;
@@ -29,5 +30,6 @@ export class Enfants {
         this.codePostal = codePostal;
         this.cin = cin;
         this.idMedecin = idMedecin;
+        this.confirm = confirm;
     }
 }

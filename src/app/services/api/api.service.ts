@@ -57,6 +57,9 @@ export class ApiService {
   getmessage(m:message){
     return this.http.get<message[]>("http://localhost:3000/listMedecins/"+m);
   }
+  getmessagePatient(m:message){
+    return this.http.get<message[]>("http://localhost:3000/listPatients/"+m);
+  }
 
   getEnfant() {
     return this.http.get<Enfants[]>('http://localhost:3000/listEnfants/');
