@@ -1,5 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+
+
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { Medecins } from 'src/app/models/medecin/Profiles';
 import { Patient } from 'src/app/models/patient/patient.model';
+import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
   selector: 'app-doctor-messagerie',

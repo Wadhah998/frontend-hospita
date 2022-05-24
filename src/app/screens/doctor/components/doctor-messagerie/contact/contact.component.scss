@@ -56,14 +56,13 @@ p {
   font-size: 40px;
   color: lightcoral;
 }
-.list-contact {
-  height: 350px;
-}
+
 .contact-name {
   font-weight: bold;
 }
 .img-contact {
-  margin-right: 10px;
+  margin-right: 30px;
+
 }
 .connected {
   width: 12px;
@@ -93,7 +92,7 @@ p {
 }
 .active,
 .link:hover {
-  background: #1355d9;
+  background: #2c88d8;
   color: #ffffff;
   transition: 0, 3s;
   -webkit-transition: 0, 3s;
@@ -101,3 +100,12 @@ p {
   -ms-transition: 0, 3s;
   -o-transition: 0, 3s;
 }
+
+#sidebarContent {
+  overflow: auto;
+  .list-contact {
+    height: 436px;
+  }
+}
+
+

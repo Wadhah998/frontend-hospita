@@ -38,7 +38,6 @@ import { SuperMedecinComponent } from './screens/SuperDoctor/components/super-me
 import { SuperDoctorApointementComponent } from './screens/SuperDoctor/components/super-doctor-apointement/super-doctor-apointement.component';
 import { DashboardSuperDoctorComponent } from './screens/SuperDoctor/components/dashboard-super-doctor/dashboard-super-doctor.component';
 import { ListMedecinsComponent } from './screens/SuperDoctor/components/list-medecins/list-medecins.component';
-import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie/messagerie.component';
 import { AllChartsComponent } from './screens/SuperDoctor/components/all-charts/all-charts.component';
 import { HeaderSuperDoctorComponent } from './screens/SuperDoctor/components/header-super-doctor/header-super-doctor.component';
 import { DoctorMessagerieComponent } from './screens/doctor/components/doctor-messagerie/doctor-messagerie.component';
@@ -57,6 +56,7 @@ import { ProfileApointementComponent } from './screens/superDoctor/components/pr
 import { ProfileMedecinComponent } from './screens/superDoctor/components/profile-medecin/profile-medecin.component';
 import { DiagnosticComponent } from './screens/parents/components/diagnostic/diagnostic.component';
 import { ThankYouComponent } from './screens/parents/components/thank-you/thank-you.component';
+import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie/messagerie.component';
 
 
 
@@ -89,7 +89,7 @@ const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
   { path: 'forgetpassword', component: ForgetPasswordComponent },
   { path: 'admin', component: AdminComponent },
-  { path: 'messagerieSuper', component: MessagerieComponent },
+  { path: 'Superdoctor-chat', component: MessagerieComponent },
 
   { path: 'medecins', component: SuperDoctorComponent },
   { path: 'ajouterMedecin', component: MedecinFormComponent },

@@ -1,23 +1,26 @@
+<app-header-super-doctor></app-header-super-doctor>
+<mat-toolbar class="hello"> مرحبا </mat-toolbar>
 <div fxLayout="row wrap ">
-  <!-- column -->
-  <div
-    fxFlex.gt-lg="75"
-    fxFlex.gt-md="75"
-    fxFlex.gt-xs="75"
-    fxFlex="100"
-    class="chat"
-  >
-    <app-chat [patient]="patient"></app-chat>
+    <!-- column -->
+    <div
+      fxFlex.gt-lg="75"
+      fxFlex.gt-md="75"
+      fxFlex.gt-xs="75"
+      fxFlex="100"
+      class="chat"
+    >
+      <app-doctor-chat [patient]="patient" *ngIf="patient"></app-doctor-chat>
+    </div>
+    <!-- column -->
+    <div
+      fxFlex.gt-lg="25"
+      fxFlex.gt-md="25"
+      fxFlex.gt-xs="25"
+      fxFlex="100"
+      class="contact"
+    >
+      <app-contact (conversation)="onConversationSelected($event)"></app-contact>
+    </div>
+    <!-- column -->
   </div>
-  <!-- column -->
-  <div
-    fxFlex.gt-lg="25"
-    fxFlex.gt-md="25"
-    fxFlex.gt-xs="25"
-    fxFlex="100"
-    class="contact"
-  >
-    <app-contact (conversation)="onConversationSelected($event)"></app-contact>
-  </div>
-  <!-- column -->
-</div>
+  

@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo&display=swap");
+* {
+  font-family: "Cairo", sans-serif;
+}
 * {
   margin: 0 !important;
 }
@@ -11,4 +15,12 @@ mat-card {
 .chat {
   background: #eee;
   // height: 90vh;
+}
+
+.hello {
+  background: #cfe7ec !important;
+  color: #07468f;
+  display: flex;
+  justify-content: end;
+  margin-left: 5%;
 }
