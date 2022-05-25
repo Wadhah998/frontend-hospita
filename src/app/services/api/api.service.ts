@@ -88,6 +88,10 @@ public signup(person: User_parent): Promise<void> {
     return this.http.get<message[]>("http://localhost:3000/listMedecins/"+m);
   }
 
+  getmessagePatient(m:message){
+    return this.http.get<message[]>("http://localhost:3000/listPatients/"+m);
+  }
+
 
 
   getEnfant() {

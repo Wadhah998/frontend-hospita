@@ -8,7 +8,7 @@
       fxShow.md="true"
       fxShow.lg="true"
     >
-      <p class="name">Imed</p>
+      <p class="name">Cyrine</p>
       <p class="detail">طبيب مختص</p>
       <p class="staus">متصل</p>
     </div>
@@ -28,6 +28,8 @@
     [(ngModel)]="userName"
   />
 </div>
+
+<div id="sidebarContent">
 <div class="list-contact">
   <ngx-simplebar
     [options]="options"
@@ -44,22 +46,24 @@
         class="link"
       >
         <p>
-          <span> 14:08 </span>
+          <span> {{ item.time }}</span>
         </p>
         <p matLine>
           <span class="contact-name"> {{ item.name }}</span>
         </p>
         <p matLine>
-          <span> Lorem ipsum </span>
+          <span>{{ item.latestMessage }} </span>
         </p>
         <div class="connected"></div>
         <img
           matListAvatar
           class="img-contact"
-          src="{{ item.image }}"
+          src="./assets/images/blank-profile-picture-973460_640.png"
           alt="..."
         />
       </a>
     </mat-nav-list>
   </ngx-simplebar>
 </div>
+</div>
+

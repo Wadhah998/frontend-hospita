@@ -51,7 +51,7 @@ export class HeaderComponent implements OnInit {
 menuSuperDoctor=[
   {
       "link":"الرسائل",
-      "redirect":"/messagerieSuper"
+      "redirect":"/Superdoctor-chat"
 
   },
 

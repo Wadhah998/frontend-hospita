@@ -47,12 +47,10 @@ import { HeaderSuperDoctorComponent } from './screens/SuperDoctor/components/hea
 import { DashboardSuperDoctorComponent } from './screens/SuperDoctor/components/dashboard-super-doctor/dashboard-super-doctor.component';
 import { ListMedecinsComponent } from './screens/SuperDoctor/components/list-medecins/list-medecins.component';
 import { ProfileDoctorComponent } from './screens/SuperDoctor/components/profile-doctor/profile-doctor.component';
-import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie/messagerie.component';
 import { AllChartsComponent } from './screens/SuperDoctor/components/all-charts/all-charts.component';
 import { ProfileApointementComponent } from './screens/superDoctor/components/profile-apointement/profile-apointement.component';
 import { ProfileMedecinComponent } from './screens/superDoctor/components/profile-medecin/profile-medecin.component';
 import { RendezVousFormComponent } from './screens/superDoctor/form/rendez-vous-form/rendez-vous-form.component';
-import { SidebarComponent } from './screens/superDoctor/components/messagerie/sidebar/sidebar.component';
 import { ListPatientsComponent } from './screens/doctor/components/doctor-consultation/list-patients/list-patients.component';
 import { TensionComponent } from './screens/doctor/components/charts/tension/tension.component';
 import { SugarComponent } from './screens/doctor/components/charts/sugar/sugar.component';
@@ -68,7 +66,6 @@ import { MaitredashboardComponent } from './screens/maitre/components/maitredash
 import { ListEnfantsComponent } from './screens/maitre/components/list-enfants/list-enfants.component';
 import { AjouterEnfantComponent } from './screens/maitre/forms/ajouter-enfant/ajouter-enfant.component';
 import { ProfilEnfantsComponent } from './screens/maitre/components/profil-enfants/profil-enfants.component';
-import { ChatComponent } from './screens/superDoctor/components/messagerie/chat/chat.component';
 import { FilterUsersPipe } from './components/pipes/filter-users.pipe';
 import { SecureStorageService } from './services/api/secure-storage.service';
 
@@ -81,6 +78,10 @@ import { ListeMaitresComponent } from './screens/ecole/components/liste-maitres/
 import { ProfileMaitreComponent } from './screens/ecole/components/profile-maitre/profile-maitre.component';
 import { AjouterMaitreComponent } from './screens/ecole/forms/ajouter-maitre/ajouter-maitre.component';
 import { ThankYouComponent } from './screens/parents/components/thank-you/thank-you.component';
+import { DoctorChatComponent } from './screens/doctor/components/doctor-messagerie/doctor-chat/doctor-chat.component';
+import { ChatComponent } from './screens/SuperDoctor/components/messagerie/chat/chat.component';
+import { SidebarComponent } from './screens/SuperDoctor/components/messagerie/sidebar/sidebar.component';
+import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie/messagerie.component';
 
 
 
@@ -140,7 +141,6 @@ import { AjoutEnfantComponent } from './screens/parents/form/ajout-enfant/ajout-
     ParentComponent,
     ParentDashboardComponent,
     ListChealdrenComponent,
-    MessagerieComponent,
     SuperMedecinComponent,
     SuperDoctorApointementComponent,
     HeaderSuperDoctorComponent,
@@ -171,6 +171,8 @@ import { AjoutEnfantComponent } from './screens/parents/form/ajout-enfant/ajout-
     SidebarComponent,
     ChatComponent,
     AjoutEnfantComponent,
+    DoctorChatComponent,
+    MessagerieComponent,
     
     DiagnosticComponent,
     DoctorCalendarComponent,
