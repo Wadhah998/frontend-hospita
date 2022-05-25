@@ -82,6 +82,7 @@ import { DoctorChatComponent } from './screens/doctor/components/doctor-messager
 import { ChatComponent } from './screens/SuperDoctor/components/messagerie/chat/chat.component';
 import { SidebarComponent } from './screens/SuperDoctor/components/messagerie/sidebar/sidebar.component';
 import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie/messagerie.component';
+import { CommingSoonComponent } from './components/comming-soon/comming-soon.component';
 
 
 
@@ -154,7 +155,8 @@ import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie
          ListeMaitresComponent,
          ProfileMaitreComponent,
          AjouterMaitreComponent,
-         ThankYouComponent
+         ThankYouComponent,
+         CommingSoonComponent
   ],
   imports: [
     BrowserModule,

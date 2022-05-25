@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./comming-soon.component.scss">
+    <script src="script.ts"></script>
+    <title>Coming soon</title>
+</head>
+<app-header></app-header>
+<body>
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h3 class="animate-charcter">REPERAGE PEDOPSY</h3>
+              </div>
+            </div>
+          </div>
+        <p class="sub-title">موقعنا تحت الإنشاء</p>
+
+        <div class="counter-list-container">
+            <div class="counter-item">
+                <p class="timenumber" id="days">35</p>
+                <p class="time-unit">days</p>
+            </div>
+            <div class="counter-item">
+                <p class="timenumber" id="hours">14</p>
+                <p class="time-unit">hours</p>
+            </div>
+            <div class="counter-item">
+                <p class="timenumber" id="minutes">12</p>
+                <p class="time-unit">minutes</p>
+            </div>
+            <div class="counter-item">
+                <p class="timenumber" id="seconds">22</p>
+                <p class="time-unit">seconds</p>
+            </div>
+        </div>
+
+        <form [formGroup]="emailForm"  class="subscribe">
+            <input formControlName="email" type="email"  placeholder="Enter email address">
+            <button type="submit">Subscribe</button>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
