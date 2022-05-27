@@ -1,0 +1,413 @@
+
+<app-header></app-header>
+<div [formGroup]="grossesseForm" fxLayout="row wrap">
+    <div style="text-align: center; color:red;  margin-top: 20px;" fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
+        وجود سوابق لدى الام او الاب او كلاهما بالإصابة بمرض عصبي: 
+    </div>
+    <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+        <mat-card>
+            <mat-card-header>
+                الفصام: 
+            </mat-card-header>
+            <mat-card-content>
+                <div >
+                    <mat-radio-group formControlName="question1" class="smallRadio">
+                        <div class="parent">
+                            <div >
+                                <mat-radio-button  value="1" >
+                                    نعم
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                        لا 
+                                </mat-radio-button>
+                                </div>
+                            </div>
+
+                            
+                        </mat-radio-group>
+                    </div>
+                </mat-card-content>
+        </mat-card>
+        
+    </div>
+    <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+        <mat-card>
+            <mat-card-header>
+                الوسواس القهري :  
+            </mat-card-header>
+            <mat-card-content>
+                <div >
+                    <mat-radio-group formControlName="question2" class="smallRadio">
+                        <div class="parent">
+                            <div >
+                                <mat-radio-button  value="1" >
+                                    نعم
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                        لا 
+                                </mat-radio-button>
+                                </div>
+                            </div>
+
+                            
+                        </mat-radio-group>
+                    </div>
+                </mat-card-content>
+        </mat-card>
+        
+    </div>
+    <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+        <mat-card>
+            <mat-card-header>
+                الرهاب الاجتماعي :
+            </mat-card-header>
+            <mat-card-content>
+                <div >
+                    <mat-radio-group formControlName="question3" class="smallRadio">
+                        <div class="parent">
+                            <div >
+                                <mat-radio-button  value="1" >
+                                    نعم
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                        لا 
+                                </mat-radio-button>
+                                </div>
+                            </div>
+
+                            
+                        </mat-radio-group>
+                    </div>
+                </mat-card-content>
+        </mat-card>
+        
+    </div>
+    <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+        <mat-card>
+            <mat-card-header>
+                لاكتئاب الهوس ثنائي القطب : 
+            </mat-card-header>
+            <mat-card-content>
+                <div >
+                    <mat-radio-group formControlName="question4" class="smallRadio">
+                        <div class="parent">
+                            <div >
+                                <mat-radio-button  value="1" >
+                                    نعم
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                        لا 
+                                </mat-radio-button>
+                                </div>
+                            </div>
+
+                            
+                        </mat-radio-group>
+                    </div>
+                </mat-card-content>
+        </mat-card>
+        
+    </div>
+    <div style="text-align: center; color:red;  margin-top: 40px;" fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
+        وجود ابن سابق يحمل اضطراب من الاضطرابات النمائية:
+    </div>
+    <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+        <mat-card>
+            <mat-card-header>
+                اضطراب التوحد: 
+            </mat-card-header>
+            <mat-card-content>
+                <div >
+                    <mat-radio-group formControlName="question5" class="smallRadio">
+                        <div class="parent">
+                            <div >
+                                <mat-radio-button  value="1" >
+                                    نعم
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                        لا 
+                                </mat-radio-button>
+                                </div>
+                            </div>
+
+                            
+                        </mat-radio-group>
+                    </div>
+                </mat-card-content>
+        </mat-card>
+        
+    </div>
+    <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+        <mat-card>
+            <mat-card-header>
+                اضطراب الاعاقة العقلية  :
+            </mat-card-header>
+            <mat-card-content>
+                <div >
+                    <mat-radio-group formControlName="question6" class="smallRadio">
+                        <div class="parent">
+                            <div >
+                                <mat-radio-button  value="1" >
+                                    نعم
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                        لا 
+                                </mat-radio-button>
+                                </div>
+                            </div>
+
+                            
+                        </mat-radio-group>
+                    </div>
+                </mat-card-content>
+        </mat-card>
+        
+    </div>
+    <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+        <mat-card>
+            <mat-card-header>
+                اضطراب فرط الحركة وتشتت الانتباه : 
+            </mat-card-header>
+            <mat-card-content>
+                <div >
+                    <mat-radio-group formControlName="question7" class="smallRadio">
+                        <div class="parent">
+                            <div >
+                                <mat-radio-button  value="1" >
+                                    نعم
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10.8%;"value="2" >
+                                        لا 
+                                </mat-radio-button>
+                                </div>
+                            </div>
+
+                            
+                        </mat-radio-group>
+                    </div>
+                </mat-card-content>
+        </mat-card>
+        
+    </div>
+    <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+        <mat-card>
+            <mat-card-header>
+                اضطراب اللغة والتواصل : 
+            </mat-card-header>
+            <mat-card-content>
+                <div >
+                    <mat-radio-group formControlName="question8" class="smallRadio">
+                        <div class="parent">
+                            <div >
+                                <mat-radio-button  value="1" >
+                                    نعم
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                        لا 
+                                </mat-radio-button>
+                                </div>
+                            </div>
+
+                            
+                        </mat-radio-group>
+                    </div>
+                </mat-card-content>
+        </mat-card>
+        
+    </div>
+    <div style="text-align: center; color:red ;  margin-top: 40px;" fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
+        الإباء
+    </div>
+    <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+        <mat-card>
+            <mat-card-header>
+                فوق  ثلاثين سنة :   
+            </mat-card-header>
+            <mat-card-content>
+                <div >
+                    <mat-radio-group formControlName="question9" class="smallRadio">
+                        <div class="parent">
+                            <div >
+                                <mat-radio-button  value="1" >
+                                    نعم
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                        لا 
+                                </mat-radio-button>
+                                </div>
+                            </div>
+
+                            
+                        </mat-radio-group>
+                    </div>
+                </mat-card-content>
+        </mat-card>
+        
+    </div>
+    <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+        <mat-card>
+            <mat-card-header>
+                فوق  اربعين سنة : 
+            </mat-card-header>
+            <mat-card-content>
+                <div >
+                    <mat-radio-group formControlName="question10" class="smallRadio">
+                        <div class="parent">
+                            <div >
+                                <mat-radio-button  value="1" >
+                                    نعم
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                        لا 
+                                </mat-radio-button>
+                                </div>
+                            </div>
+
+                            
+                        </mat-radio-group>
+                    </div>
+                </mat-card-content>
+        </mat-card>
+        
+    </div>
+    <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    فوق  خمسين سنة :   
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question11" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        نعم
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            لا 
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+    
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+    </div>
+    <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    الاصابة بالسكري  : 
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question12" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        نعم
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            لا 
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+    
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+    </div>
+    <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+                <mat-card>
+                    <mat-card-header>
+                        استخدام الادوية للمساعدة على  الانجاب او  حماية الجنين :  
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div >
+                            <mat-radio-group formControlName="question13" class="smallRadio">
+                                <div class="parent">
+                                    <div >
+                                        <mat-radio-button  value="1" >
+                                            نعم
+                                        </mat-radio-button>
+                                        <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                                لا 
+                                        </mat-radio-button>
+                                        </div>
+                                    </div>
+        
+                                    
+                                </mat-radio-group>
+                            </div>
+                        </mat-card-content>
+                </mat-card>
+                
+    </div>        
+    <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+                <mat-card>
+                    <mat-card-header>
+                        إصابة الام بتسممات أثناء  مدة الحمل: 
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div >
+                            <mat-radio-group formControlName="question14" class="smallRadio">
+                                <div class="parent">
+                                    <div >
+                                        <mat-radio-button  value="1" >
+                                            نعم
+                                        </mat-radio-button>
+                                        <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                                لا 
+                                        </mat-radio-button>
+                                        </div>
+                                    </div>
+        
+                                    
+                                </mat-radio-group>
+                            </div>
+                        </mat-card-content>
+                </mat-card>
+                
+    </div>
+    <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+                    <mat-card>
+                        <mat-card-header>
+                            استخدام الام للمضادات الحيوية :   
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div >
+                                <mat-radio-group formControlName="question15" class="smallRadio">
+                                    <div class="parent">
+                                        <div >
+                                            <mat-radio-button  value="1" >
+                                                نعم
+                                            </mat-radio-button>
+                                            <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                                    لا 
+                                            </mat-radio-button>
+                                            </div>
+                                        </div>
+            
+                                        
+                                    </mat-radio-group>
+                                </div>
+                            </mat-card-content>
+                    </mat-card>
+                    
+    </div>
+    <div style="text-align: center; ;  visibility: hidden;" fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
+        *
+    </div>
+    <div>
+        <button (click)="thankYoupage()"  class="button" mat-button >إرسال</button>    
+    </div>
+    <div style="text-align: center; ;  margin-top: 20px; visibility: hidden;" fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
+        *
+    </div>
+</div>
+

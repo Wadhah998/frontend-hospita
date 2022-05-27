@@ -23,4 +23,7 @@ export class ParentDashboardComponent implements OnInit {
     this.router.navigate(['ajout-enfant'])
   }
 
+  grossesseForm(){
+    this.router.navigate(['grossesseForm'])
+  }
 }

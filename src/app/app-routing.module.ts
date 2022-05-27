@@ -61,6 +61,7 @@ import { AjoutEnfantComponent } from './screens/parents/form/ajout-enfant/ajout-
 import { ThankYouComponent } from './screens/parents/components/thank-you/thank-you.component';
 import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie/messagerie.component';
 import { CommingSoonComponent } from './components/comming-soon/comming-soon.component';
+import { GrossesseFormComponent } from './screens/parents/components/grossesse-form/grossesse-form.component';
 
 
 
@@ -112,6 +113,7 @@ const routes: Routes = [
   { path :  'listeEnfants', component : ListEnfantsComponent },
   { path: 'thankYou', component : ThankYouComponent },
   { path: 'commingSoon', component : CommingSoonComponent },
+  { path: 'grossesseForm', component : GrossesseFormComponent },
   {
     path: '',
     component: DoctorComponent,
