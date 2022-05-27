@@ -1,7 +1,19 @@
 <app-header></app-header>
+
 <div fxLayout="row wrap">
 <div fxFlex.gt-lg="30" fxFlex.gt-md="30" fxFlex.gt-xs="100" fxFlex="100">
    <app-user-profile [User]="User" ></app-user-profile>
+   <div id="chart">
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [labels]="chartOptions.labels"
+      [fill]="chartOptions.fill"
+      [dataLabels]="chartOptions.dataLabels"
+      [responsive]="chartOptions.responsive"
+    ></apx-chart>
+  </div>
+
 </div>
  
 <div fxFlex.gt-lg="65" fxFlex.gt-md="68" fxFlex.gt-xs="100" fxFlex="100">
@@ -20,7 +32,7 @@
           
         
           
-            <select  (selectionChange)="chercheUser($event)"  #input class="btn-lg" class="form-floating w-25" style="  padding: 5px; width: 200px; text-align: center;" class="bg-primary">
+            <select    #input class="btn-lg" class="form-floating w-25" style="  padding: 5px; width: 200px; text-align: center;" class="bg-primary">
               <option style="background-color: aliceblue;"class="text-primary" selected value="نوع المستخدم">نوع المستخدم</option>
               <option  style="background-color: aliceblue;"class="text-primary"value="طبيب">طبيب</option>
               <option style="background-color: aliceblue;"class="text-primary" value="ولي
@@ -51,7 +63,7 @@
             <table mat-table [dataSource]="data" class="table mt-5">
 
               <ng-container matColumnDef="id">
-                <th style="text-align: center;" mat-header-cell *matHeaderCellDef >id</th>
+                <th style="text-align: center;" mat-header-cell *matHeaderCellDef >id </th>
                 <td style="text-align: end;" mat-cell *matCellDef="let element " class="text-center" > {{element.id}} </td>
               </ng-container>  
                 
@@ -118,7 +130,7 @@
      
              
 
-              <h2 *ngIf="listUsers.length ==0">لا يوجد مستخدمون لعرضهم </h2>
+              <h2 *ngIf="data.length ==0">لا يوجد مستخدمون لعرضهم </h2>
         
 
                 

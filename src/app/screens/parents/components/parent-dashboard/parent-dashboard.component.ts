@@ -12,7 +12,7 @@ export class ParentDashboardComponent implements OnInit {
   constructor(private router : Router) { }
 
   ajout(): void {
-    this.router.navigateByUrl('ajout-enfant');
+    this.router.navigateByUrl('commingSoon');
 
   }
   ngOnInit(): void {
@@ -20,7 +20,7 @@ export class ParentDashboardComponent implements OnInit {
   }
 
   diagnostic() {
-    this.router.navigate(['diagnostic'])
+    this.router.navigate(['ajout-enfant'])
   }
 
 }

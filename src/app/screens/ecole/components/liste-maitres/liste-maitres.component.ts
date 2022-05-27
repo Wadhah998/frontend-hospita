@@ -68,7 +68,7 @@ export class ListeMaitresComponent extends DynamicTableCrud<any> implements OnIn
         autoFocus: true,
       })
       .afterClosed()
-      .subscribe((val) => {
+      .subscribe(async (val) => {
         if (val == 'تأكيد') {
           this.getData();
         }

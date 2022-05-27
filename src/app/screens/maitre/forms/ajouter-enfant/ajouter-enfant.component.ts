@@ -1,3 +1,5 @@
+import { DialogService } from 'src/app/services/shared/dialog.service';
+import { Router } from '@angular/router';
 
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, Inject, OnInit } from '@angular/core';
@@ -17,7 +19,7 @@ export class AjouterEnfantComponent implements OnInit {
 
   constructor(
     
-    private formBuilder : FormBuilder, private api : ApiService, private dialogRef : MatDialogRef<AjouterEnfantComponent>, 
+    private formBuilder : FormBuilder,public router:Router ,private api : ApiService, private dialogRef : MatDialogRef<AjouterEnfantComponent>, 
     @Inject(MAT_DIALOG_DATA) public editData :any) { }
 
   ngOnInit(): void {
@@ -57,40 +59,8 @@ export class AjouterEnfantComponent implements OnInit {
 
 
 addEnfant() {
-  if(!this.editData){
-    if(this.enfantForm.valid){
-      this.api.postEnfant(this.enfantForm.value)
-      .subscribe({
-        next:(res)=>{
-          alert("إضافة الطفل بنجاح");
-          this.enfantForm.reset();
-          this.dialogRef.close('تأكيد');
-          
-          
-        },
-        error:()=>{
-          alert("خطأ بينما يضاف");
-        }
-      })
-    }
-  }
-  else {
-    this.modifierEnfant();
-        }
-}
-
-modifierEnfant(){
-  this.api.putEnfant(this.enfantForm.value, this.editData.id)
-  .subscribe({
-    next:(res)=>{
-     alert("تم تحديث الطفل ");
-      this.enfantForm.reset();
-      this.dialogRef.close('تحديث');
-    },
-    error:()=>{
-      alert("خطأ أثناء تحديث السجل");
-    }
-  });
+ this.router.navigate(['commingSoon'])
+ 
 }
 
 

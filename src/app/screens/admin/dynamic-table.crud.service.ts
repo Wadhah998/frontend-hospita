@@ -9,9 +9,11 @@ interface Option {
     params: object | null | undefined;
 }
 export class DynamicTableCrud<T> {
-    data !: T[];
+    data !: any;
     numberItems !: number;
     protected options !: Option;
+   
+
 
     constructor(protected service: AbstractRestService<T>, protected actionUrl: string,
                 protected secureStorageService: SecureStorageService) {
@@ -37,7 +39,12 @@ export class DynamicTableCrud<T> {
         this.data = await this.service.list(this.actionUrl, this.options);
         console.log(this.data);
         this.numberItems = this.data.length;
-    }
+        
+
+        
+               
+                
+                }
 
     delete(id: number | undefined, index: number): void {
         console.log(id);

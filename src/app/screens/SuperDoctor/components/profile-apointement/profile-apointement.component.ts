@@ -37,6 +37,10 @@ export class ProfileApointementComponent extends DynamicTableCrud<any> implement
   numberPatients !: number;
   typeUser !: string | null;
   doctors !: any[];
+  malade:number;
+  nmalade:number;
+
+
 
  async ngOnInit(): Promise<void> {
     this.access = localStorage.getItem('access');
@@ -52,10 +56,37 @@ export class ProfileApointementComponent extends DynamicTableCrud<any> implement
         await this.getData();
         console.log(this.data);
     }
+   
+    
   }
   override async getData(): Promise<void> {
     this.data = await this.service.list(this.actionUrl, this.options);
     this.numberPatients = this.data.length;
+    this.malade=0;
+    this.nmalade=0
+    this.data.forEach(element => {
+      // console.log('elemnt',element.typeUser);
+
+       if (element.scoreParent > 6){
+          // console.log("if statement", element.typeUser =="superdocter")
+          this.malade = this.malade + 1;
+       }
+       else if (element.scoreParent <= 6){
+           this.nmalade=this.nmalade + 1;
+       }
+
+     
+                   
+
+
+   }  )
+   console.log(this.nmalade)
+   console.log(this.malade)
+  
+   localStorage.setItem("maladie",JSON.stringify(this.malade));
+   localStorage.setItem("nmaladie",JSON.stringify(this.nmalade));
+   localStorage.setItem("numberPatients",JSON.stringify(this.numberPatients));
+
 }
 
 

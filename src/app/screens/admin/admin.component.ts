@@ -1,4 +1,22 @@
 import { AbstractRestService } from 'src/app/services/genericservice.service';
+import { ChartComponent } from "ng-apexcharts";
+import {
+  ApexNonAxisChartSeries,
+  ApexResponsive,
+  ApexChart,
+  ApexFill,
+  ApexDataLabels,
+  ApexLegend
+} from "ng-apexcharts";
+export type ChartOptions = {
+  series: ApexNonAxisChartSeries;
+  chart: ApexChart;
+  responsive: ApexResponsive[];
+  labels: any;
+  fill: ApexFill;
+  legend: ApexLegend;
+  dataLabels: ApexDataLabels;
+};
 
 
 import { ApiService } from 'src/app/services/api/api.service';
@@ -25,21 +43,116 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
+  @ViewChild("chart") chart: ChartComponent;
+  public chartOptions: Partial<ChartOptions>;
   public select: EventEmitter<User> = new EventEmitter();
   users : User[] = [];
-  
+   
   isSuperDoctor !: boolean;
   formGroup !: FormGroup;
-  displayPerson = false;
-  typeDisplayedPerson !: string;
-  listUsers: User[]= [];
+  labels!:any;
+ 
+  
   displayedColumns: string[] = ['modifier','loginNumber','email','telephone','nom','TypeUser','id'];
   dataSource! : MatTableDataSource<any>;
   User!: User;
    updateSubscription!: Subscription;
- 
+
+   access !: string | null;
+  typeUser: string; 
+  userId:any;
+  nbSchool:number;
+  nbparent !:number;
+  nbteacher !:number;
+  nbSuperdocter !:number;
+   async ngOnInit(): Promise<void>  {
+    this.access = localStorage.getItem('access');
+    const typeUser = localStorage.getItem('typeUser');
+     this.userId = localStorage.getItem('userId');
+    if (typeUser !== null){
+        this.typeUser = typeUser;
+    }
+    if (this.access) {
+        this.options = {
+            params: null,
+            headers: {Authorization: `Bearer ${this.secureStorageService.getToken(this.access)}`}
+        };
+        await this.getData();
+        console.log(this.data);
+        this.nbSuperdocter = 0;
+        this.nbSchool = 0;
+        this.nbparent = 0;
+        this.nbteacher = 0;
+        this.data.forEach(element => {
+          // console.log('elemnt',element.typeUser);
+  
+           if (element.typeUser === "superdoctor"){
+              // console.log("if statement", element.typeUser =="superdocter")
+              this.nbSuperdocter = this.nbSuperdocter + 1;
+           }
+           else if (element.typeUser ==="school"){
+               this.nbSchool=this.nbSchool + 1;
+           }
+           else if (element.typeUser==="parent"){
+              this.nbparent=this.nbparent + 1;
+           }
+               else if (element.typeUser==="teacher"){
+               this.nbteacher=this.nbteacher + 1;
+           }            
+
+
+       }  )
+    }
+    console.log("hhh",this.nbSuperdocter)
+       console.log(this.nbSchool)
+       console.log(this.nbteacher)
+       console.log(this.nbparent)
+       this.labels={"superDocters": String,
+                    "Techars": String,
+                    "parent": String,
+                    "shools": String,
+      }
+  
+  this.chartOptions = {
+    series: [ this.nbteacher, this.nbparent, this.nbSchool,this.nbSuperdocter],
+     chart: {
+       width: 380,
+       type: "donut"
+     },
+     dataLabels: {
+       enabled: false
+     },
+     fill: {
+       type: "gradient"
+     },
+     legend: {
+       // formatter: function(val, opts) {
+       //   return val + " - " + opts.w.globals.series[opts.seriesIndex];
+       // }
+     },
+     labels: ['Teachers', 'parents', 'Schools', 'Superdocters'],
+     
+     responsive: [
+       {
+         breakpoint: 480,
+         options: {
+           chart: {
+             width: 200
+           },
+           legend: {
+             position: "bottom"
+           }
+         }
+       }
+     ]
+   };
+  
+ }
   constructor( service:AbstractRestService<any>, public dialog:MatDialog,private dialogService : DialogService,  secureStorageService : SecureStorageService ,public api:ApiService, private _snackBar: MatSnackBar, private router : Router, private httpClient: HttpClient,) {
-    super(  service, 'http://localhost:8000/api/persons', secureStorageService);
+    super(  service, 'http://localhost:8000/api/persons', secureStorageService)
+    
+    
+    
   }
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -47,32 +160,11 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-   ngOnInit(): void {
-    
-     this.getData();
-    
-    
-    
-  }
+  
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  
-  
- 
- 
-  
-
-    
-   
-
-    
-
-  
-  
-
-
   async openUserDialog(): Promise<void> {
     this.dialog
       .open(UserFormComponent, {
@@ -83,9 +175,11 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
       .afterClosed()
       .subscribe(async (val) => {
         this.router.navigate(['/admin'])
-  .then(() => {
-    window.location.reload();
-  });
+        .then(async () => {
+         
+          console.log('catched');
+          this.getData()
+      });
       });
     
   }
@@ -103,15 +197,7 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
     });
   }  
   
-  chercheUser($event: any){
-    let filteredData = _.filter(this.listUsers,(item) =>{
-      return item.typeUser.toLowerCase() == $event.value.toLowerCase();
-      
-      
-    })
-    this.dataSource = new MatTableDataSource(filteredData);
-
-  }
+ 
   onSelect(item: User) {
     // this.selectedtIndex = index;
     this.User = item;
@@ -119,6 +205,11 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
     this.select.emit(item);
     //console.log('from list' + this.gePatients());
     console.log('from list', item);
+  }
+  override async getData(): Promise<void> {
+    this.data = await this.service.list(this.actionUrl, this.options);
+    
+  
   }
 }
    

@@ -60,6 +60,7 @@ import { DiagnosticComponent } from './screens/parents/components/diagnostic/dia
 import { AjoutEnfantComponent } from './screens/parents/form/ajout-enfant/ajout-enfant.component';
 import { ThankYouComponent } from './screens/parents/components/thank-you/thank-you.component';
 import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie/messagerie.component';
+import { CommingSoonComponent } from './components/comming-soon/comming-soon.component';
 
 
 
@@ -110,6 +111,7 @@ const routes: Routes = [
   { path: 'maitreDashboard', component: MaitredashboardComponent },
   { path :  'listeEnfants', component : ListEnfantsComponent },
   { path: 'thankYou', component : ThankYouComponent },
+  { path: 'commingSoon', component : CommingSoonComponent },
   {
     path: '',
     component: DoctorComponent,

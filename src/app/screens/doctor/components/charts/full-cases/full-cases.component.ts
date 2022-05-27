@@ -28,12 +28,17 @@ export type ChartOptions = {
   templateUrl: './full-cases.component.html',
   styleUrls: ['./full-cases.component.scss'],
 })
-export class FullCasesComponent implements OnInit {
+export class FullCasesComponent  implements OnInit {
+  nmalade:number
+  malade:number
   //@ViewChild('chart') chart: ChartComponent;
   public chartOptions: Partial<ChartOptions> | any;
   ngOnInit() {
+   this.nmalade=Number(localStorage.getItem("nmaladie"))
+   console.log(this.nmalade)
+   this.malade=Number(localStorage.getItem("maladie"))
     this.chartOptions = {
-      series: [20, 80],
+      series: [this.nmalade, this.malade],
       chart: {
         type: 'pie',
         height: 85,
@@ -91,5 +96,7 @@ export class FullCasesComponent implements OnInit {
         enabled: false,
       },
     };
+  localStorage.removeItem("maladie")
+  localStorage.removeItem("nmaladie")
   }
 }

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import {MatPaginator} from '@angular/material/paginator';
@@ -56,7 +57,9 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
     private api: ApiService,
     private dialog: MatDialog,
     private dialogService: DialogService,
-    private _snackBar: MatSnackBar
+    
+    private router: Router,
+    private _snackBar: MatSnackBar,
     
   ) {super(  service, 'http://localhost:8000/api/persons', secureStorageService)}
 
@@ -68,10 +71,14 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
         autoFocus: true,
       })
       .afterClosed()
-      .subscribe((val) => {
-        if (val == 'تأكيد') {
-          this.getData();
-        }
+      .subscribe(async (val) => {
+        this.router.navigate(['/superDoctorDashboard'])
+        .then(async () => {
+          // this.data.splice(index, 1);
+          // this.numberItems--;
+          console.log('catched');
+          this.getData()
+      });
       });
   }
 

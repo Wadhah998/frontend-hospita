@@ -28,8 +28,10 @@ export type ChartOptions = {
 })
 export class ChildrenComponent implements OnInit {
   public chartOptions: Partial<ChartOptions> | any;
+  numbersPatiens:number
 
   constructor() {
+    this.numbersPatiens=Number(localStorage.getItem("numberPatients"))
     this.chartOptions = {
       /* series: [
         {

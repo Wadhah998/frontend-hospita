@@ -140,5 +140,6 @@ export class AjoutEnfantComponent implements OnInit {
           easilyBeingDistracted
       };
       this.patientService.create(`http://localhost:8000/api/patients`, this.patient, {headers: {Authorization: `Bearer ${access}`}})
+      this.router.navigate(['diagnostic'])
    };
 }

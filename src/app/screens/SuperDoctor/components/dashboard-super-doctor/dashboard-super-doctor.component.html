@@ -3,7 +3,21 @@
 
 <div fxLayout="row">
         <div fxFlex.gt-lg="33" fxFlex.gt-md="33" fxFlex.gt-xs="100" fxFlex="100">
-          <app-profile-doctor [medecin]="medecin"></app-profile-doctor>    
+          <app-profile-doctor [medecin]="medecin"></app-profile-doctor> 
+          <div id="chart">
+            <apx-chart
+              [series]="chartOptions.series"
+              [chart]="chartOptions.chart"
+              [yaxis]="chartOptions.yaxis"
+              [xaxis]="chartOptions.xaxis"
+              [labels]="chartOptions.labels"
+              [stroke]="chartOptions.stroke"
+              [title]="chartOptions.title"
+              [dataLabels]="chartOptions.dataLabels"
+              [fill]="chartOptions.fill"
+              [tooltip]="chartOptions.tooltip"
+            ></apx-chart>
+          </div>
         </div>
         <div fxFlex.gt-lg="66" fxFlex.gt-md="66" fxFlex.gt-xs="100" fxFlex="100">
           <div fxLayout="row wrap">
