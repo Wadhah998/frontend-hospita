@@ -21,9 +21,11 @@ export class ParentDashboardComponent implements OnInit {
 
   diagnostic() {
     this.router.navigate(['ajout-enfant'])
+    localStorage.setItem('periode',"1");
   }
 
   grossesseForm(){
-    this.router.navigate(['grossesseForm'])
+    this.router.navigate(['ajout-enfant'])
+    localStorage.setItem('periode', JSON.stringify("2"));
   }
 }

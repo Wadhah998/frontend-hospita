@@ -130,7 +130,7 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
        //   return val + " - " + opts.w.globals.series[opts.seriesIndex];
        // }
      },
-     labels: ['Teachers', 'parents', 'Schools', 'Superdocters'],
+     labels: ['Teachers', 'Parents', 'Schools', 'Superdoctors'],
      
      responsive: [
        {

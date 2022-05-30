@@ -1,7 +1,7 @@
 
 <app-header></app-header>
 <div [formGroup]="grossesseForm" fxLayout="row wrap">
-    <div style="text-align: center; color:red;  margin-top: 20px;" fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
+    <div style="text-align: center; color:red;  margin-top: 20px;font-weight: 600;" fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
         وجود سوابق لدى الام او الاب او كلاهما بالإصابة بمرض عصبي: 
     </div>
     <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
@@ -11,7 +11,7 @@
             </mat-card-header>
             <mat-card-content>
                 <div >
-                    <mat-radio-group formControlName="question1" class="smallRadio">
+                    <mat-radio-group  formControlName="question1" class="smallRadio">
                         <div class="parent">
                             <div >
                                 <mat-radio-button  value="1" >
@@ -22,6 +22,7 @@
                                 </mat-radio-button>
                                 </div>
                             </div>
+
 
                             
                         </mat-radio-group>
@@ -108,7 +109,7 @@
         </mat-card>
         
     </div>
-    <div style="text-align: center; color:red;  margin-top: 40px;" fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
+    <div style="text-align: center; color:red;  margin-top: 40px;font-weight: 600;" fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
         وجود ابن سابق يحمل اضطراب من الاضطرابات النمائية:
     </div>
     <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
@@ -215,7 +216,7 @@
         </mat-card>
         
     </div>
-    <div style="text-align: center; color:red ;  margin-top: 40px;" fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
+    <div style="text-align: center; color:red ;  margin-top: 40px;font-weight: 600;" fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
         الإباء
     </div>
     <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
@@ -404,7 +405,7 @@
         *
     </div>
     <div>
-        <button (click)="thankYoupage()"  class="button" mat-button >إرسال</button>    
+        <button (click)="thankYoupage()"  class="button" mat-button style="margin-left: -11rem" >إرسال</button>    
     </div>
     <div style="text-align: center; ;  margin-top: 20px; visibility: hidden;" fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
         *
