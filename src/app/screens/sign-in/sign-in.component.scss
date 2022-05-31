@@ -6,8 +6,58 @@
 .form-side {
   width: 40%;
 }
-.image-side {
-  width: 60%;
-  height: 100vh;
+*/
+img {
+ height: 80vh;
 }
- */
+ input{
+  width: 300px;
+  height: 40px;
+  background: #eee;
+ }
+ .login-landing{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   height:100vh;
+   width: 100vw;
+   background-image: url('../../../assets/images/loogin.webp') ;
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+ }
+.login{
+  display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   border-radius: 8px;
+    border: 2px solid #80808066;
+  
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 2;
+    cursor: pointer;
+}
+.title{
+  font-size: 30px;
+  letter-spacing: 0.2cm;
+  color:#0dcaf0;
+  font-weight: 700;
+  margin-bottom:20px;
+
+}
+.subtitle{
+  font-size: 20px;
+  color:rgba(238, 238, 238, 0.986);
+
+}
+.button{
+  width: 300px;
+   margin: 3% 0; 
+   font-size: 20px;
+ }

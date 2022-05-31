@@ -3,14 +3,14 @@
 //   height: 300px !important;
 // }
 section{
-  margin-top: 20px;
+  margin: 40px  0 !important;
 }
 .title{
-  font-size: 35px;
+    font-size: 35px;
     text-align: center;
     font-family: "Cairo", sans-serif;
     color: #1355d9;
-    margin-top: 40px;
+    margin:  40px 0;
 }
 .spetialites{
   display: flex;
@@ -18,7 +18,7 @@ section{
   align-items: center;
   width: 70%;
   margin: auto;
-  margin-top: 40px;
+  //margin-top: 40px;
 }
 .spetialite{
  width: 30%;
@@ -32,7 +32,7 @@ section{
   color: #0635e1ad !important;
 }
 .spetialite img{
-  width: 100%;
+  // width: 100%;
   height: 241px;
   
 }
@@ -62,26 +62,284 @@ section{
 
 @media (max-width: 1400px) and (min-width: 1200px){
   img{
-      height: 80vh;
+      height: 100vh;
   }
 }
 .carousel{
-  width: 80%;
-  margin: auto;
+margin-bottom: 40px;
 }
-.w-100{
-  width: 100% !important;
+.carousel-item{
+  height: 91vh;
+  min-height: 300px;
+  background: no-repeat scroll center scroll;
+  background-size:cover ;
 }
+.carousel-item::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  //opacity: 0.7;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+}
+// .w-100{
+//   width: 100% !important;
+// }
  
 .carousel-indicators [data-bs-target] {
-  background-color:#161414 !important;
+  //margin-right: auto !important;
+  background-color:#1355d9 !important;
+  height: 4px !important;
 }
 
 .carousel-indicators .active{
 
   
     width: 30px !important;
-    height: 3px !important;
-    background-color: #1355d9!important;
+    height: 4px !important;
+    background-color: #fff!important;
   
+}
+.carousel-control-prev{
+  font-size: 30px;
+  color: red;
+}
+.carousel-control-prev-icon{
+  font-size: 30px;
+  color: red;
+}
+.carousel-caption{
+  bottom:200px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.carousel-caption p{
+  font-size: 22px;
+  line-height: 1.4;
+}
+.carousel-caption a{
+  margin-top: 10px;
+  background-color: white;
+  color:bleu;
+  border-radius: 4px;
+  font-size: 20px;
+}
+.carousel-caption a:hover{
+  background-color: blue;
+  color:white;
+}
+/*Services Styles*/
+
+.services {
+  position: relative;
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  &__box {
+    position: relative;
+    width: 350px;
+    height: 280px;
+    background: #51446e;
+    border-radius: 20px;
+    overflow: hidden;
+
+    &:hover .services__content {
+      transform: scale(1);
+      transition-delay: 0.25s;
+    }
+
+    &:hover .services__icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      top: 30px;
+      left: calc(50% - 40px);
+      transition-delay: 0s;
+
+      & ion-icon {
+        font-size: 2rem;
+        transition-delay: 0s;
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--i);
+    transition: 0.5s;
+    z-index: 2;
+    transition-delay: 0.25s;
+
+    & i {
+      font-size: 40px;
+      color: #fff;
+      font-weight: bold;
+      transition: 0.5s;
+      transition-delay: 0s;
+    }
+    & img {
+      font-size: 40px;
+      color: #fff;
+      font-weight: bold;
+      transition: 0.5s;
+      transition-delay: 0s;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 100px;
+    z-index: 1;
+    transform: scale(0);
+    transition: 0.5s;
+    transition-delay: 0s;
+  }
+
+  &__title {
+    margin: 10px 0 5px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  &__description {
+    font-size: 2rem;
+    font-weight: 400;
+    padding-top: 10px;
+    line-height: 1.2;
+  }
+}
+.svg-inline--fa{
+  height: 4rem !important;
+}
+/* ==== Cards using Bootstrap === */
+
+#cards .card {
+  border-radius: 20px;
+  min-height: 100%;
+}
+
+#cards .heading-border {
+  position: absolute;
+  width: 100%;
+  top: 60%;
+}
+
+#cards .card .user-picture img {
+  position: absolute;
+  top: -20%;
+  right: 10%;
+  background: #f8f9fa!important;
+  padding: 10px;
+}
+
+#cards .card .user-content .user-name {
+  margin-right: 150px;
+}
+
+
+
+.testimonial {
+  background-color: white;
+  text-align: center;
+  //padding: 30px 30px 50px;
+  margin:0 20px;
+  position: relative;
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.testimonial::before,
+.testimonial::after {
+  content: "";
+  border-top: 40px solid white;
+  border-right: 125px solid transparent;
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+}
+
+.testimonial::after {
+  border-right: none;
+  border-left: 125px solid transparent;
+  left: auto;
+  right: 0;
+}
+
+.testimonial .icon {
+  display: inline-block;
+  font-size: 80px;
+  color: #016d9b;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+
+.testimonial .description {
+  font-size: 14px;
+  color: #777;
+  text-align: justify;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.testimonial .testimonial-content {
+  width: 100%;
+  left: 0;
+  position: absolute;
+}
+
+.testimonial .pic {
+  display: inline-block;
+  border: 4px solid white;
+  //border-radius: 50%;
+  box-shadow: 0 0 4px 4px #016d9b;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+
+}
+
+.testimonial .pic img {
+  width: 200px;
+  height: 200px;
+  //margin-bottom: 20px;
+}
+
+.testimonial .name {
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  text-transform: capitalize;
+  //margin: 10px 0 5px 0;
+}
+
+.testimonial .title {
+  display: block;
+  font-size: 14px;
+  color: #ffd9b8;
+}
+.testimonials{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px !important;
 }

@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
 import { extend } from 'lodash';
 import { SecureStorageService } from 'src/app/services/api/secure-storage.service';
+import { DateComponent } from '@fullcalendar/angular';
 
 @Component({
   selector: 'app-rendez-vous-form',
@@ -34,7 +35,8 @@ export class RendezVousFormComponent extends DynamicTableCrud<any> implements On
   typeUser!: string;
   access !: string | null;
   parentId:number
-
+  age : number;
+  date:Date;
 
   idMedecin !: number;
 
@@ -80,6 +82,17 @@ export class RendezVousFormComponent extends DynamicTableCrud<any> implements On
 
       
     //  });
+    const date = new Date(this.birthday)
+    console.log(date)
+    const newDate =new Date(1992,3,4)
+    if (date>newDate){
+      console.log(true)
+
+    }else{
+      console.log(false)
+    }
+    
+    
     
 
   }
@@ -106,6 +119,13 @@ export class RendezVousFormComponent extends DynamicTableCrud<any> implements On
   chercheMedecin($event: any){
     this.doctors =  this.service.list(`http://localhost:8000/api/persons`, this.options);
   }
+  public CalculateAge(): void {
+    if (this.birthday) {
+      var timeDiff = Math.abs(Date.now() - new Date(this.birthday).getTime());
+      this.age = Math.floor(timeDiff / (1000 * 3600 * 24) / 365.25);
+        }
+      
+      }
 
   // getAllMedecins  (): Promise<void>   {
   //   this.doctors =  this.service.list(`http://localhost:8000/api/persons`, this.options);
