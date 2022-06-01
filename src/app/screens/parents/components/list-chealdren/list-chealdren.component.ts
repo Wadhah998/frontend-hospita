@@ -1,6 +1,6 @@
 import { SecureStorageService } from 'src/app/services/api/secure-storage.service';
 import { AbstractRestService } from 'src/app/services/genericservice.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Patient } from 'src/app/models/patient/patient.model';
 import { ApiService } from 'src/app/services/api/api.service';
@@ -9,6 +9,8 @@ import { MatConfirmDialogComponent } from 'src/app/screens/mat-confirm-dialog/ma
 import Swal from 'sweetalert2';
 import Toast from 'sweetalert2';
 import { DynamicTableCrud } from 'src/app/screens/admin/dynamic-table.crud.service';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-list-chealdren',
@@ -19,6 +21,10 @@ export class ListChealdrenComponent extends DynamicTableCrud<any> implements OnI
   access !: string | null;
   numberPatients !: number;
   typeUser !: string | null;
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
   displayedColumns: string[] = [
     'id',
     'name',
@@ -58,12 +64,17 @@ export class ListChealdrenComponent extends DynamicTableCrud<any> implements OnI
         await this.getData();
         console.log(this.data);
     }
+
+    this.getAllusers();
   }
   override async getData(): Promise<void> {
     this.data = await this.service.list(this.actionUrl, this.options);
     this.numberPatients = this.data.length;
 }
-  
+getAllusers () {
+  this.dataSource = new MatTableDataSource(this.data);
+  this.dataSource.paginator = this.paginator;
+}
   getPatients() {
     this.api.getPatients().subscribe({
       next: (res) => {

@@ -13,24 +13,24 @@
           </span>
         </div>
       </mat-card-title>
-      <!-- <mat-card-subtitle style="text-align: left;">
+      <!-- <mat-card-subtitle >
         <button mat-flat-button (click)="afficherTousMedecin()">القائمة</button>
       </mat-card-subtitle> -->
         <mat-card-content>
-          <table mat-table [dataSource]="data">
+          <table mat-table [dataSource]="dataSource">
             <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
       
             <!-- Position Column -->
             <ng-container  matColumnDef="id">
               <th mat-header-cell *matHeaderCellDef>رقم</th>
-              <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.id }}</td>
+              <td  mat-cell *matCellDef="let element">{{ element.id }}</td>
             </ng-container>
       
             <!-- Name Column -->
             <ng-container matColumnDef="nom">
               <th  mat-header-cell *matHeaderCellDef>اسم</th>
-              <td style="text-align: left;"mat-cell *matCellDef="let element">
+              <td mat-cell *matCellDef="let element">
                 <button class="btn btn-primary detail"
                 (click)="onSelect(element) " >
                   {{element.name}}
@@ -42,7 +42,7 @@
             <!-- Symbol Column -->
             <ng-container matColumnDef="gouvernat">
               <th  mat-header-cell *matHeaderCellDef>اللقب </th>
-              <td  style="text-align: left;" mat-cell *matCellDef="let element">{{ element.familyName }}</td>
+              <td   mat-cell *matCellDef="let element">{{ element.familyName }}</td>
             </ng-container>
             <!-- Action Column -->
       
@@ -50,27 +50,27 @@
             <ng-container matColumnDef="cin">
               <th  mat-header-cell *matHeaderCellDef>ب.ت.و
               </th>
-              <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.loginNumber}}</td>
+              <td  mat-cell *matCellDef="let element">{{ element.loginNumber}}</td>
             </ng-container>
       
             <!-- Symbol Column -->
             <ng-container matColumnDef="speciality">
               <th  mat-header-cell *matHeaderCellDef>تخصص</th>
-              <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.speciality }}</td>
+              <td  mat-cell *matCellDef="let element">{{ element.speciality }}</td>
             </ng-container>
             <!-- Action Column -->
             
             <!-- Symbol Column -->
             <ng-container matColumnDef="email">
               <th  mat-header-cell *matHeaderCellDef>البريد الإلكتروني</th>
-              <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.email }}</td>
+              <td  mat-cell *matCellDef="let element">{{ element.email }}</td>
             </ng-container>
             <!-- Action Column -->
             
             <!-- Symbol Column -->
             <ng-container matColumnDef="telephone">
               <th mat-header-cell *matHeaderCellDef>هاتف</th>
-              <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.telephone }}</td>
+              <td  mat-cell *matCellDef="let element">{{ element.telephone }}</td>
             </ng-container>
             <!-- Action Column -->
             <ng-container matColumnDef="action">
@@ -93,15 +93,10 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;let i= index;"></tr>
     
     
-            <!-- <tr class="mat-row" *matNoDataRow style="text-align: right;">
-              <td class="mat-cell" colspan="4" style="text-align: center;">الأطباء في التخصص "{{input.value}}" غير متاحين</td>
-            </tr> -->
-    
-    
           </table>
           
     
-          <!-- <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" style="text-align: right;"></mat-paginator> -->
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" style="text-align: right;"></mat-paginator>
         </mat-card-content>
       </mat-card>
       
