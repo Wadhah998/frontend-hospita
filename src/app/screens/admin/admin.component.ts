@@ -65,6 +65,8 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
   nbparent !:number;
   nbteacher !:number;
   nbSuperdocter !:number;
+
+
    async ngOnInit(): Promise<void>  {
     this.access = localStorage.getItem('access');
     const typeUser = localStorage.getItem('typeUser');
@@ -157,7 +159,17 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   ngAfterViewInit() {
+      this.afficherTouTyperUser();
+      this.getAllusers();
+      this.dataSource.paginator = this.paginator;
+  }
+  afficherTouTyperUser() {
+    this.getAllusers();
     this.dataSource.paginator = this.paginator;
+  }
+
+  getAllusers () {
+    this.dataSource = new MatTableDataSource(this.data);
   }
 
   
@@ -208,6 +220,17 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
   }
   override async getData(): Promise<void> {
     this.data = await this.service.list(this.actionUrl, this.options);
+  }
+  chercheTyperUser($event: any) {
+    let filteredData = _.filter(this.data, (element) => {
+      return element.typeUser.toLowerCase() == $event.value.toLowerCase();
+    });
+    this.dataSource = new MatTableDataSource(filteredData);
+  }
+  someCondition = true;
+
+  get className() {
+    return this.someCondition ? 'class1' : 'class2';
   }
 }
    
