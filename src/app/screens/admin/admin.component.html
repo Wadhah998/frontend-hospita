@@ -23,25 +23,32 @@
          <!-- <mat-form-field appearance="fill">
             <mat-label>spécialité</mat-label>
             <mat-select (selectionChange)="chercheMedecin($event)" #input>
-              <mat-option *ngFor="let specialities of medecins" value="{{specialities.speciality}}">
+              <mat-mat-option *ngFor="let specialities of medecins" value="{{specialities.speciality}}">
                 {{specialities.speciality}}
-              </mat-option>
+              </mat-mat-option>
             </mat-select>
            </mat-form-field>
           -->
-          
-        
-          
-            <select    #input class="btn-lg" class="form-floating w-25" style="  padding: 5px; width: 200px; text-align: center;" class="bg-primary">
-              <option style="background-color: aliceblue;"class="text-primary" selected value="نوع المستخدم">نوع المستخدم</option>
-              <option  style="background-color: aliceblue;"class="text-primary"value="طبيب">طبيب</option>
-              <option style="background-color: aliceblue;"class="text-primary" value="ولي
-              ">ولي
-              </option>
-              <option style="background-color: aliceblue;"class="text-primary"value="مربي">مربي</option>
-              <option style="background-color: aliceblue;"class="text-primary"value="طبيب أول">طبيب أول</option>
-              <option style="background-color: aliceblue;"class="text-primary"value="مدرسة">مدرسة</option>
-            </select>
+          <mat-form-field >
+            <mat-select style="font-size: medium;" (selectionChange)="chercheTyperUser($event)" placeholder="نوع المستخدم" #input>
+              <mat-option value="doctor">
+                طبيب
+              </mat-option>
+              <mat-option value="parent">
+                ولي
+
+              </mat-option>
+              <mat-option value="teacher">
+                مربي
+              </mat-option>
+              <mat-option value="superdoctor">
+                طبيب أول
+              </mat-option>
+              <mat-option value="school">
+                مدرسة  
+                          </mat-option>
+            </mat-select>
+           </mat-form-field>
           
             
         
@@ -54,13 +61,13 @@
           
           </div>
         <div class="contents"style=" margin: 1rem 0;">
-            القائمة               
+<button mat-flat-button (click)="afficherTouTyperUser()">القائمة    </button>                       
         </div>
         
         <div class="content mat-elevation-z8">
           
                 
-            <table mat-table [dataSource]="data" class="table mt-5">
+            <table mat-table [dataSource]="dataSource" class="table mt-5">
 
               <ng-container matColumnDef="id">
                 <th style="text-align: center;" mat-header-cell *matHeaderCellDef >id </th>
@@ -126,13 +133,16 @@
                   
                   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;let i= index;"></tr>
+
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
               </table>
      
              
 
               <h2 *ngIf="data.length ==0">لا يوجد مستخدمون لعرضهم </h2>
-        
-
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" style="text-align: right;"></mat-paginator>
                 
               
                 
