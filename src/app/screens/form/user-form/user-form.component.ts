@@ -102,8 +102,7 @@ console.log(this.isSuperDoctor)
     } else {
         typeUser = this.typeUser === 'superdoctor' ? 'doctor' : 'teacher';
     }
-    this.service.create('http://localhost:8000/api/persons',{
-
+    const user = this.service.create('http://localhost:8000/api/persons',{
     telephone: this.userForm.value.telephone,
     typeUser:this.userForm.value.typeUser,
     school_id: this.typeUser === 'school' ? localStorage.getItem('userId') : undefined,
@@ -120,15 +119,9 @@ console.log(this.isSuperDoctor)
         delegation: this.userForm.value.delegation,
         zipCode: this.userForm.value.zipCode
     }
-  
-
-
-
-
         },this.options)
 
         this.dialogRef.close('تأكيد');
-        
 }
 modifieruser(){
   this.api.putuser(this.userForm.value, this.editData.id)

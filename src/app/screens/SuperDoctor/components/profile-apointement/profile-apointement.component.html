@@ -1,6 +1,7 @@
-<div fxLayout="row wrap">
+<div fxLayout="row wrap" >
   <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="50" fxFlex="100"*ngFor="let enfant of data; let i = index">
-    <mat-card *ngIf="enfant.scoreParent>6"
+    
+    <mat-card *ngIf="enfant.scoreParent>6" 
     
      style="margin: 16px;
     background-color: rgb(235, 78, 88);" class="profile-content">

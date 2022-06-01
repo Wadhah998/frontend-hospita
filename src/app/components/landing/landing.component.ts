@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { HttpClient } from '@angular/common/http';
@@ -40,8 +41,13 @@ export class LandingComponent implements OnInit {
     },
   };
 
-  constructor() {}
+  constructor(public router:Router) {}
 
   ngOnInit() {}
   public ngAfterViewInit(): void {window.dispatchEvent(new Event('resize'));}
+
+  inscription(){
+    this.router.navigate(['/signin'])
+  }
+
 }

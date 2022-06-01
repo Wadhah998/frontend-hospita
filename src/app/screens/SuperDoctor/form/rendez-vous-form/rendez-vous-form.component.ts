@@ -107,7 +107,7 @@ export class RendezVousFormComponent extends DynamicTableCrud<any> implements On
             {patient_id: patientId, doctor_id: doctorId, accepted: true}, this.options).then(() => {
               console.log(patientId)
                 
-        });
+        }),this.dialogRef.close('تأكيد');
     }
     else  console.log( this.data.id,doctorId);
 }

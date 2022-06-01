@@ -2,103 +2,29 @@
     display: flex;
     border:1px solid #ccc;
     width:350px;
-    height: 40px;
+    height: 36px;
     justify-content: center;
-    background: #eee;
+    
     margin-bottom: 15px !important;
-    border-radius: 4px;
 }
 .password input{
     border:none !important;
     box-shadow:none !important;
-    height: 35px;
-}
-#email{
-    text-align: right;
+    height: 30px !important;
 }
 #email::placeholder{
     text-align: right;
+  
 }
 input{
     width: 350px !important;
     margin-bottom: 15px !important;
     height: 40px;
-    background: #eee;
 }
-input{
-    width: 70%;
-   
-   }
-   .login-landing{
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       flex-direction: column;
-   }
-   img {
-    height: 80vh;
-   }
-    input{
-     width: 300px;
-     height: 40px;
-     background: #eee;
-    }
-    .login-landing{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      height:100%;
-      width: 100%;
-      background-image: url('../../../assets/images/loogin.webp') ;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-   .login{
-     display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      border-radius: 8px;
-       border: 2px solid #80808066;
-     
-       top: 0;
-       left: 0;
-       right: 0;
-       bottom: 0;
-       background-color: rgba(0,0,0,0.3);
-       z-index: 2;
-       cursor: pointer;
-   }
-   .title{
-     font-size: 30px;
-     letter-spacing: 0.2cm;
-     color:#0dcaf0;
-     font-weight: 700;
-     margin-bottom:20px;
-     margin-top: 20px;
-   
-   }
-   .subtitle{
-     font-size: 20px;
-     color:white;
-   
-   }
-   .button{
-     width: 350px;
-      margin: 3% 0; 
-      font-size: 20px;
-    }
-    .form-inline{
-        display: flex;
-        justify-content: space-between;
-
-    }
-   
-    #gouv{
-        width: 160px !important;
-    }
-    #pos{
-        width: 160px !important;
-    }
+.mat-icon-button{
+    line-height: 0px !important;
+    height: 30px !important;
+}
+#email{
+    text-align: right;
+}

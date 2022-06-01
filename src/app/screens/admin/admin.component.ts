@@ -51,7 +51,7 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
   isSuperDoctor !: boolean;
   formGroup !: FormGroup;
   labels!:any;
- 
+  actionBtn: string = 'تأكيد';
   
   displayedColumns: string[] = ['modifier','loginNumber','email','telephone','nom','TypeUser','id'];
   dataSource! : MatTableDataSource<any>;
@@ -165,7 +165,7 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  async openUserDialog(): Promise<void> {
+   openUserDialog() {
     this.dialog
       .open(UserFormComponent, {
         width: '60%',
@@ -176,12 +176,12 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
       .subscribe(async (val) => {
         this.router.navigate(['/admin'])
         .then(async () => {
-         
+          // this.data.splice(index, 1);
+          // this.numberItems--;
           console.log('catched');
           this.getData()
       });
       });
-    
   }
  
   edituser(row : any) {
@@ -192,7 +192,7 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
       autoFocus :true
     }).afterClosed().subscribe(val=>{
       if(val==='تحديث'){
-        this.getData;
+        this.getData();
       }
     });
   }  
@@ -208,8 +208,6 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
   }
   override async getData(): Promise<void> {
     this.data = await this.service.list(this.actionUrl, this.options);
-    
-  
   }
 }
    

@@ -1,36 +1,15 @@
-<div fxLayout="row">
-    <div fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
-      <mat-card class="list-etudiant" >
-        <mat-card-title>
-          <div fxLayout="row" fxLayoutAlign="space-between">
-            <span>
-              <mat-form-field >
-                <mat-select style="font-size: medium;" (selectionChange)="chercheMaitre($event)" placeholder="تخصص" #input>
-                  <mat-option  value="Sfax">
-                    Sfax
-                  </mat-option>
-                  <mat-option  value="Tunis">
-                    Tunis
-                  </mat-option>
-                  <mat-option  value="Sousse">
-                    Sousse
-                  </mat-option>
-                  <mat-option  value="gabes">
-                    gabes
-                  </mat-option>
-                </mat-select>
-               </mat-form-field>
-            </span>
-            <span>
-              <button mat-raised-button class="add" color="primary" style="margin-left:30%;"  (click)="ajouterMaitreDialog()"> إضافة سيد
-      
+
+   
+      <mat-card class="l" >
+        <mat-card-title FxLayout="row"
+        fxLayoutAlign="space-between center">
+        <p class="card-title">القائمة</p>
+             <button mat-raised-button class="add" color="primary"   (click)="ajouterMaitreDialog()"> إضافة سيد
               </button>
-            </span>
-          </div>
+             
+
         </mat-card-title>
-        <mat-card-subtitle style="text-align: left;">
-          <button mat-flat-button (click)="afficherTousMaitre()">القائمة</button>
-        </mat-card-subtitle>
+      
           <mat-card-content>
             <table mat-table [dataSource]="data">
               <!--- Note that these columns can be defined in any order.
@@ -46,7 +25,7 @@
               <ng-container matColumnDef="nom">
                 <th style="text-align: left;" mat-header-cell *matHeaderCellDef>اسم</th>
                 <td style="text-align: left;"mat-cell *matCellDef="let element">
-                  <button 
+                  <button class="btn btn-primary" style=" width:100px"
                   (click)="onSelect(element)" >
                     {{element.name}}
                   </button> 
@@ -108,9 +87,9 @@
               <tr mat-row *matRowDef="let row; columns: displayedColumns;let i= index;"></tr>
       
       
-              <tr class="mat-row" *matNoDataRow style="text-align: right;">
+              <!-- <tr class="mat-row" *matNoDataRow style="text-align: right;">
                 <td class="mat-cell" colspan="4" style="text-align: center;">المعلمون في المدرسة "{{input.value}}" غير متاحين</td>
-              </tr>
+              </tr> -->
       
       
             </table>
@@ -119,7 +98,5 @@
           </mat-card-content>
         </mat-card>
         
-    </div>
-    
-    </div>
+   
     
