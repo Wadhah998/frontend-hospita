@@ -41,10 +41,11 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
   displayedColumns: string[] = [
     'action',
     'telephone',
-    'email',
-    'speciality',
+   
+    
     'cin',
     'gouvernat',
+    'speciality',
     'nom',
     'id',
   ];
@@ -101,7 +102,7 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
         disableClose: true,
         autoFocus: true,
       })
-      .afterClosed()
+     .afterClosed()
       .subscribe(async (val) => {
         this.router.navigate(['/superDoctorDashboard'])
         .then(async () => {
@@ -110,7 +111,7 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
           console.log('catched');
           this.getData()
       });
-      });
+      })
   }
 
   editMedecin(row: any) {
