@@ -89,7 +89,7 @@ menuMaitre=[
 
   {
       "link":"لوحة متابعة",
-      "redirect":"maitreDashboard"
+      "redirect":"/maitreDashboard"
   }
 ]
 school=[

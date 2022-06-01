@@ -4,7 +4,7 @@
         <mat-card-title FxLayout="row"
         fxLayoutAlign="space-between center">
         <p class="card-title">القائمة</p>
-             <button mat-raised-button class="add" color="primary"   (click)="ajouterMaitreDialog()"> إضافة سيد
+             <button mat-raised-button class="add" color="primary"   (click)="ajouterMaitreDialog()"> إضافة مربي
               </button>
              
 
@@ -34,38 +34,41 @@
       
               
               <!-- Symbol Column -->
-              <ng-container matColumnDef="gouvernat">
+              <ng-container matColumnDef="familyName">
                 <th  style="text-align: left;" mat-header-cell *matHeaderCellDef>اللقب </th>
                 <td  style="text-align: left;" mat-cell *matCellDef="let element">{{ element.familyName }}</td>
               </ng-container>
               <!-- Action Column -->
+              <ng-container matColumnDef="telephone">
+                <th style="text-align: left;" mat-header-cell *matHeaderCellDef>هاتف</th>
+                <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.telephone }}</td>
+              </ng-container>
+              <ng-container matColumnDef="email">
+                <th style="text-align: left;" mat-header-cell *matHeaderCellDef>البريد الإلكتروني</th>
+                <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.email }}</td>
+              </ng-container>
+              <ng-container matColumnDef="governorate">
+                <th  style="text-align: left;"mat-header-cell *matHeaderCellDef>الولاية</th>
+                <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.localisation.governorate }}</td>
+              </ng-container>
         
               <!-- Weight Column -->
-              <ng-container matColumnDef="cin">
-                <th style="text-align: left;" mat-header-cell *matHeaderCellDef>ب.ت.و
+              <ng-container matColumnDef="loginNumber">
+                <th style="text-align: left;" mat-header-cell *matHeaderCellDef>رقم الدخول
                 </th>
                 <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.loginNumber}}</td>
               </ng-container>
         
               <!-- Symbol Column -->
-              <ng-container matColumnDef="ecole">
-                <th  style="text-align: left;"mat-header-cell *matHeaderCellDef>المدرسة</th>
-                <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.ecole }}</td>
-              </ng-container>
+              
               <!-- Action Column -->
               
               <!-- Symbol Column -->
-              <ng-container matColumnDef="email">
-                <th style="text-align: left;" mat-header-cell *matHeaderCellDef>البريد الإلكتروني</th>
-                <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.email }}</td>
-              </ng-container>
+           
               <!-- Action Column -->
               
               <!-- Symbol Column -->
-              <ng-container matColumnDef="telephone">
-                <th style="text-align: left;" mat-header-cell *matHeaderCellDef>هاتف</th>
-                <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.telephone }}</td>
-              </ng-container>
+           
               <!-- Action Column -->
               <ng-container matColumnDef="action">
                 <th style="text-align: right;" mat-header-cell *matHeaderCellDef>تغيير</th>

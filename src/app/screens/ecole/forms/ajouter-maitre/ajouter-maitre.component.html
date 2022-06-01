@@ -1,4 +1,4 @@
-<h1 mat-dialog-title style="margin-right:40%;  color:rgb(7, 107, 221)">إضافة سيد</h1>
+<h1 mat-dialog-title style="margin-right:40%;  color:rgb(7, 107, 221)">إضافة مربي</h1>
 <div mat-dialog-content >
     <form [formGroup]="maitreForm">
         <mat-form-field class="class1" appearance="outline">
@@ -6,13 +6,10 @@
             <input formControlName="nom" matInput placeholder="اسم">
         </mat-form-field>
         <mat-form-field class="class1" appearance="outline">
-            <mat-label>الاسم الأول</mat-label>
+            <mat-label>اللقب</mat-label>
             <input formControlName="familyName" matInput placeholder="الاسم الأول">
         </mat-form-field>
-        <mat-form-field class="class1" appearance="outline">
-            <mat-label>رقم التسجيل</mat-label>
-            <input formControlName="loginNumber" matInput placeholder="رقم التسجيل">
-        </mat-form-field>
+        
 
         <mat-form-field class="class1" appearance="outline">
             <mat-label>الهاتف</mat-label>
@@ -23,9 +20,13 @@
             <mat-label>البريد الاكتروني</mat-label>
             <input formControlName="email" matInput placeholder="البريد الاكتروني">
         </mat-form-field >
+        <mat-form-field class="class1" appearance="outline">
+            <mat-label>رقم التسجيل</mat-label>
+            <input formControlName="loginNumber" matInput placeholder="رقم التسجيل">
+        </mat-form-field>
         
         <mat-form-field class="class1" appearance="outline">
-            <mat-label>الولاية</mat-label>
+            <mat-label>كلمة السر</mat-label>
             <input formControlName="password" matInput placeholder="كلمة السر">
         </mat-form-field>
 
@@ -35,7 +36,7 @@
         </mat-form-field>
 
         <mat-form-field class="class1" appearance="outline" >
-            <mat-label>delegation</mat-label>
+            <mat-label>المعتمدية</mat-label>
             <input formControlName="delegation" matInput placeholder="ID">
         </mat-form-field>
 
@@ -52,11 +53,7 @@
             <input formControlName="zipCode" matInput placeholder="الترقيم البريدي">
         </mat-form-field>
     </div>
-        <div class="form-group">
-            <h4>أضف صورة</h4>
-            <input type="file" class="form-control" accept="image/*">
-            <p class="text-success" *ngIf="fileUploaded">ملف مرفوع</p>
-        </div>
+        
     </form>
 </div>
 

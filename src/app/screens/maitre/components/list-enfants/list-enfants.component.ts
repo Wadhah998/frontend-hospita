@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AbstractRestService } from 'src/app/services/genericservice.service';
 
 import { FormGroup } from '@angular/forms';
@@ -50,23 +51,14 @@ export class ListEnfantsComponent extends DynamicTableCrud<any> implements OnIni
     private dialog : MatDialog, 
     private dialogService : DialogService,
     service : AbstractRestService<any>,
-    secureStorageService:SecureStorageService
+    secureStorageService:SecureStorageService,
+     public router:Router,
     ) {super(service, 'http://localhost:8000/api/patients', secureStorageService) }
     
 
 
     ajouterEnfantDialog() {
-    this.dialog.open(AjouterEnfantComponent, {
-      width:'50%',
-      disableClose:true,
-      autoFocus :true 
-      
-
-    }).afterClosed().subscribe(val=>{
-      if(val=='تأكيد'){
-        this.getAllEnfants();
-      }
-    });
+   this.router.navigate(['/commingSoon'])
   }
 
 
