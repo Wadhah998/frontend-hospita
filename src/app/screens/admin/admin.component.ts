@@ -211,5 +211,15 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
   override async getData(): Promise<void> {
     this.data = await this.service.list(this.actionUrl, this.options);
   }
+
+  chercheTyperUser($event: any) {
+    let filteredData = _.filter(this.data, (element) => {
+      return element.typeUser.toLowerCase() == $event.value.toLowerCase();
+    });
+    this.data = new MatTableDataSource(filteredData);
+  }
+  afficherTouTyperUser() {
+    this.getData();
+  }
 }
    
