@@ -46,9 +46,6 @@ export class DoctorAppointmentComponent extends DynamicTableCrud<any> implements
        
     }
      
-    
-   
-
   });
   console.log(this.patients);
 }

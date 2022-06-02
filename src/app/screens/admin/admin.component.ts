@@ -78,6 +78,8 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
             headers: {Authorization: `Bearer ${this.secureStorageService.getToken(this.access)}`}
         };
         await this.getData();
+        
+        this.User=this.data[1]
         console.log(this.data);
         this.nbSuperdocter = 0;
         this.nbSchool = 0;
