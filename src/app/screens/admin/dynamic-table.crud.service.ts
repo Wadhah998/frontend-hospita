@@ -19,7 +19,7 @@ export class DynamicTableCrud<T> {
                 protected secureStorageService: SecureStorageService) {
     }
 
-    async getData(params?: object): Promise<void> {
+    async getData(params?: object) {
         console.log(this.options);
         if (this.options === undefined){
         const access = localStorage.getItem('access');
@@ -51,8 +51,7 @@ export class DynamicTableCrud<T> {
         console.log(index)
         if (id !== undefined) {
 
-           
-                Swal.fire({
+             Swal.fire({
                     title: 'هل أنت متأكد أنك تريد حذف هذا المستعمل',
                     // text: 'هل أنت متأكد أنك تريد حذف هذا الطبيب؟',
                     icon: 'warning',
@@ -80,6 +79,7 @@ export class DynamicTableCrud<T> {
                                       popup: 'colored-toast',
                                     },
                                   });
+              
                                 this.getData()
                             });
                         }

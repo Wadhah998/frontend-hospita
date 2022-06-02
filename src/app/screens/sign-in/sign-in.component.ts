@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
 import { User } from './user';
 import { SecureStorageService } from 'src/app/services/api/secure-storage.service';
 import { saveDataToLocalhost } from 'src/app/services/genericservice.service';
+import Swal from 'sweetalert2';
+import Toast from 'sweetalert2';
+
 export interface Token{
   access: string;
   refresh: string;
@@ -28,7 +31,7 @@ export class SignInComponent implements OnInit {
 
   validated !: boolean;
   error !: string;
-
+  hide = true;
   user!:Token;
   userForm! : FormGroup;
   public currentUser = User;
@@ -71,8 +74,21 @@ export class SignInComponent implements OnInit {
   }).catch((err) => {
     this.validated = false;
     this.error = err.error.error;
-     alert("الرجاء التثبت من المعطيات الشخصية")})}
-  
+    Swal.fire({
+      title:'الرجاء التثبت من المعطيات الشخصية',
+      // text: 'هل أنت متأكد أنك تريد حذف هذا الطبيب؟',
+      icon: 'warning',
+      //showCancelButton: true,
+      // confirmButtonText: 'حذف',
+      // cancelButtonText: 'إلغاء',
+      // confirmButtonColor: '#34c38f',
+      // cancelButtonColor: '#f46a6a',
+       showConfirmButton: false,
+       timer: 1500
+      //position:
+    })
+  })}
+    
    public saveData(registerForm: NgForm) {
      console.log(registerForm.form);
      console.log('valeurs: ', JSON.stringify(registerForm.value));

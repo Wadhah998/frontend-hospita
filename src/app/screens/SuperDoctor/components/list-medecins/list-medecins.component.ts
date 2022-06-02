@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
-import { Component, OnInit,EventEmitter , AfterViewInit, Output, ViewChild } from '@angular/core';
+import { Component, OnInit,EventEmitter , Output, ViewChild } from '@angular/core';
 import { DialogService } from 'src/app/services/shared/dialog.service';
 import { ApiService } from 'src/app/services/api/api.service';
 import * as _ from 'lodash';
@@ -26,30 +26,27 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
   medecins : Medecins []= [];
   medecin!: Medecins;
 
-  access !: string | null;
-  typeUser !: string | null;
-
-  numberMedecins !: number;
-
   @Output()
   public select: EventEmitter<Medecins> = new EventEmitter();
 
   selectedSpeciality!: boolean;
-  
+
+  ngOnInit(): void {
+    this.getData();
+  }
 
   medecinForm!: FormGroup;
   displayedColumns: string[] = [
     'action',
     'telephone',
-   
-    
+    'email',
+    'speciality',
     'cin',
     'gouvernat',
-    'speciality',
     'nom',
     'id',
   ];
-  
+  dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -64,37 +61,8 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
     private router: Router,
     private _snackBar: MatSnackBar,
     
-  ) {
-    
-    super(service, 'http://localhost:8000/api/persons', secureStorageService)}
-  patients: Medecins[] = [];
-  dataSource!: MatTableDataSource<any>;
-  async ngOnInit(): Promise<void> {
-    this.access = localStorage.getItem('access');
-    const typeUser = localStorage.getItem('typeUser');
-    if (typeUser !== null){
-        this.typeUser = typeUser;
-    }
-    if (this.access) {
-        this.options = {
-            params: null,
-            headers: {Authorization: `Bearer ${this.secureStorageService.getToken(this.access)}`}
-        };
-        await this.getData();
-        console.log(this.data);
-    }
+  ) {super(  service, 'http://localhost:8000/api/persons', secureStorageService)}
 
-    this.getAllusers();
-  }
-  override async getData(): Promise<void> {
-    this.data = await this.service.list(this.actionUrl, this.options);
-    this.numberMedecins = this.data.length;
-}
-
-  getAllusers () {
-    this.dataSource = new MatTableDataSource(this.data);
-    this.dataSource.paginator = this.paginator;
-  }
   ajouterMedecinDialog() {
     this.dialog
       .open(MedecinFormComponent, {
@@ -102,7 +70,7 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
         disableClose: true,
         autoFocus: true,
       })
-     .afterClosed()
+      .afterClosed()
       .subscribe(async (val) => {
         this.router.navigate(['/superDoctorDashboard'])
         .then(async () => {
@@ -111,7 +79,7 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
           console.log('catched');
           this.getData()
       });
-      })
+      });
   }
 
   editMedecin(row: any) {

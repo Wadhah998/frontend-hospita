@@ -23,7 +23,7 @@
       
       <input type="loginNumber"
       
-      style="width: 383px;"
+      style="width: 350px;"
       class="form-control"
       placeholder="البريد الإلكتروني"
       formControlName="loginNumber"
@@ -38,18 +38,22 @@
   
     </div>
    
-    <div class="userForm">
+    <div class="userForm password">
        
        <input 
        id="mdp"
        type="password"
-       style="width: 383px;"
+       style="width: 350px;"
        class="form-control"
        placeholder="كلمة السر" 
        formControlName="password"
        
        required
-       />
+       matInput [type]="hide ? 'password' : 'text'" />
+
+       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+       <mat-icon style="color: 	#C0C0C0; margin-left:100% ; " >  {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+       </button>
         
      </div>
      <button  type="submit"

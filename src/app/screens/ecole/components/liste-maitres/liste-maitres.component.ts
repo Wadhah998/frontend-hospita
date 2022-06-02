@@ -37,14 +37,11 @@ export class ListeMaitresComponent extends DynamicTableCrud<any> implements OnIn
   maitreForm!: FormGroup;
   displayedColumns: string[] = [
     'action',
-   
-    
-    
-    'loginNumber',
-    'governorate',
-    'email',
     'telephone',
-    'familyName',
+    'email',
+    'ecole',
+    'cin',
+    'gouvernat',
     'nom',
     'id',
   ];

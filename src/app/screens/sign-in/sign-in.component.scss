@@ -65,3 +65,18 @@ input{
   height: 40px;
   box-shadow: none;
 }
+.password{
+  display: flex;
+  border:1px solid #ccc;
+  width:350px;
+  height: 36px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px !important;
+}
+.password input{
+  border:none !important;
+  box-shadow:none !important;
+  height: 30px !important;
+  margin-bottom: 0px !important;
+}

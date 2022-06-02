@@ -4,13 +4,14 @@
     width:350px;
     height: 36px;
     justify-content: center;
-    
+    align-items: center;
     margin-bottom: 15px !important;
 }
 .password input{
     border:none !important;
     box-shadow:none !important;
     height: 30px !important;
+    margin-bottom: 0px !important;
 }
 #email::placeholder{
     text-align: right;

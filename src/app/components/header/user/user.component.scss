@@ -20,6 +20,7 @@
 .user-menu-title {
   padding: 10px 30px 0 30px;
   margin-bottom: 4px;
+  text-align: center;
 }
 .user-menu-title__name {
   margin-bottom: 4px;
@@ -48,13 +49,38 @@
   border: 1px solid;
   color: #536dfe;
   width: 80%;
+  font-family: "Cairo", sans-serif;
+  //font-size: 20px;
+  font-weight: bold;
 }
-// .user-menu__item-title {
-//   /* color: #b9b9b9; */
-// }
+.sign-button:hover {
+  border: 1px solid;
+  color:#f3f5ff ;
+  background-color:#536dfe ;
+  width: 80%;
+  font-family: "Cairo", sans-serif;
+  //font-size: 20px;
+  font-weight: bold;
+}
+.user-menu__item-title {
+  /* color: #b9b9b9; */
+  font-family: "Cairo", sans-serif;
+  //font-size: 20px;
+  font-weight: bold;
+
+}
 .user-menu__item-title:hover {
   background-color: #f3f5ff;
 }
 .user-menu__item-title:hover .user-menu-icon {
   color: #536dfe;
+}
+.mat-menu-panel{
+ 
+}
+.userMenu{
+  min-width: 180px !important;
+}
+::ng-deep .userMenu {
+  width: 180px;
 }

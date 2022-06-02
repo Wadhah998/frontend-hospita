@@ -99,8 +99,8 @@
      
       
 
-      <div class="form-group">
-        <div class="password">
+      <div class="form-group password">
+       
           <input 
           id="password"
           type="password"
@@ -110,12 +110,13 @@
          
           class="form-control"
           placeholder="كلمة السر" 
-          formControlName="password" />
-  
+          formControlName="password" 
+          matInput [type]="hide ? 'password' : 'text'"/>
+        
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
             <mat-icon style="color: 	#C0C0C0; margin-left:100% ; " >  {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
-        </div>
+      
        
 
 
@@ -125,7 +126,7 @@
      
 
 
-       <!-- <div class="form-group">
+       <div class="form-group password">
         
         <input 
         id="Confmdp"
@@ -136,32 +137,22 @@
         ngModel ="true"
         
         style="width: 360px;"
-        pattern="{{ passwordVar.value }}"
+      
         class="form-control"
         placeholder="تأكيد كلمة السر" 
-        [(ngModel)]="user.mdpp"
-        name="mdpp" 
-        required 
-        #mdppVar="ngModel"
-        [ngClass]="{
-          'is-invalid': mdppVar.touched && !mdppVar.valid
-        }"  
-       
-        
-        
         matInput [type]="hide ? 'password' : 'text'" />
 
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon style="color: 	#C0C0C0; margin-left:100% ; " >  {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
-
+</div>
 
      
   
         
          
-          <div *ngIf="passwordVar.value!=mdppVar.value"> كلمة السر و تأكيد كلمة السر غير متطابقين  </div>    
-          -->
+        
+         
 
      
        
