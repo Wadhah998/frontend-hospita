@@ -112,7 +112,7 @@ export class MedecinFormComponent implements OnInit {
 
         },this.options)
 
-        this.dialogRef.close('تأكيد');
+        this.dialogRef.close();
 
         
     }

@@ -11,9 +11,11 @@
 
             </label>
             <mat-radio-group formControlName="typeUser">
-                <mat-radio-button *ngFor="let list of List" [value]="list">
-                    {{list}}
+                <mat-radio-button *ngFor="let list of List" [value]="list.value">
+                    {{list.label}}
                 </mat-radio-button>
+                
+               
             </mat-radio-group>
             
               <!--  <span class="form-check form-check-inline ml-5">
@@ -40,7 +42,7 @@
             <input formControlName="nom" matInput placeholder="الاسم">
         </mat-form-field>
         <mat-form-field class="class1" appearance="outline">
-            <mat-label>الاسم</mat-label>
+            <mat-label>اللقب</mat-label>
             <input formControlName="familyName" matInput placeholder="الاسم">
         </mat-form-field>
         <mat-form-field class="class1" appearance="outline">
@@ -48,13 +50,14 @@
             <input formControlName="telephone" matInput placeholder="رقم الهاتف">
         </mat-form-field>
         <mat-form-field class="class1" appearance="outline">
-            <mat-label>رقم التسجيل</mat-label>
-            <input formControlName="loginNumber" matInput placeholder="رقم التسجيل">
-        </mat-form-field>
-        <mat-form-field class="class1" appearance="outline">
             <mat-label>البريد الاكتروني</mat-label>
             <input formControlName="email" matInput placeholder="البريد الاكتروني">
         </mat-form-field >
+        <mat-form-field class="class1" appearance="outline">
+            <mat-label>رقم التسجيل</mat-label>
+            <input formControlName="loginNumber" matInput placeholder="رقم التسجيل">
+        </mat-form-field>
+        
         <mat-form-field class="class1" appearance="outline">
             <mat-label>كلمة السر</mat-label>
             <input formControlName="password" matInput placeholder="كلمة السر">

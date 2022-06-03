@@ -468,6 +468,6 @@ localStorage.removeItem("patient");
   horizontalPosition : 'left',
   panelClass: ['blue-snackbar'],
 });
-    }
+    } this.router.navigate(['/commingSoon'])
   }
 }

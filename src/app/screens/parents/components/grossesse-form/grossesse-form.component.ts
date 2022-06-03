@@ -1,3 +1,4 @@
+import { CommingSoonComponent } from './../../../../components/comming-soon/comming-soon.component';
 import { SecureStorageService } from './../../../../services/api/secure-storage.service';
 import { Question } from './../../../../services/question/question.module';
 import { saveDataToLocalhost, AbstractRestService } from 'src/app/services/genericservice.service';
@@ -337,7 +338,7 @@ localStorage.removeItem("patient");
     localStorage.removeItem("patient");
 
             } 
-            }
+            } 
 
   else{
       this._snackBar.open('الرجاء إكمال تعميرالاستمارة ','',
@@ -353,7 +354,7 @@ localStorage.removeItem("patient");
         
         
         
-        }}}
+        }this.router.navigate(["/CommingSoon"])}}
         
       
     

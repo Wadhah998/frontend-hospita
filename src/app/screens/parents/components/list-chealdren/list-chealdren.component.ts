@@ -31,7 +31,7 @@ export class ListChealdrenComponent extends DynamicTableCrud<any> implements OnI
     
     'state',
     'age',
-    'email',
+    
     'phone',
     'action',
   ];

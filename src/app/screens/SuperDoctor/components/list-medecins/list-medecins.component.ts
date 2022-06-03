@@ -42,7 +42,7 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
     'email',
     'speciality',
     'cin',
-    'gouvernat',
+    
     'nom',
     'id',
   ];
@@ -74,8 +74,7 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
       .subscribe(async (val) => {
         this.router.navigate(['/superDoctorDashboard'])
         .then(async () => {
-          // this.data.splice(index, 1);
-          // this.numberItems--;
+         
           console.log('catched');
           this.getData()
       });

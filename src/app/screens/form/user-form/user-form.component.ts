@@ -16,7 +16,7 @@ interface Option {
   styleUrls: ['./user-form.component.scss']
 })
 export class UserFormComponent implements OnInit {
-  List = [ "school","superdoctor"]
+  List = [ {value:'school',label:'مدرسة'},{value:'superdoctor',label:'طبيب أول'}]
   userForm! : FormGroup;
   actionBtn : string = "تأكيد";
   school : "school" | undefined

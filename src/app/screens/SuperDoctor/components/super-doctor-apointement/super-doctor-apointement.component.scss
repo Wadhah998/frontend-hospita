@@ -51,3 +51,23 @@ a {
   display: flex;
   justify-content: end;
 }
+.dots{
+  height: 25px;
+  width: 25px;
+  
+  border-radius: 50%;
+  display: inline-block;
+}
+.red{
+  background-color: rgb(235, 78, 88);
+}
+.green{
+  background-color: #9ddb4c;
+}
+.blue{
+  background-color: #4791c2;
+}
+.etat{
+  font-size: 16px;
+  font-weight: 400;
+}

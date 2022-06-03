@@ -210,6 +210,7 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
   }
   override async getData(): Promise<void> {
     this.data = await this.service.list(this.actionUrl, this.options);
+    // this.getData()
   }
 
   chercheTyperUser($event: any) {
