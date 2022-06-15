@@ -338,7 +338,7 @@ localStorage.removeItem("patient");
     localStorage.removeItem("patient");
 
             } 
-            } 
+            this.router.navigate(["/CommingSoon"]) } 
 
   else{
       this._snackBar.open('الرجاء إكمال تعميرالاستمارة ','',
@@ -354,7 +354,7 @@ localStorage.removeItem("patient");
         
         
         
-        }this.router.navigate(["/CommingSoon"])}}
+        }}}
         
       
     

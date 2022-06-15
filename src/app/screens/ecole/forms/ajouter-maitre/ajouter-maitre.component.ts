@@ -1,3 +1,4 @@
+import { Localisation } from './../../../sign-up/localisation/localisation.module';
 
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Component, Inject, OnInit } from '@angular/core';
@@ -53,13 +54,15 @@ export class AjouterMaitreComponent implements OnInit {
       this.actionBtn = 'تحديث';
       this.maitreForm.controls['telephone'].setValue(this.editData.telephone);
       this.maitreForm.controls['email'].setValue(this.editData.email);
-      this.maitreForm.controls['cin'].setValue(this.editData.loginNumber);
-      this.maitreForm.controls['ecole'].setValue(
-        this.editData.ecole
-      );
-      this.maitreForm.controls['nom'].setValue(this.editData.nom);
-      this.maitreForm.controls['prenom'].setValue(this.editData.prenom);
-      this.maitreForm.controls['password'].setValue(this.editData.password);
+      this.maitreForm.controls['loginNumber'].setValue(this.editData.loginNumber);
+      
+      this.maitreForm.controls['nom'].setValue(this.editData.name);
+      this.maitreForm.controls['familyName'].setValue(this.editData.familyName) ;
+      this.maitreForm.controls['delegation'].setValue(this.editData.localisation.delegation);
+      this.maitreForm.controls['governorate'].setValue(this.editData.localisation.governorate);
+      this.maitreForm.controls['zipCode'].setValue(this.editData.localisation.zipCode);
+      
+      this.maitreForm.controls['password'].setValue('*********');
       this.maitreForm.controls['id'].setValue(this.editData.id);
     }
   }
@@ -111,8 +114,10 @@ export class AjouterMaitreComponent implements OnInit {
 
 
         },this.options)
+        
 
         this.dialogRef.close('تأكيد');
+        
 
         
     }

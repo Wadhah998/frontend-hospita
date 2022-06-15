@@ -1,3 +1,4 @@
+import { Localisation } from 'src/app/screens/sign-up/localisation/localisation.module';
 import { ApiService } from './../../../services/api/api.service';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Component, Inject, OnInit } from '@angular/core';
@@ -51,16 +52,21 @@ export class MedecinFormComponent implements OnInit {
 
     if (this.editData) {
       this.actionBtn = 'تحديث';
+      console.log(this.editData.localisation.delegation)
+      
       this.medecinForm.controls['telephone'].setValue(this.editData.telephone);
       this.medecinForm.controls['email'].setValue(this.editData.email);
-      this.medecinForm.controls['cin'].setValue(this.editData.loginNumber);
-      this.medecinForm.controls['speciality'].setValue(
-        this.editData.speciality
-      );
-      this.medecinForm.controls['nom'].setValue(this.editData.nom);
-      this.medecinForm.controls['prenom'].setValue(this.editData.prenom);
-      this.medecinForm.controls['password'].setValue(this.editData.password);
+      this.medecinForm.controls['loginNumber'].setValue(this.editData.loginNumber);
+      this.medecinForm.controls['speciality'].setValue(this.editData.speciality);
+    
+      this.medecinForm.controls['nom'].setValue(this.editData.name);
+      this.medecinForm.controls['delegation'].setValue(this.editData.localisation.delegation);
+      this.medecinForm.controls['governorate'].setValue(this.editData.localisation.governorate);
+      this.medecinForm.controls['zipCode'].setValue(this.editData.localisation.zipCode);
+      
+      this.medecinForm.controls['password'].setValue("*********");
       this.medecinForm.controls['id'].setValue(this.editData.id);
+      
     }
   }
 
@@ -111,6 +117,7 @@ export class MedecinFormComponent implements OnInit {
 
 
         },this.options)
+        
 
         this.dialogRef.close();
 

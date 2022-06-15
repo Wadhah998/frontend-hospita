@@ -172,6 +172,7 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
     //console.log('from list' + this.gePatients());
     console.log('from list', element);
   }
+  
 
 
 

@@ -39,7 +39,7 @@ export class ListeMaitresComponent extends DynamicTableCrud<any> implements OnIn
     'action',
     'telephone',
     'email',
-    'ecole',
+    
     'cin',
     'gouvernat',
     'nom',
@@ -75,21 +75,21 @@ export class ListeMaitresComponent extends DynamicTableCrud<any> implements OnIn
       });
   }
 
-  // editMaitre(row: any) {
-  //   this.dialog
-  //     .open(AjouterMaitreComponent, {
-  //       width: '50%',
-  //       data: row,
-  //       disableClose: true,
-  //       autoFocus: true,
-  //     })
-  //     .afterClosed()
-  //     .subscribe((val) => {
-  //       if (val === 'تحديث') {
-  //         this.getData();
-  //       }
-  //     });
-  // }
+  editMaitre(row: any) {
+    this.dialog
+      .open(AjouterMaitreComponent, {
+        width: '50%',
+        data: row,
+        disableClose: true,
+        autoFocus: true,
+      })
+      .afterClosed()
+      .subscribe((val) => {
+        if (val === 'تحديث') {
+          this.getData();
+        }
+      });
+  }
 
   // deleteMaitre(id: number) {
   //   this.dialogService

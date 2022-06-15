@@ -6,6 +6,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { User } from 'src/app/models/user/user.module';
 import { DynamicTableCrud } from '../../admin/dynamic-table.crud.service';
 import { SecureStorageService } from 'src/app/services/api/secure-storage.service';
+import Swal from 'sweetalert2';
 interface Option {
   headers: object;
   params: object | null | undefined;
@@ -24,6 +25,7 @@ export class UserFormComponent implements OnInit {
   isSuperDoctor: boolean | undefined;
   typeUser!: string;
   public  options!: Option;
+  error: any;
   
 
    constructor( public service:AbstractRestService<any>, private api : ApiService ,private formBuilder:FormBuilder ,
@@ -45,7 +47,7 @@ export class UserFormComponent implements OnInit {
       zipCode: new FormControl('', [Validators.required]),
       
   });
-console.log(this.isSuperDoctor)
+
   if (this.typeUser === 'admin' && this.isSuperDoctor || this.typeUser === 'school' || this.typeUser === 'superdoctor') {
             this.userForm.addControl('familyName', new FormControl('', [Validators.required]));
             if (this.typeUser === 'superdoctor') {
@@ -58,12 +60,14 @@ console.log(this.isSuperDoctor)
     this.userForm.controls['typeUser'].setValue(this.editData.typeUser);
     this.userForm.controls['loginNumber'].setValue(this.editData.loginNumber);
     this.userForm.controls['email'].setValue(this.editData.email);
-    this.userForm.controls['nom'].setValue(this.editData.nom);
+    this.userForm.controls['nom'].setValue(this.editData.name);
+    
     this.userForm.controls['telephone'].setValue(this.editData.telephone);
-    this.userForm.controls['password'].setValue(this.editData.password);
-    this.userForm.controls['delegation'].setValue(this.editData.delegation);
-    this.userForm.controls['governorate'].setValue(this.editData.governorate);
-    this.userForm.controls['zipCode'].setValue(this.editData.zipCode);
+    this.userForm.controls['password'].setValue("**************");
+    this.userForm.controls['delegation'].setValue(this.editData.localisation.delegation);
+    this.userForm.controls['governorate'].setValue(this.editData.localisation.governorate);
+    this.userForm.controls['zipCode'].setValue(this.editData.localisation.zipCode);
+    
 
   }
 
@@ -91,7 +95,7 @@ console.log(this.isSuperDoctor)
               };
           }
       }
-      console.log(this.options);
+     
         
      
 
@@ -119,9 +123,23 @@ console.log(this.isSuperDoctor)
         delegation: this.userForm.value.delegation,
         zipCode: this.userForm.value.zipCode
     }
-        },this.options)
-
-        this.dialogRef.close('تأكيد');
+        },this.options).catch((err) => {
+          
+          this.error = err.error.error;
+        alert("رقم تسجيل موجود") 
+        console.log(this.error)
+        return this.error
+        // this.dialogRef.close('تأكيد');
+        
+        
+        })
+        if (!this.error.error){
+       this.dialogRef.close('تأكيد');
+      }
+         
+        
+        
+       
 }
 modifieruser(){
   this.api.putuser(this.userForm.value, this.editData.id)

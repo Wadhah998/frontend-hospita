@@ -41,7 +41,8 @@
             <mat-label>الاسم</mat-label>
             <input formControlName="nom" matInput placeholder="الاسم">
         </mat-form-field>
-        <mat-form-field class="class1" appearance="outline">
+       
+        <mat-form-field class="class1" appearance="outline" *ngIf="this.actionBtn !='تحديث'">
             <mat-label>اللقب</mat-label>
             <input formControlName="familyName" matInput placeholder="الاسم">
         </mat-form-field>

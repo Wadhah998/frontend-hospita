@@ -1,3 +1,4 @@
+import { MaitreService } from './guards/maitre.service';
 import { AjouterMaitreComponent } from './screens/ecole/forms/ajouter-maitre/ajouter-maitre.component';
 import { EcoleDashboardComponent } from './screens/ecole/components/ecole-dashboard/ecole-dashboard.component';
 import { Localisation } from './screens/sign-up/localisation/localisation.module';
@@ -46,6 +47,7 @@ import { DoctorMessagerieComponent } from './screens/doctor/components/doctor-me
 import { AuthGuard } from './guards/auth.guard';
 import { DoctorGuard } from './guards/doctor.guard';
 import { AdminGuard } from './guards/admin.guard';
+import { EcoleService } from './guards/ecole.service';
 import { DoctorCalendarComponent } from './screens/doctor/components/doctor-calendar/doctor-calendar.component';
 
 
@@ -93,7 +95,7 @@ const routes: Routes = [
   { path: 'signin', component: SignInComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'forgetpassword', component: ForgetPasswordComponent },
-  { path: 'admin', component: AdminComponent },
+  { path: 'admin', component: AdminComponent,canActivate: [AuthGuard, AdminGuard] },
   { path: 'Superdoctor-chat', component: MessagerieComponent },
 
   { path: 'medecins', component: SuperDoctorComponent },
@@ -101,15 +103,15 @@ const routes: Routes = [
   { path: 'ajouterMaitre', component: AjouterMaitreComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'superDoctorDashboard', component: DashboardSuperDoctorComponent },
-  { path: 'ecoleDashboard', component: EcoleDashboardComponent },
+  { path: 'superDoctorDashboard', component: DashboardSuperDoctorComponent , canActivate: [AuthGuard, SuperdocService] },
+  { path: 'ecoleDashboard', component: EcoleDashboardComponent,canActivate: [AuthGuard,EcoleService ] },
   { path: 'listMedecins', component: ListMedecinsComponent },
   { path: 'allCharts', component : AllChartsComponent},
   { path: 'headerSuper', component : HeaderSuperDoctorComponent},
   { path: 'profileApoint', component : ProfileApointementComponent},
   { path: 'profileApoint/singleDoctor/:id', component : ProfileMedecinComponent },
   { path: 'diagnostic', component : DiagnosticComponent },
-  { path: 'maitreDashboard', component: MaitredashboardComponent },
+  { path: 'maitreDashboard', component: MaitredashboardComponent,canActivate: [AuthGuard,MaitreService ] },
   { path :  'listeEnfants', component : ListEnfantsComponent },
   { path: 'thankYou', component : ThankYouComponent },
   { path: 'commingSoon', component : CommingSoonComponent },
@@ -148,13 +150,13 @@ const routes: Routes = [
       /*  { path: 'doctor-appointment', component: DoctorAppointmentComponent }, */
       {
         path: 'parent-dashboard',
-        component: ParentDashboardComponent,
+        component: ParentDashboardComponent,canActivate: [AuthGuard, PatientService]
       },
       { path: 'superDoctor-appointment', component : SuperDoctorApointementComponent,canActivate:[AuthGuard,SuperdocService] },
 
 
 
-      { path: 'ajout-enfant', component: AjoutEnfantComponent }
+      { path: 'ajout-enfant', component: AjoutEnfantComponent ,canActivate: [AuthGuard, PatientService] }
     ];
   
 

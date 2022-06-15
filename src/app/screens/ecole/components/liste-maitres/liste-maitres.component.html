@@ -17,14 +17,14 @@
         
               <!-- Position Column -->
               <ng-container  matColumnDef="id">
-                <th style="text-align: left;" mat-header-cell *matHeaderCellDef>رقم</th>
-                <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.id }}</td>
+                <th style="text-align: center;" mat-header-cell *matHeaderCellDef>رقم</th>
+                <td style="text-align: center;" mat-cell *matCellDef="let element">{{ element.id }}</td>
               </ng-container>
         
               <!-- Name Column -->
               <ng-container matColumnDef="nom">
-                <th style="text-align: left;" mat-header-cell *matHeaderCellDef>اسم</th>
-                <td style="text-align: left;"mat-cell *matCellDef="let element">
+                <th style="text-align: center;" mat-header-cell *matHeaderCellDef>اسم</th>
+                <td style="text-align: center;"mat-cell *matCellDef="let element">
                   <button class="btn btn-primary" style=" width:100px"
                   (click)="onSelect(element)" >
                     {{element.name}}
@@ -35,36 +35,33 @@
               
               <!-- Symbol Column -->
               <ng-container matColumnDef="gouvernat">
-                <th  style="text-align: left;" mat-header-cell *matHeaderCellDef>اللقب </th>
-                <td  style="text-align: left;" mat-cell *matCellDef="let element">{{ element.familyName }}</td>
+                <th  style="text-align: center;" mat-header-cell *matHeaderCellDef>اللقب </th>
+                <td  style="text-align: center;" mat-cell *matCellDef="let element">{{ element.familyName }}</td>
               </ng-container>
               <!-- Action Column -->
         
               <!-- Weight Column -->
               <ng-container matColumnDef="cin">
-                <th style="text-align: left;" mat-header-cell *matHeaderCellDef>ب.ت.و
+                <th style="text-align: center;" mat-header-cell *matHeaderCellDef>رقم التسجيل
                 </th>
-                <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.loginNumber}}</td>
+                <td style="text-align: center;" mat-cell *matCellDef="let element">{{ element.loginNumber}}</td>
               </ng-container>
         
               <!-- Symbol Column -->
-              <ng-container matColumnDef="ecole">
-                <th  style="text-align: left;"mat-header-cell *matHeaderCellDef>المدرسة</th>
-                <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.ecole }}</td>
-              </ng-container>
+            
               <!-- Action Column -->
               
               <!-- Symbol Column -->
               <ng-container matColumnDef="email">
-                <th style="text-align: left;" mat-header-cell *matHeaderCellDef>البريد الإلكتروني</th>
-                <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.email }}</td>
+                <th style="text-align: center;" mat-header-cell *matHeaderCellDef>البريد الإلكتروني</th>
+                <td style="text-align: center;" mat-cell *matCellDef="let element">{{ element.email }}</td>
               </ng-container>
               <!-- Action Column -->
               
               <!-- Symbol Column -->
               <ng-container matColumnDef="telephone">
-                <th style="text-align: left;" mat-header-cell *matHeaderCellDef>هاتف</th>
-                <td style="text-align: left;" mat-cell *matCellDef="let element">{{ element.telephone }}</td>
+                <th style="text-align: center;" mat-header-cell *matHeaderCellDef>هاتف</th>
+                <td style="text-align: center;" mat-cell *matCellDef="let element">{{ element.telephone }}</td>
               </ng-container>
               <!-- Action Column -->
               <ng-container matColumnDef="action">
@@ -76,7 +73,7 @@
                   </button>
                   </a>
                   <a class="pointer">
-                    <button  mat-icon-button  color="primary" matTooltip="تحرير">
+                    <button  mat-icon-button  color="primary" matTooltip="تحرير" (click)="editMaitre(element)">
                       <mat-icon>edit</mat-icon>
                   </button>
                   </a>
