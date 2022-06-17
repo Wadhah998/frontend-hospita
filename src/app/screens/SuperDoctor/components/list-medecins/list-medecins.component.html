@@ -37,6 +37,11 @@
                 </button> 
               </td>
             </ng-container>
+            <ng-container  matColumnDef="prenon">
+              <th mat-header-cell *matHeaderCellDef style="text-align: center;">اللقب</th>
+              <td style="text-align: center;" mat-cell *matCellDef="let element">{{ element.familyName }}</td>
+            </ng-container>
+            
     
             
             <!-- Symbol Column -->

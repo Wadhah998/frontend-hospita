@@ -105,6 +105,8 @@ FullCalendarModule.registerPlugins([
 import { AjoutEnfantComponent } from './screens/parents/form/ajout-enfant/ajout-enfant.component';
 import { GrossesseFormComponent } from './screens/parents/components/grossesse-form/grossesse-form.component';
 
+import { ProfileUComponent } from './components/header/profile-u/profile-u.component';
+
 // import {
 //   NgxMatDatetimePickerModule,
 //    NgxMatNativeDateModule,
@@ -185,7 +187,9 @@ import { GrossesseFormComponent } from './screens/parents/components/grossesse-f
          AjouterMaitreComponent,
          ThankYouComponent,
          CommingSoonComponent,
-         GrossesseFormComponent
+         GrossesseFormComponent,
+         ProfileUComponent,
+         
   ],
   imports: [
     BrowserModule,

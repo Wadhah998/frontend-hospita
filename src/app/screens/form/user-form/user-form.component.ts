@@ -110,7 +110,7 @@ export class UserFormComponent implements OnInit {
     telephone: this.userForm.value.telephone,
     typeUser:this.userForm.value.typeUser,
     school_id: this.typeUser === 'school' ? localStorage.getItem('userId') : undefined,
-    is_super: this.typeUser === 'superdoctor' ? false : undefined,
+    is_super: true,
     super_doctor_id: this.typeUser === 'superdoctor' ? localStorage.getItem('userId') : undefined,
     name: this.userForm.value.nom,
     familyName: this.userForm.value?.familyName,

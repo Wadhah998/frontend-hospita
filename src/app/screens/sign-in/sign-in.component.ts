@@ -19,6 +19,7 @@ export interface Token{
   name: string;
   familyName: string | undefined;
   is_super:any;
+  speciality:string
 }
 
 

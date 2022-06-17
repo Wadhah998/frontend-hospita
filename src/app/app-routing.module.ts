@@ -64,6 +64,7 @@ import { ThankYouComponent } from './screens/parents/components/thank-you/thank-
 import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie/messagerie.component';
 import { CommingSoonComponent } from './components/comming-soon/comming-soon.component';
 import { GrossesseFormComponent } from './screens/parents/components/grossesse-form/grossesse-form.component';
+import { ProfileUComponent } from './components/header/profile-u/profile-u.component';
 
 
 
@@ -99,6 +100,8 @@ const routes: Routes = [
   { path: 'Superdoctor-chat', component: MessagerieComponent },
 
   { path: 'medecins', component: SuperDoctorComponent },
+  { path: 'profileU', component: ProfileUComponent },
+
   { path: 'ajouterMedecin', component: MedecinFormComponent },
   { path: 'ajouterMaitre', component: AjouterMaitreComponent },
   { path: 'dashboard', component: DashboardComponent },

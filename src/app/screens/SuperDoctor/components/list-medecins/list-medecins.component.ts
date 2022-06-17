@@ -42,6 +42,7 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
     'email',
     'speciality',
     'cin',
+    'prenon',
     
     'nom',
     'id',
@@ -57,7 +58,7 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
     private api: ApiService,
     private dialog: MatDialog,
     private dialogService: DialogService,
-    
+
     private router: Router,
     private _snackBar: MatSnackBar,
     
@@ -92,35 +93,12 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
       .afterClosed()
       .subscribe((val) => {
         if (val === 'تحديث') {
-          this.getAllMedecins();
+          this.getData();
         }
       });
   }
 
-  // deleteMedecin(id: number) {
-  //   this.dialogService
-  //     .openConfirmDialog('هل أنت متأكد أنك تريد حذف هذا الطبيب؟')
-  //     .afterClosed()
-  //     .subscribe((res) => {
-  //       if (res) {
-  //         this.api.deleteMedecin(id).subscribe({
-  //           next: (res) => {
-  //             this._snackBar.open('حذف الدكتور بنجاح','',
-  //   { 
-  //     duration: 3000
-  // });
-  //             this.getAllMedecins();
-  //           },
-  //           error: () => {
-  //             this._snackBar.open('خطأ اثناء حذف هذا الطبيب !!','',
-  //   { 
-  //     duration: 3000
-  // });
-  //           },
-  //         });
-  //       }
-  //     });
-  // }
+ 
 
 
   showMedecin(row: any){
@@ -142,23 +120,7 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
     this.dataSource = new MatTableDataSource(filteredData);
   }
 
-  getAllMedecins () {
-    this.api.getMedecin()
-      .subscribe({
-        next:(res)=>{
-          console.log(res);
-          this.medecins = res
-          this.medecin = this.medecins[0];
-          this.dataSource = new MatTableDataSource(res);
-          this.dataSource.paginator = this.paginator;
-          this.dataSource.sort = this.sort;
-          this.select.emit(this.medecin)
-        },
-        error:(error)=>{
-          //alert("خطأ أثناء جلب السجلات")
-        }
-      })
-  }
+ 
 
   afficherTousMedecin() {
     this.getData();
@@ -172,6 +134,7 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
     //console.log('from list' + this.gePatients());
     console.log('from list', element);
   }
+ 
   
 
 

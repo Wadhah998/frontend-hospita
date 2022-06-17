@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { SecureStorageService } from './../../../services/api/secure-storage.service';
 import { User } from './../../../screens/sign-in/user';
 import { AbstractRestService } from 'src/app/services/genericservice.service';
@@ -13,7 +14,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class UserComponent  implements OnInit {
   
-  constructor(public SecureStorageService:SecureStorageService, private authService:AuthService,public service:AbstractRestService<any>) {}
+  constructor(public SecureStorageService:SecureStorageService, private authService:AuthService,public service:AbstractRestService<any>,public router :Router) {}
    user=JSON.parse(localStorage.getItem("currentUser")!);
    
    
@@ -27,4 +28,9 @@ async  ngOnInit(): Promise <void> {
   logOut(){
     this.authService.logOut();
   }
+  profile(){
+    this.router.navigate(['/profileU'])
+  }
+
+  
 }

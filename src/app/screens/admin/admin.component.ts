@@ -178,8 +178,7 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
       .subscribe(async (val) => {
         this.router.navigate(['/admin'])
         .then(async () => {
-          // this.data.splice(index, 1);
-          // this.numberItems--;
+          
           console.log('catched');
           this.getData()
       });

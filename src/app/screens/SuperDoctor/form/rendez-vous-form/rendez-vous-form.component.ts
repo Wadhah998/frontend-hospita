@@ -37,8 +37,10 @@ export class RendezVousFormComponent extends DynamicTableCrud<any> implements On
   parentId:number
   age : number;
   date:Date;
+  supervised:number;
 
   idMedecin !: number;
+  familyNamep !:string;
 
   
 
@@ -58,39 +60,20 @@ export class RendezVousFormComponent extends DynamicTableCrud<any> implements On
             headers: {Authorization: `Bearer ${this.secureStorageService.getToken(this.access)}`}}}
     this.getData();
     this.nomEnfant = this.data.name;
-    this.familyName = this.data.parent.familyName;
+    this.familyName = this.data.familyName;
+    this.familyNamep = this.data.parent.familyName;
     this.birthday = this.data.birthdate;
     this.nomParent=this.data.parent.name;
     this.score=this.data.scoreParent;
     this.telephone=this.data.parent.telephone
     this.parentId=this.data.id
+    this.supervised=this.data.supervise.doctor;
+    
+    
 
-    // this.enfantForm = this.formBuilder.group({
-    //   idMedecin: ['', Validators.required],
-    //   nomEnfant: [this.data.name],
-    //   nomParent: [this.data.nomParent],
-    //   telephone : [this.data.telephone],
-    //   cin : [this.data.cin],
-    //   email: [this.data.email],
-    //   gouvernat: [this.data.gouvernat],
-    //   ecole: [this.data.ecole],
-    //   date: [this.data.date],
-    //   password: [this.data.password],
-    //   situation: [this.data.situation],
-    //   codePostal: [this.data.codePostal],
-    //   confirm : [false]
-
+    
       
-    //  });
-    const date = new Date(this.birthday)
-    console.log(date)
-    const newDate =new Date(1992,3,4)
-    if (date>newDate){
-      console.log(true)
-
-    }else{
-      console.log(false)
-    }
+    
     
     
     
@@ -113,24 +96,10 @@ export class RendezVousFormComponent extends DynamicTableCrud<any> implements On
 }
 
 
-  chercheMedecine($event: any){
+ 
+  
+  
 
-  }
-  chercheMedecin($event: any){
-    this.doctors =  this.service.list(`http://localhost:8000/api/persons`, this.options);
-  }
-  public CalculateAge(): void {
-    if (this.birthday) {
-      var timeDiff = Math.abs(Date.now() - new Date(this.birthday).getTime());
-      this.age = Math.floor(timeDiff / (1000 * 3600 * 24) / 365.25);
-        }
-      
-      }
-
-  // getAllMedecins  (): Promise<void>   {
-  //   this.doctors =  this.service.list(`http://localhost:8000/api/persons`, this.options);
-  //   console.log(this.doctors.name)
-  //   return this.doctors
-  // }
+ 
 
 }

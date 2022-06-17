@@ -23,11 +23,20 @@
   </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions>
-    <a class="card-button"
-      ><i class="fa-solid fa-circle-arrow-up switch"></i>تحويل
-    </a>
+    <mat-form-field  class="class1" appearance="outline">
+      <mat-select [(value)]="idMedecin" formControlName="idMedecin"  placeholder="إختيار طبيب أخر" #input>
+          <mat-option *ngFor="let medecin of data"  value={{medecin.id}}>
+            {{medecin.name}}
+            {{medecin.familyName}}
+          
+          </mat-option>
+        </mat-select>
+  </mat-form-field>
+  <a class="card-button"(click)="affecterMedecin(idMedecin,$event,patient?.parent?.id)">
+    <i class="fa-solid fa-circle-arrow-up switch"></i>تحويل</a
+  >
     <a class="card-button card-button-left"(click)="handleDateClick()">
-      <i class="fa-solid fa-circle-check done"(click)="handleDateClick()"></i>تاكيد</a
+      <i class="fa-solid fa-circle-check done"></i>تاكيد</a
     >
   </mat-card-actions>
 </mat-card>

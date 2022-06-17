@@ -60,6 +60,7 @@ export class MedecinFormComponent implements OnInit {
       this.medecinForm.controls['speciality'].setValue(this.editData.speciality);
     
       this.medecinForm.controls['nom'].setValue(this.editData.name);
+      this.medecinForm.controls['familyName'].setValue(this.editData.familyName);
       this.medecinForm.controls['delegation'].setValue(this.editData.localisation.delegation);
       this.medecinForm.controls['governorate'].setValue(this.editData.localisation.governorate);
       this.medecinForm.controls['zipCode'].setValue(this.editData.localisation.zipCode);
