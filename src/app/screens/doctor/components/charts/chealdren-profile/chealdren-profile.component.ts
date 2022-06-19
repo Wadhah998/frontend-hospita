@@ -1,3 +1,4 @@
+
 import { SecureStorageService } from 'src/app/services/api/secure-storage.service';
 import { AbstractRestService } from 'src/app/services/genericservice.service';
 import { Router } from '@angular/router';
@@ -8,6 +9,8 @@ import { RdvFormComponent } from '../../doctor-calendar/rdv-form/rdv-form.compon
 import { CalendarOptions } from '@fullcalendar/angular';
 import { MatDialog } from '@angular/material/dialog';
 import { DynamicTableCrud } from 'src/app/screens/admin/dynamic-table.crud.service';
+import { RendezVousFormComponent } from 'src/app/screens/SuperDoctor/form/rendez-vous-form/rendez-vous-form.component';
+import { RdvdocterComponent } from '../rdvdocter/rdvdocter.component';
 
 
 @Component({
@@ -51,6 +54,17 @@ export class ChealdrenProfileComponent extends DynamicTableCrud<any> implements 
         })
     }
     else  console.log( this.data.id,doctorId);
+
+}
+rendezvous (enfant : any){
+  const dialogRef = this.dialog.open(RdvdocterComponent,{
+    width : '40%',
+    data : enfant,
+    autoFocus :true,
+    disableClose:true,
+    
+
+  });
 }
 }
 

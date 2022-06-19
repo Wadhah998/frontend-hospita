@@ -40,6 +40,8 @@ export class DynamicTableCrud<T> {
         console.log(this.data);
         this.numberItems = this.data.length;
         
+        //this.getData()
+        
 
         
                

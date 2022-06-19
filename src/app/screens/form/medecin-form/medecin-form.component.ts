@@ -22,7 +22,8 @@ export class MedecinFormComponent implements OnInit {
   fileUploaded = true;
   typeUser!: string;
   public  options!: Option;
-
+  error: any;
+  
   optionss: Object = { autoHide: false, direction: 'rtl' };
   constructor(
     private formBuilder: FormBuilder,
@@ -52,7 +53,7 @@ export class MedecinFormComponent implements OnInit {
 
     if (this.editData) {
       this.actionBtn = 'تحديث';
-      console.log(this.editData.localisation.delegation)
+      
       
       this.medecinForm.controls['telephone'].setValue(this.editData.telephone);
       this.medecinForm.controls['email'].setValue(this.editData.email);
@@ -72,6 +73,7 @@ export class MedecinFormComponent implements OnInit {
   }
 
   addMedecin() {
+    if (this.actionBtn != 'تحديث')
     console.log(this.medecinForm.value);
     if (this.options === undefined){
       const access = localStorage.getItem('access');
@@ -84,8 +86,6 @@ export class MedecinFormComponent implements OnInit {
       }
       console.log(this.options);
         
-     
-
 
     let typeUser: string;
     if (this.typeUser === 'admin') {
@@ -101,52 +101,88 @@ export class MedecinFormComponent implements OnInit {
     is_super: this.medecinForm.value?.is_super,
     super_doctor_id: this.typeUser === 'superdoctor' ? localStorage.getItem('userId') : undefined,
     name: this.medecinForm.value.nom,
-    familyName: this.medecinForm.value?.familyName,
+    familyName: this.medecinForm.value.familyName,
     
     password: this.medecinForm.value.password,
-    speciality: this.medecinForm.value?.speciality,
+    speciality: this.medecinForm.value.speciality,
     loginNumber: this.medecinForm.value.loginNumber,
-    email: this.medecinForm.value?.email,
+    email: this.medecinForm.value.email,
     localisation: this.medecinForm.value.delegation === null ? null : {
         governorate: this.medecinForm.value.governorate,
         delegation: this.medecinForm.value.delegation,
         zipCode: this.medecinForm.value.zipCode
     }
-  
+        },this.options).catch((err) => {     
+          this.error = err.error.error;
+        alert("رقم تسجيل موجود") 
+        console.log(this.error)
+        return this.error
+        // this.dialogRef.close('تأكيد');
+        })
+        if (!this.error.error){
+      // this.dialogRef.close('تأكيد');
+      }
 
 
-
-
-        },this.options)
-        
-
-        this.dialogRef.close();
+       // this.dialogRef.close();
 
         
     }
   
 
   modifierMedecin() {
-    this.api.putMedecin(this.medecinForm.value, this.editData.id).subscribe({
-      next: (res) => {
-        this._snackBar.open('تم تحديث الطبيب خليفة','',
-    { 
-      duration: 3000,
-      verticalPosition:'bottom',
-      horizontalPosition : 'left',
-      panelClass: ['blue-snackbar']
-  });
-        this.medecinForm.reset();
-        this.dialogRef.close('تحديث');
-      },
-      error: () => {
-        this._snackBar.open('خطأ أثناء تحديث السجل','',
-    { 
-      duration: 3000,
-      verticalPosition:'top',
-      horizontalPosition : 'left'
-  });
-      },
-    });
-  }
+   if (this.actionBtn = 'تحديث'){
+    if (this.options === undefined){
+      const access = localStorage.getItem('access');
+      if (access !== null){
+              this.options = {
+                  headers: {Authorization : `Bearer ${this.secureStorageService.getToken(access)}`},
+                  params: null
+              };
+          }
+      }
+    this.service.put('http://localhost:8000/api/persons', this.editData.id,{
+
+      telephone: this.medecinForm.value.telephone,
+      typeUser:this.medecinForm.value.typeUser,
+      school_id: this.typeUser === 'school' ? localStorage.getItem('userId') : undefined,
+      is_super: "false",
+      super_doctor_id: this.typeUser === 'superdoctor' ? localStorage.getItem('userId') : undefined,
+      name: this.medecinForm.value.nom,
+      familyName: this.medecinForm.value.familyName,
+      
+      password: this.medecinForm.value.password,
+      speciality: this.medecinForm.value.speciality,
+      loginNumber: this.medecinForm.value.loginNumber,
+      email: this.medecinForm.value.email,
+      Localisation: this.medecinForm.value.delegation === null ? null : {
+          governorate: this.medecinForm.value.governorate,
+          delegation: this.medecinForm.value.delegation,
+          zipCode: this.medecinForm.value.zipCode
+      }
+    
+  
+  
+  
+  
+          },this.options)}
+
+          this.dialogRef.close();
+   }
+    
+     
+  // ;
+  //       this.medecinForm.reset();
+  //       this.dialogRef.close('تحديث');
+  //     },
+  //     error: () => {
+  //       this._snackBar.open('خطأ أثناء تحديث السجل','',
+  //   { 
+  //     duration: 3000,
+  //     verticalPosition:'top',
+  //     horizontalPosition : 'left'
+  // });
+  //     },
+  //   });
+  // }
 }

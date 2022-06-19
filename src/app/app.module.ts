@@ -106,6 +106,9 @@ import { AjoutEnfantComponent } from './screens/parents/form/ajout-enfant/ajout-
 import { GrossesseFormComponent } from './screens/parents/components/grossesse-form/grossesse-form.component';
 
 import { ProfileUComponent } from './components/header/profile-u/profile-u.component';
+import { RdvdocterComponent } from './screens/doctor/components/charts/rdvdocter/rdvdocter.component';
+
+
 
 // import {
 //   NgxMatDatetimePickerModule,
@@ -189,6 +192,9 @@ import { ProfileUComponent } from './components/header/profile-u/profile-u.compo
          CommingSoonComponent,
          GrossesseFormComponent,
          ProfileUComponent,
+         RdvdocterComponent,
+         
+        
          
   ],
   imports: [

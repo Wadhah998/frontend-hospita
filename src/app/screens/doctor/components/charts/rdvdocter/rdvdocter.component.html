@@ -12,17 +12,14 @@
         <mat-list-item role="listitem">  تاريخ الولادة: {{ birthday}}</mat-list-item>
         <mat-list-item role="listitem"> رقم هاتف الولي{{ telephone}}</mat-list-item>
         <mat-list-item role="listitem">النتيجة: {{ score}}</mat-list-item>
-        <div *ngFor="let medecin of data">
-        <mat-list-item role="listitem"*ngIf="supervised==medecin.id" > الطبيب المعين : {{ medecin.name}} {{medecin.familyName}} </mat-list-item>
-        <mat-list-item role="listitem"*ngIf="supervised==medecin.id" >إختصاص الطبيب المعين  : {{ medecin.speciality}} </mat-list-item>
-      </div>
+        
 
         
 
       </mat-list>
     </div>
       
-      <mat-form-field  class="class1" appearance="outline"*ngIf="supervised==null">
+      <mat-form-field  class="class1" appearance="outline">
           <mat-select [(value)]="idMedecin" formControlName="idMedecin"  placeholder="قائمة الأطباء" #input>
               <mat-option *ngFor="let medecin of data"  value={{medecin.id}}>
                 {{medecin.name}}
@@ -37,5 +34,5 @@
 
 <div mat-dialog-actions [align]="'end'" style="margin-left: 65%;">
     <button mat-raised-button color="warn" mat-dialog-close>إغلاق</button> 
-    <button *ngIf="supervised==null" mat-raised-button color="primary" (click)="affecterMedecin(idMedecin,$event)">تأكيد</button>
+    <button  mat-raised-button color="primary" (click)="affecterMedecin(idMedecin,$event)">تأكيد</button>
 </div>

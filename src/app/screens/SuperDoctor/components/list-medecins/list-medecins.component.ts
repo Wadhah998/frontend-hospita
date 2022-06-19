@@ -15,6 +15,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import { DynamicTableCrud } from 'src/app/screens/admin/dynamic-table.crud.service';
 import { AbstractRestService } from 'src/app/services/genericservice.service';
 import { SecureStorageService } from 'src/app/services/api/secure-storage.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-list-medecins',
@@ -23,17 +24,32 @@ import { SecureStorageService } from 'src/app/services/api/secure-storage.servic
 })
 export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnInit {
 
-  medecins : Medecins []= [];
+  medecins : any ;
   medecin!: Medecins;
-
+  access !: string | null;
   @Output()
   public select: EventEmitter<Medecins> = new EventEmitter();
 
   selectedSpeciality!: boolean;
 
-  ngOnInit(): void {
-    this.getData();
-  }
+  async ngOnInit(): Promise<void>  {
+    this.access = localStorage.getItem('access');
+  
+    if (this.access) {
+        this.options = {
+            params: null,
+            headers: {Authorization: `Bearer ${this.secureStorageService.getToken(this.access)}`}
+        };
+        await this.getData();
+        
+      
+    }
+   
+      }
+  
+
+  
+ 
 
   medecinForm!: FormGroup;
   displayedColumns: string[] = [
@@ -52,18 +68,13 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(
-    service:AbstractRestService<any>,
-    secureStorageService : SecureStorageService,
-    private api: ApiService,
-    private dialog: MatDialog,
-    private dialogService: DialogService,
-
-    private router: Router,
-    private _snackBar: MatSnackBar,
+  constructor( service:AbstractRestService<any>, public dialog:MatDialog,private dialogService : DialogService,  secureStorageService : SecureStorageService ,public api:ApiService, private _snackBar: MatSnackBar, private router : Router, private httpClient: HttpClient,) {
+    super(  service, 'http://localhost:8000/api/persons', secureStorageService)
     
-  ) {super(  service, 'http://localhost:8000/api/persons', secureStorageService)}
-
+    
+    
+  }
+  
   ajouterMedecinDialog() {
     this.dialog
       .open(MedecinFormComponent, {
@@ -75,13 +86,14 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
       .subscribe(async (val) => {
         this.router.navigate(['/superDoctorDashboard'])
         .then(async () => {
-         
+          
           console.log('catched');
           this.getData()
+         
       });
       });
   }
-
+  
   editMedecin(row: any) {
     this.dialog
       .open(MedecinFormComponent, {
@@ -92,14 +104,20 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
       })
       .afterClosed()
       .subscribe((val) => {
-        if (val === 'تحديث') {
-          this.getData();
-        }
-      });
+      
+          this.router.navigate(['/superDoctorDashboard'])
+          .then(async () => {
+            console.log('catched');
+           await this.getData()
+          });
+        });
   }
 
  
-
+  override async getData(): Promise<void> {
+    this.data = await this.service.list(this.actionUrl, this.options);
+    // this.getData()
+  }
 
   showMedecin(row: any){
     const dialogRef = this.dialog.open(ProfileDoctorComponent,{
@@ -135,7 +153,7 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
     console.log('from list', element);
   }
  
-  
+ 
 
 
 
