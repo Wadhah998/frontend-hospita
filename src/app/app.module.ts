@@ -106,6 +106,9 @@ import { AjoutEnfantComponent } from './screens/parents/form/ajout-enfant/ajout-
 import { GrossesseFormComponent } from './screens/parents/components/grossesse-form/grossesse-form.component';
 
 import { ProfileUComponent } from './components/header/profile-u/profile-u.component';
+import { ParentMessagerieComponent } from './screens/parents/components/parent-messagerie/parent-messagerie.component';
+import { ParentChatComponent } from './screens/parents/components/parent-messagerie/parent-chat/parent-chat.component';
+import { ParentContactComponent } from './screens/parents/components/parent-messagerie/parent-contact/parent-contact.component';
 
 // import {
 //   NgxMatDatetimePickerModule,
@@ -189,6 +192,9 @@ import { ProfileUComponent } from './components/header/profile-u/profile-u.compo
          CommingSoonComponent,
          GrossesseFormComponent,
          ProfileUComponent,
+         ParentMessagerieComponent,
+         ParentChatComponent,
+         ParentContactComponent
          
   ],
   imports: [

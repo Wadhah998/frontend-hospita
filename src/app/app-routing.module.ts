@@ -65,6 +65,7 @@ import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie
 import { CommingSoonComponent } from './components/comming-soon/comming-soon.component';
 import { GrossesseFormComponent } from './screens/parents/components/grossesse-form/grossesse-form.component';
 import { ProfileUComponent } from './components/header/profile-u/profile-u.component';
+import { ParentMessagerieComponent } from './screens/parents/components/parent-messagerie/parent-messagerie.component';
 
 
 
@@ -115,29 +116,26 @@ const routes: Routes = [
   { path: 'profileApoint/singleDoctor/:id', component : ProfileMedecinComponent },
   { path: 'diagnostic', component : DiagnosticComponent },
   { path: 'maitreDashboard', component: MaitredashboardComponent,canActivate: [AuthGuard,MaitreService ] },
-  { path :  'listeEnfants', component : ListEnfantsComponent },
+  { path:  'listeEnfants', component : ListEnfantsComponent },
   { path: 'thankYou', component : ThankYouComponent },
   { path: 'commingSoon', component : CommingSoonComponent },
   { path: 'grossesseForm', component : GrossesseFormComponent },
+  { path: 'parent-chat', component: ParentMessagerieComponent },
   {
     path: '',
     component: DoctorComponent,
-    // canActivate: [AuthGuard],
     children: [
       {
         path: 'doctor-appointment',
         component: DoctorAppointmentComponent,
-        // canActivate: [AuthGuard, DoctorGuard],
       },
       {
         path: 'doctor-consultation',
         component: DoctorConsultationComponent,
-        // canActivate: [AuthGuard, DoctorGuard],
       },
       {
         path: 'doctor-chat',
         component: DoctorMessagerieComponent,
-        // canActivate: [AuthGuard, DoctorGuard],
       },
       {
         path: 'doctor-calendar',

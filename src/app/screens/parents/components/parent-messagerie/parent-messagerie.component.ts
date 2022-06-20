@@ -1,5 +1,3 @@
-
-
 import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -8,21 +6,23 @@ import { Patient } from 'src/app/models/patient/patient.model';
 import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
-  selector: 'app-doctor-messagerie',
-  templateUrl: './doctor-messagerie.component.html',
-  styleUrls: ['./doctor-messagerie.component.scss'],
+  selector: 'app-parent-messagerie',
+  templateUrl: './parent-messagerie.component.html',
+  styleUrls: ['./parent-messagerie.component.scss']
 })
-export class DoctorMessagerieComponent implements OnInit {
+export class ParentMessagerieComponent implements OnInit {
+
   @Input()
-  
-  patient!: Patient;
+  //public patient;
+  medecin!: Medecins;
   constructor() {}
 
   ngOnInit(): void {}
-  
-  onConversationSelected(event: Patient) {
+  //backgroundUrl = './assets/images/whatsbackground.webp';
+  onConversationSelected(event: Medecins) {
     console.log('current event', event);
-    this.patient = event;
-    console.log('currentItem', this.patient);
+    this.medecin = event;
+    console.log('currentItem', this.medecin);
   }
+
 }
