@@ -1,227 +1,319 @@
-<app-landing-navbar></app-landing-navbar>
-<div style="margin-top: 3%; margin-left: 2%; margin-right: 2%;">
-<div class="">
-  <div class="col-sm-6">
-    <img  src="assets/img1.png" id="img1">
-  </div>
-<div style="margin-top: 3%; margin-left: 2%; margin-right: 2%;">
-  <div class="col-sm-6">
-   <div style=" margin-right:15%; color: rgba(26,125,183,1); ">
-    <span class="h2">إفهمني</span>
-  </div>
-  <div style="margin-top: 2%; color:  rgba(100,109,130,1); margin-right: 13%; ">
-    <span class="h5">الرجاء إكمال إنشاء حسابك</span>
-  </div>
-  
- 
-  <form class="form-inline" style="margin-top: 3%; margin-right: 2%; ">
+<div class="container-fluid p-0 m-0">
+  <div class="row login-landing p-0 m-0">
+    <div class="col-md-6 p-0 m-0 justify-content-end">
+      <div class="card p-4 login border-0">
+        <div style="margin-top: 0%; margin-bottom: 3%">
+          <span class="title">إفهمني</span>
+        </div>
+        <div style="margin-bottom: 8%">
+          <span class="subtitle">الرجاء إكمال إنشاء حسابك</span>
+        </div>
 
-      <form [formGroup]="registerForm">
-    
+        <form [formGroup]="registerForm">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="اللقب"
+              formControlName="familyName"
+              [ngClass]="{ 'is-invalid': submitted && f['familyName'].errors }"
+            />
+            <div
+              *ngIf="submitted && f['familyName'].errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f['familyName']?.errors['required']">
+                *اللقب ضروري
+              </div>
+            </div>
+          </div>
 
-      
-       <div class="form-group">
-      
-       <input type="text" 
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="الاسم"
+              class="form-control"
+              id="nom"
+              formControlName="name"
+              [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
+            />
+            <div
+            *ngIf="submitted && f['name'].errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f['familyName']?.errors['required']">
+              *الإسم ضروري
+            </div>
+          </div>
+          </div>
 
-       class="form-control"
-       placeholder="اللقب" 
-      formControlName="familyName"
-        />
-       
-       </div>
+          <div class="form-group">
+            <input
+              type="text"
+              id="cin"
+             
+              class="form-control"
+              placeholder="رقم بطاقة الهوية الوطنية"
+              formControlName="loginNumber"
+              [ngClass]="{ 'is-invalid': submitted && f['loginNumber'].errors }"
+            />
+            <div
+            *ngIf="submitted && f['loginNumber'].errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f['loginNumber']?.errors['required']">
+              *رقم بطاقة الهويةالوطنية  ضروري
+            </div> 
+            <div *ngIf="f['loginNumber']?.errors['minlength']">
+              * رقم بطاقة الهويةالوطنية يجب أن يكون أكبر من 8
+            </div>
+            <div *ngIf="f['loginNumber']?.errors['maxlength']">
+              *رقم بطاقة الهويةالوطنية يجب أن يكون أصغر من 12
+            </div>
+          </div>
+          </div>
+          <div class="form-group">
+            <input
+              id="tel"
+              type="text"
+             
+              class="form-control"
+              placeholder="رقم الهاتف"
+              formControlName="telephone"
+              [ngClass]="{ 'is-invalid': submitted && f['telephone'].errors }"
+            />
+            <div
+            *ngIf="submitted && f['telephone'].errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f['telephone']?.errors['required']">
+              *رقم الهاتف ضروري
+            </div> 
+            <div *ngIf="f['telephone']?.errors['minlength']">
+              * رقم الهاتف يجب أن يكون متكون من 8 أرقام
+            </div>
+          </div>
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              style="width: 350px"
+              class="form-control"
+              placeholder="البريد الإلكتروني"
+              formControlName="email"
+              [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+            />
+            <div class="invalid-feedback">
+              <div *ngIf="f['email']?.errors['required']">
+                * البريد الإلكتروني ضروري
+              </div> 
+              <div *ngIf="f['email']?.errors['email']">
+                *التحقق من صحة البريدالإلكتروني
+              </div> 
+            </div>
+          </div>
 
-
-       <div class="form-group">
-
-       <input type="text"
-       placeholder="الاسم" 
-       class="form-control"
-       id="nom"
-      
-      formControlName="name" />
-   
-  </div>
-
-     
-   
-    
-       <div class="form-group">
-        
-        <input type="text" 
-        id="cin"
-        minlength="8"
-        maxlength="8"
-        class="form-control"
-        placeholder="البريد الإلكتروني" 
-        formControlName="email" />
-
-       
-       </div>
-
-      
-       <div class="form-group">
-        
-        <input 
-        id="tel"
-        type="text"
-       
-        minlength="8"
-        maxlength="8"
-    class="form-control"
-     placeholder="رقم الهاتف"
-   formControlName="telephone" />
-    
-  </div>
-     
-     
-
-       <div class="form-group">
-      
-       <input type="email" 
-       id="email"
-       style="width: 350px;"
-       class="form-control"
-       placeholder="رقم بطاقة الهوية الوطنية" 
-      formControlName="loginNumber" />
-       <div class="invalid-feedback">
-       
-        
-       
-      </div>
-       
-        
-       </div>
-       
-       
-       
-   
-     
-      
-
-      <div class="form-group password">
-       
-          <input 
-          id="password"
-          type="password"
-          name="password"
-          ngModel =""
+          <div class="form-group">
+            <div class="password">
+              <input
+                id="password"
+                name="password"
+                [type]="hide ? 'password' : 'text'"
+                class="form-control"
+                placeholder="كلمة السر"
+                formControlName="password"
+                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+              />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+           
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+              >
+                <mat-icon style="color: #337ab7">
+                  {{ hide ? "visibility_off" : "visibility" }}</mat-icon
+                >
+              </button> 
+             </div>
+             <div
+            *ngIf="submitted && f['password'].errors"
+            class="invalid-feedback-password "
+          >
+            <div *ngIf="f['password']?.errors['required']">
+              *كلمة السر ضروري
+            </div> 
+            <div *ngIf="f['password'].errors['minlength']">
+              * كلمة السر يجب أن تكون متكونة من 8 حروف
+            </div>
+          </div>      
+            </div>
+            
           
-         
-          class="form-control"
-          placeholder="كلمة السر" 
-          formControlName="password" 
-          matInput [type]="hide ? 'password' : 'text'"/>
-        
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon style="color: 	#C0C0C0; margin-left:100% ; " >  {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-      
-       
+          <div class="form-group">
+            <div class="password">
+              <input
+                id="Confmdp"
+                name="Confmdp"
+                [type]="hide ? 'password' : 'text'"
+                class="form-control"
+                placeholder="كلمة السر"
+                formControlName="Confmdp"
+                [ngClass]="{ 'is-invalid': submitted && f['Confmdp'].errors }"
+              />
 
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+              >
+                <mat-icon style="color: #337ab7">
+                  {{ hide ? "visibility_off" : "visibility" }}</mat-icon
+                >
+              </button>
+            </div>                            
+            <div
+            *ngIf="submitted && f['Confmdp']errors"
+            class="invalid-feedback-password "
+          >
+            <div *ngIf="f['Confmdp']?.errors['required']">
+              *كلمة السر ضروري
+            </div> 
+            <div *ngIf="f['Confmdp'].errors['minlength']">
+              * كلمة السر يجب أن تكون متكونة من 8 حروف
+            </div>
+          </div>     
+          </div>
 
+          <!-- <div class="form-group">
 
-      </div>
-       
-     
-
-
-       <div class="form-group password">
-        
-        <input 
+        <input
         id="Confmdp"
         type="password"
         name="mdp"
-       
-      
+
+
         ngModel ="true"
-        
+
         style="width: 360px;"
-      
+        pattern="{{ passwordVar.value }}"
         class="form-control"
-        placeholder="تأكيد كلمة السر" 
+        placeholder="تأكيد كلمة السر"
+        [(ngModel)]="user.mdpp"
+        name="mdpp"
+        required
+        #mdppVar="ngModel"
+        [ngClass]="{
+          'is-invalid': mdppVar.touched && !mdppVar.valid
+        }"
+
+
+
         matInput [type]="hide ? 'password' : 'text'" />
 
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon style="color: 	#C0C0C0; margin-left:100% ; " >  {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
-</div>
 
-     
-  
-        
-         
-        
-         
 
-     
-       
-     
-       <div class="form-group">
-        
-        <input type="text" 
-        id="pos"
-        class="form-control"
-        placeholder="الرمز البريدي" 
-        formControlName="zipCode" />
-        
-       </div>
-       <div class="form-group">
-        
-        <input type="text"
-        id="gouv"
-       
+
+
+
+
+          <div *ngIf="passwordVar.value!=mdppVar.value"> كلمة السر و تأكيد كلمة السر غير متطابقين  </div>
+          -->
+
+          <div class="form-group">
+            <input
+              type="text"
+              id="gouve"
+              class="form-control"
+              placeholder="الولاية"
+              formControlName="governorate"
+              [ngClass]="{ 'is-invalid': submitted && f['governorate'].errors }"
+            />
+            <div class="invalid-feedback">
+              <div *ngIf="f['governorate']?.errors['required']">
+                * الولاية ضروري
+              </div>           
+            </div>
+          </div>
+          <div class="form-inline">
+            <div class="form-group">
+              <input
+                type="text"
+                id="gouv"
+                class="form-control"
+                placeholder="الولاية"
+                formControlName="delegation"
+                [ngClass]="{ 'is-invalid': submitted && f['delegation'].errors }"
+              />
+              <div  *ngIf="submitted && f['delegation']errors" class="invalid-feedback">
+                <div *ngIf="f['delegation']?.errors['required']">
+                  * الولاية ضروري
+                </div>           
+              </div>
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                id="pos"
+                class="form-control"
+                placeholder="الرمز البريدي"
+                formControlName="zipCode"
+                [ngClass]="{ 'is-invalid': submitted && f['zipCode'].errors }"
+              />
+              <div  *ngIf="submitted && f['zipCode']errors" class="invalid-feedback">
+                <div *ngIf="f['zipCode']?.errors['required']">
+                  * الرمز البريدي ضروري
+                </div>           
+              </div>
+            </div>
+          </div>
+
+          <!-- <div style="margin-right: 1%; margin-top: 2%;" class="form-check">
+    <input class="form-check-input" type="checkbox"
     class="form-control"
-     placeholder="الولاية"
-    formControlName="governorate"/>
-    
-        </div>
-        <div class="form-group">
-          <input type="text"
-          id="gouv"
-         
-        class="form-control"
-        placeholder="الولاية"
-        formControlName="delegation"/>
-
-        </div>
-         
-
-  
-  <!-- <div style="margin-right: 1%; margin-top: 2%;" class="form-check">
-    <input class="form-check-input" type="checkbox" 
-    class="form-control" 
      [(ngModel)]="user.check"
     id="check"
-    name="check" 
+    name="check"
     required
     #checkVar="ngModel"
     [ngClass]="{
       'is-invalid': checkVar.touched && !checkVar.valid
     }" />
-     
+
     <label class="form-check-label" for="flexCheckChecked">
-         أقبل الأحكام والشروط  
+         أقبل الأحكام والشروط
     </label>
   </div> -->
+          <form-group>
+            <button
+              type="submit"
+              style="margin-top: 2%"
+              class="btn btn-primary button"
+              (click)="onSignin($event)"
+            >
+              سجل
+            </button>
+          </form-group>
 
-
-
-  
-
-  <button  type="submit"
-  [disabled]="!registerForm.valid" 
-  style="width: 180px;  margin-right: 10%; margin-top: 2%; " 
-  class="btn btn-primary" (click)="onSignin($event)"> سجل </button>
-
-</form>
-  </form>
-  
-
-  <div style="color: rgba(100,109,130,1); margin-right: 11.5%; margin-top: 1%;" >
-    <a routerLink="/signin" routerLinkActive="active">بالفعل عضو ؟ تسجيل الدخول
-  </a>
-  </div>
-  
+          <div>
+            <a class="subtitle" routerLink="/signin" routerLinkActive="active"
+              >بالفعل عضو ؟
+              <span class="sigin"> تسجيل الدخول </span>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-6 p-0 m-0">
+      <div class="background"></div>
+    </div>
   </div>
 </div>

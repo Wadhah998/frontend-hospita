@@ -106,7 +106,7 @@ export class UserFormComponent implements OnInit {
     } else {
         typeUser = this.typeUser === 'superdoctor' ? 'doctor' : 'teacher';
     }
-    const user = this.service.create('http://localhost:8000/api/persons',{
+      this.service.create('http://localhost:8000/api/persons',{
     telephone: this.userForm.value.telephone,
     typeUser:this.userForm.value.typeUser,
     school_id: this.typeUser === 'school' ? localStorage.getItem('userId') : undefined,
@@ -142,16 +142,56 @@ export class UserFormComponent implements OnInit {
        
 }
 modifieruser(){
-  this.api.putuser(this.userForm.value, this.editData.id)
-  .subscribe({
-    next:(res)=>{
-      alert("تم تحديث الطبيب خليفة");
-      this.userForm.reset();
-      this.dialogRef.close('تحديث');
-    },
-    error:()=>{
-      alert("خطأ أثناء تحديث السجل");
-    }
-  });
+  if (this.actionBtn = 'تحديث'){
+    if (this.options === undefined){
+      const access = localStorage.getItem('access');
+      if (access !== null){
+              this.options = {
+                  headers: {Authorization : `Bearer ${this.secureStorageService.getToken(access)}`},
+                  params: null
+              };
+          }
+      }
+    this.service.put('http://localhost:8000/api/persons', this.editData.id,{
+
+      telephone: this.userForm.value.telephone,
+      typeUser:this.userForm.value.typeUser,
+      school_id: this.typeUser === 'school' ? localStorage.getItem('userId') : undefined,
+      is_super: "false",
+      super_doctor_id: this.typeUser === 'superdoctor' ? localStorage.getItem('userId') : undefined,
+      name: this.userForm.value.nom,
+      familyName: this.userForm.value.familyName,
+      
+      password: this.userForm.value.password,
+      speciality: this.userForm.value.speciality,
+      loginNumber: this.userForm.value.loginNumber,
+      email: this.userForm.value.email,
+      Localisation: this.userForm.value.delegation === null ? null : {
+          governorate: this.userForm.value.governorate,
+          delegation: this.userForm.value.delegation,
+          zipCode: this.userForm.value.zipCode
+      }
+    
+  
+  
+  
+  
+          },this.options).catch((err) => {
+          
+            this.error = err.error.error;
+          alert("رقم تسجيل موجود") 
+          console.log(this.error)
+          return this.error
+          // this.dialogRef.close('تأكيد');
+          
+          
+          })
+          if (!this.error){
+         this.dialogRef.close('تأكيد');
+          alert("تم تغيير المعطيات بناجح") 
+        }}
+          
+
+          
 } 
 }

@@ -1,85 +1,96 @@
-<app-landing-navbar></app-landing-navbar>
-<div class="">
-  <div class="col-sm-6">
-    <img  src="assets/img1.png" id="img1">
-  </div>
+<div class="container-fluid p-0 m-0">
+  <div class="row login-landing p-0 m-0">
+    <div class="col-md-6 p-0 m-0 justify-content-end">
+      <div class="card p-4 login border-0">
+        <div style="margin-top: 0%; margin-bottom: 3%">
+          <span class="title">إفهمني</span>
+        </div>
+        <div style="margin-bottom: 8%">
+          <span class="subtitle">مرحبا ، من فضلك سجل الدخول</span>
+        </div>
 
-<div  style="margin-top: 5%; margin-left: 2%; margin-right: 2%;">
-  <div class="col-sm-6">
-  <div style=" margin-right:15%; color: rgba(26,125,183,1); ">
-    <span class="h2">إفهمني</span>
- </div>
- <div style="margin-top: 3%;margin-bottom: 3%; color:  rgba(100,109,130,1); margin-right: 13%; ">
-   <span class="h5">مرحبا ، من فضلك سجل الدخول</span>
- </div>
- 
-  
- 
- 
+        <form [formGroup]="userForm">
+          <div class="form-group">
+            <input
+              type="loginNumber"
+              class="form-control"
+              placeholder="رقم التسجيل "
+              formControlName="loginNumber"
+              [ngClass]="{ 'is-invalid': submitted && f['loginNumber'].errors }"
+            />
+            <div
+            *ngIf="submitted && f['loginNumber']errors"
+            class="invalid-feedback d-block "
+          >
+            <div *ngIf="f['loginNumber']?.errors['required']">
+              *رقم التسجيل ضروري
+            </div> 
+         
+          </div>     
+          </div>
 
- <form [formGroup]="userForm"> 
- 
-   <div class="form-group mb-5">
-      
-      <input type="loginNumber"
-      
-      style="width: 350px;"
-      class="form-control"
-      placeholder="رقم بطاقة الهوية الوطنية"
-      formControlName="loginNumber"
-        />
-       <div class="invalid-feedback">
-        <span >
-          البريد الإلكتروني غير صحيح
-        </span>
-        
-       
+          <div class="form-group">
+            <div class="password">
+              <input
+                id="password"
+                name="password"
+
+                [type]="hide ? 'password' : 'text'"
+                class="form-control"
+                placeholder="كلمة السر"
+                formControlName="password"
+                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+              />
+
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+              >
+                <mat-icon style="color: #337ab7">
+                  {{ hide ? "visibility_off" : "visibility" }}</mat-icon
+                >
+              </button>
+            </div>
+            <div
+            *ngIf="submitted && f['password']errors"
+            class="invalid-feedback d-block "
+          >
+            <div *ngIf="f['password']?.errors['required']">
+              *كلمة السر ضروري
+            </div> 
+         
+          </div>     
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary button"
+            (click)="onSignin($event)"
+          >
+            تسجيل الدخول
+          </button>
+          <div style="margin-right: 13%; margin-top: 2%">
+            <a
+              class="subtitle"
+              routerLink="/forgetpassword"
+              routerLinkActive="active"
+              ><span class="sigin">نسيت كلمة السر ؟ </span>
+            </a>
+          </div>
+          <button
+            type="button"
+            class="btn btn-primary button"
+            (click)="onSignup()"
+          >
+            التسجيل
+          </button>
+        </form>
       </div>
-  
     </div>
-   
-    <div class="userForm password">
-       
-       <input 
-       id="mdp"
-       type="password"
-       style="width: 350px;"
-       class="form-control"
-       placeholder="كلمة السر" 
-       formControlName="password"
-       
-       required
-       matInput [type]="hide ? 'password' : 'text'" />
-
-       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-       <mat-icon style="color: 	#C0C0C0; margin-left:100% ; " >  {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-       </button>
-        
-     </div>
-     <button  type="submit"
- 
-     style="width: 180px;  margin-right: 8%; margin-top: 3%; " 
-     class="btn btn-primary" (click)="onSignin($event)" >تسجيل الدخول 
-     
-     </button>
-   
-   <div style="color: rgba(100,109,130,1); margin-right: 13%; margin-top: 2%;" >
-    <a routerLink="/forgetpassword" routerLinkActive="active">نسيت كلمة السر ؟
-  </a>
+    <div class="col-md-6 p-0 m-0">
+      <div class="background"></div>
+    </div>
   </div>
-  
-  <button type="button"
-   style="width: 180px;  margin-right: 8%; margin-top: 3%; " 
-   class="btn btn-primary" (click)="onSignup()" >التسجيل 
-     
-  </button>
-    
-   </form>
-
-
-  
-
 </div>
-
- </div>
-

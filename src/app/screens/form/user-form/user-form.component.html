@@ -80,6 +80,7 @@
     </form>
 </div>
 <div mat-dialog-actions [align]="'end'">
-    <button mat-raised-button color="primary" (click)="postUser()">{{actionBtn}}</button>
+    < <button *ngIf="actionBtn=='تأكيد'" mat-raised-button color="primary" (click)="postUser()">{{actionBtn}}</button>
+    <button *ngIf="actionBtn=='تحديث'" mat-raised-button color="primary" (click)="modifieruser()">{{actionBtn}}</button>
     <button mat-raised-button color="warn" mat-dialog-close>إلغاء</button> 
 </div>

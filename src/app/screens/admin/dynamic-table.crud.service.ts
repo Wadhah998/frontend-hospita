@@ -52,7 +52,6 @@ export class DynamicTableCrud<T> {
         console.log(id);
         console.log(index)
         if (id !== undefined) {
-
              Swal.fire({
                     title: 'هل أنت متأكد أنك تريد حذف هذا المستعمل',
                     // text: 'هل أنت متأكد أنك تريد حذف هذا الطبيب؟',

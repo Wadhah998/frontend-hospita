@@ -24,7 +24,7 @@
       
       <mat-form-field  class="class1" appearance="outline"*ngIf="supervised==null">
           <mat-select [(value)]="idMedecin" formControlName="idMedecin"  placeholder="قائمة الأطباء" #input>
-              <mat-option *ngFor="let medecin of data"  value={{medecin.id}}>
+              <mat-option *ngFor="let medecin of data2"  value={{medecin.id}}>
                 {{medecin.name}}
                 {{medecin.familyName}}
               

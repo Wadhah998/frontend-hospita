@@ -71,10 +71,12 @@ menuParent=[
   {
       "link":"الرسائل",
       "redirect":"/menu"
-
   },
 
-
+  {
+    "link":" جدول المواعيد",
+    "redirect":"/parent-calendar"
+  },
   {
       "link":"لوحة متابعة",
       "redirect":"/parent-dashboard"
@@ -97,7 +99,6 @@ school=[
   {
       "link":"الرسائل",
       "redirect":"/menu"
-
   },
 
 
@@ -112,10 +113,7 @@ school=[
   ngOnInit(): void {
     this.test=JSON.parse(localStorage.getItem("currentUser")!);
     console.log("from navbar",this.test.typeUser);
-    console.log((this.test.is_super==true));
-  
-    
-      
+    console.log((this.test.is_super==true));  
         if (this.test.typeUser=="admin"){
         this.menu=this.menuAdmin}
         else if (( this.test.typeUser=="superdoctor")&&(this.test.is_super==true)){
@@ -129,12 +127,6 @@ school=[
          else if (this.test.typeUser=="school"){
            this.menu=this.school
          }
-        
-        
-      
-      
-
-
       // default:
       //   this.menu=this.menuMedecin;
       //   break;

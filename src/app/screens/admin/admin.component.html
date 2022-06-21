@@ -123,7 +123,7 @@
                         <a  class="pointer" style="color:rgb(0, 255, 128)" matTooltip="تحرير هذا المستخدم">
                             <mat-icon (click)="edituser(element)" >edit</mat-icon>
                         </a>
-                        <a class="pointer" style="color:rgb(255, 0, 0)" matTooltip="حذف هذا المستخدم">
+                        <a *ngIf="element.typeUser!='admin'" class="pointer" style="color:rgb(255, 0, 0)" matTooltip="حذف هذا المستخدم">
                             <mat-icon (click)="delete(element.id,i)">delete </mat-icon>
                         </a>
                     </td>

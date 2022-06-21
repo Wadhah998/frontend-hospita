@@ -2,9 +2,8 @@
   <mat-card-title>
     <p class="card-title">قائمة الأطفال المضافين</p>
   </mat-card-title>
-
   <mat-card-content>
-    <table mat-table [dataSource]="dataSource">
+    <table mat-table [dataSource]="data">
       <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
 
@@ -63,3 +62,4 @@
     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" style="text-align: right;"></mat-paginator>
   </mat-card-content>
 </mat-card>
+

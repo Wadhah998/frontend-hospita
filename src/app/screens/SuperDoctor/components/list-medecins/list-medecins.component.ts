@@ -31,6 +31,9 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
   public select: EventEmitter<Medecins> = new EventEmitter();
 
   selectedSpeciality!: boolean;
+  doctors:any[]=[];
+  userId:any
+  data2!:any
 
   async ngOnInit(): Promise<void>  {
     this.access = localStorage.getItem('access');
@@ -59,7 +62,6 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
     'speciality',
     'cin',
     'prenon',
-    
     'nom',
     'id',
   ];
@@ -70,12 +72,8 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
 
   constructor( service:AbstractRestService<any>, public dialog:MatDialog,private dialogService : DialogService,  secureStorageService : SecureStorageService ,public api:ApiService, private _snackBar: MatSnackBar, private router : Router, private httpClient: HttpClient,) {
     super(  service, 'http://localhost:8000/api/persons', secureStorageService)
-    
-    
-    
   }
-  
-  ajouterMedecinDialog() {
+  async ajouterMedecinDialog() {
     this.dialog
       .open(MedecinFormComponent, {
         width: '50%',
@@ -86,12 +84,12 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
       .subscribe(async (val) => {
         this.router.navigate(['/superDoctorDashboard'])
         .then(async () => {
-          
-          console.log('catched');
-          this.getData()
-         
-      });
-      });
+          console.log("catched",val)
+          // this.doctors.push(val)
+           this.getData()
+      } );
+      })
+      
   }
   
   editMedecin(row: any) {
@@ -108,15 +106,27 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
           this.router.navigate(['/superDoctorDashboard'])
           .then(async () => {
             console.log('catched');
-           await this.getData()
+            await this.getData()
+           
           });
         });
   }
 
  
   override async getData(): Promise<void> {
+    this.userId=localStorage.getItem("userId")
     this.data = await this.service.list(this.actionUrl, this.options);
-    // this.getData()
+    console.log(this.data)
+    this.data.forEach(element => {
+   
+      if (element.super_doctor_id==this.userId){
+         this.doctors.push(element);
+         this.data2=this.doctors
+        //  this.getData()
+    }
+     
+  });
+    
   }
 
   showMedecin(row: any){

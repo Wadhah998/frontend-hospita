@@ -65,10 +65,7 @@ import { MessagerieComponent } from './screens/SuperDoctor/components/messagerie
 import { CommingSoonComponent } from './components/comming-soon/comming-soon.component';
 import { GrossesseFormComponent } from './screens/parents/components/grossesse-form/grossesse-form.component';
 import { ProfileUComponent } from './components/header/profile-u/profile-u.component';
-
-
-
-
+import { ParentCalendarComponent } from './screens/parents/components/parent-calendar/parent-calendar.component';
 const MaterialComponents = [
   MatButtonModule,
   MatToolbarModule,
@@ -146,7 +143,7 @@ const routes: Routes = [
       },
     ],
   },
-  /*{
+  {
     path: '',
     component: ParentComponent,
     children: [
@@ -157,16 +154,11 @@ const routes: Routes = [
       },
       { path: 'superDoctor-appointment', component : SuperDoctorApointementComponent,canActivate:[AuthGuard,SuperdocService] },
 
-
-
-      { path: 'ajout-enfant', component: AjoutEnfantComponent ,canActivate: [AuthGuard, PatientService] }
-    ];
+      { path: 'ajout-enfant', component: AjoutEnfantComponent ,canActivate: [AuthGuard, PatientService] },
+      { path: 'parent-calendar', component: ParentCalendarComponent ,canActivate: [AuthGuard, PatientService] }
+    ],
+  },]
   
-
-
-
-
-
 @NgModule({
   imports: [RouterModule.forRoot(routes), MaterialComponents],
   exports: [RouterModule, MaterialComponents],

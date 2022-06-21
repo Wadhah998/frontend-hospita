@@ -22,7 +22,7 @@ export class ListChealdrenComponent extends DynamicTableCrud<any> implements OnI
   numberPatients !: number;
   typeUser !: string | null;
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  // @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
   displayedColumns: string[] = [
@@ -65,62 +65,14 @@ export class ListChealdrenComponent extends DynamicTableCrud<any> implements OnI
         console.log(this.data);
     }
 
-    this.getAllusers();
+    
   }
   override async getData(): Promise<void> {
     this.data = await this.service.list(this.actionUrl, this.options);
     this.numberPatients = this.data.length;
 }
-getAllusers () {
-  this.dataSource = new MatTableDataSource(this.data);
-  this.dataSource.paginator = this.paginator;
-}
-  getPatients() {
-    this.api.getPatients().subscribe({
-      next: (res) => {
-        console.log(res);
-        this.patients = res;
-        this.dataSource = new MatTableDataSource(res);
-        /*  this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort; */
-      },
-      error: (error) => {
-        alert('خطأ أثناء جلب السجلات');
-      },
-    });
-  }
 
-  deletePatient(id: number) {
-    Swal.fire({
-      title: 'هل أنت متأكد أنك تريد حذف هذا الطبيب؟',
-      // text: 'هل أنت متأكد أنك تريد حذف هذا الطبيب؟',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'حذف',
-      cancelButtonText: 'إلغاء',
-      confirmButtonColor: '#34c38f',
-      cancelButtonColor: '#f46a6a',
-      //position:
-    }).then((result) => {
-      if (result.value) {
-        this.api.deletePatient(id).subscribe({
-          next: (res) => {
-            Swal.fire({
-              toast: true,
-              icon: 'success',
-              title: 'تمت عملية الحذف بنجاح',
-              iconColor: 'white',
-              //position: 'top-center',
-              showConfirmButton: false,
-              timer: 3000,
-              customClass: {
-                popup: 'colored-toast',
-              },
-            });
-            this.getPatients();
-          },
-        });
-      }
-    });
-  }
+ 
+
+ 
 }

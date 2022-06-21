@@ -72,7 +72,7 @@ export class MedecinFormComponent implements OnInit {
     }
   }
 
-  addMedecin() {
+  async addMedecin() {
     if (this.actionBtn != 'تحديث')
     console.log(this.medecinForm.value);
     if (this.options === undefined){
@@ -93,7 +93,7 @@ export class MedecinFormComponent implements OnInit {
     } else {
         typeUser = this.typeUser === 'superdoctor' ? 'doctor' : 'teacher';
     }
-    this.service.create('http://localhost:8000/api/persons',{
+    const user=await this.service.create('http://localhost:8000/api/persons',{
 
     telephone: this.medecinForm.value.telephone,
     typeUser:this.medecinForm.value.typeUser,
@@ -112,16 +112,18 @@ export class MedecinFormComponent implements OnInit {
         delegation: this.medecinForm.value.delegation,
         zipCode: this.medecinForm.value.zipCode
     }
-        },this.options).catch((err) => {     
-          this.error = err.error.error;
-        alert("رقم تسجيل موجود") 
-        console.log(this.error)
-        return this.error
-        // this.dialogRef.close('تأكيد');
-        })
-        if (!this.error.error){
-      // this.dialogRef.close('تأكيد');
-      }
+        },this.options)
+        // .catch((err) => {     
+        //   this.error = err.error.error;
+        // alert("رقم تسجيل موجود") 
+        // console.log(this.error)
+        // return this.error
+        // // this.dialogRef.close('تأكيد');
+        // })
+        // if (!this.error){
+          console.log(user);
+       this.dialogRef.close(user);
+      //}
 
 
        // this.dialogRef.close();
@@ -166,8 +168,10 @@ export class MedecinFormComponent implements OnInit {
   
   
           },this.options)}
+          
 
           this.dialogRef.close();
+          alert("تم تغيير المعطيات بناجح") 
    }
     
      

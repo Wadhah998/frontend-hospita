@@ -31,7 +31,7 @@ export class RendezVousFormComponent extends DynamicTableCrud<any> implements On
   ecole !:string;
   nomParent!:string;
   telephone!:string;
-  doctors !: any;
+  doctors : any[]=[];
   typeUser!: string;
   access !: string | null;
   parentId:number
@@ -41,6 +41,8 @@ export class RendezVousFormComponent extends DynamicTableCrud<any> implements On
 
   idMedecin !: number;
   familyNamep !:string;
+  userId:any
+  data2!:any
 
   
 
@@ -94,7 +96,19 @@ export class RendezVousFormComponent extends DynamicTableCrud<any> implements On
     }
     else  console.log( this.data.id,doctorId);
 }
-
+override async getData(): Promise<void> {
+  this.userId=localStorage.getItem("userId")
+  this.data = await this.service.list(this.actionUrl, this.options);
+  console.log(this.data)
+  this.data.forEach(element => {
+ 
+    if (element.super_doctor_id==this.userId){
+       this.doctors.push(element);
+  }
+   
+});this.data2=this.doctors
+  // this.getData()
+}
 
  
   

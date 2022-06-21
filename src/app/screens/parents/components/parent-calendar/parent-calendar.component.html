@@ -1,0 +1,36 @@
+
+<p class="page-title">المواعيد</p>
+<mat-card>
+  <mat-card-title
+    class="doctor p-20"
+    FxLayout="row"
+    fxLayoutAlign="space-between center"
+  >
+    <!-- Image Docter -->
+    <div class="docter-img">
+      <img
+        src="./assets/images/users/user-3.jpg"
+        alt="user"
+        class="img-circle"
+      />
+    </div>
+    <!-- Docter Details -->
+    <div class="mail-contnet">
+      <h5 class="user-name">{{ user.name}} {{user.familyName}}</h5>
+      <!--  <span class="mail-desc">imed.akrouti@gmail.com</span> -->
+    </div>
+
+    <div class="search" fxLayout="row">
+      <mat-icon class="search-icon">search</mat-icon>
+      <input
+        type="search"
+        class="search-input"
+        placeholder="بحث"
+        [(ngModel)]="searchText"
+      />
+    </div>
+  </mat-card-title>
+  <mat-card-content>
+    <full-calendar [options]="calendarOptions"></full-calendar>
+  </mat-card-content>
+</mat-card>

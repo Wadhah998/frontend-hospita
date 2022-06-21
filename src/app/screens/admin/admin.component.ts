@@ -177,24 +177,27 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
       .afterClosed()
       .subscribe(async (val) => {
         this.router.navigate(['/admin'])
-        .then(async () => {
-          
+        .then(async () => { 
           console.log('catched');
           this.getData()
       });
       });
   }
  
-  edituser(row : any) {
+   edituser(row : any) {
     this.dialog.open(UserFormComponent,{
       width : '50%',
       data:row,
       disableClose:true,
       autoFocus :true
-    }).afterClosed().subscribe(val=>{
-      if(val==='تحديث'){
-        this.getData();
-      }
+    }).afterClosed()
+    .subscribe(async (val) => {
+      this.router.navigate(['/admin'])
+      .then(async () => {
+        
+        console.log('catched');
+        this.getData()
+    });
     });
   }  
   

@@ -2,7 +2,7 @@ import { ApiService } from 'src/app/services/api/api.service';
 
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators,AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { User } from './user';
@@ -29,7 +29,7 @@ export interface Token{
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-
+  submitted = false;
   validated !: boolean;
   error !: string;
   hide = true;
@@ -42,17 +42,23 @@ export class SignInComponent implements OnInit {
   ngOnInit() {
     this.userForm = this.formBuilder.group({
       password: ['', Validators.required],
-      loginNumber: ['', [Validators.required, Validators.email]],
+      loginNumber: ['', Validators.required],
     
   })}
+  get f(): { [key: string]: AbstractControl } {
+    return this.userForm.controls;
+  }
 
   onSignup(): void {
+
     this.router.navigate(['/signup'])
 
   }
   
   onSignin($event: Event): void {
+   
     $event.preventDefault();
+    this.submitted = true;
         this.ApiService.login(this.userForm.value.loginNumber, this.userForm.value.password).then(async (response: Token) => {
             response.access = this.secureStorageService.setToken(response.access);
             response.refresh = this.secureStorageService.setToken(response.refresh);
