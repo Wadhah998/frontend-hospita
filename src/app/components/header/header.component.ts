@@ -70,7 +70,8 @@ menuSuperDoctor=[
 menuParent=[
   {
       "link":"الرسائل",
-      "redirect":"/menu"
+      "redirect":"/parent-chat"
+
   },
 
   {

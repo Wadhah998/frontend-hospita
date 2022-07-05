@@ -104,7 +104,7 @@
               formControlName="email"
               [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
             />
-            <div class="invalid-feedback">
+            <div  *ngIf="submitted && f['email'].errors" class="invalid-feedback">
               <div *ngIf="f['email']?.errors['required']">
                 * البريد الإلكتروني ضروري
               </div> 
@@ -178,7 +178,7 @@
               </button>
             </div>                            
             <div
-            *ngIf="submitted && f['Confmdp']errors"
+            *ngIf="submitted && f['Confmdp'].errors"
             class="invalid-feedback-password "
           >
             <div *ngIf="f['Confmdp']?.errors['required']">
@@ -237,7 +237,7 @@
               formControlName="governorate"
               [ngClass]="{ 'is-invalid': submitted && f['governorate'].errors }"
             />
-            <div class="invalid-feedback">
+            <div  *ngIf="submitted && f['familyName'].errors" class="invalid-feedback">
               <div *ngIf="f['governorate']?.errors['required']">
                 * الولاية ضروري
               </div>           
@@ -253,7 +253,7 @@
                 formControlName="delegation"
                 [ngClass]="{ 'is-invalid': submitted && f['delegation'].errors }"
               />
-              <div  *ngIf="submitted && f['delegation']errors" class="invalid-feedback">
+              <div  *ngIf="submitted && f['delegation'].errors" class="invalid-feedback">
                 <div *ngIf="f['delegation']?.errors['required']">
                   * الولاية ضروري
                 </div>           
@@ -268,7 +268,7 @@
                 formControlName="zipCode"
                 [ngClass]="{ 'is-invalid': submitted && f['zipCode'].errors }"
               />
-              <div  *ngIf="submitted && f['zipCode']errors" class="invalid-feedback">
+              <div  *ngIf="submitted && f['zipCode'].errors" class="invalid-feedback">
                 <div *ngIf="f['zipCode']?.errors['required']">
                   * الرمز البريدي ضروري
                 </div>           

@@ -1,24 +1,23 @@
-<mat-card class="profile-content">
-    <mat-card-content class="">
-      <div fxLayout="column" fxLayoutAlign="center center">
-        <h3 class="name">{{ User?.nom }}</h3>
-        
+<!--  -->
+  <div class="card" style="margin:15px">
+   
+    <div class="card-body p-0">
+      <div class="card-header">
+        <h3  class="card-title mb-0 text-primary fw-bolder ">معطيات المستخدم</h3>
       </div>
+     
       <div class="details" fxLayout="row" fxLayoutAlign="">
-        <mat-list role="list" class="list">
-          <mat-list-item role="listitem">نوع المستخدم : {{User?.typeUser}} </mat-list-item>
-          <mat-list-item role="listitem"> رقم الهاتف: {{User?.telephone}} </mat-list-item>
-          <mat-list-item role="listitem"> البريد الألكتروني: {{User?.email}} </mat-list-item>
-          <mat-list-item role="listitem"> رقم الدخول: {{User?.loginNumber}} </mat-list-item>
-          <mat-list-item role="listitem"> الولاية {{User?.localisation?.governorate}} </mat-list-item>
-          <mat-list-item role="listitem"> الترقيم البريدي{{User?.localisation?.zipCode}} </mat-list-item>
-          <mat-list-item role="listitem"> المعتمدية{{User?.localisation?.delegation}} </mat-list-item>
+        <mat-list role="list" class="list w-100">
+          <mat-list-item role="listitem"> <span class="text-primary mx-2 fw-bolder w-50"> الأسم </span>: {{User?.name}} </mat-list-item>
+          <mat-list-item role="listitem"> <span class="text-primary mx-2 fw-bolder w-50">نوع المستخدم </span>: {{User?.typeUser}} </mat-list-item>
+          <mat-list-item role="listitem"> <span class="text-primary mx-2 fw-bolder w-50">رقم الهاتف </span>: {{User?.telephone}} </mat-list-item>
+          <mat-list-item role="listitem w-100"> <span class="text-primary mx-2 fw-bolder w-50"> البريد الألكتروني </span>: {{User?.email}} </mat-list-item>
+          <mat-list-item role="listitem"> <span class="text-primary mx-2 fw-bolder w-50">رقم الدخول</span> : {{User?.loginNumber}} </mat-list-item>
+          <mat-list-item role="listitem"> <span class="text-primary mx-2 fw-bolder w-50">الولاية </span>:  {{User?.localisation?.governorate}} </mat-list-item>
+          <mat-list-item role="listitem"> <span class="text-primary mx-2 fw-bolder w-50"> الترقيم البريدي </span>: {{User?.localisation?.zipCode}} </mat-list-item>
+          <mat-list-item role="listitem"> <span class="text-primary mx-2 fw-bolder w-50">المعتمدية </span>: {{User?.localisation?.delegation}} </mat-list-item>
           
         </mat-list>
       </div>
-      <mat-divider></mat-divider>
-      <div class="note">
-        <p class="note-title">الملاحظات:</p>
-      </div>
-    </mat-card-content>
-  </mat-card>
+    </div>
+  </div>

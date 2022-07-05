@@ -1,0 +1,71 @@
+
+<div class="contact-header" fxLayout="row" fxLayoutAlign="space-between ">
+  <i class="fa-solid fa-gear setting"></i>
+  <div class="doctor" fxLayout="row">
+    <div
+      class="doctor-detils"
+      fxShow="true"
+      fxHide.sm="true"
+      fxShow.md="true"
+      fxShow.lg="true"
+    >
+      <p class="name">Imed</p>
+      <p class="detail">طبيب مختص</p>
+      <p class="staus">متصل</p>
+    </div>
+    <img src="./assets/images/users/user-3.jpg" alt="user" class="img-circle" />
+  </div>
+</div>
+<div class="sidebar" fxLayout="row" fxLayoutAlign="space-between center">
+  <span>الدردشات النشطة</span>
+  <i class="fa-duotone fa-plus plus"></i>
+</div>
+<div class="search" fxLayout="row">
+  <mat-icon class="search-icon">search</mat-icon>
+  <input
+    type="search"
+    class="search-input"
+    placeholder="بحث"
+    [(ngModel)]="userName"
+  />
+</div>
+
+<div id="sidebarContent">
+<div class="list-contact">
+  <ngx-simplebar
+    [options]="options"
+    data-simplebar-direction="ltr"
+    style="position: relative; height: 100%"
+    #scrollEle
+  >
+    <mat-nav-list dir="ltr">
+      <a
+        mat-list-item
+        *ngFor="let item of medecins | filterUsers: userName"
+        [routerLink]=""
+        [ngClass]="{ active: item === medecin }"
+        (click)="onSelect(item)"
+        class="link"
+      >
+        <p>
+          <span> {{ item.time }}</span>
+        </p>
+        <p matLine>
+          <span class="contact-name"> {{ item.nom }}</span>
+        </p>
+        <p matLine>
+          <span>{{ item.latestMessage }} </span>
+        </p>
+        <div class="connected"></div>
+        <img
+          matListAvatar
+          class="img-contact"
+          src="./assets/images/blank-profile-picture-973460_640.png"
+          alt="..."
+        />
+      </a>
+    </mat-nav-list>
+  </ngx-simplebar>
+</div>
+</div>
+

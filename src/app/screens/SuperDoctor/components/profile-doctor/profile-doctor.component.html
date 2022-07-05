@@ -1,4 +1,4 @@
-<mat-card class="profile-content">
+<!-- <mat-card class="profile-content">
   <mat-card-content class="">
     <div fxLayout="column" fxLayoutAlign="center center">
       <img src="./assets/images/users/doctor.jfif"  mat-card-avatar />
@@ -17,9 +17,28 @@
       </mat-list>
     </div>
   </mat-card-content>
-</mat-card>
+</mat-card> -->
 
-
+<!--  -->
+<div class="card" style="margin:15px">
+   
+  <div class="card-body p-0">
+    <div class="card-header">
+      <h3  class="card-title mb-0 text-primary fw-bolder ">معطيات المستخدم</h3>
+    </div>
+   
+    <div class="details" fxLayout="row" fxLayoutAlign="">
+      <mat-list role="list" class="list w-100">
+        <mat-list-item role="listitem"> <span class="text-primary mx-2 fw-bolder w-50"> الأسم </span> : {{medecin?.name}} </mat-list-item>
+        <mat-list-item role="listitem"> <span class="text-primary mx-2 fw-bolder w-50">رقم الهاتف </span>: {{medecin?.telephone}} </mat-list-item>
+        <mat-list-item role="listitem"> <span class="text-primary mx-2 fw-bolder w-50"> البريد الألكتروني </span>: {{medecin?.email}} </mat-list-item>
+        <mat-list-item role="listitem"> <span class="text-primary mx-2 fw-bolder w-50">الولاية </span>: {{medecin?.localisation?.governorate}} </mat-list-item>
+        <mat-list-item role="listitem"> <span class="text-primary mx-2 fw-bolder w-50"> الترقيم البريدي </span>: {{medecin?.localisation?.zipCode}} </mat-list-item>
+        <mat-list-item role="listitem"> <span class="text-primary mx-2 fw-bolder w-50">المعتمدية </span>: {{medecin?.localisation?.delegation}} </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>
 <!--<mat-card dir="rtl" class="profile-content">
     <mat-card-content class="">
       <div class="item">

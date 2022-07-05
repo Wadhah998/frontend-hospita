@@ -24,6 +24,7 @@ export class ProfileApointementComponent extends DynamicTableCrud<any> implement
   img2: string = './assets/images/users/imagesllk.jfif';
 
   indexe!: string;
+  actionBtn:String;
 
   enfants : Enfants []= [];
 

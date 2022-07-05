@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import {MatPaginator} from '@angular/material/paginator';
@@ -47,10 +48,11 @@ export class ListeMaitresComponent extends DynamicTableCrud<any> implements OnIn
   ];
   dataSource!: MatTableDataSource<any>;
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
+    public router:Router,
     service:AbstractRestService<any>,
     secureStorageService : SecureStorageService,
     private api: ApiService,
@@ -70,7 +72,7 @@ export class ListeMaitresComponent extends DynamicTableCrud<any> implements OnIn
       .afterClosed()
       .subscribe(async (val) => {
         if (val == 'تأكيد') {
-          this.getData();
+         await this.getData();
         }
       });
   }
@@ -85,10 +87,14 @@ export class ListeMaitresComponent extends DynamicTableCrud<any> implements OnIn
       })
       .afterClosed()
       .subscribe((val) => {
-        if (val === 'تحديث') {
-          this.getData();
-        }
-      });
+      
+          // this.router.navigate([''])
+         // .then(async () => {
+            console.log('catched');
+             this.getData()
+           
+          });
+       // });
   }
 
   // deleteMaitre(id: number) {

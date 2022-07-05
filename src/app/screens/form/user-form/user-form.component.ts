@@ -63,10 +63,11 @@ export class UserFormComponent implements OnInit {
     this.userForm.controls['nom'].setValue(this.editData.name);
     
     this.userForm.controls['telephone'].setValue(this.editData.telephone);
-    this.userForm.controls['password'].setValue("**************");
+    
     this.userForm.controls['delegation'].setValue(this.editData.localisation.delegation);
     this.userForm.controls['governorate'].setValue(this.editData.localisation.governorate);
     this.userForm.controls['zipCode'].setValue(this.editData.localisation.zipCode);
+    this.userForm.controls['password'].setValue("*********");
     
 
   }
@@ -126,22 +127,35 @@ export class UserFormComponent implements OnInit {
         },this.options).catch((err) => {
           
           this.error = err.error.error;
-        alert("رقم تسجيل موجود") 
+          Swal.fire('رقم تسجيل موجود') 
         console.log(this.error)
-        return this.error
+        return this.error==null
         // this.dialogRef.close('تأكيد');
-        
         
         })
         if (!this.error.error){
+          console.log(this.error)
        this.dialogRef.close('تأكيد');
+       Swal.fire({
+        toast: true,
+        icon: 'success',
+        title: 'تمت العملية  بنجاح',
+        iconColor: 'white',
+        //position: 'top-center',
+        showConfirmButton: false,
+        timer: 3000,
+        customClass: {
+          popup: 'colored-toast',
+        },
+      });
+
       }
          
         
         
        
 }
-modifieruser(){
+async modifieruser(){
   if (this.actionBtn = 'تحديث'){
     if (this.options === undefined){
       const access = localStorage.getItem('access');
@@ -152,46 +166,54 @@ modifieruser(){
               };
           }
       }
-    this.service.put('http://localhost:8000/api/persons', this.editData.id,{
+      
+      if( this.userForm.value.password=="*********"){
+         this.userForm.value.password='123456789'}
+      await  this.service.put('http://localhost:8000/api/persons', this.editData.id,{
 
       telephone: this.userForm.value.telephone,
-      typeUser:this.userForm.value.typeUser,
-      school_id: this.typeUser === 'school' ? localStorage.getItem('userId') : undefined,
-      is_super: "false",
-      super_doctor_id: this.typeUser === 'superdoctor' ? localStorage.getItem('userId') : undefined,
       name: this.userForm.value.nom,
       familyName: this.userForm.value.familyName,
-      
-      password: this.userForm.value.password,
-      speciality: this.userForm.value.speciality,
+       password: this.userForm.value.password,
       loginNumber: this.userForm.value.loginNumber,
       email: this.userForm.value.email,
       Localisation: this.userForm.value.delegation === null ? null : {
           governorate: this.userForm.value.governorate,
           delegation: this.userForm.value.delegation,
           zipCode: this.userForm.value.zipCode
-      }
-    
-  
-  
-  
-  
-          },this.options).catch((err) => {
           
-            this.error = err.error.error;
-          alert("رقم تسجيل موجود") 
+      }
+          },this.options).catch((err) => {
+          this.error = err.error.error;
+          Swal.fire('رقم تسجيل موجود')
+          // alert("رقم تسجيل موجود") 
           console.log(this.error)
           return this.error
-          // this.dialogRef.close('تأكيد');
-          
-          
+          // this.dialogRef.close('تأكيد');   
           })
           if (!this.error){
          this.dialogRef.close('تأكيد');
-          alert("تم تغيير المعطيات بناجح") 
+         Swal.fire({
+          toast: true,
+          icon: 'success',
+          title: 'تمت العملية  بنجاح',
+          iconColor: 'white',
+          //position: 'top-center',
+          showConfirmButton: false,
+          timer: 3000,
+          customClass: {
+            popup: 'colored-toast',
+          },
+        });
+         //  Swal.fire({
+        //   title: 'Sweet!',
+        //   text: 'Modal with a custom image.',
+        //   imageUrl: 'https://unsplash.it/400/200',
+        //   imageWidth: 400,
+        //   imageHeight: 200,
+        //   imageAlt: 'Custom image',
+        // })
+          // alert("تم تغيير المعطيات بناجح") 
         }}
-          
-
-          
 } 
 }

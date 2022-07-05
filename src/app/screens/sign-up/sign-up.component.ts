@@ -13,6 +13,7 @@ import {
   AbstractControl,
   MinLengthValidator,
 } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-sign-up',
@@ -46,8 +47,8 @@ export class SignUpComponent implements OnInit {
       familyName: ['', Validators.required],
       telephone: ['', [Validators.required, Validators.minLength(8)]],
       loginNumber: ['', [Validators.required,Validators.maxLength(12),Validators.minLength(10)]],
-      password: ['', [Validators.required, Validators.minLength(10)]],
-      Confmdp: ['', [Validators.required, Validators.minLength(10)]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      Confmdp: ['', [Validators.required, Validators.minLength(8)]],
       email: ['', [Validators.required, Validators.email]],
       governorate: ['', Validators.required],
       delegation: ['', Validators.required],
@@ -84,6 +85,8 @@ export class SignUpComponent implements OnInit {
       })
       .catch((err: Error) => {
         console.log(err);
+        Swal.fire('رقم تسجيل موجود')
+
       });
   }
 

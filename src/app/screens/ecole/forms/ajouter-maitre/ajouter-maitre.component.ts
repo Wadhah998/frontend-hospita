@@ -12,6 +12,7 @@ interface Option {
 
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { ApiService } from 'src/app/services/api/api.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-ajouter-maitre',
@@ -67,7 +68,7 @@ export class AjouterMaitreComponent implements OnInit {
     }
   }
 
-  addMaitre() {
+ async addMaitre() {
     console.log(this.maitreForm.value);
     if (this.options === undefined){
       const access = localStorage.getItem('access');
@@ -89,7 +90,7 @@ export class AjouterMaitreComponent implements OnInit {
     } else {
         typeUser = this.typeUser === 'superdoctor' ? 'doctor' : 'teacher';
     }
-    this.service.create('http://localhost:8000/api/persons',{
+    await this.service.create('http://localhost:8000/api/persons',{
 
     telephone: this.maitreForm.value.telephone,
     typeUser:this.maitreForm.value.typeUser,
@@ -123,28 +124,52 @@ export class AjouterMaitreComponent implements OnInit {
     }
   
 
-  // modifierMaitre() {
-  //   this.api.putMaitre(this.maitreForm.value, this.editData.id).subscribe({
-  //     next: (res:any) => {
-  //       this._snackBar.open('تم تحديث المعلم','',
-  //   { 
-  //     duration: 3000,
-  //     verticalPosition:'bottom',
-  //     horizontalPosition : 'left',
-  //     panelClass: ['blue-snackbar']
-  // });
-  //       this.maitreForm.reset();
-  //       this.dialogRef.close('تحديث');
-  //     },
-  //     error: () => {
-  //       this._snackBar.open('خطأ أثناء تحديث السجل','',
-  //   { 
-  //     duration: 3000,
-  //     verticalPosition:'top',
-  //     horizontalPosition : 'left'
-  // });
-  //     },
-  //   });
-  // }
+  async modifierMaitre() {
+    if (this.actionBtn = 'تحديث'){
+      if (this.options === undefined){
+        const access = localStorage.getItem('access');
+        if (access !== null){
+                this.options = {
+                    headers: {Authorization : `Bearer ${this.secureStorageService.getToken(access)}`},
+                    params: null
+                };
+            }
+        }if( this.maitreForm.value.password=="*********"){
+          this.maitreForm.value.password='123456789'}
+     await this.service.put('http://localhost:8000/api/persons', this.editData.id,{
+  
+      telephone: this.maitreForm.value.telephone,
+      name: this.maitreForm.value.nom,
+      familyName: this.maitreForm.value.familyName,
+       password: this.maitreForm.value.password,
+      loginNumber: this.maitreForm.value.loginNumber,
+      email: this.maitreForm.value.email,
+      Localisation: this.maitreForm.value.delegation === null ? null : {
+          governorate: this.maitreForm.value.governorate,
+          delegation: this.maitreForm.value.delegation,
+          zipCode: this.maitreForm.value.zipCode
+        }
+      
+    
+    
+    
+    
+            },this.options)}
+            
+  
+            this.dialogRef.close();
+            Swal.fire({
+              toast: true,
+              icon: 'success',
+              title: 'تمت العملية  بنجاح',
+              iconColor: 'white',
+              //position: 'top-center',
+              showConfirmButton: false,
+              timer: 3000,
+              customClass: {
+                popup: 'colored-toast',
+              },
+            });
+  }
 
 }

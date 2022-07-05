@@ -44,7 +44,8 @@ export class ListMedecinsComponent extends DynamicTableCrud<any> implements OnIn
             headers: {Authorization: `Bearer ${this.secureStorageService.getToken(this.access)}`}
         };
         await this.getData();
-        
+        //this.medecin=this.data[0]
+        //console.log('jjj',this.medecin)
       
     }
    

@@ -1,21 +1,97 @@
 
    
-      <mat-card class="l" >
-        <mat-card-title FxLayout="row"
-        fxLayoutAlign="space-between center">
-        <p class="card-title">القائمة</p>
-             <button mat-raised-button class="add" color="primary"   (click)="ajouterMaitreDialog()"> إضافة مربي
+     
+        <div fxLayout="row ">
+          <div fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
+            <div class="card border-info my-4 w-100">
+              <div class="card-header d-flex justify-content-between">
+                <h3 class="card-title mb-0 text-primary fw-bolder">قائمة المربين</h3>
+                <button  mat-raised-button (click)="ajouterMaitreDialog()">
+                  إضافة مربي   
               </button>
-             
-
-        </mat-card-title>
-      
-          <mat-card-content>
-            <table mat-table [dataSource]="data">
-              <!--- Note that these columns can be defined in any order.
-                The actual rendered columns are set as a property on the row definition" -->
+            </div>
+              <div class="card-body text-success ">
+                 
+                  <!-- <table mat-table [dataSource]="data" class="">
+                    <ng-container matColumnDef="id">
+                      <th style="text-align: center;" mat-header-cell *matHeaderCellDef >id </th>
+                      <td style="text-align: end;" mat-cell *matCellDef="let element " class="text-center" > {{element.id}} </td>
+                    </ng-container>  
+                      <ng-container matColumnDef="TypeUser">
+                        <th style="text-align: center;" mat-header-cell *matHeaderCellDef >نوع المستخدم</th>
+                        <td style="text-align: end;" mat-cell *matCellDef="let element" class="text-center"  > 
+                        
+                           {{element.typeUser}}
+                        </td>
+                      </ng-container>
+                      
+                      
+                      <ng-container matColumnDef="nom">
+                          <th  style="text-align: center;" mat-header-cell *matHeaderCellDef>الأسم</th>
+                          <td style="text-align: end;" mat-cell *matCellDef="let element  "  class="text-center"> {{element.name}} </td>
+                        </ng-container>
+                        
+                      
+                     
         
-              <!-- Position Column -->
+        
+                        
+                      <ng-container matColumnDef="telephone">
+                          <th  style="text-align: end;" mat-header-cell *matHeaderCellDef>الهاتف</th>
+                          <td  style="text-align: end;" mat-cell *matCellDef="let element"> {{element.telephone}} </td>
+                        </ng-container>
+                        
+                      
+                      <ng-container matColumnDef="email">
+                          <th  style="text-align: end;" mat-header-cell *matHeaderCellDef>الولاية</th>
+                          <td style="text-align: end;" mat-cell *matCellDef="let element"> {{element.localisation?.delegation}} </td>
+                        </ng-container>
+                          
+                        <ng-container matColumnDef="loginNumber">
+                          <th  style="text-align: end;"  mat-header-cell *matHeaderCellDef> رقم الدخول </th>
+                          <td style="text-align: end;" mat-cell *matCellDef="let element"> {{element.loginNumber}} </td>
+                        </ng-container>
+                  
+                      
+                          
+                      
+                      <ng-container matColumnDef="modifier">
+                          <th style="text-align: end;" mat-header-cell *matHeaderCellDef>تعديل</th>
+                          <td style="text-align: end;" mat-cell *matCellDef="let element;index as i"> 
+                            <a  class="pointer " (click)="onSelect(element)" >
+                              <i class="fa-solid fa-bars mx-3" style="font-size: 20px;"></i>
+                            </a>
+                              <a class="pointer" matTooltip="تحرير هذا المستخدم"
+                              (click)="edituser(element)">
+                                <i class="fa-solid fa-pencil edit-icon"></i>
+                              </a>
+                              <a *ngIf="element.typeUser!='admin'" class="pointer"
+                              class="pointer"
+                              matTooltip="حذف هذا المستخدم"
+                              (click)="delete(element.id,i)"
+                            >
+                              <i class="fa-solid fa-trash-can delete-icon"></i>
+                            </a>
+                          </td>
+                        </ng-container>                
+        
+                    
+          
+                    
+                        
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedColumns;let i= index;"></tr>
+        
+                      <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4">لا توجد بيانات تطابق عامل التصفية "{{input.value}}"</td>
+                      </tr>
+                    </table> -->
+           
+                    <table mat-table [dataSource]="data" dir="ltr">
+                      <!--- Note that these columns can be defined in any order.
+                        The actual rendered columns are set as a property on the row definition" -->
+                
+                         <!-- Position Column -->
               <ng-container  matColumnDef="id">
                 <th style="text-align: center;" mat-header-cell *matHeaderCellDef>رقم</th>
                 <td style="text-align: center;" mat-cell *matCellDef="let element">{{ element.id }}</td>
@@ -25,10 +101,9 @@
               <ng-container matColumnDef="nom">
                 <th style="text-align: center;" mat-header-cell *matHeaderCellDef>اسم</th>
                 <td style="text-align: center;"mat-cell *matCellDef="let element">
-                  <button class="btn btn-primary" style=" width:100px"
-                  (click)="onSelect(element)" >
+                 
                     {{element.name}}
-                  </button> 
+                
                 </td>
               </ng-container>
       
@@ -63,37 +138,47 @@
                 <th style="text-align: center;" mat-header-cell *matHeaderCellDef>هاتف</th>
                 <td style="text-align: center;" mat-cell *matCellDef="let element">{{ element.telephone }}</td>
               </ng-container>
-              <!-- Action Column -->
-              <ng-container matColumnDef="action">
-                <th style="text-align: right;" mat-header-cell *matHeaderCellDef>تغيير</th>
-                <td mat-cell *matCellDef="let element,index as i">
-                  <a class="pointer">
-                    <button  mat-icon-button (click)="delete(element.id,i)" color="warn" matTooltip="حذف">
-                      <mat-icon>delete</mat-icon>
-                  </button>
-                  </a>
-                  <a class="pointer">
-                    <button  mat-icon-button  color="primary" matTooltip="تحرير" (click)="editMaitre(element)">
-                      <mat-icon>edit</mat-icon>
-                  </button>
-                  </a>
-                </td>
-              </ng-container>
+                      <!-- Action Column -->
+                      <ng-container matColumnDef="action">
+                        <th style="text-align: end;" mat-header-cell *matHeaderCellDef>تعديل</th>
+                        <td style="text-align: end;" mat-cell *matCellDef="let element;index as i"> 
+                        
+                          <a class="pointer"
+                          class="pointer"
+                          matTooltip="حذف هذا المستخدم"
+                          (click)="delete(element.id,i)"
+                        >
+                          <i class="fa-solid fa-trash-can delete-icon"></i>
+                        </a>
+                       
+                        <a class="pointer" matTooltip="تحرير هذا المستخدم"
+                          (click)="editMaitre(element)">
+                            <i class="fa-solid fa-pencil edit-icon"></i>
+                          </a>
+                          <a  class="pointer " (click)="onSelect(element)" >
+                            <i class="fa-solid fa-bars mx-3" style="font-size: 20px;"></i>
+                          </a>
+                        </td>
+                      </ng-container>
+                
+                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedColumns;let i= index;"></tr>
+              
+              
+                      <!-- <tr class="mat-row" *matNoDataRow style="text-align: right;">
+                        <td class="mat-cell" colspan="4" style="text-align: center;">الأطباء في التخصص "{{input.value}}" غير متاحين</td>
+                      </tr> -->
+              
+              
+                    </table>
         
-              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-              <tr mat-row *matRowDef="let row; columns: displayedColumns;let i= index;"></tr>
-      
-      
-              <!-- <tr class="mat-row" *matNoDataRow style="text-align: right;">
-                <td class="mat-cell" colspan="4" style="text-align: center;">المعلمون في المدرسة "{{input.value}}" غير متاحين</td>
-              </tr> -->
-      
-      
-            </table>
-      
-            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" style="text-align: right;"></mat-paginator>
-          </mat-card-content>
-        </mat-card>
-        
-   
-    
+                    <h2 *ngIf="data.length ==0">لا يوجد مستخدمون لعرضهم </h2>
+            
+              </div>
+            </div>
+           
+              
+          </div>
+          
+          </div>
+          

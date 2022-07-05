@@ -10,6 +10,7 @@ interface Option {
   params: object | null | undefined;
 }
 import {MatSnackBar} from '@angular/material/snack-bar';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-medecin-form',
@@ -22,7 +23,7 @@ export class MedecinFormComponent implements OnInit {
   fileUploaded = true;
   typeUser!: string;
   public  options!: Option;
-  error: any;
+  error: any='1';
   
   optionss: Object = { autoHide: false, direction: 'rtl' };
   constructor(
@@ -112,18 +113,34 @@ export class MedecinFormComponent implements OnInit {
         delegation: this.medecinForm.value.delegation,
         zipCode: this.medecinForm.value.zipCode
     }
-        },this.options)
-        // .catch((err) => {     
-        //   this.error = err.error.error;
-        // alert("رقم تسجيل موجود") 
-        // console.log(this.error)
-        // return this.error
-        // // this.dialogRef.close('تأكيد');
-        // })
-        // if (!this.error){
-          console.log(user);
-       this.dialogRef.close(user);
-      //}
+  },this.options).then((res)=>{
+
+    this.dialogRef.close('val')
+    Swal.fire({
+     toast: true,
+     icon: 'success',
+     title: 'تمت العملية  بنجاح',
+     iconColor: 'white',
+     //position: 'top-center',
+     showConfirmButton: false,
+     timer: 3000,
+     customClass: {
+       popup: 'colored-toast',
+     },
+   })
+  }).catch((err) => {     
+    this.error = err.error.error;
+    Swal.fire('رقم تسجيل موجود') 
+  console.log(this.error)
+  return this.error==null
+  // this.dialogRef.close('تأكيد');
+  
+  })
+  
+   // console.log(this.error)
+
+
+
 
 
        // this.dialogRef.close();
@@ -132,7 +149,7 @@ export class MedecinFormComponent implements OnInit {
     }
   
 
-  modifierMedecin() {
+  async modifierMedecin() {
    if (this.actionBtn = 'تحديث'){
     if (this.options === undefined){
       const access = localStorage.getItem('access');
@@ -142,25 +159,20 @@ export class MedecinFormComponent implements OnInit {
                   params: null
               };
           }
-      }
-    this.service.put('http://localhost:8000/api/persons', this.editData.id,{
+      }if( this.medecinForm.value.password=="*********"){
+        this.medecinForm.value.password='123456789'}
+   await this.service.put('http://localhost:8000/api/persons', this.editData.id,{
 
-      telephone: this.medecinForm.value.telephone,
-      typeUser:this.medecinForm.value.typeUser,
-      school_id: this.typeUser === 'school' ? localStorage.getItem('userId') : undefined,
-      is_super: "false",
-      super_doctor_id: this.typeUser === 'superdoctor' ? localStorage.getItem('userId') : undefined,
-      name: this.medecinForm.value.nom,
-      familyName: this.medecinForm.value.familyName,
-      
-      password: this.medecinForm.value.password,
-      speciality: this.medecinForm.value.speciality,
-      loginNumber: this.medecinForm.value.loginNumber,
-      email: this.medecinForm.value.email,
-      Localisation: this.medecinForm.value.delegation === null ? null : {
-          governorate: this.medecinForm.value.governorate,
-          delegation: this.medecinForm.value.delegation,
-          zipCode: this.medecinForm.value.zipCode
+    telephone: this.medecinForm.value.telephone,
+    name: this.medecinForm.value.nom,
+    familyName: this.medecinForm.value.familyName,
+     password: this.medecinForm.value.password,
+    loginNumber: this.medecinForm.value.loginNumber,
+    email: this.medecinForm.value.email,
+    Localisation: this.medecinForm.value.delegation === null ? null : {
+        governorate: this.medecinForm.value.governorate,
+        delegation: this.medecinForm.value.delegation,
+        zipCode: this.medecinForm.value.zipCode
       }
     
   
@@ -171,7 +183,19 @@ export class MedecinFormComponent implements OnInit {
           
 
           this.dialogRef.close();
-          alert("تم تغيير المعطيات بناجح") 
+          Swal.fire({
+            toast: true,
+            icon: 'success',
+            title: 'تمت العملية  بنجاح',
+            iconColor: 'white',
+            //position: 'top-center',
+            showConfirmButton: false,
+            timer: 3000,
+            customClass: {
+              popup: 'colored-toast',
+            },
+          });
+          // alert("تم تغيير المعطيات بناجح") 
    }
     
      

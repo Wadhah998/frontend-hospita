@@ -108,6 +108,9 @@ import { GrossesseFormComponent } from './screens/parents/components/grossesse-f
 import { ProfileUComponent } from './components/header/profile-u/profile-u.component';
 import { RdvdocterComponent } from './screens/doctor/components/charts/rdvdocter/rdvdocter.component';
 import { ParentCalendarComponent } from './screens/parents/components/parent-calendar/parent-calendar.component';
+import { ParentMessagerieComponent } from './screens/parents/components/parent-messagerie/parent-messagerie.component';
+import { ParentChatComponent } from './screens/parents/components/parent-messagerie/parent-chat/parent-chat.component';
+import { ParentContactComponent } from './screens/parents/components/parent-messagerie/parent-contact/parent-contact.component';
 
 // import {
 //   NgxMatDatetimePickerModule,
@@ -196,6 +199,9 @@ import { ParentCalendarComponent } from './screens/parents/components/parent-cal
       
          
         
+         ParentMessagerieComponent,
+         ParentChatComponent,
+         ParentContactComponent
          
   ],
   imports: [

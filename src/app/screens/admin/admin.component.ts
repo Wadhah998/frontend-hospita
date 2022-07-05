@@ -78,7 +78,7 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
             headers: {Authorization: `Bearer ${this.secureStorageService.getToken(this.access)}`}
         };
         await this.getData();
-        
+        this.data.shift();
         this.User=this.data[1]
         console.log(this.data);
         this.nbSuperdocter = 0;
@@ -132,7 +132,7 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
        //   return val + " - " + opts.w.globals.series[opts.seriesIndex];
        // }
      },
-     labels: ['Teachers', 'Parents', 'Schools', 'Superdoctors'],
+     labels: ['معلمون', 'الآباء', 'المدارس', 'طبيب أول'],
      
      responsive: [
        {
@@ -180,6 +180,7 @@ export class AdminComponent  extends DynamicTableCrud<any> implements OnInit {
         .then(async () => { 
           console.log('catched');
           this.getData()
+          
       });
       });
   }

@@ -3,23 +3,31 @@
 <div fxLayout="row wrap">
 <div fxFlex.gt-lg="30" fxFlex.gt-md="30" fxFlex.gt-xs="100" fxFlex="100">
    <app-user-profile [User]="User" ></app-user-profile>
-   <div id="chart">
-    <apx-chart
-      [series]="chartOptions.series"
-      [chart]="chartOptions.chart"
-      [labels]="chartOptions.labels"
-      [fill]="chartOptions.fill"
-      [dataLabels]="chartOptions.dataLabels"
-      [responsive]="chartOptions.responsive"
-    ></apx-chart>
-  </div>
+   <div class="card" style="margin:15px" >
+    <div class="card-header">
+      <h3  class="card-title mb-0 text-primary fw-bolder ">إحصائيات المستخدم</h3>
+    </div>
+     <div class="card-body p-0">
+      <div id="chart">
+        <apx-chart
+          [series]="chartOptions.series"
+          [chart]="chartOptions.chart"
+          [labels]="chartOptions.labels"
+          [fill]="chartOptions.fill"
+          [dataLabels]="chartOptions.dataLabels"
+          [responsive]="chartOptions.responsive"
+        ></apx-chart>
+      </div>
+     </div>
+   </div>
+   
 
 </div>
  
 <div fxFlex.gt-lg="65" fxFlex.gt-md="68" fxFlex.gt-xs="100" fxFlex="100">
         <div class="header-content">
           
- 
+
          <!-- <mat-form-field appearance="fill">
             <mat-label>spécialité</mat-label>
             <mat-select (selectionChange)="chercheMedecin($event)" #input>
@@ -31,124 +39,142 @@
           -->
           
         
-          <mat-form-field >
-            <mat-select style="font-size: medium;" (selectionChange)="chercheTyperUser($event)" placeholder="نوع المستخدم" #input>
-              <mat-option value="doctor">
-                طبيب
-              </mat-option>
-              <mat-option value="parent">
-                ولي
-
-              </mat-option>
-              <mat-option value="teacher">
-                مربي
-              </mat-option>
-              <mat-option value="superdoctor">
-                طبيب أول
-              </mat-option>
-              <mat-option value="school">
-                مدرسة  
-                          </mat-option>
-            </mat-select>
-           </mat-form-field>
-          
-            
         
-            
           
-        
-            <button  class="btn btn-lg btn-primary" (click)="openUserDialog()">
-                إضافة طبيب أول أو مدرسة
-            </button>
+           
           
           </div>
-          <div class="contents"style=" margin: 1rem 0;">
-            <button mat-flat-button (click)="afficherTouTyperUser()">القائمة    </button>                       
+         
+                    <div class="card border-info mb-3 w-100">
+                      <div class="card-header d-flex justify-content-between">
+                        <div class="contents"style=" margin: 1rem 0;">
+                          <button mat-raised-button (click)="afficherTouTyperUser()">القائمة </button>                       
+                                  </div>
+                                  <div class="contents"style=" margin: 1rem 0;">
+                        <button  mat-raised-button (click)="openUserDialog()">
+                          إضافة طبيب أول أو مدرسة
+                      </button>
+                      </div>
                     </div>
-        
-        <div class="content mat-elevation-z8">
-          
-                
-            <table mat-table [dataSource]="data" class="table mt-5">
-
-              <ng-container matColumnDef="id">
-                <th style="text-align: center;" mat-header-cell *matHeaderCellDef >id </th>
-                <td style="text-align: end;" mat-cell *matCellDef="let element " class="text-center" > {{element.id}} </td>
-              </ng-container>  
-                
-                
-              
-                
-                <ng-container matColumnDef="TypeUser">
-                  <th style="text-align: center;" mat-header-cell *matHeaderCellDef >نوع المستخدم</th>
-                  <td style="text-align: end;" mat-cell *matCellDef="let element" class="text-center"  > 
-                    <button class="btn btn-primary" style=" width:100px" (click)="onSelect(element)" >
-                     {{element.typeUser}}
-                    </button> </td>
-                </ng-container>
-                
-                
-                <ng-container matColumnDef="nom">
-                    <th  style="text-align: center;" mat-header-cell *matHeaderCellDef>الأسم</th>
-                    <td style="text-align: end;" mat-cell *matCellDef="let element  "  class="text-center"> {{element.name}} </td>
-                  </ng-container>
+                      <div class="card-body text-success">
+                       
+                          <div fxLayout fxLayoutAlign="">
+                            <mat-form-field  appearance="fill">
+                              <mat-select style="font-size: medium;" (selectionChange)="chercheTyperUser($event)" placeholder="نوع المستخدم" #input>
+                                <mat-option value="doctor">
+                                  طبيب
+                                </mat-option>
+                                <mat-option value="parent">
+                                  ولي
                   
-                
-               
-
-
-                  
-                <ng-container matColumnDef="telephone">
-                    <th  style="text-align: end;" mat-header-cell *matHeaderCellDef>الهاتف</th>
-                    <td  style="text-align: end;" mat-cell *matCellDef="let element"> {{element.telephone}} </td>
-                  </ng-container>
-                  
-                
-                <ng-container matColumnDef="email">
-                    <th  style="text-align: end;" mat-header-cell *matHeaderCellDef>الولاية</th>
-                    <td style="text-align: end;" mat-cell *matCellDef="let element"> {{element.localisation?.delegation}} </td>
-                  </ng-container>
-                    
-                  <ng-container matColumnDef="loginNumber">
-                    <th  style="text-align: end;"  mat-header-cell *matHeaderCellDef> رقم الدخول </th>
-                    <td style="text-align: end;" mat-cell *matCellDef="let element"> {{element.loginNumber}} </td>
-                  </ng-container>
-            
-                
-                    
-                
-                <ng-container matColumnDef="modifier">
-                    <th style="text-align: end;" mat-header-cell *matHeaderCellDef>تعديل</th>
-                    <td style="text-align: end;" mat-cell *matCellDef="let element;index as i"> 
-                        <a  class="pointer" style="color:rgb(0, 255, 128)" matTooltip="تحرير هذا المستخدم">
-                            <mat-icon (click)="edituser(element)" >edit</mat-icon>
-                        </a>
-                        <a *ngIf="element.typeUser!='admin'" class="pointer" style="color:rgb(255, 0, 0)" matTooltip="حذف هذا المستخدم">
-                            <mat-icon (click)="delete(element.id,i)">delete </mat-icon>
-                        </a>
-                    </td>
-                  </ng-container>                
-
+                                </mat-option>
+                                <mat-option value="teacher">
+                                  مربي
+                                </mat-option>
+                                <mat-option value="superdoctor">
+                                  طبيب أول
+                                </mat-option>
+                                <mat-option value="school">
+                                  مدرسة  
+                                            </mat-option>
+                              </mat-select>
+                             </mat-form-field>
+                          </div>
+                         
+                          <table mat-table [dataSource]="data" class=""  dir="ltr">
               
-    
+                            <ng-container matColumnDef="id">
+                              <th style="text-align: center;" mat-header-cell *matHeaderCellDef >رقم  </th>
+                              <td style="text-align: end;" mat-cell *matCellDef="let element " class="text-center" > {{element.id}} </td>
+                            </ng-container>  
+                              
+                              
+                            
+                              
+                              <ng-container matColumnDef="TypeUser">
+                                <th style="text-align: center;" mat-header-cell *matHeaderCellDef >نوع المستخدم</th>
+                                <td style="text-align: end;" mat-cell *matCellDef="let element" class="text-center"  > 
+                                
+                                   {{element.typeUser}}
+                                </td>
+                              </ng-container>
+                              
+                              
+                              <ng-container matColumnDef="nom">
+                                  <th  style="text-align: center;" mat-header-cell *matHeaderCellDef>الأسم</th>
+                                  <td style="text-align: end;" mat-cell *matCellDef="let element  "  class="text-center"> {{element.name}} </td>
+                                </ng-container>
+                                
+                              
+                             
               
+              
+                                
+                              <ng-container matColumnDef="telephone">
+                                  <th  style="text-align: end;" mat-header-cell *matHeaderCellDef>الهاتف</th>
+                                  <td  style="text-align: end;" mat-cell *matCellDef="let element"> {{element.telephone}} </td>
+                                </ng-container>
+                                
+                              
+                              <ng-container matColumnDef="email">
+                                  <th  style="text-align: end;" mat-header-cell *matHeaderCellDef>الولاية</th>
+                                  <td style="text-align: end;" mat-cell *matCellDef="let element"> {{element.localisation?.delegation}} </td>
+                                </ng-container>
+                                  
+                                <ng-container matColumnDef="loginNumber">
+                                  <th  style="text-align: end;"  mat-header-cell *matHeaderCellDef> رقم الدخول </th>
+                                  <td style="text-align: end;" mat-cell *matCellDef="let element"> {{element.loginNumber}} </td>
+                                </ng-container>
+                          
+                              
+                                  
+                              
+                              <ng-container matColumnDef="modifier">
+                                  <th style="text-align: end;" mat-header-cell *matHeaderCellDef>تعديل</th>
+                                  <td style="text-align: end;" mat-cell *matCellDef="let element;index as i"> 
+                                   
+                                      
+                                      <a *ngIf="element.typeUser!='admin'" class="pointer"
+                                      class="pointer"
+                                      matTooltip="حذف هذا المستخدم"
+                                      (click)="delete(element.id,i)"
+                                    >
+                                      <i class="fa-solid fa-trash-can delete-icon"></i>
+                                    </a>
+                                   
+                                    <a class="pointer" matTooltip="تحرير هذا المستخدم"
+                                      (click)="edituser(element)">
+                                        <i class="fa-solid fa-pencil edit-icon"></i>
+                                      </a>
+                                      <a  class="pointer " (click)="onSelect(element)" >
+                                        <i class="fa-solid fa-bars mx-3" style="font-size: 20px;"></i>
+                                      </a>
+                                  </td>
+                                </ng-container>                
+              
+                            
                   
-                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;let i= index;"></tr>
-
-                <tr class="mat-row" *matNoDataRow>
-                  <td class="mat-cell" colspan="4">لا توجد بيانات تطابق عامل التصفية "{{input.value}}"</td>
-                </tr>
-              </table>
-     
-             
-
-              <h2 *ngIf="data.length ==0">لا يوجد مستخدمون لعرضهم </h2>
-        
-
-                
+                            
+                                
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                              <tr mat-row *matRowDef="let row; columns: displayedColumns;let i= index;"></tr>
               
-                
-            </div>
+                              <tr class="mat-row" *matNoDataRow>
+                                <td class="mat-cell" colspan="4">لا توجد بيانات تطابق عامل التصفية "{{input.value}}"</td>
+                              </tr>
+                            </table>
+                   
+                           
+              
+                            <h2 *ngIf="data.length ==0">لا يوجد مستخدمون لعرضهم </h2>
+                      
+              
+                              
+                            
+                              
+                          
+                      </div>
+                    </div>
+         
           </div>
         </div>

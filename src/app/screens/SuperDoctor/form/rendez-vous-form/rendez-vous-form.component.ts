@@ -10,6 +10,7 @@ import {MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
 import { extend } from 'lodash';
 import { SecureStorageService } from 'src/app/services/api/secure-storage.service';
 import { DateComponent } from '@fullcalendar/angular';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-rendez-vous-form',
@@ -93,6 +94,19 @@ export class RendezVousFormComponent extends DynamicTableCrud<any> implements On
               console.log(patientId)
                 
         }),this.dialogRef.close('تأكيد');
+        Swal.fire({
+          toast: true,
+          icon: 'success',
+          title: 'تمت العملية  بنجاح',
+          iconColor: 'white',
+          //position: 'top-center',
+          showConfirmButton: false,
+          timer: 3000,
+          customClass: {
+            popup: 'colored-toast',
+          },
+        });
+
     }
     else  console.log( this.data.id,doctorId);
 }

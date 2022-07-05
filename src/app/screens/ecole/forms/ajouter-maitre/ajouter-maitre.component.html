@@ -55,6 +55,7 @@
 </div>
 
 <div mat-dialog-actions [align]="'end'">
-    <button mat-raised-button color="primary" (click)="addMaitre()">{{actionBtn}}</button>
+    <button *ngIf="actionBtn=='تأكيد'" mat-raised-button color="primary" (click)="addMaitre()">{{actionBtn}}</button>
+    <button *ngIf="actionBtn=='تحديث'" mat-raised-button color="primary" (click)="modifierMaitre()">{{actionBtn}}</button>
     <button mat-raised-button color="warn" mat-dialog-close>إلغاء</button> 
 </div>

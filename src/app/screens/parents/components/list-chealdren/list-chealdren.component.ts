@@ -33,7 +33,9 @@ export class ListChealdrenComponent extends DynamicTableCrud<any> implements OnI
     'age',
     
     'phone',
+    'etat',
     'action',
+    
   ];
   Toast = Swal.mixin({
     toast: true,
@@ -70,6 +72,13 @@ export class ListChealdrenComponent extends DynamicTableCrud<any> implements OnI
   override async getData(): Promise<void> {
     this.data = await this.service.list(this.actionUrl, this.options);
     this.numberPatients = this.data.length;
+}
+action(element : any){
+  if (element.supervise!=null){
+    return('تحت الإشراف')
+  }else{
+    return('غير خاضعة للرقابة')
+  }
 }
 
  

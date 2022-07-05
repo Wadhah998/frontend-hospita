@@ -1,4 +1,4 @@
-import { User } from 'src/app/models/user/user.module';
+//import { User } from 'src/app/models/user/user.module';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -7,11 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
+  
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
+    //console.log(this.User)
   }
   @Input()
-  public User!: User;
+  public User!: any;
  
 }
 
