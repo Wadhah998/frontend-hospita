@@ -49,9 +49,7 @@ export class DiagnosticMaitreComponent implements OnInit {
       });
     }
 
-    submit() {
-      
-    }
+  
 
     next(){
       this.step = this.step+1;
