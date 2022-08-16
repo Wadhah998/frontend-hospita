@@ -111,6 +111,7 @@ import { ParentCalendarComponent } from './screens/parents/components/parent-cal
 import { ParentMessagerieComponent } from './screens/parents/components/parent-messagerie/parent-messagerie.component';
 import { ParentChatComponent } from './screens/parents/components/parent-messagerie/parent-chat/parent-chat.component';
 import { ParentContactComponent } from './screens/parents/components/parent-messagerie/parent-contact/parent-contact.component';
+import { DiagnosticMaitreComponent } from './screens/maitre/components/di/diagnostic-maitre/diagnostic-maitre.component';
 
 // import {
 //   NgxMatDatetimePickerModule,
@@ -201,8 +202,8 @@ import { ParentContactComponent } from './screens/parents/components/parent-mess
         
          ParentMessagerieComponent,
          ParentChatComponent,
-         ParentContactComponent
-         
+         ParentContactComponent,
+         DiagnosticMaitreComponent,
   ],
   imports: [
     BrowserModule,

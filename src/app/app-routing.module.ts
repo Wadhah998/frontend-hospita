@@ -67,7 +67,7 @@ import { GrossesseFormComponent } from './screens/parents/components/grossesse-f
 import { ProfileUComponent } from './components/header/profile-u/profile-u.component';
 import { ParentCalendarComponent } from './screens/parents/components/parent-calendar/parent-calendar.component';
 import { ParentMessagerieComponent } from './screens/parents/components/parent-messagerie/parent-messagerie.component';
-
+import { DiagnosticMaitreComponent } from './screens/maitre/components/di/diagnostic-maitre/diagnostic-maitre.component';
 
 
 
@@ -122,6 +122,8 @@ const routes: Routes = [
   { path: 'commingSoon', component : CommingSoonComponent },
   { path: 'grossesseForm', component : GrossesseFormComponent },
   { path: 'parent-chat', component: ParentMessagerieComponent },
+  { path: 'diagnosticMaitre', component : DiagnosticMaitreComponent },
+
   {
     path: '',
     component: DoctorComponent,

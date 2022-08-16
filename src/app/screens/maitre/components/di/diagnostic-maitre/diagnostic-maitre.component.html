@@ -1,0 +1,952 @@
+
+<app-header></app-header>
+<div [formGroup]="diagnosticForm" (ngSubmit)="submit()" >
+    <div fxLayout="row wrap" *ngIf="step ==1">
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    مضطرب (هائج) يستدير حول نفسه في اتجاهات مختلفة و هو جالس على مقعده
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question1" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    يصدر اصواتا في غير محلها و عندما لا يسمح الظرف بذلك 
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question2" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    يجب تلبية طلباته حالا
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question3" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    يميل الى الخبث وقح غير مهذب
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question4" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    تنتابه نوبات غضب و يقوم بتصرفات غير متوقعة
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question5" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    له حساسية مفرطة للنقد
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question6" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    يبدو شارد الذهن
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question7" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;"value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    يزعج غيره من التلاميذ
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question8" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    يبدو حالما,أحلام اليقظة 
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question9" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    يعبس و يغضب بسهولة
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question10" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+    </div>
+    <div fxLayout="row wrap" *ngIf="step ==2">
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    له مزاج متقلب و بصفة واضحة
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question11" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    يتشاجر بكثرة 
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question12" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    يخضع لكل ذي سلطة
+                            </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question13" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    مضطرب (هائج) يتحرك باستمرار
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question14" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    يثور (يهيج) بسهولة مندفع
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question15" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    يستدعي انتباه المدرس بصفة مفرطة
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question16" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    يبدو غير مقبول من قبل المجموعة
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question17" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;"value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    ينقاد من قبل الآخرين
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question18" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    لا يقبل الهزيمة
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question19" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    ليست له القدرة على تدريب الاخرين او قيادتهم
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question20" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+    </div>
+    <div fxLayout="row wrap" *ngIf="step ==3">
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    يجد صعوبة في اتمام ما شرع القيام فيه
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question21" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    صبياني غير ناضج على المستوى العاطفي يتصرف تصرفات من هو اصغر منه سنا. 
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question22" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    ينكر اخطاءه و يتهم غيره
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question23" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    يجد صعوبة في التفاهم ( المفاهمة مع غيره من التلاميذ)
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question24" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    يتعاون بقلة مع اترابه بالقسم
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question25" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    يتوتر بسهولة عندما يجب عليه القيام بمجهود ما
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question26" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    يستعين بقلة بمعلمه- يطلب استعانة معلمه بقلة
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question27" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;"value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+        <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="50" fxFlex="100">
+            <mat-card>
+                <mat-card-header>
+                    يجد صعوبات في التعلم
+                </mat-card-header>
+                <mat-card-content>
+                    <div >
+                        <mat-radio-group formControlName="question28" class="smallRadio">
+                            <div class="parent">
+                                <div >
+                                    <mat-radio-button  value="1" >
+                                        أبدا
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10.8%;" value="2" >
+                                            قليلا
+                                    </mat-radio-button>
+                                    </div>
+                                </div>
+                                <div  >
+                                   <mat-radio-button  value="2" >
+                                    كثيرا
+                                </mat-radio-button>
+                                <mat-radio-button style="margin-right: 10%;" value="3" >
+                                    كثيرا جدا
+                                </mat-radio-button> 
+                                </div>
+                                
+                            </mat-radio-group>
+                        </div>
+                    </mat-card-content>
+            </mat-card>
+            
+        </div>
+    </div>
+    
+</div>
+<div class="alert doctor ">
+
+    <span class="text-danger" *ngIf="step==3">
+        <button class="btn btn-success send"  style="margin-left: 3px;">إرسال</button>
+    </span>
+    
+    <span class="text-danger" *ngIf="step!=3">
+        <button (click)="next()" style="background-color: rgb(0, 255, 0) ; color:black; border-radius: 4px; border-color:rgb(0, 255, 0) ; width: 100px; height: 35px;margin-left: 5px;" >التالي</button>
+    </span>
+    <span class="text-danger" *ngIf="step!=1">
+        <button (click)="previous()" style="background-color: rgb(0, 255, 0) ; color:black; border-radius: 4px; border-color:rgb(0, 255, 0) ; width: 100px; height: 35px;" >السابق</button>
+    </span>
+    
+    
+
+    
+  </div>
