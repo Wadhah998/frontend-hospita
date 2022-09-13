@@ -36,7 +36,8 @@ export class AjoutEnfantComponent implements OnInit {
     }
   }
  changementDePage(): void {
-      localStorage.setItem('patient', JSON.stringify(this.formGroup.value));
+  if (localStorage.getItem('typeUser') == 'parent') {   
+  localStorage.setItem('patient', JSON.stringify(this.formGroup.value));
       this.direction=localStorage.getItem("periode")
        console.log(this.direction)
         if (this.direction=="1"){
@@ -46,5 +47,9 @@ export class AjoutEnfantComponent implements OnInit {
       else{
         this.router.navigate(['grossesseForm'])
       }localStorage.removeItem("periode")
-   };
+   }else{ 
+    localStorage.setItem('patient', JSON.stringify(this.formGroup.value));
+    this.router.navigate(['diagnosticMaitre'])
+   };}
+   
 }

@@ -936,7 +936,7 @@
 <div class="alert doctor ">
 
     <span class="text-danger" *ngIf="step==3">
-        <button class="btn btn-success send"  style="margin-left: 3px;">إرسال</button>
+        <button class="btn btn-success send" (click)="envoi()"  style="margin-left: 3px;">إرسال</button>
     </span>
     
     <span class="text-danger" *ngIf="step!=3">

@@ -1,3 +1,4 @@
+import { Localisation } from 'src/app/screens/sign-up/localisation/localisation.module';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -51,9 +52,10 @@ export class ProfileUComponent implements OnInit {
   this.familyName=localStorage.getItem('familyName')
   this.email=this.user.email
   this.telephone=this.user.telephone
-  this.gouvernorat=this.user.localisation.governorate
-  this.delegation=this.user.localisation.delegation
-  this.zipCode=this.user.localisation.zipCode
+  
+  this.gouvernorat=this.user.localisation?.governorate
+  this.delegation=this.user.localisation?.delegation
+  this.zipCode=this.user.localisation?.zipCode
   this.loginNumber=this.user.loginNumber 
   this.userform = new FormGroup({
     typeUser:new FormControl('',[Validators.required]),

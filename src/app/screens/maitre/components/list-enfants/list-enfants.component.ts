@@ -16,6 +16,7 @@ import { Enfants } from 'src/app/models/enfant/Enfant';
 import { ProfilEnfantsComponent } from '../profil-enfants/profil-enfants.component';
 import { DynamicTableCrud } from 'src/app/screens/admin/dynamic-table.crud.service';
 import { SecureStorageService } from 'src/app/services/api/secure-storage.service';
+import { Patient } from 'src/app/models/patient/patient.model';
 
 
 @Component({
@@ -30,15 +31,15 @@ export class ListEnfantsComponent extends DynamicTableCrud<any> implements OnIni
   enfant !: Enfants;
 
   selectedSpeciality!: boolean;
+  access !: string | null;
+  numberPatients !: number;
+  typeUser !: string | null;
    
-  ngOnInit(): void {
-    this.getData();
-    
-  }
+  
 
   enfantForm! : FormGroup;
   displayedColumns: string[] = ['action','telephone', 'email','situation','date','nomEnfant','id' ];
-  dataSource!: MatTableDataSource<any>;
+  
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -46,95 +47,44 @@ export class ListEnfantsComponent extends DynamicTableCrud<any> implements OnIni
   @Output()
   public select: EventEmitter<Enfants> = new EventEmitter()
 
-  constructor(
-    private api : ApiService,
-    private dialog : MatDialog, 
-    private dialogService : DialogService,
-    service : AbstractRestService<any>,
-    secureStorageService:SecureStorageService,
-     public router:Router,
-    ) {super(service, 'http://localhost:8000/api/patients', secureStorageService) }
-    
+  constructor(private api: ApiService, public dialog: MatDialog, public router:Router  ,service:AbstractRestService<any>,secureStorageService:SecureStorageService) 
+  {super(service, 'http://localhost:8000/api/patients', secureStorageService) }
+  patients: Patient[] = [];
+  dataSource!: MatTableDataSource<any>;
+  async ngOnInit(): Promise<void> {
+    this.access = localStorage.getItem('access');
+    const typeUser = localStorage.getItem('typeUser');
+    if (typeUser !== null){
+        this.typeUser = typeUser;
+    }
+    if (this.access) {
+        this.options = {
+            params: null,
+            headers: {Authorization: `Bearer ${this.secureStorageService.getToken(this.access)}`}
+        };
+        await this.getData();
+        console.log(this.data);
+    }
 
-
-    ajouterEnfantDialog() {
-   this.router.navigate(['/commingSoon'])
-  }
-
-
-  editEnfant(row : any) {
-    this.dialog.open(AjouterEnfantComponent,{
-      width : '50%',
-      data:row,
-      disableClose:true,
-      autoFocus :true
-    }).afterClosed().subscribe(val=>{
-      if(val==='تحديث'){
-        this.getAllEnfants();
-      }
-    });
-  }
-
-  deleteEnfant(id:number){
-
-    this.dialogService.openConfirmDialog('هل أنت متأكد أنك تريد حذف هذاالطفل  ؟')
-    .afterClosed().subscribe(res =>{
-      if(res){
-        this.api.deleteEnfants(id)
-    .subscribe({
-      next:(res)=>{
-        alert("حذف الطفل  بنجاح")
-        this.getAllEnfants();
-      },
-      error:()=>{
-        alert("خطأ اثناء حذف هذا الطفل   !!")
-      }
-    })
-      }
-    })
     
   }
-
-  showEnfant(row: any){
-    const dialogRef = this.dialog.open(ProfilEnfantsComponent,{
-      width : '32%',
-      data:row,
-      autoFocus :true,
-
-    });
-   
-  }
-
-
-
-
-
-  getAllEnfants(){
-    this.api.getEnfant()
-      .subscribe({
-        next:(res)=>{
-          console.log(res);
-          this.enfants = res
-          this.dataSource = new MatTableDataSource(res);
-          this.dataSource.paginator = this.paginator;
-          this.dataSource.sort = this.sort;
-        },
-        error:(error)=>{
-          alert("خطأ أثناء جلب السجلات")
-        }
-      })
-  }
-
-  afficherTousEnfant(){
-    this.getAllEnfants();
-  }
-
-  onSelect(element: Enfants) {
-    // this.selectedtIndex = index;
-    this.enfant = element;
-    console.log('from list', this.enfants);
-    this.select.emit(element);
-    //console.log('from list' + this.gePatients());
-    console.log('from list', element);
+  override async getData(): Promise<void> {
+    this.data = await this.service.list(this.actionUrl, this.options);
+    this.numberPatients = this.data.length;
+}
+action(element : any){
+  if (element.supervise!=null){
+    return('تحت الإشراف')
+  }else{
+    return('غير خاضعة للرقابة')
   }
 }
+ajoutenfant(){
+  this.router.navigate(['ajout-enfant'])
+}
+
+ 
+
+ 
+}
+

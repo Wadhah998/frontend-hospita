@@ -158,7 +158,7 @@ const routes: Routes = [
       },
       { path: 'superDoctor-appointment', component : SuperDoctorApointementComponent,canActivate:[AuthGuard,SuperdocService] },
 
-      { path: 'ajout-enfant', component: AjoutEnfantComponent ,canActivate: [AuthGuard, PatientService] },
+      { path: 'ajout-enfant', component: AjoutEnfantComponent  },
       { path: 'parent-calendar', component: ParentCalendarComponent ,canActivate: [AuthGuard, PatientService] }
     ],
   },]

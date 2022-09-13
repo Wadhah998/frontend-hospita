@@ -5,14 +5,14 @@
         <span></span>
         
         <span>
-          <button mat-raised-button color="primary" style=" margin-left: 30px;"   (click)=" ajouterEnfantDialog()"> اضافة تلميذ
+          <button mat-raised-button color="primary" style=" margin-left: 30px;" (click)="ajoutenfant()"   > اضافة تلميذ
   
           </button>
         </span>
       </div>
     </mat-card-title>
     <mat-card-subtitle style="text-align: left;">
-      <button mat-flat-button (click)="afficherTousEnfant()">القائمة</button>
+      <button mat-flat-button >القائمة</button>
     </mat-card-subtitle>
       <mat-card-content>
         <table mat-table [dataSource]="data">
@@ -28,7 +28,7 @@
             <td style="text-align: left;"mat-cell *matCellDef="let element">
               <button mat-flat-button 
                 [ngClass]="{ active: element === enfant }"
-                (click)="onSelect(element)" >
+                 >
                   {{element.name}}
                 </button> 
             </td>
@@ -73,7 +73,7 @@
               </button>
               </a>
               <a class="pointer">
-                <button  mat-icon-button (click)="editEnfant(element)" color="primary" matTooltip="تحرير">
+                <button  mat-icon-button  color="primary" matTooltip="تحرير">
                   <mat-icon>edit</mat-icon>
               </button>
               </a>
