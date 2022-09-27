@@ -1,0 +1,32 @@
+<div class="conversation-container">
+    <div class="header">
+      <img src="./assets/images/blank-profile-picture-973460_640.png" alt="" class="img-circle" />
+      <h3 class="contact-name">{{ medecin?.nom}}</h3>
+    </div>
+    <div class="content" dir="ltr">
+      <div class="message"
+      [ngClass]="{me: m.me}"
+      *ngFor=" let m of medecin?.messages"  >
+      <div class="messageContent">
+        {{m.body}}
+        <div class="time">{{m.time}}</div>
+      </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="chat-input">
+        <input 
+        (keyup.enter)="SubmitMessage($event)" type="text" name="" id="" />
+        <div class="chat-input-links">
+          <a class="pointer"><i class="fa-solid fa-face-smile link">
+          </i></a>
+          <a  class="pointer" ><i class="fa-solid fa-file-import link"></i></a>
+  
+          <button  type="submit" class="sendbutton">
+            <i class="fa-solid fa-paper-plane-top"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
