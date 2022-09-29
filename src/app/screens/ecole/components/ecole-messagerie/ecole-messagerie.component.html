@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div fxLayout="row wrap ">
+    <!-- column -->
+    <div
+      fxFlex.gt-lg="75"
+      fxFlex.gt-md="75"
+      fxFlex.gt-xs="75"
+      fxFlex="100"
+      class="chat"
+    >
+      <app-ecole-chat [medecin]="medecin" *ngIf="medecin"></app-ecole-chat>
+    </div>
+    <!-- column -->
+    <div
+      fxFlex.gt-lg="25"
+      fxFlex.gt-md="25"
+      fxFlex.gt-xs="25"
+      fxFlex="100"
+      class="contact"
+    >
+      <app-ecole-contact (conversation)="onConversationSelected($event)"></app-ecole-contact>
+    </div>
+    <!-- column -->
+  </div>
+  

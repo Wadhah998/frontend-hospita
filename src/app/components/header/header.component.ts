@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit {
   menuAdmin=[
     {
         "link":"الرسائل",
-        "redirect":"/menu"
+        "redirect":"/admin-chat"
 
     },
 
@@ -86,7 +86,7 @@ menuParent=[
 menuMaitre=[
   {
       "link":"الرسائل",
-      "redirect":"maitreD"
+      "redirect":"ecole-chat"
 
   },
 
@@ -99,7 +99,7 @@ menuMaitre=[
 school=[
   {
       "link":"الرسائل",
-      "redirect":"/menu"
+      "redirect":"/ecole-chat"
   },
 
 

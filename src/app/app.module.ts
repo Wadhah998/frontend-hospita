@@ -112,6 +112,15 @@ import { ParentMessagerieComponent } from './screens/parents/components/parent-m
 import { ParentChatComponent } from './screens/parents/components/parent-messagerie/parent-chat/parent-chat.component';
 import { ParentContactComponent } from './screens/parents/components/parent-messagerie/parent-contact/parent-contact.component';
 import { DiagnosticMaitreComponent } from './screens/maitre/components/di/diagnostic-maitre/diagnostic-maitre.component';
+import { AdminChatComponent } from './screens/admin/admin-messagerie/admin-chat/admin-chat.component';
+import { AdminContactComponent } from './screens/admin/admin-messagerie/admin-contact/admin-contact.component';
+import { AdminMessagerieComponent } from './screens/admin/admin-messagerie/admin-messagerie.component';
+import { EcoleMessagerieComponent } from './screens/ecole/components/ecole-messagerie/ecole-messagerie.component';
+import { EcoleChatComponent } from './screens/ecole/components/ecole-messagerie/ecole-chat/ecole-chat.component';
+import { EcoleContactComponent } from './screens/ecole/components/ecole-messagerie/ecole-contact/ecole-contact.component';
+import { MaitreMessagerieComponent } from './screens/maitre/components/maitre-messagerie/maitre-messagerie.component';
+import { MaitreChatComponent } from './screens/maitre/components/maitre-messagerie/maitre-chat/maitre-chat.component';
+import { MaitreContactComponent } from './screens/maitre/components/maitre-messagerie/maitre-contact/maitre-contact.component';
 
 // import {
 //   NgxMatDatetimePickerModule,
@@ -204,6 +213,15 @@ import { DiagnosticMaitreComponent } from './screens/maitre/components/di/diagno
          ParentChatComponent,
          ParentContactComponent,
          DiagnosticMaitreComponent,
+         AdminChatComponent,
+         AdminContactComponent,
+         AdminMessagerieComponent,
+         EcoleMessagerieComponent,
+         EcoleChatComponent,
+         EcoleContactComponent,
+         MaitreMessagerieComponent,
+         MaitreChatComponent,
+         MaitreContactComponent,
   ],
   imports: [
     BrowserModule,

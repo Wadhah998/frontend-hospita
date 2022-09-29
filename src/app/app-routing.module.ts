@@ -68,6 +68,9 @@ import { ProfileUComponent } from './components/header/profile-u/profile-u.compo
 import { ParentCalendarComponent } from './screens/parents/components/parent-calendar/parent-calendar.component';
 import { ParentMessagerieComponent } from './screens/parents/components/parent-messagerie/parent-messagerie.component';
 import { DiagnosticMaitreComponent } from './screens/maitre/components/di/diagnostic-maitre/diagnostic-maitre.component';
+import { AdminMessagerieComponent } from './screens/admin/admin-messagerie/admin-messagerie.component';
+import { EcoleMessagerieComponent } from './screens/ecole/components/ecole-messagerie/ecole-messagerie.component';
+import { MaitreMessagerieComponent } from './screens/maitre/components/maitre-messagerie/maitre-messagerie.component';
 
 
 
@@ -123,6 +126,9 @@ const routes: Routes = [
   { path: 'grossesseForm', component : GrossesseFormComponent },
   { path: 'parent-chat', component: ParentMessagerieComponent },
   { path: 'diagnosticMaitre', component : DiagnosticMaitreComponent },
+  { path: 'admin-chat', component: AdminMessagerieComponent },
+  { path: 'ecole-chat', component:EcoleMessagerieComponent },
+  { path: 'maitre-chat', component:MaitreMessagerieComponent },
 
   {
     path: '',
